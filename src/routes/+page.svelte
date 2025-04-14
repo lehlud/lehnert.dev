@@ -52,11 +52,11 @@
 
         let lidx: number = 0;
         const lineInterval = setInterval(() => {
-            if (Math.random() < 0.7) return;
+            if (Math.random() < 0.3) return;
             if (Math.random() < 0.05) lidx = chooseRandom(indices);
 
             let iter = 0;
-            while (iter++ < 100) {
+            while (iter++ < 1000) {
                 const nidx = chooseRandom(indices);
                 if (lidx === nidx) continue;
 
@@ -65,7 +65,7 @@
                 const d = Math.sqrt(
                     Math.pow(lx - rx, 2) + Math.pow(ly - ry, 2),
                 );
-                if (d > 0.4 && Math.random() < 0.8) continue;
+                if ((d > 0.4 && Math.random() < 0.8) || d > 0.5) continue;
 
                 const line = document.getElementById(`${lidx}-${nidx}`);
                 if (!line) continue;
@@ -73,13 +73,13 @@
                 line.setAttribute("opacity", "1");
                 setTimeout(
                     () => line.setAttribute("opacity", "0"),
-                    Math.random() * 6000,
+                    4500 + Math.random() * 2500,
                 );
 
                 lidx = nidx;
                 break;
             }
-        }, 150);
+        }, 650);
 
         document.getElementById("stars")?.append(...stars);
 
@@ -225,7 +225,10 @@
 
     :global(#stars-lines line) {
         transition-duration: 500ms;
-        animation: strokeAnim 3s ease-in-out infinite alternate;
+    }
+
+    :global(#stars-lines line[opacity="1"]) {
+        animation: strokeAnim 3s ease-in-out forwards;
     }
 
     @keyframes strokeAnim {
