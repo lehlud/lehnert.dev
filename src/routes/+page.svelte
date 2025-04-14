@@ -50,32 +50,36 @@
             return others;
         });
 
+        let lidx: number = 0;
         const lineInterval = setInterval(() => {
             if (Math.random() < 0.7) return;
+            if (Math.random() < 0.05) lidx = chooseRandom(indices);
 
-            while (true) {
-                const lidx = chooseRandom(indices);
-                const ridx = chooseRandom(indices);
-                if (lidx === ridx) continue;
+            let iter = 0;
+            while (iter++ < 100) {
+                const nidx = chooseRandom(indices);
+                if (lidx === nidx) continue;
 
                 const [lx, ly] = points[lidx];
-                const [rx, ry] = points[ridx];
+                const [rx, ry] = points[nidx];
                 const d = Math.sqrt(
                     Math.pow(lx - rx, 2) + Math.pow(ly - ry, 2),
                 );
-                if (d > 0.4) continue;
+                if (d > 0.4 && Math.random() < 0.8) continue;
 
-                const line = document.getElementById(`${lidx}-${ridx}`);
+                const line = document.getElementById(`${lidx}-${nidx}`);
                 if (!line) continue;
 
                 line.setAttribute("opacity", "1");
                 setTimeout(
                     () => line.setAttribute("opacity", "0"),
-                    Math.random() * 4500,
+                    Math.random() * 6000,
                 );
+
+                lidx = nidx;
                 break;
             }
-        }, 100);
+        }, 150);
 
         document.getElementById("stars")?.append(...stars);
 
