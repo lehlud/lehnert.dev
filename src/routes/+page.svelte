@@ -23,7 +23,7 @@
             star.src = Star;
             star.classList.add("star");
 
-            star.style.width = `${sizes[i]}vw`;
+            star.style.width = `max(${sizes[i]}vw, ${sizes[i]}vh)`;
             star.style.position = "absolute";
             star.style.left = `${100 * x}vw`;
             star.style.top = `${100 * y}vh`;
