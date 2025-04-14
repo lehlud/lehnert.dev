@@ -129,13 +129,13 @@
 
 <svg
     id="stars-lines"
-    style="position: fixed; height: 100%; width: 100%;"
-    viewBox="0 0 300 300"
+    aria-hidden="true"
+    style="position: fixed; left: 0; top: 0; height: 100vh; width: 100vw; z-index: 0;"
 ></svg>
 
-<div id="stars"></div>
+<div id="stars" style="position: fixed; left: 0; top: 0; z-index: 2;"></div>
 
-<main>
+<main style="position: relative; z-index: 1;">
     <h1>Hey, I'm Ludwig 🚀</h1>
     <p>Welcome to my digital playground.</p>
 
