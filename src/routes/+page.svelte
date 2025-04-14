@@ -4,7 +4,136 @@
     import GitHub from "$lib/assets/github.svg";
     import Instagram from "$lib/assets/instagram.svg";
     import LinkedIn from "$lib/assets/linkedin.svg";
+    import Star from "$lib/assets/star.svg";
+    import { onMount } from "svelte";
+
+    $effect(() => {
+        const indices = Array(50)
+            .fill(0)
+            .map((_, i) => i);
+
+        const points: [number, number][] = indices.map(() => [
+            Math.random(),
+            Math.random(),
+        ]);
+        const sizes = indices.map(() => Math.max(Math.random(), 0.3) * 2);
+
+        const stars = points.map(([x, y], i) => {
+            const star = document.createElement("img");
+            star.src = Star;
+            star.classList.add("star");
+
+            star.style.width = `${sizes[i]}vw`;
+            star.style.position = "fixed";
+            star.style.left = `${100 * x}%`;
+            star.style.top = `${100 * y}%`;
+
+            return star;
+        });
+
+        function chooseRandom<T>(arr: T[]): T {
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
+
+        const connections = stars.map((_, i) => {
+            let others: number[] = [];
+
+            const otherCount = Math.max(3, Math.floor(Math.random() * 10));
+            for (let i = 0; i < otherCount; i++) {
+                let other = i;
+                while (other === i || others.includes(other)) {
+                    other = chooseRandom(indices);
+                }
+                others.push(other);
+            }
+
+            return others;
+        });
+
+        document.getElementById("stars")?.append(...stars);
+
+        function centeredPoint(
+            [x, y]: [number, number],
+            width: number,
+        ): [number, number] {
+            return [x + width / 200, y + width / 200];
+        }
+
+        const linesSVG = document.getElementById("stars-lines");
+
+        stars.forEach((_, i) => {
+            const [x1, y1] = centeredPoint(points[i], sizes[i]);
+
+            connections[i].forEach((conn) => {
+                const [x2, y2] = centeredPoint(points[conn], sizes[conn]);
+                const line = document.createElementNS(
+                    "http://www.w3.org/2000/svg",
+                    "line",
+                );
+
+                line.setAttribute("x1", `${x1 * 100}%`);
+                line.setAttribute("y1", `${y1 * 100}%`);
+                line.setAttribute("x2", `${x2 * 100}%`);
+                line.setAttribute("y2", `${y2 * 100}%`);
+
+                line.setAttribute("stroke", "white");
+                line.setAttribute("stroke-width", "1.5");
+
+                line.id = `${i}-${conn}`;
+
+                line.setAttribute("opacity", "0");
+
+                linesSVG?.append(line);
+            });
+        });
+
+        const enterListeners = stars.map((_, i) => () => {
+            connections[i].forEach((conn) => {
+                const line = document.getElementById(`${i}-${conn}`);
+                line?.setAttribute("opacity", "1");
+            });
+        });
+
+        const leaveListeners = stars.map((_, i) => () => {
+            connections[i].forEach((conn) => {
+                const line = document.getElementById(`${i}-${conn}`);
+                line?.setAttribute("opacity", "0");
+            });
+        });
+
+        stars.forEach((star, i) => {
+            star.addEventListener("mouseenter", enterListeners[i]);
+            star.addEventListener("mouseleave", leaveListeners[i]);
+        });
+
+        const svgResizeListener = () =>
+            linesSVG?.setAttribute(
+                "viewBox",
+                `0 0 ${window.innerWidth} ${window.innerHeight}`,
+            );
+
+        svgResizeListener();
+
+        window.addEventListener("resize", svgResizeListener);
+
+        return () => {
+            stars.forEach((star, i) => {
+                star.removeEventListener("mouseenter", enterListeners[i]);
+                star.removeEventListener("mouseleave", leaveListeners[i]);
+            });
+
+            window.removeEventListener("resize", svgResizeListener);
+        };
+    });
 </script>
+
+<svg
+    id="stars-lines"
+    style="position: fixed; height: 100%; width: 100%;"
+    viewBox="0 0 300 300"
+></svg>
+
+<div id="stars"></div>
 
 <main>
     <h1>Hey, I'm Ludwig 🚀</h1>
@@ -49,6 +178,33 @@
         }
         to {
             text-shadow: 0 0 20px #ff00ff;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    :global(.star) {
+        animation: fadeIn 1s forwards;
+    }
+
+    :global(#stars-lines line) {
+        transition-duration: 500ms;
+        animation: strokeAnim 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes strokeAnim {
+        from {
+            stroke: #00ffff;
+        }
+        to {
+            stroke: #ff00ff;
         }
     }
 
