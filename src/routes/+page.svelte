@@ -50,22 +50,42 @@
             return others;
         });
 
-        document.getElementById("stars")?.append(...stars);
+        const lineInterval = setInterval(() => {
+            if (Math.random() < 0.7) return;
 
-        function centeredPoint(
-            [x, y]: [number, number],
-            width: number,
-        ): [number, number] {
-            return [x + width / 200, y + width / 120];
-        }
+            while (true) {
+                const lidx = chooseRandom(indices);
+                const ridx = chooseRandom(indices);
+                if (lidx === ridx) continue;
+
+                const [lx, ly] = points[lidx];
+                const [rx, ry] = points[ridx];
+                const d = Math.sqrt(
+                    Math.pow(lx - rx, 2) + Math.pow(ly - ry, 2),
+                );
+                if (d > 0.4) continue;
+
+                const line = document.getElementById(`${lidx}-${ridx}`);
+                if (!line) continue;
+
+                line.setAttribute("opacity", "1");
+                setTimeout(
+                    () => line.setAttribute("opacity", "0"),
+                    Math.random() * 4500,
+                );
+                break;
+            }
+        }, 100);
+
+        document.getElementById("stars")?.append(...stars);
 
         const linesSVG = document.getElementById("stars-lines");
 
         stars.forEach((_, i) => {
-            const [x1, y1] = centeredPoint(points[i], sizes[i]);
+            const [x1, y1] = points[i];
 
             connections[i].forEach((conn) => {
-                const [x2, y2] = centeredPoint(points[conn], sizes[conn]);
+                const [x2, y2] = points[conn];
                 const line = document.createElementNS(
                     "http://www.w3.org/2000/svg",
                     "line",
@@ -106,17 +126,20 @@
             star.addEventListener("mouseleave", leaveListeners[i]);
         });
 
-        const svgResizeListener = () =>
+        const svgResizeListener = () => {
             linesSVG?.setAttribute(
                 "viewBox",
                 `0 0 ${window.innerWidth} ${window.innerHeight}`,
             );
+        };
 
         svgResizeListener();
 
         window.addEventListener("resize", svgResizeListener);
 
         return () => {
+            clearInterval(lineInterval);
+
             stars.forEach((star, i) => {
                 star.removeEventListener("mouseenter", enterListeners[i]);
                 star.removeEventListener("mouseleave", leaveListeners[i]);
@@ -130,7 +153,7 @@
 <svg
     id="stars-lines"
     aria-hidden="true"
-    style="position: fixed; left: 0; top: 0; height: 100vh; width: 100vw; z-index: 0;"
+    style="position: fixed; left: 0; top: 0; height: 100%; width: 100%; z-index: 0;"
 ></svg>
 
 <div id="stars" style="position: fixed; left: 0; top: 0; z-index: 2;"></div>
@@ -192,6 +215,8 @@
 
     :global(.star) {
         animation: fadeIn 1s forwards;
+        transition-duration: 500ms;
+        translate: -50% -50%;
     }
 
     :global(#stars-lines line) {
