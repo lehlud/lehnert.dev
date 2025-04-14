@@ -16,8 +16,8 @@
         background: linear-gradient(
             135deg,
             #1e1e2f 0,
-            #252547 100vh,
-            #252547 100%
+            #252547 99vh,
+            #252547 100vh
         );
     }
 

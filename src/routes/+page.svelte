@@ -160,10 +160,10 @@
 <svg
     id="stars-lines"
     aria-hidden="true"
-    style="position: absolute; left: 0; top: 0; height: 100%; width: 100%; z-index: 0;"
+    style="position: absolute; height: 100vh; width: 100vw; z-index: 0;"
 ></svg>
 
-<div id="stars" style="position: absolute; left: 0; top: 0; z-index: 2;"></div>
+<div id="stars" style="position: absolute; z-index: 2;"></div>
 
 <main style="position: relative; z-index: 1;">
     <h1>Hey, I'm Ludwig 🚀</h1>
@@ -193,7 +193,7 @@
     </div>
 </main>
 
-<div style="height: 1000px;"></div>
+<div style="height: 400px;"></div>
 
 <style>
     h1 {
