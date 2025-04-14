@@ -56,7 +56,7 @@
             [x, y]: [number, number],
             width: number,
         ): [number, number] {
-            return [x + width / 200, y + width / 200];
+            return [x + width / 200, y + width / 120];
         }
 
         const linesSVG = document.getElementById("stars-lines");
