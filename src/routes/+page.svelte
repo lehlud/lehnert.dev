@@ -163,7 +163,10 @@
     style="position: absolute; height: 100vh; width: 100vw; z-index: 0;"
 ></svg>
 
-<div id="stars" style="position: absolute; z-index: 2;"></div>
+<div
+    id="stars"
+    style="position: absolute; z-index: 2; height: 100vh; width: 100vw; overflow-x: hidden;"
+></div>
 
 <main style="position: relative; z-index: 1;">
     <h1>Hey, I'm Ludwig 🚀</h1>
