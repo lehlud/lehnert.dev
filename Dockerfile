@@ -5,11 +5,11 @@ COPY . .
 RUN npm install
 RUN npx vite build
 
-FROM httpd:2.4
+FROM nginx:latest
 
-COPY --from=builder /app/build/ /usr/local/apache2/htdocs/
-COPY httpd.conf /usr/local/apache2/conf/httpd.conf
+COPY --from=builder /app/build /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/nginx.conf
 
 EXPOSE 3000
-CMD ["httpd-foreground"]
 
+CMD ["nginx", "-g", "daemon off;"]
