@@ -134,10 +134,10 @@
         });
 
         const svgResizeListener = () => {
-            linesSVG?.setAttribute(
-                "viewBox",
-                `0 0 ${window.innerWidth} ${window.innerHeight}`,
-            );
+            if (!linesSVG) return;
+            const w = linesSVG.clientWidth;
+            const h = linesSVG.clientHeight;
+            linesSVG.setAttribute("viewBox", `0 0 ${w} ${h}`);
         };
 
         svgResizeListener();
