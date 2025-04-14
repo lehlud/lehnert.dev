@@ -24,9 +24,9 @@
             star.classList.add("star");
 
             star.style.width = `${sizes[i]}vw`;
-            star.style.position = "fixed";
-            star.style.left = `${100 * x}%`;
-            star.style.top = `${100 * y}%`;
+            star.style.position = "absolute";
+            star.style.left = `${100 * x}vw`;
+            star.style.top = `${100 * y}vh`;
 
             return star;
         });
@@ -56,7 +56,7 @@
             if (Math.random() < 0.05) lidx = chooseRandom(indices);
 
             let iter = 0;
-            while (iter++ < 1000) {
+            while (iter++ < 300) {
                 const nidx = chooseRandom(indices);
                 if (lidx === nidx) continue;
 
@@ -77,8 +77,11 @@
                 );
 
                 lidx = nidx;
-                break;
+                return;
             }
+
+            // nothing found -> choose next random
+            lidx = chooseRandom(indices);
         }, 650);
 
         document.getElementById("stars")?.append(...stars);
@@ -157,10 +160,10 @@
 <svg
     id="stars-lines"
     aria-hidden="true"
-    style="position: fixed; left: 0; top: 0; height: 100%; width: 100%; z-index: 0;"
+    style="position: absolute; left: 0; top: 0; height: 100%; width: 100%; z-index: 0;"
 ></svg>
 
-<div id="stars" style="position: fixed; left: 0; top: 0; z-index: 2;"></div>
+<div id="stars" style="position: absolute; left: 0; top: 0; z-index: 2;"></div>
 
 <main style="position: relative; z-index: 1;">
     <h1>Hey, I'm Ludwig 🚀</h1>
@@ -189,6 +192,8 @@
         <a href="/privacy">Privacy Policy</a>
     </div>
 </main>
+
+<!-- <div style="height: 1000px;"></div> -->
 
 <style>
     h1 {

@@ -2,8 +2,8 @@
 
 <style>
     :global(html, body) {
-        width: 100%;
-        height: 100%;
+        min-width: 100%;
+        min-height: 100%;
     }
 
     :global(*) {
@@ -13,7 +13,12 @@
     }
 
     :global(body) {
-        background: linear-gradient(135deg, #1e1e2f, #252547);
+        background: linear-gradient(
+            135deg,
+            #1e1e2f 0,
+            #252547 100vh,
+            #252547 100%
+        );
     }
 
     :global(main) {
@@ -21,7 +26,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        min-height: 100vh;
+        min-height: 80vh;
         color: white;
         font-family: "Inter", sans-serif;
         text-align: center;
