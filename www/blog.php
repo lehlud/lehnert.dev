@@ -13,6 +13,11 @@ if ($blog === null) {
 
 $svgs = $blog->getSVGs();
 
+$rand_imprint = mt_rand() % 6;
+$rand_privacy = mt_rand() % 6;
+$rand_comments = mt_rand() % 6;
+$rand_send_comment = mt_rand() % 5;
+
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -30,6 +35,7 @@ $svgs = $blog->getSVGs();
         html,
         body {
             min-height: max(100%, 100vh);
+            background: white;
         }
 
         * {
@@ -40,20 +46,48 @@ $svgs = $blog->getSVGs();
 
         main {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
         }
 
-        main>svg {
+        main>* {
+            display: block;
             width: min(100vw, 1000px);
             height: auto;
         }
 
-        main>svg a {
+        svg .hyperref {
             cursor: pointer;
         }
 
-        main>svg a:hover {
+        svg .hyperref:hover {
             opacity: 0.6;
+        }
+
+        .send-comment {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .send-comment svg {
+            max-height: 3rem;
+            height: 7vw;
+            min-height: 1.5rem;
+            width: auto;
+        }
+
+        .bottom-links {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .bottom-links svg {
+            max-height: 4rem;
+            height: 10vw;
+            min-height: 2rem;
+            width: auto;
+            padding: 0 2rem 0 2rem;
         }
     </style>
 </head>
@@ -63,6 +97,19 @@ $svgs = $blog->getSVGs();
         <?php foreach ($svgs as $svg): ?>
             <?= $svg ?>
         <?php endforeach; ?>
+
+        <div class="send-comment">
+            <?= get_svg(__DIR__ . "/assets/blog/send-comment$rand_send_comment.svg") ?>
+        </div>
+
+        <div style="height: 100px"></div>
+
+        <div class="bottom-links">
+            <?= get_svg(__DIR__ . "/assets/blog/imprint$rand_imprint.svg") ?>
+            <?= get_svg(__DIR__ . "/assets/blog/privacy$rand_privacy.svg") ?>
+        </div>
+
+        <div style="height: 100px"></div>
     </main>
 
 </body>

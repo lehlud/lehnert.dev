@@ -23,13 +23,7 @@ class Blog
     public function getSVGs(): array
     {
         return array_map(function ($file) {
-            $svg = file_get_contents(__DIR__ . '/../blog/' . $file);
-
-            if (str_starts_with($svg, '<?xml')) {
-                $svg = preg_replace('/^\s*<\?xml[^>]+>\s*/', '', $svg);
-            }
-
-            return $svg;
+            return get_svg(__DIR__ . '/../blog/' . $file);
         }, $this->files);
     }
 
