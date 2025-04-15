@@ -74,6 +74,12 @@ switch ($code) {
         <?= default_styles() ?>
         <?= common_styles() ?>
 
+        body {
+            background: radial-gradient(ellipse at center,
+                    #1e1e2f 0%,
+                    #0f0f1a 100%);
+        }
+
         main {
             display: flex;
             flex-direction: column;
