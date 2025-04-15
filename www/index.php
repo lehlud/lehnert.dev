@@ -4,6 +4,11 @@ require_once __DIR__ . "/lib/_index.php";
 
 [$points, $edges, $sizes] = stars_random();
 
+$blogs = Blog::getAll();
+usort($blogs, function ($a, $b) {
+    strtotime($b->date) - strtotime($a->date);
+});
+
 ?><!DOCTYPE html>
 <html lang="en">
 
@@ -32,17 +37,20 @@ require_once __DIR__ . "/lib/_index.php";
         }
 
         main {
+            color: white;
+            font-family: "Inter", sans-serif;
+            pointer-events: none;
+        }
+
+        .welcome {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 80vh;
-            color: white;
-            font-family: "Inter", sans-serif;
             text-align: center;
             padding: 2rem;
 
-            pointer-events: none;
         }
 
         h1 {
@@ -95,14 +103,37 @@ require_once __DIR__ . "/lib/_index.php";
             pointer-events: auto;
         }
 
-        .legal-links a {
-            color: rgb(255, 255, 255);
-            cursor: pointer;
-            transition: background 0.3s ease;
+        a {
+            color: white;
         }
 
-        .legal-links a:hover {
+        a:hover {
             opacity: 0.8;
+        }
+
+        .blog-entries {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            gap: 1rem;
+        }
+
+        .blog-entry {
+            width: min(90vw, 600px);
+            background: #303050;
+            border-left: 4px solid #00ffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+        }
+
+        .blog-entry * {
+            margin: 0;
+        }
+
+        .blog-entry a {
+            pointer-events: auto;
         }
 
 
@@ -128,30 +159,41 @@ require_once __DIR__ . "/lib/_index.php";
     </script>
 
     <main style="position: relative; z-index: 2;">
-        <h1>Hey, I'm Ludwig 🚀</h1>
-        <p>Welcome to my digital playground.</p>
+        <div class="welcome">
+            <h1>Hey, I'm Ludwig 🚀</h1>
+            <p>Welcome to my digital playground.</p>
 
-        <div class="social-links">
-            <a target="_blank" href="https://instagram.com/lehlud">
-                <img src="/assets/instagram.svg" alt="" width="25" />
-            </a>
-            <a target="_blank" href="https://linkedin.com/in/ludwig-lehnert">
-                <img src="/assets/linkedin.svg" alt="" width="25" />
-            </a>
-            <a target="_blank" href="mailto:info@lehnert.dev">
-                <img src="/assets/email.svg" alt="" width="25" />
-            </a>
-            <a target="_blank" href="https://gitea.cloud.lehnert.dev/explore/repos">
-                <img src="/assets/git.svg" alt="" width="25" />
-            </a>
-            <a target="_blank" href="https://github.com/lehlud">
-                <img src="/assets/github.svg" alt="" width="25" />
-            </a>
+            <div class="social-links">
+                <a target="_blank" href="https://instagram.com/lehlud">
+                    <img src="/assets/instagram.svg" alt="" width="25" />
+                </a>
+                <a target="_blank" href="https://linkedin.com/in/ludwig-lehnert">
+                    <img src="/assets/linkedin.svg" alt="" width="25" />
+                </a>
+                <a target="_blank" href="mailto:info@lehnert.dev">
+                    <img src="/assets/email.svg" alt="" width="25" />
+                </a>
+                <a target="_blank" href="https://gitea.cloud.lehnert.dev/explore/repos">
+                    <img src="/assets/git.svg" alt="" width="25" />
+                </a>
+                <a target="_blank" href="https://github.com/lehlud">
+                    <img src="/assets/github.svg" alt="" width="25" />
+                </a>
+            </div>
+
+            <div class="legal-links">
+                <a href="/imprint">Imprint</a>
+                <a href="/privacy">Privacy Policy</a>
+            </div>
         </div>
 
-        <div class="legal-links">
-            <a href="/imprint">Imprint</a>
-            <a href="/privacy">Privacy Policy</a>
+        <div class="blog-entries">
+            <?php foreach ($blogs as $blog): ?>
+                <div class="blog-entry">
+                    <h2><a href="/blog/<?= $blog->id ?>"><?= $blog->title ?></a></h2>
+                    <p><?= $blog->formatDate() ?></p>
+                </div>
+            <?php endforeach; ?>
         </div>
     </main>
 </body>

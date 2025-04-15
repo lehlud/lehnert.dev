@@ -1,7 +1,7 @@
 {
-    "links": {
-        "google": "https://google.com",
-        "handwritten.blog": "https://handwritten.blog",
-        "blog-lehnert.dev": "mailto:blog@lehnert.dev"
-    }
+    "title": "Test: First Blog Entry",
+    "date": "2025-04-15",
+    "files": [
+        "0.svg"
+    ]
 }
