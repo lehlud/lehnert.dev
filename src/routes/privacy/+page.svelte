@@ -41,6 +41,20 @@
 </main>
 
 <style>
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh;
+        color: white;
+        font-family: "Inter", sans-serif;
+        text-align: center;
+        padding: 2rem;
+
+        pointer-events: none;
+    }
+
     h1 {
         font-size: 2.5rem;
         background: linear-gradient(90deg, #00ffff, #ff00ff);
