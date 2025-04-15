@@ -13,8 +13,8 @@
             .map((_, i) => i);
 
         const points: [number, number][] = indices.map(() => [
-            Math.random(),
-            Math.random(),
+            Math.max(0.02, Math.min(0.98, Math.random())),
+            Math.max(0.02, Math.min(0.98, Math.random())),
         ]);
         const sizes = indices.map(() => Math.max(Math.random(), 0.3) * 2);
 
@@ -90,7 +90,6 @@
                     4500 + Math.random() * 2500,
                 );
 
-                console.log(d);
                 lidx = nidx;
                 return;
             }
@@ -252,6 +251,11 @@
         transition-duration: 500ms;
         translate: -50% -50%;
     }
+
+    /* :global(#stars-lines) {
+        max-width: 100vw;
+        overflow-x: hidden;
+    } */
 
     :global(#stars-lines line) {
         transition-duration: 500ms;

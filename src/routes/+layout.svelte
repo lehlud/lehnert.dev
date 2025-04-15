@@ -2,8 +2,8 @@
 
 <style>
     :global(html, body) {
-        min-width: 100%;
-        min-height: 100%;
+        min-width: 100vw;
+        min-height: max(100%, 100vh);
     }
 
     :global(*) {
@@ -19,5 +19,8 @@
             #252547 99vh,
             #252547 100vh
         );
+
+        max-width: 100vw;
+        overflow-x: hidden;
     }
 </style>
