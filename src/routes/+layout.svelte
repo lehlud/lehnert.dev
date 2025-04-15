@@ -20,16 +20,4 @@
             #252547 100vh
         );
     }
-
-    :global(main) {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 80vh;
-        color: white;
-        font-family: "Inter", sans-serif;
-        text-align: center;
-        padding: 2rem;
-    }
 </style>

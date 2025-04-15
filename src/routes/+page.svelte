@@ -35,16 +35,34 @@
             return arr[Math.floor(Math.random() * arr.length)];
         }
 
+        const distance = (a: [number, number], b: [number, number]) => {
+            return (
+                Math.sqrt(Math.pow(a[0] - b[0], 2) + Math.pow(a[1] - b[1], 2)) /
+                Math.SQRT2
+            );
+        };
+
         const connections = stars.map((_, i) => {
             let others: number[] = [];
 
+            const choosable = [...indices]
+                .sort((a, b) => {
+                    return (
+                        distance(points[i], points[a]) -
+                        distance(points[i], points[b])
+                    );
+                })
+                .slice(0, 15);
+
             const otherCount = Math.max(3, Math.floor(Math.random() * 10));
             for (let i = 0; i < otherCount; i++) {
-                let other = i;
-                while (other === i || others.includes(other)) {
-                    other = chooseRandom(indices);
+                let o = i;
+
+                while (o === i || others.includes(o)) {
+                    o = chooseRandom(choosable);
                 }
-                others.push(other);
+
+                others.push(o);
             }
 
             return others;
@@ -60,11 +78,7 @@
                 const nidx = chooseRandom(indices);
                 if (lidx === nidx) continue;
 
-                const [lx, ly] = points[lidx];
-                const [rx, ry] = points[nidx];
-                const d = Math.sqrt(
-                    Math.pow(lx - rx, 2) + Math.pow(ly - ry, 2),
-                );
+                const d = distance(points[lidx], points[nidx]);
                 if ((d > 0.4 && Math.random() < 0.8) || d > 0.5) continue;
 
                 const line = document.getElementById(`${lidx}-${nidx}`);
@@ -76,6 +90,7 @@
                     4500 + Math.random() * 2500,
                 );
 
+                console.log(d);
                 lidx = nidx;
                 return;
             }
@@ -157,18 +172,25 @@
     });
 </script>
 
+<svelte:head>
+    <meta
+        name="keywords"
+        content="Ludwig Lehnert,Nürnberg,Pegnitz,Nuremberg,Informatik,Computer,Copmuter Science"
+    />
+</svelte:head>
+
 <svg
     id="stars-lines"
     aria-hidden="true"
-    style="position: absolute; height: 100vh; width: 100vw; z-index: 0;"
+    style="position: absolute; z-index: 0; height: 100vh; width: 100vw;"
 ></svg>
 
 <div
     id="stars"
-    style="position: absolute; z-index: 2; height: 100vh; width: 100vw; overflow-x: hidden;"
+    style="position: absolute; z-index: 1; height: 100vh; width: 100vw; overflow-x: hidden;"
 ></div>
 
-<main style="position: relative; z-index: 1;">
+<main style="position: relative; z-index: 2;">
     <h1>Hey, I'm Ludwig 🚀</h1>
     <p>Welcome to my digital playground.</p>
 
@@ -259,6 +281,8 @@
         display: flex;
         gap: 0.75rem;
         margin-top: 1.5rem;
+
+        pointer-events: auto;
     }
 
     .social-links a {
@@ -284,6 +308,8 @@
         margin-top: 1rem;
         display: flex;
         gap: 0.5rem;
+
+        pointer-events: auto;
     }
 
     .legal-links a {
@@ -294,5 +320,19 @@
 
     .legal-links a:hover {
         opacity: 0.8;
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 80vh;
+        color: white;
+        font-family: "Inter", sans-serif;
+        text-align: center;
+        padding: 2rem;
+
+        pointer-events: none;
     }
 </style>
