@@ -44,7 +44,7 @@ $svgs = $blog->getSVGs();
         }
 
         main>svg {
-            width: min(95vw, 1000px);
+            width: min(100vw, 1000px);
             height: auto;
         }
 

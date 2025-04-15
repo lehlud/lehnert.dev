@@ -2704,7 +2704,7 @@
 		</g>
 		<a href="https://handwritten.blog">
 			<g id="handwritten.blog">
-				<rect x="180.8" y="212.9" width="88.1" height="21.02" fill="#fff" stroke-width="1.911"/>
+				<rect x="180.8" y="212.9" width="88.1" height="21.02" fill="#fff" stroke-width="1.911" opacity="0"/>
 				<g fill="none" stroke="#33c" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
 					<path transform="scale(1.333)" d="m137.2 161.3-0.098-0.449" stroke-width=".1357"/>
 					<path transform="scale(1.333)" d="m137.1 160.9-0.019-0.48" stroke-width=".1928"/>
@@ -8445,7 +8445,7 @@
 		</g>
 		<a href="https://google.com">
 			<g id="google">
-				<rect x="98" y="152" width="24.46" height="16.99" fill="#fff" stroke-width=".9054"/>
+				<rect x="98" y="152" width="24.46" height="16.99" fill="#fff" stroke-width=".9054" opacity="0"/>
 				<g fill="none" stroke="#33c" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
 					<g stroke-width=".0705">
 						<path transform="scale(1.333)" d="m75.97 120.3 0.125-0.512"/>
@@ -15218,7 +15218,7 @@
 		</g>
 		<a href="mailto:blog@lehnert.dev">
 			<g id="blog-lehnert.dev">
-				<rect x="268" y="344.2" width="72.98" height="20.87" fill="#fff" stroke-width="1.911"/>
+				<rect x="268" y="344.2" width="72.98" height="20.87" fill="#fff" stroke-width="1.911" opacity="0"/>
 				<g fill="none" stroke="#33c" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10">
 					<path transform="scale(1.333)" d="m203.1 263v-0.383" stroke-width=".0705"/>
 					<path transform="scale(1.333)" d="m203.1 262.7-0.04-0.5" stroke-width=".1059"/>
