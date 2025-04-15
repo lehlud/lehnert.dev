@@ -1,15 +1,6 @@
-FROM node:18-alpine AS builder
+FROM php:8.2-apache
 
-WORKDIR /app
-COPY . .
-RUN npm install
-RUN npx vite build
+COPY www/ /var/www/html/
 
-FROM nginx:latest
-
-COPY --from=builder /app/build /usr/share/nginx/html
-COPY nginx.conf /etc/nginx/nginx.conf
-
-EXPOSE 3000
-
-CMD ["nginx", "-g", "daemon off;"]
+RUN chown -R www-data:www-data /var/www/html
+RUN a2enmod rewrite
