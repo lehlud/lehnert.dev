@@ -38,7 +38,6 @@ usort($blogs, function ($a, $b) {
 
         main {
             color: white;
-            font-family: "Inter", sans-serif;
             pointer-events: none;
         }
 
@@ -121,11 +120,12 @@ usort($blogs, function ($a, $b) {
 
         .blog-entry {
             width: min(90vw, 600px);
-            background: #303050;
+            background: rgba(32, 32, 54, 0.49);
             border-left: 4px solid #00ffff;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             padding: 1rem;
+            backdrop-filter: blur(3px);
         }
 
         .blog-entry * {

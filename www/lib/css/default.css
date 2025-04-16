@@ -2,6 +2,7 @@ html,
 body {
     /* min-width: 100vw; */
     min-height: max(100%, 100vh);
+    font-family: 'Noto Sans', 'Inter', sans-serif;
 }
 
 * {
