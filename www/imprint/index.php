@@ -12,7 +12,7 @@
     <style>
         body {
             margin: 0;
-            padding: 2rem;
+            padding: 0.8rem;
             background-color: #000000;
             color: white;
             font-family: 'Courier New', Courier, monospace;
