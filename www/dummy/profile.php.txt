@@ -7,7 +7,7 @@ if (!$user) {
     throw new Exception("Profile not found.");
 }
 
-// 😢 Oops... Looks like profile.php forgot to profile itself.
+// :( Oops... Looks like profile.php forgot to profile itself.
 
 // Maybe it went out to find itself.
 // Or maybe it was never real to begin with.

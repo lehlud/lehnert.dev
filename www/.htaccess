@@ -8,30 +8,26 @@ RewriteRule ^blog/([^/]+)/?$ /blog.php?id=$1 [L,QSA]
 # -------------------------------------------
 # Rewrite /sitemap.xml to /blog.php?id=<ID>
 # -------------------------------------------
-RewriteRule ^sitemap\.xml$ /sitemap.php
-
-
+RewriteRule ^sitemap\.xml$ /sitemap.php [L]
 
 # -------------------------------------------
 # Rewrite some dummy urls to some funny af
 # shit
 # -------------------------------------------
-RewriteRule ^(wp-admin|wp-login|cms-admin).*$ /dummy/wp-login.html
-RewriteRule ^.*?wp-config\.php$ /dummy/wp-config.php.txt
+RewriteRule ^(wp\-admin|wp\-login|cms\-admin).*$ /dummy/wp-login.html [L]
+RewriteRule ^.*?wp-config\.php$ /dummy/wp-config.php.txt [L]
+RewriteRule ^.*?profile\.php$ /dummy/profile.php.txt [L]
+RewriteRule ^.*?phpinfo\.php$ /dummy/phpinfo.php.html [L]
+RewriteRule ^\..*?\.json$ /dummy/sftp-login.json [L]
+RewriteRule ^.*?\.env$ /dummy/.env [L]
 
-RewriteRule ^.*?profile\.php$ /dummy/profile.php.txt
-RewriteRule ^.*?phpinfo\.php$ /dummy/phpinfo.php.html
-
-RewriteRule ^\..*?\.json$ /dummy/sftp-login.json
-RewriteRule ^.*?\.env$ /dummy/.env
-
-RewriteRule ^(typo|admin|login|dashboard).*$ /dummy/kaffee.php
+RewriteRule ^(typo|admin|login|dashboard).*$ /dummy/kaffee.php [L]
 
 # ----------------------------------------------------
 # Rewrite /lib/* or /blog/* to /error.php?code=404
 # with 404 response code (internal rewriting)
 # ----------------------------------------------------
-RewriteCond %{REQUEST_URI} ^/(lib|blog|dummy)(/.*)?$
+RewriteCond %{REQUEST_URI} ^/(lib|blog)(/.*)?$
 RewriteRule ^ - [R=404,L]
 ErrorDocument 404 /error.php?code=404
 
