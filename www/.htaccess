@@ -18,7 +18,11 @@ RewriteRule ^(wp\-admin|wp\-login|cms\-admin).*$ /dummy/wp-login.html [L]
 RewriteRule ^.*?wp-config\.php$ /dummy/wp-config.php.txt [L]
 RewriteRule ^.*?profile\.php$ /dummy/profile.php.txt [L]
 RewriteRule ^.*?phpinfo\.php$ /dummy/phpinfo.php.html [L]
+
+RewriteCond %{REQUEST_URI} !^/dummy/sftp-login.json$
 RewriteRule ^\..*?\.json$ /dummy/sftp-login.json [L]
+
+RewriteCond %{REQUEST_URI} !^/dummy/\.env$
 RewriteRule ^.*?\.env$ /dummy/.env [L]
 
 RewriteRule ^(typo|admin|login|dashboard).*$ /dummy/kaffee.php [L]
