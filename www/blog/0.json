@@ -1,5 +1,9 @@
 {
     "title": "Test: First Blog Entry",
+    "keywords": [
+        "test",
+        "first blog entry"
+    ],
     "date": "2025-04-15",
     "files": [
         "0.svg"

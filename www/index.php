@@ -6,7 +6,7 @@ require_once __DIR__ . "/lib/_index.php";
 
 $blogs = Blog::getAll();
 usort($blogs, function ($a, $b) {
-    strtotime($b->date) - strtotime($a->date);
+    return strtotime($b->date) - strtotime($a->date);
 });
 
 ?><!DOCTYPE html>

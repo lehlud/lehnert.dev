@@ -29,6 +29,8 @@ $rand_send_comment = mt_rand() % 5;
 
     <base target="_blank">
 
+    <meta name="keywords" content="ludwig lehnert,blog,<?= join(",", $blog->keywords) ?>">
+
     <title><?= $blog->title ?></title>
 
     <style>

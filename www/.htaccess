@@ -5,6 +5,8 @@ RewriteEngine On
 # -------------------------------------------
 RewriteRule ^blog/([^/]+)/?$ /blog.php?id=$1 [L,QSA]
 
+RewriteRule ^sitemap\.xml$ /sitemap.php
+
 # ----------------------------------------------------
 # 2. Rewrite /lib/* or /blog/* to /error.php?code=404
 #     with 404 response code (internal rewriting)

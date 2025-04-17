@@ -4,13 +4,15 @@ class Blog
 {
     public readonly string $id;
     public readonly string $title;
+    public readonly array $keywords;
     public readonly string $date;
     public readonly array $files;
 
-    public function __construct(string $id, string $title, string $date, array $files)
+    public function __construct(string $id, string $title, array $keywords, string $date, array $files)
     {
         $this->id = $id;
         $this->title = $title;
+        $this->keywords = $keywords;
         $this->date = $date;
         $this->files = $files;
     }
@@ -35,7 +37,7 @@ class Blog
 
         try {
             $json = json_decode(file_get_contents($path), true);
-            return new Blog($id, $json['title'], $json['date'], $json['files']);
+            return new Blog($id, $json['title'], $json['keywords'], $json['date'], $json['files']);
         } catch (Exception $e) {
             return null;
         }
