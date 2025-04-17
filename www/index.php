@@ -115,7 +115,7 @@ usort($blogs, function ($a, $b) {
             flex-direction: column;
             align-items: center;
             padding: 1rem;
-            gap: 1rem;
+            gap: 2.2rem;
         }
 
         .blog-entry {
@@ -195,6 +195,8 @@ usort($blogs, function ($a, $b) {
                 </div>
             <?php endforeach; ?>
         </div>
+
+        <div style="height: 350px;"></div>
     </main>
 </body>
 
