@@ -1,0 +1,44 @@
+{
+  "title": "Ode to Credentials",
+  "author": "Parody of Schiller",
+  "language": "English",
+  "protocol": "sftp",
+  "host": "nope.not.a.real.server",
+  "port": 22,
+  "username": "admin_but_not_really",
+  "privateKey": "-----BEGIN FAKE KEY-----\nthisisnotarealkeylol\n-----END FAKE KEY-----",
+  "passphrase": "tryHarder123!",
+  "retryAttempts": 42,
+  "timeout": 9001,
+  "backup": false,
+  "mood": "desperate",
+  "lastSeen": "sometime-before-it-mattered",
+  "favoriteSnack": "RAM chips",
+  "debugLevel": "emotional",
+  "stanzas": [
+    [
+      "Joyless, broken, code forsaken,",
+      "Server dreams now out of view,",
+      "SFTP has left me shaken,",
+      "Where’s the login? Where are you?"
+    ],
+    [
+      "Hosts I’ve pinged, and ports I’ve queried,",
+      "But the key I seek is gone;",
+      "All my scripts are old and weary,",
+      "They just fail and won’t move on."
+    ],
+    [
+      "Was it saved in notes forgotten?",
+      "Was it once on sticky tape?",
+      "Maybe in a doc long rotten,",
+      "Buried deep and lost to fate?"
+    ],
+    [
+      "O credentials, source of power,",
+      "Come and grant my code a sign!",
+      "Else I’ll spend another hour,",
+      "Crying to the debug line."
+    ]
+  ]
+}

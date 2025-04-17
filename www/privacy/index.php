@@ -129,7 +129,7 @@
 
         <h2>Verantwortliche Stelle</h2>
         <p>Ludwig Lehnert<br>Zedernstr. 41<br>90441 Nürnberg<br>E-Mail: <a
-                href="mailto:privacy@lehnert.dev">privacy@lehnert.dev</a></p>
+                href="mailto:piracy@lehnert.dev">piracy@lehnert.dev</a></p>
 
         <h2>Erhobene Daten</h2>
         <p>Diese Website erhebt keine personenbezogenen Daten über Formulare oder Tracking-Dienste. Es werden keine
@@ -158,7 +158,7 @@
 
         <h2>Controller</h2>
         <p>Ludwig Lehnert<br>Zedernstr. 41<br>90441 Nuremberg, Germany<br>Email: <a
-                href="mailto:privacy@lehnert.dev">privacy@lehnert.dev</a></p>
+                href="mailto:piracy@lehnert.dev">piracy@lehnert.dev</a></p>
 
         <h2>Data Collected</h2>
         <p>This website does not collect personal data via forms or third-party tracking tools. No cookies or analytics

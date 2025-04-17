@@ -1,0 +1,21 @@
+<?php
+// wp-config.php
+// This file is supposed to contain the magic.
+// Instead... it contains disappointment.
+
+define('DB_NAME', '');       // Ah yes, the void. Classic.
+define('DB_USER', '');       // Who needs users anyway?
+define('DB_PASSWORD', '');   // Security through obscurity. And also forgetfulness.
+define('DB_HOST', 'localhost');
+define('DB_CHARSET', 'utf8');
+
+// Error: wp-config.php not found... emotionally or physically.
+
+// Perhaps it ran away during deployment.
+// Perhaps it was never created at all.
+// One thing's certain: WordPress is confused and so are you.
+
+// Solution?
+// Step 1: scream internally
+// Step 2: create a new wp-config.php
+// Step 3: try turning it off and on again

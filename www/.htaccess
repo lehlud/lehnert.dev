@@ -1,23 +1,43 @@
 RewriteEngine On
 
 # -------------------------------------------
-# 1. Rewrite /blog/<ID> to /blog.php?id=<ID>
+# Rewrite /blog/<ID> to /blog.php?id=<ID>
 # -------------------------------------------
 RewriteRule ^blog/([^/]+)/?$ /blog.php?id=$1 [L,QSA]
 
+# -------------------------------------------
+# Rewrite /sitemap.xml to /blog.php?id=<ID>
+# -------------------------------------------
 RewriteRule ^sitemap\.xml$ /sitemap.php
 
+
+
+# -------------------------------------------
+# Rewrite some dummy urls to some funny af
+# shit
+# -------------------------------------------
+RewriteRule ^(wp-admin|wp-login|cms-admin).*$ /dummy/wp-login.html
+RewriteRule ^.*?wp-config\.php$ /dummy/wp-config.php.txt
+
+RewriteRule ^.*?profile\.php$ /dummy/profile.php.txt
+RewriteRule ^.*?phpinfo\.php$ /dummy/phpinfo.php.html
+
+RewriteRule ^\..*?\.json$ /dummy/sftp-login.json
+RewriteRule ^.*?\.env$ /dummy/.env
+
+RewriteRule ^(typo|admin|login|dashboard).*$ /dummy/kaffee.php
+
 # ----------------------------------------------------
-# 2. Rewrite /lib/* or /blog/* to /error.php?code=404
-#     with 404 response code (internal rewriting)
+# Rewrite /lib/* or /blog/* to /error.php?code=404
+# with 404 response code (internal rewriting)
 # ----------------------------------------------------
-RewriteCond %{REQUEST_URI} ^/(lib|blog)(/.*)?$
+RewriteCond %{REQUEST_URI} ^/(lib|blog|dummy)(/.*)?$
 RewriteRule ^ - [R=404,L]
 ErrorDocument 404 /error.php?code=404
 
 # ----------------------------------------------------
-# 3. Custom error handler for all other errors
-#     Sends proper status code to client
+# Custom error handler for all other errors
+# Sends proper status code to client
 # ----------------------------------------------------
 ErrorDocument 400 /error.php?code=400
 ErrorDocument 401 /error.php?code=401
