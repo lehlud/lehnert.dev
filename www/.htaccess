@@ -31,7 +31,7 @@ RewriteRule ^(typo|admin|login|dashboard).*$ /dummy/kaffee.php [L]
 # Rewrite /lib/* or /blog/* to /error.php?code=404
 # with 404 response code (internal rewriting)
 # ----------------------------------------------------
-RewriteCond %{REQUEST_URI} ^/(lib|blog)(/.*)?$
+RewriteCond %{REQUEST_URI} ^/(lib)(/.*)?$
 RewriteRule ^ - [R=404,L]
 ErrorDocument 404 /error.php?code=404
 

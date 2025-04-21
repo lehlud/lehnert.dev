@@ -8,6 +8,8 @@ if (isset($_GET['code'])) {
     $code = (int) $_GET['code'];
 }
 
+http_response_code($code);
+
 $msg = '🪐 Unknown error! Something went wrong in the fabric of spacetime.';
 $action = 'Stabilize systems';
 

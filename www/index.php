@@ -136,6 +136,10 @@ usort($blogs, function ($a, $b) {
             pointer-events: auto;
         }
 
+        .none {
+            display: none;
+        }
+
 
         @keyframes glow {
             from {
@@ -188,15 +192,20 @@ usort($blogs, function ($a, $b) {
         </div>
 
         <div class="blog-entries">
+            <h2 class="none">Handwritten Blog</h2>
+
             <?php foreach ($blogs as $blog): ?>
                 <div class="blog-entry">
-                    <h2><a href="/blog/<?= $blog->id ?>"><?= $blog->title ?></a></h2>
+                    <h2><a href="/blog/<?= $blog->id ?>"><?= $blog->title() ?></a></h2>
                     <p><?= $blog->formatDate() ?></p>
                 </div>
             <?php endforeach; ?>
         </div>
 
         <div style="height: 350px;"></div>
+
+        <!-- SEO Tags -->
+        <h1 class="none">Ludwig Lehnert</h1>
     </main>
 </body>
 

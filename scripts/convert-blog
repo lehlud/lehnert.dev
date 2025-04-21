@@ -1,0 +1,125 @@
+#!/usr/bin/env python3
+
+import re
+import os
+import gzip
+import json
+import shutil
+import argparse
+import tempfile
+import subprocess
+from datetime import date
+from lxml import etree as ET
+
+def open_blog(path: str) -> ET._Element:
+    with gzip.open(path, 'rt', encoding='utf-8') as f:
+        raw_svg = f.read()
+    
+    return ET.fromstring(raw_svg)
+
+def remove_by_xpath(el: ET._Element, xpath: str):
+    for node in el.xpath(xpath):
+        parent = node.getparent()
+        parent.remove(node)
+
+def tag_xpath(tag: str):
+    return f".//*[local-name()='{tag}']"
+
+def class_xpath(class_: str):
+    return f".//*[contains(concat(' ', normalize-space(@class), ' '), '{class_}')]"
+
+def save_blog(dir: str, root: ET._Element):
+    os.makedirs(dir, exist_ok=True)
+
+    frame: ET._Element = root.xpath(tag_xpath('svg'))[0]
+    width = int(frame.attrib['width'][:-2])
+    height = int(frame.attrib['height'][:-2])
+    root.attrib['viewBox'] = f'0 0 {width} {height}'
+    
+    content: ET._Element = frame.getchildren()[0]
+    root.remove(frame)
+    root.append(content)
+
+    remove_by_xpath(root, ".//*[@id='write-document']")
+    remove_by_xpath(root, ".//*[@id='write-defs']")
+    remove_by_xpath(root, ".//*[@id='write-doc-background']")
+    remove_by_xpath(root, class_xpath('ruleline'))
+
+    bookmarks: list[tuple[str, float]] = []
+    for node in root.xpath(class_xpath('bookmark')):
+        match = re.search(r"translate\([^\d\-]*([-+]?\d*\.?\d+),\s*([-+]?\d*\.?\d+)\)", node.attrib['transform'])
+        bookmarks.append((node.attrib['id'], float(match.group(2))))
+        node.getparent().remove(node)
+
+    hyperrefs: list[tuple[ET._Element, str, tuple[float, float], tuple[float, float]]] = []
+    for node in root.xpath(class_xpath('hyperref')):
+        anchor = node.xpath(tag_xpath('a'))[0]
+        rect = anchor.xpath(tag_xpath('rect'))[0]
+        x, y = float(rect.attrib['x']), float(rect.attrib['y'])
+        w, h = float(rect.attrib['width']), float(rect.attrib['height'])
+        url = anchor.attrib['{http://www.w3.org/1999/xlink}href']
+        hyperrefs.append((node, url, (x, y), (w, h)))
+        anchor.getparent().remove(anchor)
+        node.getparent().remove(node)
+
+    tempdir = tempfile.mkdtemp()
+
+    try:
+        with open(f'{tempdir}/main.svg', 'wb') as f:
+            f.write(ET.tostring(root, xml_declaration=True, encoding="utf-8"))
+
+        subprocess.call(['magick', '-density', '300', '-background', 'none', f'{tempdir}/main.svg', f'{tempdir}/main.png'])
+        subprocess.call(['magick', f'{tempdir}/main.png', '-crop', 'x16383', '+repage', f'{tempdir}/main_%03d.webp'])
+
+        main_files: list[str] = []
+        for file in os.listdir(tempdir):
+            if file.endswith('webp'): main_files.append(file)
+
+        url_defs: list[tuple[str, str, tuple[float, float], tuple[float, float]]] = []
+        for node, url, (x, y), (w, h) in hyperrefs:
+            name = os.urandom(15).hex()[:7]
+
+            svg = ET.Element('svg', attrib={'viewBox': f'{x} {y} {w} {h}'}, nsmap={None: 'http://www.w3.org/2000/svg'})
+            svg.append(node)
+
+            with open(f'{tempdir}/{name}.svg', 'wb') as f:
+                f.write(ET.tostring(svg, xml_declaration=True, encoding="utf-8"))
+            
+            subprocess.call(['magick', '-density', '300', '-background', 'none', f'{tempdir}/{name}.svg',f'{tempdir}/{name}.png'])
+            subprocess.call(['magick', f'{tempdir}/{name}.png', f'{tempdir}/{name}.webp'])
+
+            url_defs.append((f'{name}.webp', url, (x, y), (w, h)))
+        
+
+        for file in os.listdir(tempdir):
+            if file.endswith('webp'):
+                shutil.move(f'{tempdir}/{file}', f'{dir}/{file}')
+
+        with open(f'{dir}/_definition.json', 'w') as f:
+            json.dump({
+                'date': date.today().strftime("%Y-%m-%d"),
+                'title': 'My Cool Blog Entry',
+                'keywords': ['Cool', 'Blog'],
+                'bookmarks': list(map(lambda b: {'id': b[0], 'offset': b[1]}, bookmarks)),
+                'urls': list(map(lambda d: {'src': d[0], 'href': d[1], 'offset': d[2], 'dimensions': d[3]}, url_defs)),
+                'files': sorted(main_files),
+                'dimensions': [width, height],
+            }, f, indent=4)
+
+    finally:
+        shutil.rmtree(tempdir, ignore_errors=True)
+
+def parse_args():
+    parser = argparse.ArgumentParser()
+    
+    parser.add_argument('--svgz', required=True, type=str)
+    parser.add_argument('--dir', required=True, type=str)
+
+    return parser.parse_args()
+
+def main():
+    args = parse_args()
+    save_blog(args.dir, open_blog(args.svgz))
+
+if __name__ == '__main__':
+    main()

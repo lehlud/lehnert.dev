@@ -1,0 +1,417 @@
+{
+    "date": "2025-04-17",
+    "title": "Thoughts about edge computation",
+    "keywords": [
+        "edge",
+        "edge computation",
+        "thoughts about"
+    ],
+    "bookmarks": [
+        {
+            "id": "b-d5I21c9U7J",
+            "offset": 1914.461
+        },
+        {
+            "id": "b-fLRN0SS32U",
+            "offset": 4834.461
+        },
+        {
+            "id": "b-sXQ0BxXCpj",
+            "offset": 5754.461
+        },
+        {
+            "id": "b-yFt7MQSghl",
+            "offset": 6014.461
+        },
+        {
+            "id": "b-yR35Qi4Msf",
+            "offset": 6774.461
+        },
+        {
+            "id": "b-qxKx5OdrIT",
+            "offset": 7954.461
+        }
+    ],
+    "urls": [
+        {
+            "src": "5ad1430.webp",
+            "href": "https://en.wikipedia.org/wiki/Edge_computing",
+            "offset": [
+                291.575,
+                369.178
+            ],
+            "dimensions": [
+                22.265,
+                17.722
+            ]
+        },
+        {
+            "src": "908a399.webp",
+            "href": "https://en.wikipedia.org/wiki/Time_to_live",
+            "offset": [
+                163.033,
+                1462.429
+            ],
+            "dimensions": [
+                49.831,
+                17.907
+            ]
+        },
+        {
+            "src": "b285770.webp",
+            "href": "https://en.wikipedia.org/wiki/Active_users",
+            "offset": [
+                20.623,
+                1579.52
+            ],
+            "dimensions": [
+                42.045,
+                18.93
+            ]
+        },
+        {
+            "src": "9c229c9.webp",
+            "href": "#b-d5I21c9U7J",
+            "offset": [
+                323.993,
+                2981.505
+            ],
+            "dimensions": [
+                75.638,
+                30.079
+            ]
+        },
+        {
+            "src": "717c078.webp",
+            "href": "https://cloud.google.com/products/calculator",
+            "offset": [
+                180.869,
+                3060.241
+            ],
+            "dimensions": [
+                184.16,
+                28.221
+            ]
+        },
+        {
+            "src": "b55185f.webp",
+            "href": "https://cloud.google.com/run/pricing#pricing_for_regions_in_tier_1",
+            "offset": [
+                302.069,
+                3384.668
+            ],
+            "dimensions": [
+                40.145,
+                12.978
+            ]
+        },
+        {
+            "src": "c5aea0a.webp",
+            "href": "https://cloud.google.com/run/pricing#pricing_for_regions_in_tier_2",
+            "offset": [
+                394.121,
+                3406.002
+            ],
+            "dimensions": [
+                45.343,
+                13.91
+            ]
+        },
+        {
+            "src": "fe86e6f.webp",
+            "href": "https://en.wikipedia.org/wiki/Virtual_private_server",
+            "offset": [
+                65.769,
+                3762.201
+            ],
+            "dimensions": [
+                33.444,
+                18.997
+            ]
+        },
+        {
+            "src": "53145df.webp",
+            "href": "https://www.hetzner.com/cloud/",
+            "offset": [
+                153.962,
+                3760.823
+            ],
+            "dimensions": [
+                127.856,
+                20.199
+            ]
+        },
+        {
+            "src": "17e65d5.webp",
+            "href": "#b-fLRN0SS32U",
+            "offset": [
+                328.668,
+                5220.784
+            ],
+            "dimensions": [
+                99.508,
+                30.447
+            ]
+        },
+        {
+            "src": "a0be263.webp",
+            "href": "https://en.wikipedia.org/wiki/JSON_Web_Token",
+            "offset": [
+                414.148,
+                5500.374
+            ],
+            "dimensions": [
+                39.779,
+                26.594
+            ]
+        },
+        {
+            "src": "30d5de3.webp",
+            "href": "https://en.wikipedia.org/wiki/Round-trip_delay",
+            "offset": [
+                78.417,
+                6561.832
+            ],
+            "dimensions": [
+                40.835,
+                16.013
+            ]
+        },
+        {
+            "src": "2f7fe30.webp",
+            "href": "#b-sXQ0BxXCpj",
+            "offset": [
+                132.554,
+                6562.702
+            ],
+            "dimensions": [
+                9.351,
+                14.592
+            ]
+        },
+        {
+            "src": "4e13630.webp",
+            "href": "#b-yFt7MQSghl",
+            "offset": [
+                227.85,
+                6564.368
+            ],
+            "dimensions": [
+                13.333,
+                9.814
+            ]
+        },
+        {
+            "src": "c1e1de3.webp",
+            "href": "#b-sXQ0BxXCpj",
+            "offset": [
+                108.014,
+                6621.458
+            ],
+            "dimensions": [
+                10.852,
+                14.101
+            ]
+        },
+        {
+            "src": "09eef40.webp",
+            "href": "#b-fLRN0SS32U",
+            "offset": [
+                359.605,
+                7101.638
+            ],
+            "dimensions": [
+                88.394,
+                29.214
+            ]
+        },
+        {
+            "src": "15704c1.webp",
+            "href": "#b-sXQ0BxXCpj",
+            "offset": [
+                397.962,
+                7261.618
+            ],
+            "dimensions": [
+                8.913,
+                18.387
+            ]
+        },
+        {
+            "src": "f4b2484.webp",
+            "href": "#b-yFt7MQSghl",
+            "offset": [
+                440.001,
+                7261.85
+            ],
+            "dimensions": [
+                14.139,
+                17.629
+            ]
+        },
+        {
+            "src": "f44e23c.webp",
+            "href": "#b-sXQ0BxXCpj",
+            "offset": [
+                182.096,
+                7583.017
+            ],
+            "dimensions": [
+                10.694,
+                13.19
+            ]
+        },
+        {
+            "src": "64a799d.webp",
+            "href": "#b-yFt7MQSghl",
+            "offset": [
+                278.685,
+                7586.278
+            ],
+            "dimensions": [
+                14.377,
+                10.387
+            ]
+        },
+        {
+            "src": "ea08577.webp",
+            "href": "#b-sXQ0BxXCpj",
+            "offset": [
+                109.759,
+                7643.622
+            ],
+            "dimensions": [
+                9.297,
+                13.103
+            ]
+        },
+        {
+            "src": "0aea930.webp",
+            "href": "#b-fLRN0SS32U",
+            "offset": [
+                123.703,
+                7736.656
+            ],
+            "dimensions": [
+                115.125,
+                34.642
+            ]
+        },
+        {
+            "src": "7e7a7e4.webp",
+            "href": "https://en.wikipedia.org/wiki/ACID",
+            "offset": [
+                84.38,
+                8640.77
+            ],
+            "dimensions": [
+                48.438,
+                20.131
+            ]
+        },
+        {
+            "src": "07a08c4.webp",
+            "href": "#b-fLRN0SS32U",
+            "offset": [
+                361.351,
+                8940.184
+            ],
+            "dimensions": [
+                91.42,
+                33.02
+            ]
+        },
+        {
+            "src": "35ca008.webp",
+            "href": "https://en.wikipedia.org/wiki/NoSQL",
+            "offset": [
+                216.592,
+                9041.812
+            ],
+            "dimensions": [
+                68.499,
+                18.973
+            ]
+        },
+        {
+            "src": "1cc4eb8.webp",
+            "href": "https://en.wikipedia.org/wiki/Relational_database",
+            "offset": [
+                381.531,
+                8540.439
+            ],
+            "dimensions": [
+                77.199,
+                20.197
+            ]
+        },
+        {
+            "src": "590f333.webp",
+            "href": "https://en.wikipedia.org/wiki/Graph_database",
+            "offset": [
+                307.123,
+                9079.422
+            ],
+            "dimensions": [
+                51.318,
+                26.761
+            ]
+        },
+        {
+            "src": "4d55914.webp",
+            "href": "https://en.wikipedia.org/wiki/Content_delivery_network",
+            "offset": [
+                87.833,
+                9358.795
+            ],
+            "dimensions": [
+                250.808,
+                30.198
+            ]
+        },
+        {
+            "src": "f072857.webp",
+            "href": "https://en.wikipedia.org/wiki/Denial-of-service_attack#Distributed_DoS",
+            "offset": [
+                82.307,
+                9398.894
+            ],
+            "dimensions": [
+                54.456,
+                19.93
+            ]
+        },
+        {
+            "src": "f63dffe.webp",
+            "href": "https://en.wikipedia.org/wiki/TLS_termination_proxy",
+            "offset": [
+                80.339,
+                9479.985
+            ],
+            "dimensions": [
+                163.634,
+                19.53
+            ]
+        },
+        {
+            "src": "2618a28.webp",
+            "href": "https://en.wikipedia.org/wiki/Load_balancing_(computing)",
+            "offset": [
+                169.377,
+                9440.959
+            ],
+            "dimensions": [
+                155.393,
+                32.558
+            ]
+        }
+    ],
+    "files": [
+        "main_000.webp",
+        "main_001.webp"
+    ],
+    "dimensions": [
+        480,
+        9700
+    ]
+}

@@ -2,21 +2,24 @@
 
 require_once __DIR__ . '/lib/_index.php';
 
-$id = (int) $_GET['id'];
+$id = $_GET['id'];
 
 $blog = Blog::get($id);
 if ($blog === null) {
-    http_response_code(404);
-    require __DIR__ . '/404.php';
+    $_GET['code'] = 404;
+    require __DIR__ . '/error.php';
     exit;
 }
-
-$svgs = $blog->getSVGs();
 
 $rand_imprint = mt_rand() % 6;
 $rand_privacy = mt_rand() % 6;
 $rand_comments = mt_rand() % 6;
 $rand_send_comment = mt_rand() % 5;
+
+function is_external_url(string $url): bool
+{
+    return !str_starts_with($url, '#');
+}
 
 ?><!DOCTYPE html>
 <html lang="en">
@@ -27,17 +30,20 @@ $rand_send_comment = mt_rand() % 5;
 
     <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon">
 
-    <base target="_blank">
+    <meta name="keywords" content="ludwig lehnert,blog,<?= join(",", $blog->keywords()) ?>">
 
-    <meta name="keywords" content="ludwig lehnert,blog,<?= join(",", $blog->keywords) ?>">
-
-    <title><?= $blog->title ?></title>
+    <title><?= $blog->title() ?></title>
 
     <style>
         html,
         body {
             min-height: max(100%, 100vh);
             background: white;
+        }
+
+        body {
+            width: min(100%, 800px);
+            margin: auto;
         }
 
         * {
@@ -47,22 +53,47 @@ $rand_send_comment = mt_rand() % 5;
         }
 
         main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            position: relative;
+            width: 100%;
+            aspect-ratio:
+                <?= $blog->width() ?>
+                /
+                <?= $blog->height() ?>
+            ;
         }
 
-        main>* {
+        .content img {
             display: block;
-            width: min(100vw, 1000px);
+            width: 100%;
             height: auto;
         }
 
-        svg .hyperref {
-            cursor: pointer;
+        .bookmarks {
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
         }
 
-        svg .hyperref:hover {
+        .bookmarks * {
+            position: absolute;
+            height: 10px;
+            width: 100%;
+        }
+
+        .urls {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .urls a {
+            position: absolute;
+        }
+
+        .urls a:hover {
             opacity: 0.6;
         }
 
@@ -79,12 +110,12 @@ $rand_send_comment = mt_rand() % 5;
             width: auto;
         }
 
-        .bottom-links {
+        .legal-links {
             display: flex;
             justify-content: space-between;
         }
 
-        .bottom-links svg {
+        .legal-links svg {
             max-height: 4rem;
             height: 10vw;
             min-height: 2rem;
@@ -96,24 +127,47 @@ $rand_send_comment = mt_rand() % 5;
 
 <body>
     <main>
-        <?php foreach ($svgs as $svg): ?>
-            <?= $svg ?>
-        <?php endforeach; ?>
+        <div class="content">
+            <?php foreach ($blog->files() as $file): ?>
+                <img src="/blog/<?= $blog->id ?>/<?= $file ?>">
+            <?php endforeach; ?>
+        </div>
 
+        <div class="bookmarks">
+            <?php foreach ($blog->bookmarks() as $bm): ?>
+                <div id="<?= $bm['id'] ?>" style="top: <?= 100 * $bm['offset'] / $blog->height() ?>%;"></div>
+            <?php endforeach; ?>
+        </div>
+
+        <div class="urls">
+            <?php foreach ($blog->urls() as $url): ?>
+                <a href="<?= $url['href'] ?>" <?php if (is_external_url($url['href']))
+                      echo 'target="_blank"'; ?> style="
+                        top: <?= 100 * $url['offset'][1] / $blog->height() ?>%;
+                        left: <?= 100 * $url['offset'][0] / $blog->width() ?>%;
+                        width: <?= 100 * $url['dimensions'][0] / $blog->width() ?>%;">
+                    <img src="/blog/<?= $blog->id ?>/<?= $url['src'] ?>" style="width: 100%;">
+                </a>
+            <?php endforeach; ?>
+        </div>
+    </main>
+
+    <div style="height: 100px"></div>
+
+    <footer>
         <div class="send-comment">
             <?= get_svg(__DIR__ . "/assets/blog/send-comment$rand_send_comment.svg") ?>
         </div>
 
         <div style="height: 100px"></div>
 
-        <div class="bottom-links">
+        <div class="legal-links">
             <?= get_svg(__DIR__ . "/assets/blog/imprint$rand_imprint.svg") ?>
             <?= get_svg(__DIR__ . "/assets/blog/privacy$rand_privacy.svg") ?>
         </div>
+    </footer>
 
-        <div style="height: 100px"></div>
-    </main>
-
+    <div style="height: 100px"></div>
 </body>
 
 </html>

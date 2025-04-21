@@ -1,0 +1,90 @@
+{
+    "date": "2025-04-15",
+    "title": "Test: First Blog Entry",
+    "keywords": [
+        "test",
+        "first blog entry"
+    ],
+    "bookmarks": [],
+    "urls": [
+        {
+            "src": "18bddb5.webp",
+            "href": "https://google.com",
+            "offset": [
+                176.315,
+                378.853
+            ],
+            "dimensions": [
+                42.536,
+                25.653
+            ]
+        },
+        {
+            "src": "76c4bca.webp",
+            "href": "https://handwritten.blog",
+            "offset": [
+                271.101,
+                511.231
+            ],
+            "dimensions": [
+                142.634,
+                40.839
+            ]
+        },
+        {
+            "src": "913fe45.webp",
+            "href": "mailto:blog@lehnert.dev",
+            "offset": [
+                60.28,
+                868.451
+            ],
+            "dimensions": [
+                188.266,
+                44.067
+            ]
+        },
+        {
+            "src": "60d1274.webp",
+            "href": "https://en.wikipedia.org/wiki/SVG",
+            "offset": [
+                454.485,
+                1012.028
+            ],
+            "dimensions": [
+                35.147,
+                20.576
+            ]
+        },
+        {
+            "src": "6a1748c.webp",
+            "href": "https://en.wikipedia.org/wiki/PNG",
+            "offset": [
+                320.493,
+                1057.862
+            ],
+            "dimensions": [
+                44.903,
+                19.773
+            ]
+        },
+        {
+            "src": "2db2951.webp",
+            "href": "https://inkscape.org/",
+            "offset": [
+                64.774,
+                1231.579
+            ],
+            "dimensions": [
+                87.11,
+                37.658
+            ]
+        }
+    ],
+    "files": [
+        "main_000.webp"
+    ],
+    "dimensions": [
+        650,
+        1400
+    ]
+}
