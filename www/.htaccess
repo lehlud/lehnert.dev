@@ -3,7 +3,7 @@ RewriteEngine On
 # -------------------------------------------
 # Rewrite /blog/<ID> to /blog.php?id=<ID>
 # -------------------------------------------
-RewriteRule ^blog/([^/]+)/?$ /blog.php?id=$1 [L,QSA]
+RewriteRule ^blog/([^/]+)/?$ /blog.php?id=$1 [L]
 
 # -------------------------------------------
 # Rewrite /sitemap.xml to /blog.php?id=<ID>
