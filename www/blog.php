@@ -98,7 +98,7 @@ function is_external_url(string $url): bool
             top: 0;
         }
 
-        .urls a:hover {
+        a:hover {
             opacity: 0.6;
         }
 
@@ -108,7 +108,7 @@ function is_external_url(string $url): bool
             align-items: center;
         }
 
-        .send-comment svg {
+        .send-comment img {
             max-height: 3rem;
             height: 7vw;
             min-height: 1.5rem;
@@ -120,7 +120,7 @@ function is_external_url(string $url): bool
             justify-content: space-between;
         }
 
-        .legal-links svg {
+        .legal-links img {
             max-height: 4rem;
             height: 10vw;
             min-height: 2rem;
@@ -157,18 +157,26 @@ function is_external_url(string $url): bool
         </div>
     </main>
 
-    <div style="height: 100px"></div>
+    <div style="height: 20px"></div>
 
     <footer>
         <div class="send-comment">
-            <?= get_svg(__DIR__ . "/assets/blog/send-comment$rand_send_comment.svg") ?>
+            <a href="mailto:blog@lehnert.dev">
+                <img src="/assets/blog/send-comment<?= $rand_send_comment ?>.webp"
+                    alt="Send me your handwritten comment">
+            </a>
         </div>
 
         <div style="height: 100px"></div>
 
         <div class="legal-links">
-            <?= get_svg(__DIR__ . "/assets/blog/imprint$rand_imprint.svg") ?>
-            <?= get_svg(__DIR__ . "/assets/blog/privacy$rand_privacy.svg") ?>
+            <a href="/imprint">
+                <img src="/assets/blog/imprint<?= $rand_imprint ?>.webp" alt="Imprint">
+            </a>
+
+            <a href="/privacy">
+                <img src="/assets/blog/privacy<?= $rand_privacy ?>.webp" alt="Privacy Policy">
+            </a>
         </div>
     </footer>
 
