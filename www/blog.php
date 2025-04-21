@@ -18,7 +18,7 @@ $rand_send_comment = mt_rand() % 5;
 
 function is_external_url(string $url): bool
 {
-    return !str_starts_with($url, '#');
+    return str_starts_with($url, 'http');
 }
 
 ?><!DOCTYPE html>
