@@ -93,6 +93,11 @@ function is_external_url(string $url): bool
             position: absolute;
         }
 
+        .urls a img {
+            position: absolute;
+            top: 0;
+        }
+
         .urls a:hover {
             opacity: 0.6;
         }
@@ -146,7 +151,7 @@ function is_external_url(string $url): bool
                         top: <?= 100 * $url['offset'][1] / $blog->height() ?>%;
                         left: <?= 100 * $url['offset'][0] / $blog->width() ?>%;
                         width: <?= 100 * $url['dimensions'][0] / $blog->width() ?>%;">
-                    <img src="/blog/<?= $blog->id ?>/<?= $url['src'] ?>" style="width: 100%;">
+                    <img src="/blog/<?= $blog->id ?>/<?= $url['src'] ?>" style="width: 100%; height: auto;">
                 </a>
             <?php endforeach; ?>
         </div>
