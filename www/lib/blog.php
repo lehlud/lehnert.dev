@@ -56,6 +56,11 @@ class Blog
         return date("F jS, Y", strtotime($this->date()));
     }
 
+    public function transcript_html(): string
+    {
+        return file_get_contents(__DIR__."/../blog/{$this->id}/_transcript.html");
+    }
+
     public static function get(string $id): Blog|null
     {
         $path = __DIR__ . "/../blog/$id/_definition.json";

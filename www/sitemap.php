@@ -20,7 +20,7 @@ echo '<?';
     <?php foreach ($blogs as $blog): ?>
         <url>
             <loc>https://lehnert.dev/blog/<?= $blog->id ?>/</loc>
-            <lastmod><?= $blog->date() ?></lastmod>
+            <!-- <lastmod><?= $blog->date() ?></lastmod> -->
             <priority>0.8</priority>
         </url>
     <?php endforeach; ?>

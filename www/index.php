@@ -16,9 +16,9 @@ usort($blogs, function ($a, $b) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" href="/favicon.svg" type="image/svg">
+    <meta name="theme-color" content="#fff" />
 
     <title>lehnert.dev</title>
-
     <meta name="keywords" content="Ludwig,Ludwig Lehnert,Nürnberg,Pegnitz,Nuremberg,Informatik,Computer,Copmuter Science,FAU,Friedrich Alexander Universität,Erlangen" />
 
     <style>
@@ -67,7 +67,10 @@ usort($blogs, function ($a, $b) {
     <h1>Hey, I'm Ludwig</h1>
 
     <div style="margin-top: 2rem; display: flex; gap: 0.5rem;">
-        <span>I work at</span>
+        <div style="display: flex; flex-direction: column; align-items: end;">
+            <span>I work at</span>
+            <span>&amp; at</span>
+        </div>
         <div style="display: flex; flex-direction: column">
             <span><a target="_blank" href="https://siemens-healthineers.com">Siemens Healthineers</a></span>
             <span><a target="_blank" href="https://stuck-lehnert.de">our Family Company</a>.</span>
@@ -78,6 +81,22 @@ usort($blogs, function ($a, $b) {
         I study computer science at
         <a target="_blank" href="https://fau.de">FAU Erlangen</a>.
     </p>
+
+    <p style="margin-top: 1rem;">
+        I like skiing and
+        <a target="_blank" href="https://www.fcn.de/">football</a>.
+    </p>
+
+    <div style="margin-top: 0.6rem; display: flex; gap: 0.5rem;">
+        <div style="display: flex; flex-direction: column; align-items: end;">
+            <span>I am a member of</span>
+            <span>and</span>
+        </div>
+        <div style="display: flex; flex-direction: column">
+            <span><a target="_blank" href="https://www.tv-eibach03.de/">TV Eibach 03</a></span>
+            <span><a target="_blank" href="https://www.alpenverein-erlangen.de/">DAV Erlangen</a>.</span>
+        </div>
+    </div>
 
     <p style="margin-top: 2rem;">
         Here's my
@@ -100,7 +119,7 @@ usort($blogs, function ($a, $b) {
         </a>
     </div>
 
-    <div style="margin-top: 2rem;">
+    <div style="margin-top: 2rem; display: flex; gap: 0.7rem;">
         <a href="/imprint">Imprint</a>
         <a href="/privacy">Privacy Policy</a>
         <a href="/sitemap.xml">Sitemap</a>

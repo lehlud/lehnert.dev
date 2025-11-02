@@ -7,10 +7,21 @@ RewriteBase /
 RewriteRule ^blog/([^/]+)$ /blog/$1/ [L]
 RewriteRule ^blog/([^/]+)/$ blog.php?id=$1 [L]
 
+# -------------------------------------------------------------
+# Rewrite /blog/<ID>/transcript to /blog.transcript.php?id=<ID>
+# -------------------------------------------------------------
+RewriteRule ^blog/([^/]+)/transcript$ /blog/$1/transcript/ [L]
+RewriteRule ^blog/([^/]+)/transcript/$ blog.transcript.php?id=$1 [L]
+
 # -------------------------------------------
-# Rewrite /sitemap.xml to /blog.php?id=<ID>
+# Rewrite /sitemap.xml to /sitemap.php
 # -------------------------------------------
 RewriteRule ^sitemap\.xml$ /sitemap.php [L]
+
+# -------------------------------------------
+# Rewrite /rss.xml to /rss.php
+# -------------------------------------------
+RewriteRule ^rss\.xml$ /rss.php [L]
 
 # -------------------------------------------
 # Rewrite some dummy urls to some funny af

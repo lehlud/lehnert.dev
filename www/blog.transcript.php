@@ -1,0 +1,58 @@
+<?php
+
+require_once __DIR__ . '/lib/_index.php';
+
+$id = $_GET['id'];
+
+$blog = Blog::get($id);
+if ($blog === null) {
+    $_GET['code'] = 404;
+    require __DIR__ . '/error.php';
+    exit;
+}
+
+?><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon">
+
+    <meta name="keywords" content="ludwig lehnert,blog,<?= join(",", $blog->keywords()) ?>">
+
+    <title><?= $blog->title() ?></title>
+
+    <base target="_blank">
+
+    <style>
+        body {
+            color: black;
+            background: white;
+            font-family: 'Noto Sans', 'Inter', sans-serif;
+        }
+
+        blockquote {
+            color: #4a4a4a;
+        }
+
+        a:hover {
+            opacity: 0.7;
+        }
+    </style>
+
+    <script async src="/static/js/mathjax-tex-mml-chtml.js"></script>
+</head>
+
+<body style="max-width: 900px; margin: 0 auto 0 auto; padding: 16px;">
+    <?= $blog->transcript_html() ?>
+
+    <footer style="margin-top: 2rem; display: flex; gap: 0.7rem;">
+        <a href="/imprint">Imprint</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/sitemap.xml">Sitemap</a>
+    </footer>
+</body>
+
+</html>

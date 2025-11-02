@@ -39,6 +39,7 @@ function is_external_url(string $url): bool
         body {
             min-height: max(100%, 100vh);
             background: white;
+            font-family: 'Noto Sans', 'Inter', sans-serif;
         }
 
         body {
@@ -127,11 +128,23 @@ function is_external_url(string $url): bool
             width: auto;
             padding: 0 2rem 0 2rem;
         }
+
+        .none {
+            display: none;
+        }
     </style>
 </head>
 
 <body>
+    <a href="/blog/<?= $blog->id ?>/transcript" style="position: absolute; top: 0; left: 0; font-size: 0.7rem; padding: 3px;">
+        Transcript
+    </a>
+
     <main>
+        <div class="none">
+            <?= $blog->transcript_html() ?>
+        </div>
+
         <div class="content">
             <?php foreach ($blog->files() as $file): ?>
                 <img src="/blog/<?= $blog->id ?>/<?= $file ?>">

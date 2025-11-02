@@ -5,7 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.svg" type="image/svg">
+    <meta name="theme-color" content="#000" />
 
     <title>Imprint</title>
 
@@ -13,7 +14,7 @@
         body {
             margin: 0;
             padding: 0.8rem;
-            background-color: #000000;
+            background-color: #000;
             color: white;
             font-family: 'Courier New', Courier, monospace;
             font-size: 1rem;

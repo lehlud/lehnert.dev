@@ -1,0 +1,282 @@
+<h1>Thoughts about edge computation</h1>
+<h2>April 17th, 2025</h2>
+
+<p>
+    I will start this blog post by defining what "computing on the edge"
+    refers to. Wikipedia states that
+</p>
+
+<blockquote>
+    [...] [edge computing] refers to any design that pushes computation
+    physically closer to a user, so as to reduce latency [...]
+    (<a href="https://en.wikipedia.org/wiki/Edge_computing">ref</a>)
+</blockquote>
+
+<p>
+    However, as I'd like to focus on web apps, I will extend the definition
+    by the understanding of major cloud providers (CP):
+</p>
+
+<blockquote>
+    Edge computing is typically accomplished by serving requests via scalable,
+    containerized, load-balanced systems.
+</blockquote>
+
+<p>
+    Running your app on the edge typically requires some sort of containerization.
+    When a user sends a request to your service, major cloud providers spin
+    up the container, wait for the HTTP service (inside the container) to be
+    available and then forward the request to the (now running) container.
+    Here's a (simplified) graphic: <i>(not included in transcript)</i>
+</p>
+
+<p>
+    The startup time for more complex HTTP services typically ranges from a few
+    hundred milliseconds to a few hundred seconds, depending on the tech-stack
+    used to build the service. Most (all) cloud providers know about this and
+    thus mark the container with a
+    <a href="https://en.wikipedia.org/wiki/Time_to_live">TTL</a>
+    that is renewed on every subsequent request. Because of this, the startup
+    latency is significantly worse for apps with few
+    <a href="https://en.wikipedia.org/wiki/Active_users">MAU</a>s
+    and for users that reside in regions with few MAUs, as the TTL will expire
+    more often. As a customer of any CP, you can typically request to always
+    have at least one running container per region. However, this will radically
+    increase your hosting expenses, especially for apps with few MAUs, as CPs
+    usually bill their customers per computing time.
+</p>
+
+<p>
+    Because the cloud is overpriced, devs should always make sure to confirm that
+    anything that runs in the cloud really needs to stay in the cloud. To augment
+    the cost efficiency of the cloud, CPs usually offer their customers two
+    different billing models:
+</p>
+
+<ol>
+    <li>
+        <b>Pay-per-Request/Request-based-billing (PpR)</b><br>
+        Customer pays a fixed amount per request <u>plus</u> a fixed amount per
+        vCPU-second <u>plus</u> a fixed amount per GiB-second.
+    </li>
+    <li>
+        <b>Pay-per-Instance/Instance-based-billing (PpI)</b><br>
+        Customer pays a fixed amount per vCPU-second <u>plus</u> a fixed amount
+        per GiB-second. The fixed amounts are usually lower compared to PpR.
+    </li>
+</ol>
+
+
+<p>
+    You've probably already looked at
+    <a href="/blog/one/#b-d5I21c9U7J">Example I</a>.
+    This will be our scenario for showcasing the cost of the cloud. I am using the
+    <a href="https://cloud.google.com/products/calculator">GCP Expense Calculator</a>
+    for the calculation of costs.
+</p>
+
+<p>Assumptions:</p>
+<ul>
+    <li>2k requests per user per month</li>
+    <li>1 vCPU</li>
+    <li>300ms computing time per request</li>
+    <li>1.5 GiB memory required</li>
+    <li>1 container can handle up to 100 concurrent requests</li>
+    <li>
+        us-central1 (Iowa, <a href="https://cloud.google.com/run/pricing#pricing_for_regions_in_tier_1">Tier 1</a>)<br>
+        southamerica-east1 (São Paulo, <a href="https://cloud.google.com/run/pricing#pricing_for_regions_in_tier_2">Tier 2</a>)
+    </li>
+    <li>PpI 1 instance per region</li>
+</ul>
+
+<table>
+    <tbody>
+        <tr>
+            <th>Setup</th>
+            <th>Cost/month</th>
+        </tr>
+        <tr>
+            <td>PpR no min-instances</td>
+            <td>$ 13.81</td>
+        </tr>
+        <tr>
+            <td>PpR 1 min-instance</td>
+            <td>$ 52.56</td>
+        </tr>
+        <tr>
+            <td>PpI 18h/day</td>
+            <td>$ 81.00</td>
+        </tr>
+        <tr>
+            <td>PpI 24h/day</td>
+            <td>$ 121.41</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>
+    Putting the GCP and easy scalability aside, two
+    <a href="https://en.wikipedia.org/wiki/Virtual_private_server">VPS</a>s
+    on
+    <a href="https://www.hetzner.com/cloud/">Hetzner Cloud</a>
+    with 2 vCPUs and 4 GiB memory each, running 24h/day will cost $ 9.18/month.
+    That will provide you with >2x better specs compared to PpI 24h/day while
+    being >13x cheaper. Ironically, avoiding CPs like the GCP instantly gets
+    you a >10x cost efficiency improvement.
+</p>
+
+<p>Larry Page, co-founder of Google:</p>
+
+<blockquote>
+    It's often easier to make something 10 times better than it is to make it
+    10% better.
+</blockquote>
+
+<p>
+    Thus, when running on the edge is a requirement, devs should strongly
+    consider choosing VPS providers over major CPs, as the cloud is significantly
+    overpriced and the initial manual effort can be easily paid off long term.
+    Sadly, I feel like many devs have forgotten about what "running on the edge"
+    really means. You absolutely do not have to pay Google, amazon or Microsoft
+    ridiculous amounts of money. For most use cases, a few VPSs for every region
+    will be enough.
+</p>
+
+<p>
+    Up until here, we have mainly focused on the costs and talked a bit about
+    latency. But now, we will get to the real deal when it comes to edge computing:
+    data(-bases)
+</p>
+
+<p>
+    To demonstrate why running on the edge is pointless when using a monolithic/single
+    central database, let's take a look at
+    <a href="/blog/one/#b-fLRN0SS32U">Example II</a>.
+    Alice (A) resides in the US while Bob (B) resides in Russia. A talks to the NA
+    Service (N-S) while B talks to the Asia Service (A-S). Both the A-S and the N-S
+    need to access the central database that is being hosted in Germany. In order to
+    talk to their services, A and B authenticate themselves using a
+    <a href="https://en.wikipedia.org/wiki/JSON_Web_Token">JWT</a>.
+    Because the access shall be revokable at any time, N-S and A-S need to query the
+    DB to validate the given credentials. Now assume that our service is a messaging
+    service and A wants to send B a message. We will observe 2 actions:
+</p>
+
+<ol>
+    <li id="1">
+        A sending the message<br>
+        <i>(sequence diagram not included in transcript)</i>
+    </li>
+    <li id="2">
+        B pulling new messages<br>
+        <i>(sequence diagram not included in transcript)</i>
+    </li>
+</ol>
+
+<p>Now let's make some assumptions:</p>
+
+<ul>
+    <li>database delay \(d_{DB} = 100\) ms</li>
+    <li>service delay \(d_s = 10\) ms</li>
+    <li>
+        processing delay \(d_p = 0\) ms<br>
+        "processing is free"
+    </li>
+</ul>
+
+<p>
+    With these assumptions made, it's obvious to see that
+    <a href="https://en.wikipedia.org/wiki/Round-trip_delay">RTT</a>(<a href="#1">1</a>)
+    = RTT(<a href="#2">2</a>), where
+</p>
+
+<p>RTT(<a href="#1">1</a>) \(= 2 d_s + 4 d_{DB} = 420\) ms</p>
+
+<p>Thus, sending as well as pulling messages takes 420 ms in this scenario.</p>
+
+<p>
+    <a href="/blog/one/#b-yR35Qi4Msf">This</a>
+    example is a modified version of
+    <a href="/blog/one/#b-fLRN0SS32U">Example II</a>:
+    We still have A and B in their locations but only provide a single Main Service (M-S)
+    this time. A still wants to send B a message and we still observe the actions
+    <a href="#1">1</a> &amp; <a href="#2">2</a> (with N-S and A-S replaced by M-S).
+    However, since the scenery has changed, we need a new set of assumptions:
+</p>
+
+<ul>
+    <li>database delay \(d_{DB} = 10\) ms</li>
+    <li>service delay \(d_s = 100\) ms</li>
+    <li>processing delay \(d_p = 10\) ms (unchanged)</li>
+</ul>
+
+<p>Obviously, RTT(<a href="#1">1</a>) = RTT(<a href="#2">2</a>) still holds, but</p>
+
+<p>RTT(<a href="#1">1</a>) \(= 2 d_s + 4 d_{DB} = 240\) ms</p>
+
+<p>
+    this time, which is almost 2x faster compared to
+    <a href="/blog/one/#b-fLRN0SS32U">Example II</a>.
+    As one can clearly see, when using a single central database, the use of edge
+    computing significantly increases the latency for end users. Thus, edge computing
+    should not be employed in such scenarios.
+</p>
+
+<p><a href="/blog/one/#b-qxKx5OdrIT">Example IV</a></p>
+
+<p>
+    But what if we want to have both low-latency database access and low-latency services?
+    Then we need to have the same database in different regions at the same time. The key
+    concept we need to accomplish this, is: replication. We need to replicate our database.
+</p>
+
+<p>
+    Sadly, this easier said than done. Most data models are difficult to replicate. Take
+    <a href="https://en.wikipedia.org/wiki/Relational_database">relational</a>
+    databases for example, you will face some real challenges:
+</p>
+
+<ul>
+    <li><a href="https://en.wikipedia.org/wiki/ACID">ACID</a>-Compliance</li>
+    <li>database migrations/schema changes</li>
+    <li>conflict resolution</li>
+</ul>
+
+<p>
+    You will have to give up some guarantees if you want to improve latency. E.g. if you
+    wouldn't give up ACID-compliance, you would have to lock relations simultaneously for
+    all regions, which then would worsen the latency far beyond
+    <a href="/blog/one/#b-fLRN0SS32U">Example II</a>.
+</p>
+
+<p>
+    This is why most apps that (successfully) run on the edge employ
+    <a href="https://en.wikipedia.org/wiki/NoSQL">NoSQL</a>
+    databases, as those are much easier to replicate.
+    <a href="https://en.wikipedia.org/wiki/Graph_database">Graph</a>
+    databases on the other hand, despite belonging to the NoSQL family, are an exception and
+    hard to replicate.
+</p>
+
+<p>To round things up, I'd like to share some of the best use cases for the edge:</p>
+
+<ul>
+    <li>
+        <a href="https://en.wikipedia.org/wiki/Content_delivery_network">Content Delivery Networks</a>
+        (CDNs)
+    </li>
+
+    <li>
+        <a href="https://en.wikipedia.org/wiki/Denial-of-service_attack#Distributed_DoS">DDoS</a>
+        Protection
+    </li>
+
+    <li>
+        Global
+        <a href="https://en.wikipedia.org/wiki/Load_balancing_(computing)">Load Balancing</a>
+    </li>
+
+    <li><a href="https://en.wikipedia.org/wiki/TLS_termination_proxy">TLS Termination</a></li>
+</ul>
+
+<p>If you came this far, I hope you enjoyed the read :)</p>
