@@ -18,7 +18,6 @@
             font-family: 'Courier New', Courier, monospace;
             font-size: 1rem;
             line-height: 1.6;
-            zoom: 0.9;
         }
 
         .prompt::before {

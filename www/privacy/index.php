@@ -4,69 +4,26 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon">
-
-    <title>Privacy Policy</title>
-
+    <title>Imprint / Datenschutzerklärung</title>
     <style>
-        :root {
-            --accent: #00ffe0;
-            --accent2: #ff79c6;
-            --bg: linear-gradient(135deg, #0f0f1f, #000010);
-            --glass: rgba(255, 255, 255, 0.06);
-            --glass-border: rgba(255, 255, 255, 0.12);
-        }
-
-        * {
-            box-sizing: border-box;
-        }
-
         body {
             margin: 0;
-            padding: 2rem 1rem;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--bg);
-            color: #e0e0e0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-            min-height: 100vh;
+            padding: 0.8rem;
+            background-color: #000000;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1rem;
+            line-height: 1.6;
         }
 
-        .glass-box {
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 1rem;
-            padding: 2rem 2rem;
-            width: 100%;
-            max-width: 720px;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.05), 0 4px 20px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 0.8s ease-out both;
-        }
-
-        h1 {
-            color: var(--accent);
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-            text-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
-        }
-
-        h2 {
-            color: var(--accent2);
-            font-size: 1.1rem;
-            margin-top: 2rem;
-        }
-
-        p {
-            line-height: 1.7;
-            margin: 0.8rem 0;
+        .prompt::before {
+            content: "ludwig@laptop:~$ ";
+            color: #00ff88;
         }
 
         a {
-            color: var(--accent);
+            color: #00ffff;
             text-decoration: none;
         }
 
@@ -74,112 +31,112 @@
             text-decoration: underline;
         }
 
-        .footer-note {
-            font-size: 0.85rem;
-            color: #999;
-            text-align: right;
-            margin-top: 2rem;
+        .comment {
+            color: #666;
+            font-style: italic;
+            margin-bottom: 0;
         }
 
-        .divider {
-            height: 2px;
-            width: 60px;
-            background: var(--accent);
-            opacity: 0.4;
-            border-radius: 100px;
-            margin: 0 auto;
+        .comment+* {
+            margin-top: 0;
         }
 
-        @media (max-width: 480px) {
-            body {
-                padding: 1.5rem 1rem;
-            }
-
-            .glass-box {
-                padding: 1.5rem 1.2rem;
-            }
-
-            h1 {
-                font-size: 1.4rem;
-            }
-
-            h2 {
-                font-size: 1rem;
-            }
+        .cursor {
+            display: inline-block;
+            color: white;
+            background-color: white;
+            animation: blink 1s steps(1) infinite;
+            margin-left: 6px;
+            user-select: none;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
+        @keyframes blink {
+            50% {
+                color: transparent;
+                background-color: transparent;
             }
         }
     </style>
 </head>
 
 <body>
+    <div class="prompt">cat datenschutz.txt</div>
 
-    <div class="glass-box">
-        <h1>Datenschutzerklärung</h1>
+    <p class="comment"># Verantwortliche Stelle</p>
+    <p>
+        Ludwig Lehnert<br />
+        Zedernstr. 41<br />
+        90441 Nürnberg<br />
+        <a href="mailto:piracy@lehnert.dev">piracy@lehnert.dev</a>
+    </p>
 
-        <h2>Verantwortliche Stelle</h2>
-        <p>Ludwig Lehnert<br>Zedernstr. 41<br>90441 Nürnberg<br>E-Mail: <a
-                href="mailto:piracy@lehnert.dev">piracy@lehnert.dev</a></p>
+    <p class="comment"># Erhobene Daten</p>
+    <p>
+        Diese Website erhebt keine personenbezogenen Daten über Formulare oder Tracking-Dienste.<br/>
+        Es werden keine Cookies verwendet und keine Drittanbieter-Analyse-Tools eingebunden.
+    </p>
+    
+    <p class="comment"># Server-Hosting</p>
+    <p>
+        Die Website wird bei der Hetzner Online GmbH (Industriestr. 25, 91710 Gunzenhausen, Deutschland) gehostet.<br/>
+        Es besteht ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO.
+    </p>
+    
+    <p class="comment"># Zugriffsprotokolle</p>
+    <p>
+        Beim Zugriff auf die Website speichert der Server automatisch sogenannte Logfiles, die IP-Adresse und Zeitstempel enthalten.<br/>
+        Diese Daten werden ausschließlich für Sicherheit, Fehlererkennung und Statistiken genutzt und nach 90 Tagen automatisch gelöscht.
+    </p>
+    
+    <p class="comment"># Ihre Rechte</p>
+    <p>
+        Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie ein Widerspruchsrecht.<br/>
+        Bitte kontaktieren Sie mich über die oben genannte E-Mail-Adresse.
+    </p>
+    
+    <p class="comment"># Stand</p>
+    <p>Stand: 16. April 2025</p>
+    
+    
+    <div class="prompt">cat privacy.txt</div>
+    
+    <p class="comment"># Controller</p>
+    <p>
+        Ludwig Lehnert<br/>
+        Zedernstr. 41<br/>
+        90441 Nuremberg<br/>
+        Germany<br/>
+        <a href="mailto:piracy@lehnert.dev">piracy@lehnert.dev</a>
+    </p>
+    
+    <p class="comment"># Data Collected</p>
+    <p>
+        This website does not collect personal data via forms or third-party tracking tools.<br/>
+        No cookies or analytics are used.
+    </p>
+    
+    <p class="comment"># Server Hosting</p>
+    <p>
+        The site is hosted by Hetzner Online GmbH (Industriestr. 25, 91710 Gunzenhausen, Germany).<br/>
+        A data processing agreement has been signed in accordance with Art. 28 GDPR.
+    </p>
+    
+    <p class="comment"># Access Logs</p>
+    <p>
+        When accessing the site, the server automatically stores log files that include your IP address and timestamp.<br/>
+        These logs are used solely for security, debugging, and statistical purposes and are automatically deleted after 90 days.
+    </p>
+    
+    <p class="comment"># Your Rights</p>
+    <p>
+        You have the right to request access to your data, rectify or delete it, restrict processing, and object to certain uses.<br/>
+        Feel free to reach out via email.
+    </p>
+    
+    <p class="comment"># Last updated</p>
+    <p>Last updated: April 16, 2025</p>
 
-        <h2>Erhobene Daten</h2>
-        <p>Diese Website erhebt keine personenbezogenen Daten über Formulare oder Tracking-Dienste. Es werden keine
-            Cookies verwendet und keine Drittanbieter-Analyse-Tools eingebunden.</p>
-
-        <h2>Server-Hosting</h2>
-        <p>Die Website wird bei der Hetzner Online GmbH (Industriestr. 25, 91710 Gunzenhausen, Deutschland) gehostet. Es
-            besteht ein Auftragsverarbeitungsvertrag gemäß Art. 28 DSGVO.</p>
-
-        <h2>Zugriffsprotokolle</h2>
-        <p>Beim Zugriff auf die Website speichert der Server automatisch sogenannte Logfiles, die IP-Adresse und
-            Zeitstempel enthalten. Diese Daten werden ausschließlich für Sicherheit, Fehlererkennung und Statistiken
-            genutzt und nach 90 Tagen automatisch gelöscht.</p>
-
-        <h2>Ihre Rechte</h2>
-        <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung sowie ein
-            Widerspruchsrecht. Bitte kontaktieren Sie mich über die oben genannte E-Mail-Adresse.</p>
-
-        <div class="footer-note">Stand: 16. April 2025</div>
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="glass-box">
-        <h1>Privacy Policy</h1>
-
-        <h2>Controller</h2>
-        <p>Ludwig Lehnert<br>Zedernstr. 41<br>90441 Nuremberg, Germany<br>Email: <a
-                href="mailto:piracy@lehnert.dev">piracy@lehnert.dev</a></p>
-
-        <h2>Data Collected</h2>
-        <p>This website does not collect personal data via forms or third-party tracking tools. No cookies or analytics
-            are used.</p>
-
-        <h2>Server Hosting</h2>
-        <p>The site is hosted by Hetzner Online GmbH (Industriestr. 25, 91710 Gunzenhausen, Germany). A data processing
-            agreement has been signed in accordance with Art. 28 GDPR.</p>
-
-        <h2>Access Logs</h2>
-        <p>When accessing the site, the server automatically stores log files that include your IP address and
-            timestamp. These logs are used solely for security, debugging, and statistical purposes and are
-            automatically deleted after 90 days.</p>
-
-        <h2>Your Rights</h2>
-        <p>You have the right to request access to your data, rectify or delete it, restrict processing, and object to
-            certain uses. Feel free to reach out via email.</p>
-
-        <div class="footer-note">Last updated: April 16, 2025</div>
-    </div>
-
+    <div class="prompt"><a href="/">exit</a><span class="cursor">I</span></div>
 </body>
 
 </html>
