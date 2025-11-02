@@ -136,7 +136,7 @@ function is_external_url(string $url): bool
 </head>
 
 <body>
-    <a href="/blog/<?= $blog->id ?>/transcript" style="position: absolute; top: 0; left: 0; font-size: 0.7rem; padding: 3px;">
+    <a href="/blog/<?= $blog->id ?>/transcript" style="position: absolute; top: 0; left: 0; font-size: 0.7rem; padding: 3px; z-index: 99;">
         Transcript
     </a>
 
