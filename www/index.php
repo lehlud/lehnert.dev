@@ -73,7 +73,7 @@ usort($blogs, function ($a, $b) {
         </div>
         <div style="display: flex; flex-direction: column">
             <span><a target="_blank" href="https://siemens-healthineers.com">Siemens Healthineers</a></span>
-            <span><a target="_blank" href="https://stuck-lehnert.de">our Family Company</a>.</span>
+            <span><a target="_blank" href="https://stuck-lehnert.de">our family business</a>.</span>
         </div>
     </div>
 

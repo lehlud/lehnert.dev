@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="/favicon.svg" type="image/svg">
     <meta name="theme-color" content="#000" />
 
-    <title>Imprint</title>
+    <title>lehnert.dev Imprint</title>
 
     <style>
         body {
