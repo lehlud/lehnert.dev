@@ -64,7 +64,9 @@ usort($blogs, function ($a, $b) {
 </head>
 
 <body style="max-width: 800px; margin: 0 auto 0 auto; padding: 16px;">
-    <h1 style="margin-top: 0.5rem;">Hey, I'm Ludwig</h1>
+    <h1 style="margin-top: 0.5rem; font-weight: 900; font-size: 2.2em;">
+        Hey, I'm Ludwig
+    </h1>
 
     <div style="margin-top: 2rem; display: flex; gap: 0.5rem;">
         <div style="display: flex; flex-direction: column; align-items: end;">
