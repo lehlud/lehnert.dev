@@ -64,7 +64,7 @@ usort($blogs, function ($a, $b) {
 </head>
 
 <body style="max-width: 800px; margin: 0 auto 0 auto; padding: 16px;">
-    <h1>Hey, I'm Ludwig</h1>
+    <h1 style="margin-top: 0.5rem;">Hey, I'm Ludwig</h1>
 
     <div style="margin-top: 2rem; display: flex; gap: 0.5rem;">
         <div style="display: flex; flex-direction: column; align-items: end;">
@@ -126,6 +126,9 @@ usort($blogs, function ($a, $b) {
     </div>
 
     <h2 style="margin-top: 2rem;"><span class="none">Handwritten </span>Blog</h2>
+    <a href="/rss.xml" style="font-size: 0.8em;">RSS Feed</a>
+
+    <div style="height: 1rem;"></div>
 
     <?php foreach ($blogs as $blog): ?>
         <h3 style="margin-top: 0.4rem;"><a href="/blog/<?= $blog->id ?>"><?= $blog->title() ?></a></h3>
