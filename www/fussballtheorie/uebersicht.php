@@ -17,8 +17,8 @@ $glossary = [
     'Formation' => 'Richtline des Trainers zur Aufstellung der Mannschaft auf dem Feld.',
     'System' => 'Menge der taktischen Elemente, die die Ausführung einer Formation betreffen.',
 
-    'Angreifer' => 'Menge der Spieler der Mannschaft mit Ballbesitz.',
-    'Verteidiger' => 'Menge der Spieler der Mannschaft ohne Ballbesitz.',
+    'Angreifer' => 'Mannschaft mit Ballbesitz.',
+    'Verteidiger' => 'Mannschaft ohne Ballbesitz.',
 
     'Pressing' => 'Der Versuch, über mindestens einen Zweikampf den Ballbesitz zu erlangen.',
     'stellen (Aktion)' => 'Positioniert sich ein Verteidiger vor dem Ballführenden, ohne in einen Zweikampf zu gehen, so <i>stellt</i> er ihn.',
