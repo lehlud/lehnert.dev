@@ -38,10 +38,12 @@ if ($blog === null) {
 <body style="max-width: 900px; margin: 0 auto 0 auto; padding: 16px;">
     <?= $blog->transcript_html() ?>
 
-    <footer style="margin-top: 2rem; display: flex; gap: 0.7rem;">
-        <a href="/imprint">Imprint</a>
-        <a href="/privacy">Privacy Policy</a>
-        <a href="/sitemap.xml">Sitemap</a>
+    <footer style="margin-top: 2rem;">
+        <p>
+            <a href="/imprint">Imprint</a>&nbsp;
+            <a href="/privacy">Privacy Policy</a>&nbsp;
+            <a href="/sitemap.xml">Sitemap</a>&nbsp;
+        </p>
     </footer>
 </body>
 

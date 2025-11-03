@@ -124,14 +124,18 @@ usort($blogs, function ($a, $b) {
         </a>
     </div>
 
-    <p>
-        <a href="/imprint">Imprint</a>&nbsp;
-        <a href="/privacy">Privacy Policy</a>&nbsp;
-        <a href="/sitemap.xml">Sitemap</a>&nbsp;
-    </p>
+    <footer>
+        <p>
+            <a href="/imprint">Imprint</a>&nbsp;
+            <a href="/privacy">Privacy Policy</a>&nbsp;
+            <a href="/sitemap.xml">Sitemap</a>&nbsp;
+        </p>
 
-    <!-- SEO Tags -->
-    <h1 class="none">Ludwig Lehnert</h1>
+        <!-- SEO Tags -->
+        <h1 class="none">Ludwig Lehnert</h1>
+        <h2 class="none">Computer Science/Informatik</h2>
+        <h2 class="none">Nürnberg/Nuremberg/Erlangen</h2>
+    </footer>
 </body>
 
 </html>

@@ -147,10 +147,12 @@ function links_html(array $links, array $path = []): string {
 
     <?= links_html($links) ?>
 
-    <p style="margin-top: 2em;">
-        <a href="/imprint">Imprint</a>&nbsp;
-        <a href="/privacy">Privacy Policy</a>&nbsp;
-        <a href="/sitemap.xml">Sitemap</a>&nbsp;
-    </p>
+    <footer>
+        <p style="margin-top: 2em;">
+            <a href="/imprint">Imprint</a>&nbsp;
+            <a href="/privacy">Privacy Policy</a>&nbsp;
+            <a href="/sitemap.xml">Sitemap</a>&nbsp;
+        </p>
+    </footer>
 </body>
 </html>
