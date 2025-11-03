@@ -19,10 +19,11 @@ $links = [
                     Java ist, dass es nach JavaScript, WASM sowie zu nativen Maschinencode kompiliert werden
                     kann. Alternativ kann es aber auch in der Dart VM Just-in-Time ausgeführt werden.
                 ',
+                'DartPad;;Online-Entwicklungsumgebung' => 'https://dartpad.dev/',
             ],
             'Go' => [
                 'Go Tutorials;;Einführung und häufige Use Cases' => 'https://go.dev/doc/tutorial/',
-                'Go Playground;;Interaktive Online-Umgebung' => 'https://go.dev/play/',
+                'Go Playground;;Online-Entwicklungsumgebung' => 'https://go.dev/play/',
             ],
             'Java' => [
                 'MOOC Java Programming Course;;von der Uni Helsinki' => 'https://java-programming.mooc.fi/',
