@@ -61,6 +61,7 @@ $links = [
         'Self-Hosting' => [
             'Stalwart;;OSS E-Mail- &amp; Kollaborationsserver' => 'https://github.com/stalwartlabs/stalwart',
             'Vaultwarden;;alternative OSS-Implementierung der Bitwarden API' => 'https://github.com/dani-garcia/vaultwarden',
+            'Z-Push;;Exchange-Active-Sync (EAS) Proxy' => 'https://z-push.org/',
         ],
         'Web-Apps' => [
             'Haikei;;damit kann man coole <a href="https://en.wikipedia.org/wiki/SVG">SVG</a>-Muster generieren' => 'https://app.haikei.app/',
