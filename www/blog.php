@@ -39,7 +39,6 @@ function is_external_url(string $url): bool
         body {
             min-height: max(100%, 100vh);
             background: white;
-            font-family: 'Noto Sans', 'Inter', sans-serif;
         }
 
         body {

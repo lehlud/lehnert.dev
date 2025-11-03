@@ -11,11 +11,15 @@ echo '<?';
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://lehnert.dev/</loc>
-        <lastmod>2025-11-02</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
 
+    <url>
+        <loc>https://lehnert.dev/links/</loc>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
 
     <?php foreach ($blogs as $blog): ?>
         <url>

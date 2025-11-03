@@ -24,21 +24,11 @@ if ($blog === null) {
 
     <title><?= $blog->title() ?></title>
 
-    <base target="_blank">
-
     <style>
-        body {
-            color: black;
-            background: white;
-            font-family: 'Noto Sans', 'Inter', sans-serif;
-        }
+        <?= default_styles() ?>
 
         blockquote {
             color: #4a4a4a;
-        }
-
-        a:hover {
-            opacity: 0.7;
         }
     </style>
 
