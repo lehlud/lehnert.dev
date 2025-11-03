@@ -5,14 +5,24 @@ require_once __DIR__ . "/../lib/_index.php";
 $links = [
     'Informatik' => [
         'Programmiersprachen' => [
-            'Learn X in Y minutes;;Kurzüberblicke über alle bekannteren Programmiersprachen' => 'https://learnxinyminutes.com/',
+            'Learn X in Y minutes;;Kurzüberblicke für alle bekannteren Programmiersprachen' => 'https://learnxinyminutes.com/',
             'C' => [
                 'man.cx;;Online Linux Man-Pages' => 'https://man.cx/',
                 'Coroutines in C;;asynchronen C-Code richtig aufbauen' => 'https://www.chiark.greenend.org.uk/~sgtatham/coroutines.html',
                 'Beispiel Fork-Bombe;;auf meiner CIP-Seite' => 'https://wwwcip.cs.fau.de/~at69yvos/',
             ],
+            'Dart' => [
+                '_' => '
+                    <a href="https://en.wikipedia.org/wiki/Dart_(programming_language)">Dart</a> ist eine
+                    recht unbekannte Programmiersprache, die aber eigentlich ganz cool ist, weil sie viele
+                    OOP-Konzepte aus Java übernimmt und erweitert. Ein großer Vorteil von Dart gegenüber
+                    Java ist, dass es nach JavaScript, WASM sowie zu nativen Maschinencode kompiliert werden
+                    kann. Alternativ kann es aber auch in der Dart VM Just-in-Time ausgeführt werden.
+                ',
+            ],
             'Go' => [
                 'Go Tutorials;;Einführung und häufige Use Cases' => 'https://go.dev/doc/tutorial/',
+                'Go Playground;;Interaktive Online-Umgebung' => 'https://go.dev/play/',
             ],
             'Java' => [
                 'MOOC Java Programming Course;;von der Uni Helsinki' => 'https://java-programming.mooc.fi/',
@@ -64,6 +74,39 @@ $links = [
             'Michael Gernoth: Dissecting HomeMatic AES' => 'https://git.zerfleddert.de/hmcfgusb/AES/',
         ],
     ],
+    'Alternative Netzwerke' => [
+        'Tor-Netzwerk' => [
+            '_' => '
+                Why should people care about surveillance?
+                <blockquote>
+                    <i>Edward Snowden:</i>
+                    Because even if you\'re not doing anything wrong, you\'re being watched and recorded.
+                </blockquote>
+
+                Das <a href="https://en.wikipedia.org/wiki/Tor_(network)">Tor-Netzwerk</a>
+                (in den Medien auch "Darknet" oder "Darkweb") ist ein Werkzeug gegen
+                Überwachung und Zensur und für Anonymität im Internet. Zusätzlich zu den Funktionen zur
+                Verbesserung der Privätsphäre bietet das Tor-Netzwerk noch einen weiteren Vorteil:
+                es können sog. Hidden Services bereitgestellt werden, die außerhalb des Tor-Netwerks (also
+                im "Clear Web") nicht erreichbar sind und ohne unverhältmäßig großen Aufwand nicht zensiert
+                bzw. Zwangsabgeschaltet werden können.
+            ',
+            'DNM Bible;;Leitfaden für das Nicht-Erwischt-Werden' => 'https://darknetbible.info/',
+            'Tor Browser;;Firefox-basierter Browser für das Tor-Netzwerk' => 'https://www.torproject.org/download/',
+            'tor.taxi;;Sammlung aktueller Onion-Links für gängige Seiten' => 'https://tor.taxi/',
+        ],
+        'Usenet' => [
+            '_' => '
+                Das <a href="https://en.wikipedia.org/wiki/Usenet">Usenet</a> ist im Prinzip
+                ein dezentrales Forum, das datenpersistent ist und Nutzern Anonymität gewährleisten kann
+                (wenn sie sich bestimmt verhalten). Es war in den 90er Jahren besonders populär, heute
+                wird es eigentlich nur noch für den Austausch von Dateien (mitunter auch nicht-lizensiert,
+                z.B. Filme &amp; Serien) verwendet.
+            ',
+            'r/usenet Wiki' => 'https://www.reddit.com/r/usenet/wiki/index/',
+            'Usenet Starter Guide' => 'https://www.reddit.com/r/usenet/comments/18q7r0f/usenet_starter_guide/',
+        ],
+    ],
     'Software' => [
         'Notizen/Annotation' => [
             'Xournal++;;handgeschriebene Notizen &amp; PDF-Annotationen' => 'https://github.com/xournalpp/xournalpp',
@@ -71,11 +114,17 @@ $links = [
         ],
         'Editor' => [
             'Vim' => 'https://www.vim.org/',
+            'Emacs' => 'https://www.gnu.org/software/emacs/',
             'Helix Editor;;multimodaler Editor, kann mehr als <code>vim</code>' => 'https://github.com/helix-editor/helix',
+            'Visual Studio Code;;einfach zu benutzender, modular erweiterbarer GUI-Editor' => 'https://code.visualstudio.com/',
+            'Zed;;VSCode-Alternative, geschrieben in <code>rust</code>' => 'https://zed.dev/',
         ],
         'Self-Hosting' => [
+            'Coolify;;containerisierte Apps bequem selber hosten' => 'https://coolify.io/',
+            'Nextcloud;;OSS-Alternative zu Google Drive/OneDrive' => 'https://nextcloud.com/',
+            'SyncThing;;Sync-Server für Dateien/Verzeichnisse' => 'https://syncthing.net/',
             'Stalwart;;OSS E-Mail- &amp; Kollaborationsserver' => 'https://github.com/stalwartlabs/stalwart',
-            'Vaultwarden;;alternative OSS-Implementierung der Bitwarden API' => 'https://github.com/dani-garcia/vaultwarden',
+            'Vaultwarden;;alternative OSS-Implementierung zu Bitwarden' => 'https://github.com/dani-garcia/vaultwarden',
             'Z-Push;;Exchange-Active-Sync (EAS) Proxy' => 'https://z-push.org/',
         ],
         'Web-Apps' => [
@@ -83,38 +132,41 @@ $links = [
             'JWT Debugger;;mit <a href="https://en.wikipedia.org/wiki/JSON_Web_Token">JWT</a>s rumspielen' => 'https://www.jwt.io/',
             'CyberChef;;mit Encodings rumspielen' => 'https://cyberchef.org/',
             'JSFuck;;JavaScript Obfuscation-Tool' => 'https://jsfuck.com/',
+            'Mermaid Live;;Interaktive Umgebung für die Erstellung von <a href="https://mermaid.js.org/">Mermaid</a>-Diagrammen' => 'https://mermaid.live/edit',
         ],
         'nicht-Chromium-basierte Browser' => [
             '_' => '
                 Es ist wichtig, nicht-Chromium-basierte Browser wie Firefox zu verwenden,
                 um das Machtmonopol von Google auf die Entwicklung der Web-Standards einzudämmen;
-                z.B. sind Chrome, Edge, Opera (GX), Vivaldi und Brave alles Chromium-basierte
+                Chrome, Edge, Opera (GX), Vivaldi und Brave sind alle Beispiele für Chromium-basierte
                 Browser.
             ',
             'Firefox;;Gecko' => 'https://firefox.com/',
-            'Tor Browser;;einfacher Zugang Tor-Netzwerk ("Darknet")' => 'https://www.torproject.org/download/',
             'Safari;;WebKit' => 'https://www.apple.com/safari/',
             'Epiphany/GNOME Web;;WebKitGTK' => 'https://apps.gnome.org/Epiphany/',
         ],
         'Firefox-Erweiterungen' => [
             'uBlock Origin;;Werbe-Blocker' => 'https://ublockorigin.com/',
             'NoScript;;JavaScript-Blocker' => 'https://noscript.net/',
+            'ClearURLs;;entfernt Tracking-Info aus URLs' => 'https://addons.mozilla.org/en-US/firefox/addon/clearurls/',
         ],
     ],
     'Fußballtheorie' => [
-        // 'Glossar;;von mir selbst erstellt' => '/fussballtheorie/glossar',
+        'Übersicht;;noch Work in Progress' => '/fussballtheorie/uebersicht.php',
         'DFB-Akademie – Taktik & Spielanalyse;;Kurze Infos über Studien zu Einzelthemen' => 'https://www.dfb-akademie.de/taktik-spielanalyse/-/id-11008483/',
+    ],
+    'Kommunikation' => [
+        'PARA-Framework' => '/kb/PARA.php',
     ],
     'Lesenswerte Bücher' => [
         '_' => '
             Man könnte vielleicht vermuten, dass hier einfach alle Bücher stehen, die ich
-            überhaupt jemals gelesen habe, tatsächlich sind hier aber nur die Bücher aufgelistet,
+            überhaupt jemals gelesen habe, tatsächlich sind hier aber nur diejenigen Bücher aufgelistet,
             die ich wirklich für lesenswert halte.
         ',
         'Der Schlüssel zum Spiel – Wie moderner Fußball funktioniert;;Tobias Escher' => 'https://www.rowohlt.de/buch/tobias-escher-der-schluessel-zum-spiel-9783499001987',
         'Geschichte eines Deutschen;;Sebastian Haffner' => 'https://de.wikipedia.org/wiki/Geschichte_eines_Deutschen',
         'Ein MANN, Ein BUCH;;Eduard Augustin, Philipp V. Keisenberg, Christian Zaschke' => 'https://www.penguin.de/buecher/ein-mann-ein-buch/taschenbuch/9783442471829',
-        'Die Wertformel;;Dr. Julian Hosp' => 'https://www.m-vg.de/finanzbuchverlag/shop/article/24991-die-wertformel/',
         'No Place to Hide;;Glenn Greenwald' => 'https://en.wikipedia.org/wiki/No_Place_to_Hide_%28Greenwald_book%29',
         'Anleitung zur Selbstüberlistung;;Prof. Dr. Christian Rieck' => 'https://www.m-vg.de/yes/shop/article/24155-anleitung-zur-selbstueberlistung/',
     ],
@@ -124,31 +176,27 @@ $links = [
     ],
     'Andere Linksammlungen' => [
         'Linksammlung von Philip KALUĐERČIĆ' => 'https://wwwcip.cs.fau.de/~oj14ozun/links.html',
+        'Linksammlung des BKA' => 'https://www.bka.de/DE/IhreSicherheit/WichtigeLinks/wichtigelinks_node.html',
+        'BSI Home-Office Check' => 'https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Cyber-Sicherheit/Themen/checkliste-home-office_linkliste.pdf?__blob=publicationFile&v=5',
     ],
 ];
 
 function path_id(array $path): string {
-    $id = strtolower(join("_", $path));
-
-    $id = preg_replace("/\s+/", "-", $id);
-
-    $id = str_replace("ü", "ue", $id);
-    $id = str_replace("ö", "oe", $id);
-    $id = str_replace("ä", "ae", $id);
-    $id = str_replace("ß", "ss", $id);
-
-    $id = preg_replace("/[^a-zA-Z0-9_\-]+/", "", $id);
-
-    return $id;
+    $id = join("_", $path);
+    return make_id($id);
 }
 
 function link_name(string $name, string $url) {
-    if (str_ends_with($url, '.pdf')) {
+    [$url_without_query] = explode('?', $url);
+
+    if (str_ends_with($url_without_query, '.pdf')) {
         $name = "[PDF] $name";
     } else if (str_contains($url, 'github.com')) {
         $name = "[GitHub] $name";
     } else if (str_contains($url, 'pastebin.')) {
         $name = "[PasteBin] $name";
+    } else if (str_contains($url, 'reddit.')) {
+        $name = "[Reddit] $name";
     } else if (str_contains($url, "youtube.") || str_contains($url, "youtu.be")) {
         $name = "[YouTube] $name";
     } else if (str_contains($url, "wikipedia.") || str_contains($url, "youtu.be")) {
@@ -189,7 +237,7 @@ function links_html(array $links, array $path = []): string {
     $html = '';
 
     if (array_key_exists('_', $links)) {
-        $html = $links['_'];
+        $html = '<p>' . $links['_'] . "</p>\n";
         $links = [...$links];
         unset($links['_']);
     }
@@ -237,20 +285,14 @@ function links_html(array $links, array $path = []): string {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sammlung interessanter Links</title>
+    <title>Linksammlung</title>
 
     <style>
         <?= default_styles() ?>
-
-        @media screen and (min-width: 900px) {
-            body {
-                font-size: 1.15rem;
-            }
-        }
     </style>
 </head>
 <body style="max-width: 900px; margin: 0 auto 0 auto; padding: 16px;">
-    <h1>Sammlung interessanter Links</h1>
+    <h1>Linksammlung</h1>
 
     <p>
         Hier findest du Links, die ich nützlich oder interessant finde und deshalb

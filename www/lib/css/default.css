@@ -19,6 +19,12 @@ body {
     font-size: 1.05rem;
 }
 
+@media screen and (min-width: 900px) {
+    body {
+        font-size: 1.15rem;
+    }
+}
+
 h1 {
     font-weight: 900;
 }
@@ -33,4 +39,21 @@ h1, h2, h3, h4, h5, h6, p {
 
 a:hover {
     opacity: 0.7;
+}
+
+blockquote {
+    color: #4a4a4a;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    vertical-align: top;
+    text-align: start;
+}
+
+:target {
+    background-color: rgb(255, 255, 108) !important;
 }

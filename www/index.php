@@ -24,28 +24,6 @@ usort($blogs, function ($a, $b) {
     <style>
         <?= default_styles() ?><?= common_styles() ?>
 
-        /* body {
-            font-size: 1.5rem;
-        }
-
-        @media screen and (max-width: 1100px) {
-            body {
-                font-size: 1.4rem;
-            }
-        }
-
-        @media screen and (max-width: 700px) {
-            body {
-                font-size: 1.3rem;
-            }
-        }
-
-        @media screen and (max-width: 550px) {
-            body {
-                font-size: 1.15rem;
-            }
-        } */
-
         .social-links>* {
             padding: 0.25rem;
             display: grid;

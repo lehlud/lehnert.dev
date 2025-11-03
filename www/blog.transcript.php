@@ -26,10 +26,6 @@ if ($blog === null) {
 
     <style>
         <?= default_styles() ?>
-
-        blockquote {
-            color: #4a4a4a;
-        }
     </style>
 
     <script async src="/static/js/mathjax-tex-mml-chtml.js"></script>
