@@ -38,14 +38,14 @@ $glossary = [
 
     'vertikale Kettenkonformität' => '
         Quadratisch invertiertes Mittelmaß der absoluten Tiefendifferenz der Spieler einer Abwehrkette von der mittleren Tiefe der Abwehrkette.<br>
-        \(\text{KKonf}_T = (\sum_{i=1}^n \frac{|T_i - T_\varnothing|}{n})^{-2}\), wobei<br>
+        \(\text{KKonf}_T = (\sum_{i=1}^n \frac{|T_i - T_\varnothing|}{n})^{-1}\), wobei<br>
         [\(n\)]: Anzahl der Spieler in der Abwehrkette<br>
         [\(T_i\)]: Tiefe des \(i\)-ten Spielers der Abwehrkette<br>
         [\(T_\varnothing = \sum_{i=1}^n \frac{T_i}{n}\)]: mittlere Tiefe der Abwehrkette
     ',
     'horizontale Kettenkonformität' => '
         Quadratisch invertiertes Mittelmaß der absoluten Differenz aus dem Abstand der Spieler einer Abwehrkette zueinander und dem Verhältnis aus Breite der Abwehrkette und Anzahl der Verteiger in der Abwehrkette.<br>
-        \(\text{KKonf}_B = (\sum_{i=1}^{n-1} \frac{|d_{B_\varnothing} - d_{B_{i,i+1}}|}{n})^{-2}\), wobei<br>
+        \(\text{KKonf}_B = (\sum_{i=1}^{n-1} \frac{|d_{B_\varnothing} - d_{B_{i,i+1}}|}{n})^{-1}\), wobei<br>
         [\(n\)]: Anzahl der Spieler in der Abwehrkette<br>
         [\(d_{B_{i,j}}\)]: tatsächliche Breitendifferenz des \(i\)-ten und des \(j\)-ten Spielers der Abwehrkette<br>
         [\(d_{B_\varnothing} = \frac{B}{n}\)]: ideale Breitendifferenz zweier Spieler der Abwehrkette<br>
@@ -59,7 +59,7 @@ $glossary = [
 
     'Kompaktheit' => '
         Quadratisch invertiertes Mittelmaß der Abstände der Spieler einer Mannschaft zueinander.<br>
-        \(\text{Komp} = (\sum_{i=2}^n \sum_{j=1}^{i-1} \frac{2 d_{ij}}{n(n-1)})^{-2} \), wobei<br>
+        \(\text{Komp} = (\sum_{i=2}^n \sum_{j=1}^{i-1} \frac{2 d_{ij}}{n(n-1)})^{-1} \), wobei<br>
         [\(n\)]: Anzahl der Spieler der Mannschaft auf dem Feld<br>
         [\(d_{ij}\)]: Abstand zwischen dem \(i\)-ten und dem \(j\)-ten Spieler der Mannschaft<br>
     ',
