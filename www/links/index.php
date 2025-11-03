@@ -7,22 +7,31 @@ $links = [
         'Programmiersprachen' => [
             'Learn X in Y minutes;;Kurzüberblicke über alle bekannteren Programmiersprachen' => 'https://learnxinyminutes.com/',
             'C' => [
-                'Linux Manpages Online' => 'https://man.cx/',
-                'Coroutines in C' => 'https://www.chiark.greenend.org.uk/~sgtatham/coroutines.html',
+                'man.cx;;Online Linux Man-Pages' => 'https://man.cx/',
+                'Coroutines in C;;asynchronen C-Code richtig aufbauen' => 'https://www.chiark.greenend.org.uk/~sgtatham/coroutines.html',
+                'Beispiel Fork-Bombe;;auf meiner CIP-Seite' => 'https://wwwcip.cs.fau.de/~at69yvos/',
             ],
             'Go' => [
-                'Go Tutorials' => 'https://go.dev/doc/tutorial/',
+                'Go Tutorials;;Einführung und häufige Use Cases' => 'https://go.dev/doc/tutorial/',
+            ],
+            'Java' => [
+                'MOOC Java Programming Course;;von der Uni Helsinki' => 'https://java-programming.mooc.fi/',
+            ],
+            'Java-/TypeScript' => [
+                'MDN JavaScript Guides' => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript#javascript_guides',
+                'TypeScript Handbook;;offizielles TypeScript-Handbuch' => 'https://www.typescriptlang.org/docs/handbook/intro.html',
             ],
             'Prolog' => [
                 'The Power of Prolog' => 'https://www.metalevel.at/prolog',
+                'A Tour of Prolog' => 'https://youtu.be/8XUutFBbUrg',
                 'Efficient Prolog: A Practical Guide' => 'https://www.researchgate.net/publication/2820431_Efficient_Prolog_A_Practical_Guide',
                 'The Art of Prolog' => 'https://mitpress.mit.edu/9780262691635/the-art-of-prolog/',
             ],
         ],
         'Competitive Programming' => [
-            'Starting Competitive Programming - Steps and Mistakes' => 'https://youtu.be/bVKHRtafgPc',
-            'Antti Laaksonen: Competitive Programmer’s Handbook' => 'https://cses.fi/book/book.pdf',
             'Algorithms for Competitive Programming' => 'https://cp-algorithms.com/',
+            'Antti Laaksonen: Competitive Programmer’s Handbook' => 'https://cses.fi/book/book.pdf',
+            'Starting Competitive Programming - Steps and Mistakes' => 'https://youtu.be/bVKHRtafgPc',
         ],
         'Forensik/Dateisysteme' => [
             'B. Carrier: File System Forensic Analysis' => 'https://raw.githubusercontent.com/Urinx/Books/master/Forensic/File%20System%20Forensic%20Analysis.pdf',
@@ -41,8 +50,14 @@ $links = [
             'WinAFL;;Windows-Port von AFL' => 'https://github.com/googleprojectzero/winafl',
             'DynamoRIO;;Standard-Instrumentierung für WinAFL' => 'https://dynamorio.org/',
         ],
+        'Signalverarbeitung' => [
+            'Nyquist-Shannon-Abtasttheorem' => 'https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem'
+        ],
         'Medizinische Informatik' => [
 
+        ],
+        'LaTeX' => [
+            'Detexify;;Erkennung gezeichneter LaTeX-Symbole' => 'https://detexify.kirelabs.org/classify.html',
         ],
         'Nicht kategorisiert' => [
             'homematic bidcos default aes key (November 2014)' => 'https://pastebin.com/eiDnuS8N',
@@ -66,6 +81,8 @@ $links = [
         'Web-Apps' => [
             'Haikei;;damit kann man coole <a href="https://en.wikipedia.org/wiki/SVG">SVG</a>-Muster generieren' => 'https://app.haikei.app/',
             'JWT Debugger;;mit <a href="https://en.wikipedia.org/wiki/JSON_Web_Token">JWT</a>s rumspielen' => 'https://www.jwt.io/',
+            'CyberChef;;mit Encodings rumspielen' => 'https://cyberchef.org/',
+            'JSFuck;;JavaScript Obfuscation-Tool' => 'https://jsfuck.com/',
         ],
         'nicht-Chromium-basierte Browser' => [
             '_' => '
@@ -134,6 +151,8 @@ function link_name(string $name, string $url) {
         $name = "[PasteBin] $name";
     } else if (str_contains($url, "youtube.") || str_contains($url, "youtu.be")) {
         $name = "[YouTube] $name";
+    } else if (str_contains($url, "wikipedia.") || str_contains($url, "youtu.be")) {
+        $name = "[Wiki] $name";
     }
 
     return htmlspecialchars($name);
@@ -222,6 +241,12 @@ function links_html(array $links, array $path = []): string {
 
     <style>
         <?= default_styles() ?>
+
+        @media screen and (min-width: 900px) {
+            body {
+                font-size: 1.15rem;
+            }
+        }
     </style>
 </head>
 <body style="max-width: 900px; margin: 0 auto 0 auto; padding: 16px;">
@@ -229,7 +254,7 @@ function links_html(array $links, array $path = []): string {
 
     <p>
         Hier findest du Links, die ich nützlich oder interessant finde und deshalb
-        einfach irgendwo abspeichern wollte, sodass ich sie jederzeit wiederfinden
+        einfach irgendwo abspeichern wollte, damit ich sie jederzeit wiederfinden
         kann.
     </p>
 
