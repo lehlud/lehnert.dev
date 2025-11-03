@@ -18,9 +18,9 @@ if ($blog === null) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.svg" type="image/svg">
 
-    <meta name="keywords" content="ludwig lehnert,blog,<?= join(",", $blog->keywords()) ?>">
+    <meta name="keywords" content="Ludwig Lehnert,Blog,<?= join(",", $blog->keywords()) ?>">
 
     <title><?= $blog->title() ?></title>
 
