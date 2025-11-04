@@ -88,13 +88,23 @@ $glossary = [
     <style>
         <?= default_styles() ?>
 
-        th {
-            padding-right: 0.4em;
+        td, th {
+            padding: 0.2em;
         }
 
-        td, th {
-            padding-top: 0.2em;
-            padding-bottom: 0.2em;
+        @media screen and (max-width: 650px) {
+            tr, td, th {
+                all: unset;
+                display: block;
+            }
+
+            th {
+                font-weight: bold;
+            }
+
+            tr {
+                padding: 0.3em;
+            }
         }
 
         tr:nth-child(even) {
