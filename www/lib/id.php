@@ -1,4 +1,3 @@
-
 <?php
 
 function make_id(string $str): string {

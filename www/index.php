@@ -18,7 +18,7 @@ usort($blogs, function ($a, $b) {
     <link rel="shortcut icon" href="/favicon.svg" type="image/svg">
     <meta name="theme-color" content="#fff" />
 
-    <title>lehnert.dev</title>
+    <title>Personal Homepage of Ludwig Lehnert</title>
     <meta name="keywords" content="Ludwig,Ludwig Lehnert,Nürnberg,Pegnitz,Nuremberg,Informatik,Computer,Copmuter Science,FAU,Friedrich Alexander Universität,Erlangen" />
 
     <style>
@@ -110,10 +110,13 @@ usort($blogs, function ($a, $b) {
             <a href="/sitemap.xml">Sitemap</a>&nbsp;
         </p>
 
+        <p>&copy; <?= date("Y") ?> Ludwig Lehnert</p>
+
         <!-- SEO Tags -->
         <h1 class="none">Ludwig Lehnert</h1>
         <h2 class="none">Computer Science/Informatik</h2>
         <h2 class="none">Nürnberg/Nuremberg/Erlangen</h2>
+        <p class="none">This is the personal homepage of Ludwig Lehnert</p>
     </footer>
 </body>
 

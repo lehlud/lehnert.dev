@@ -55,6 +55,7 @@ $links = [
             'System V ABI' => 'https://refspecs.linuxbase.org/elf/x86_64-abi-0.99.pdf',
         ],
         'Fuzzing' => [
+            'Miller, Frederiksen, So: Study of the Reliability of UNIX Utilities' => 'https://dl.acm.org/doi/pdf/10.1145/96267.96279',
             'AFL' => 'https://github.com/google/AFL',
             'AFL++' => 'https://github.com/AFLplusplus/AFLplusplus',
             'OSS-Fuzz' => 'https://github.com/google/oss-fuzz',
