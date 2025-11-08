@@ -1,0 +1,110 @@
+<!-- Copyright (C) 2024	Philip Kaludercic -->
+
+<!-- This program is free software: you can redistribute it and/or modify -->
+<!-- it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation, either version 3 of the License, or -->
+<!-- (at your option) any later version. -->
+
+<!-- This program is distributed in the hope that it will be useful, -->
+<!-- but WITHOUT ANY WARRANTY; without even the implied warranty of -->
+<!-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the -->
+<!-- GNU General Public License for more details. -->
+
+<!-- You should have received a copy of the GNU General Public License -->
+<!-- along with this program.  If not, see <https://www.gnu.org/licenses/>. -->
+
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="referrer" content="none" />
+    <meta  name="viewport" content="width=device-width" />
+    <title>Quiz</title>
+    <link rel="stylesheet" href="quiz.css" />
+    <script src="conf.js"></script>
+    <script src="quiz.js"></script>
+  </head>
+  <body>
+    <main class="info-box">
+      <div id="metadata">
+	Quelle: <span id="metadata-data">N/A</span>
+      </div>
+
+      <div id="info" class="info-box">
+        <aside >
+	  <h1 id="title">Quiz</h1>
+	  <div id="desc"></div>
+	  <p>
+	    Diese Seite benutzt <a href="https://en.wikipedia.org/wiki/Web_storage">Web storage</a>
+	    um zu lokal zu verfolgen welche Fragen wie oft richtig oder falsch
+	    beantwortet wurden.  Man kann diese Daten mittels des Browsers
+	    zurücksetzen, siehe bspw. für
+	    <a href="https://support.mozilla.org/en-US/kb/storage">Firefox</a>.
+	  </p>
+	  <hr />
+	  <p>
+	    <strong>Tipp zum Benutzen dieser Seite:</strong>
+	    Man kann alles mit der Tastatur eingeben!  Die
+	    Fragen <em>1</em> bis <em>10</em> können auch über die
+	    Tasten <kbd>1</kbd> bis <kbd>0</kbd> eingegeben werden,
+	    und mit <kbd>Enter</kbd> (oder <kbd>Space</kbd>) bestätigt werden.  Ein
+	    weiteres <kbd>Enter</kbd> (oder <kbd>Space</kbd>) öffnet die nächste Frage.
+	  </p>
+        </aside>
+	<button id="info-toggle">𝒊</button>
+      </div>
+
+      <noscript>
+	<p>
+	  Diese Seite benötigt leider Javascript um beabsichtigt
+	  funktionieren!
+	</p>
+	<p>
+	  Die Fragen können
+	  auch <a href="quiz.json">hier</a> direkt heruntergeladen und
+	  selbst verwertet werden.
+	</p>
+      </noscript>
+
+      <img id="media" />
+      <section id="text">
+	<!-- questions shall be inserted here -->
+      </section>
+    </main>
+    <section id="options">
+      <ol id="answers"></ol>
+    </section>
+    <button id="action"></button>
+
+    <table id="stats">
+
+    <tr>
+    <td><label for="seen">Gesehen:</label></td>
+    <td><progress id="seen"></progress></td>
+    </tr>
+    <tr>
+
+    <td><label for="correct">
+    <abbr title="Wie viele Fragen wurden insgesamt schon mehrheitlich richtig beantwortet?">#Richtig</abbr>:
+    </label></td>
+    <td><meter id="correct"></meter></td>
+    </tr>
+
+    <tr>
+    <td><label for="success">
+    <abbr title="Wie häufig  wurde diese Frage richtig beantwortet?">@Richtig</abbr>:
+    </label></td>
+    <td><meter id="success"></meter></td>
+    </tr>
+
+    </table>
+
+    <input type="checkbox" id="display-hl" class="display-hl" />
+    <label for="display-hl" class="display-hl">
+      Hebe <abbr title="Wörter wie &quot;immer&quot;, &quot;nie&quot;, ...">Warnwörter</abbr> hervor
+    </label>
+    <a class="shy" id="report" href="index.html#" target="_blank" rel="noopener noreferrer">Fehler melden</a>
+    <a class="shy" id="perma" href="index.html#">Dauerlink</a>
+    <span id="display-hl-hack"></span>
+  </body>
+</html>

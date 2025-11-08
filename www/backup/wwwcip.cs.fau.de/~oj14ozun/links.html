@@ -1,0 +1,2832 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de" xml:lang="de">
+<head>
+<!-- 2025-07-29 Tue 23:59 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sammlung Interessanter Webseiten</title>
+<meta name="author" content="Philip KALUĐERČIĆ" />
+<meta name="generator" content="Org Mode" />
+<style type="text/css">
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="org-div-home-and-up">
+ <a accesskey="h" href="https://wwwcip.cs.fau.de/~oj14ozun/"> UP </a>
+ |
+ <a accesskey="H" href="https://wwwcip.cs.fau.de/~oj14ozun/"> HOME </a>
+</div><div id="content" class="content">
+<h1 class="title">Sammlung Interessanter Webseiten
+<br />
+<span class="subtitle">Abenteuer entlang des <i>Superhighway de la Informatique</i> &#x2013; Eine öffentliche Sammlung von &bdquo;Hyper-Lesezeichen&ldquo;</span>
+</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>Inhaltsverzeichnis</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="links.html#cs">Informatik</a>
+<ul>
+<li><a href="links.html#csbooks">Zu Büchern</a></li>
+<li><a href="links.html#prog">Zu Programmiersprachen</a>
+<ul>
+<li><a href="links.html#prog:ada">Ada</a></li>
+<li><a href="links.html#prog:algol">Algol</a></li>
+<li><a href="links.html#prog:apl">APL &amp; co.</a></li>
+<li><a href="links.html#prog:assembler">Assembler</a>
+<ul>
+<li><a href="links.html#prog:assembler:x86">x86 Assembler</a></li>
+<li><a href="links.html#prog:assembler:riscv">RISC-V Assembler</a></li>
+</ul>
+</li>
+<li><a href="links.html#prog:awk">AWK</a></li>
+<li><a href="links.html#prog:c">C</a></li>
+<li><a href="links.html#prog:erlang">Erlang</a></li>
+<li><a href="links.html#prog:forth">Forth</a></li>
+<li><a href="links.html#prog:fortran">Fortran</a></li>
+<li><a href="links.html#prog:haskell">Haskell</a></li>
+<li><a href="links.html#prog:www">HTML/CSS/etc. und das WWW</a></li>
+<li><a href="links.html#prog:tex">{La,}TeX</a></li>
+<li><a href="links.html#prog:lisp">Lisp</a></li>
+<li><a href="links.html#prog:ocaml/ml">ML Familie (Ocaml, Standard ML)</a></li>
+<li><a href="links.html#prog:prolog">Prolog</a></li>
+<li><a href="links.html#prog:scheme">Scheme</a></li>
+<li><a href="links.html#prog:smalltalk">Smalltalk</a></li>
+</ul>
+</li>
+<li><a href="links.html#science">Zu <i>Computer Science</i> als Wissenschaft</a></li>
+<li><a href="links.html#theory">Zu Theoretische Informatik</a>
+<ul>
+<li><a href="links.html#org2416b28">Zu Automaten Theorie</a></li>
+</ul>
+</li>
+<li><a href="links.html#hardware">Zu Geräte, Hardware, Schaltungen und Elektrik</a></li>
+<li><a href="links.html#compiler">Zu Übersetzer</a></li>
+<li><a href="links.html#sp">Zur Systemprogrammierung</a></li>
+<li><a href="links.html#os">Zu Betriebsysteme (im weiteren Sinne)</a>
+<ul>
+<li><a href="links.html#os:unix">Zu (und gegen) U*ix</a></li>
+<li><a href="links.html#linux">Zu Linux</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="links.html#internet">Internet und Technische Kultur</a>
+<ul>
+<li><a href="links.html#archiv">Zur Archivierung</a></li>
+<li><a href="links.html#wiki:wikipedia">Zu Wikipedia Seiten</a></li>
+<li><a href="links.html#pastebin">Zu (Anonymen) Pastebins</a></li>
+<li><a href="links.html#folk">Zur Geschichte und Folklore der Informatik</a></li>
+<li><a href="links.html#editor">Zu Textbearbeitungsprogrammen</a>
+<ul>
+<li><a href="links.html#editor:emacs">Zu Emacs</a></li>
+</ul>
+</li>
+<li><a href="links.html#android">Zu Android Anwendungen</a></li>
+<li><a href="links.html#firefox">Zu Firefox Extensions</a></li>
+<li><a href="links.html#privacy">Zu Datenschutz und Privatssphäre</a></li>
+</ul>
+</li>
+<li><a href="links.html#math">Mathematik</a>
+<ul>
+<li><a href="links.html#logik">Zu Logik</a>
+<ul>
+<li><a href="links.html#logik:proofassistant">Zu Beweis-Assistenten/Theorem-Beweisern</a></li>
+<li><a href="links.html#logik:solver">Zu Solvern</a></li>
+</ul>
+</li>
+<li><a href="links.html#cattheory">Zu Category Theory</a></li>
+<li><a href="links.html#topology">Zu Topologie</a></li>
+<li><a href="links.html#typetheory">Zu Type Theory</a></li>
+<li><a href="links.html#gametheory">Zu Game Theory</a></li>
+</ul>
+</li>
+<li><a href="links.html#philos">Philosophie</a></li>
+<li><a href="links.html#physik">Physik (und Astronomie)</a></li>
+<li><a href="links.html#spiele">Spiele</a>
+<ul>
+<li><a href="links.html#org332ca1b">&bdquo;Video Spiele&ldquo;</a></li>
+</ul>
+</li>
+<li><a href="links.html#ebook">AUDIO- und Ebook Seiten</a></li>
+<li><a href="links.html#lang">Gesprochene, Natürliche und Konstruierte Sprachen</a></li>
+<li><a href="links.html#orgce852af">Navigation, Reisen und Verwandtes</a></li>
+<li><a href="links.html#cooking">Kochen, &amp;c.</a></li>
+<li><a href="links.html#art">Kunst und Design</a>
+<ul>
+<li><a href="links.html#art:comics">Web Comics</a></li>
+</ul>
+</li>
+<li><a href="links.html#musik">Musik</a>
+<ul>
+<li><a href="links.html#musik:lieder">Lieder und Kompositionen</a></li>
+</ul>
+</li>
+<li><a href="links.html#filme">Filme</a></li>
+<li><a href="links.html#fau">FAU</a></li>
+<li><a href="links.html#orgas">Organisationen</a></li>
+<li><a href="links.html#evil">Böse Links</a></li>
+<li><a href="links.html#sonstig">Weitere Link Seiten</a></li>
+</ul>
+</div>
+</div>
+<p>
+Auf dieser Seite habe ich Links gesammelt, auf welche ich später
+nochmal zurückkommen oder mich beziehen will.  Es ist der Versuch den
+Zustand zu vermeiden, sich an eine Seite zu erinnern ohne zu wissen
+wie ich diese wieder finden kann.
+</p>
+
+<p>
+Meine lieblings-, bzw. besonders empfehlenswerten Seiten sind mit
+einem <img new="new link" src="../smileys/idea.png"/> markiert.
+</p>
+
+<p>
+Die Seite wurde im wesentlichem im Zustand eingefroren am
+<span class="timestamp-wrapper"><span class="timestamp">&lt;2025-07-29 Tue&gt;</span></span>, und wird nicht mehr weiter aktualisiert, nach
+ungefähr drei Jahren der aktiven Instandhaltung.
+</p>
+<div id="outline-container-cs" class="outline-2">
+<h2 id="cs">Informatik</h2>
+<div class="outline-text-2" id="text-cs">
+<ul class="org-ul">
+<li><a href="https://www.cs.cmu.edu/~pattis/quotations.html">Quotations for Learning and Programming</a></li>
+<li><a href="https://www.nand2tetris.org/">From Nand to Tetris</a></li>
+<li><a href="https://missing.csail.mit.edu/">The Missing Semester of Your CS Education</a></li>
+<li><a href="https://teachyourselfcs.com/">Teach Yourself Computer Science</a></li>
+<li><a href="https://download-mirror.savannah.gnu.org/releases/pgubook/ProgrammingGroundUp-1-0-booksize.pdf">Programming from the Ground Up</a></li>
+<li><a href="https://jeffreykegler.github.io/personal/timeline_v3">Parsing: a timeline</a></li>
+<li><a href="https://www.youtube.com/watch?v=EbLh7rZ3rhU">Systems Thinking Speech by Dr. Russell Ackoff</a></li>
+<li><a href="https://mfleck.cs.illinois.edu/building-blocks/index-sp2020.html">Building Blocks for Theoretical Computer Science</a></li>
+<li><a href="https://www.tug.org/texshowcase/cheat.pdf">Theoretical Computer Science Cheat Sheet</a></li>
+<li><a href="https://float.exposed/">Float Exposed</a></li>
+<li><a href="https://intronetworks.cs.luc.edu/current2/mobile/">An Introduction to Computer Networks</a></li>
+<li><a href="https://github.com/corkami/pics/blob/master/binary/README.md">Visualisierungen diverser Themen</a></li>
+<li><a href="https://sigbovik.org/">The Association for Computational Heresy</a></li>
+<li><a href="https://www.alchemistowl.org/pocorgtfo/">International Journal of <i>Proof-of-Concept or Get The F*** Out</i></a></li>
+<li><a href="https://web.archive.org/web/20231021210556/http://www.inwap.com/pdp10/hbaker/hakmem/hakmem.html">HAKMEM</a> in HTML</li>
+<li><a href="https://qiao.github.io/PathFinding.js/visual/">Visualisation of Path Finding Algorithms</a></li>
+<li><a href="https://quantumalgorithmzoo.org/">Quantum Algorithm Zoo</a></li>
+<li><a href="https://csrankings.org/#/index?all&amp;world">Computer Science Rankings</a></li>
+</ul>
+</div>
+<div id="outline-container-csbooks" class="outline-3">
+<h3 id="csbooks">Zu Büchern</h3>
+<div class="outline-text-3" id="text-csbooks">
+<ul class="org-ul">
+<li><a href="https://en.wikipedia.org/wiki/Introduction_to_Algorithms">Introduction to Algorithms</a> (CLRS)</li>
+<li><a href="https://www-cs-faculty.stanford.edu/~knuth/taocp.html">The Art of Computer Programming</a> (TAOCP)</li>
+<li><a href="https://www.pearson.com/us/higher-education/program/Hopcroft-Introduction-to-Automata-Theory-Languages-and-Computation-3rd-Edition/PGM64331.html">Introduction to Automata Theory, Languages, and Computation</a> (<i>Cinderella Book</i>)</li>
+<li><a href="https://en.wikipedia.org/wiki/G%C3%B6del,_Escher,_Bach">Gödel, Escher, Bach</a> (<i>GEB</i>, <a href="https://www.youtube.com/playlist?list=PLBOgSgXfJ6B2nbZ_YREW_Nb-AX8FW9U9K">Aufnahmen</a> von der <a href="https://ocw.mit.edu/courses/es-258-goedel-escher-bach-spring-2007/">MIT Vorlesung</a>)</li>
+<li><a href="https://en.wikipedia.org/wiki/The_Cathedral_and_the_Bazaar">The Cathedral and the Bazaar</a> (<i>CatB</i>, fragwürdig)</li>
+<li><a href="https://archive.org/details/ProgrammingPearls2ndEditionJonBentley">Programming Pearls</a>
+<ul class="org-ul">
+<li><a href="https://www.cambridge.org/core/books/pearls-of-functional-algorithm-design/B0CF0AC5A205AF9491298684113B088F">Pearls of Functional Algorithm Design</a></li>
+</ul></li>
+<li><a href="https://softwarefoundations.cis.upenn.edu/">Software Foundations</a> <img new="new link" src="../smileys/idea.png"/></li>
+<li><a href="https://mitpress.mit.edu/books/concepts-techniques-and-models-computer-programming">Concepts, Techniques, and Models of Computer Programming</a></li>
+<li><a href="https://www.pearson.com/us/higher-education/program/Bryant-Computer-Systems-A-Programmer-s-Perspective-3rd-Edition/PGM2476825.html">Computer Systems: A Programmer&rsquo;s Perspective, 3rd Edition</a></li>
+<li><a href="https://www.pearson.com/us/higher-education/program/Russell-Artificial-Intelligence-A-Modern-Approach-4th-Edition/PGM1263338.html">Artificial Intelligence: A Modern Approach</a></li>
+<li><a href="https://cs.brown.edu/courses/cs173/2012/book/index.html">Programming Languages: Application and Interpretation</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-prog" class="outline-3">
+<h3 id="prog">Zu Programmiersprachen</h3>
+<div class="outline-text-3" id="text-prog">
+<ul class="org-ul">
+<li><a href="https://hyperpolyglot.org/">Hyperpolyglot</a>: Commonly used features in a side-by-side format</li>
+<li><a href="https://learnxinyminutes.com/">Learn X in Y minutes</a>: Take a whirlwind tour of your next favorite language.</li>
+<li><a href="https://rosettacode.org/wiki/Rosetta_Code">Rosetta Code</a> <img new="new link" src="../smileys/idea.png"/></li>
+<li><a href="https://slebok.github.io/zoo/index.html">Grammar Zoo</a>, eine Sammlung von formalen Grammatiken für echte  (Computer) Sprachen</li>
+<li><a href="http://helloworldcollection.de/">The Hello World Collection</a></li>
+<li><a href="https://web.archive.org/web/20111118234422/hopl.murdoch.edu.au/home.prx">HOPL: an interactive Roster of Programming Languages</a></li>
+<li><a href="https://www.cs.man.ac.uk/~pjj/cs211/language.html">Humourous looks at programming languages</a></li>
+<li><a href="http://www.math.bas.bg/bantchev/place/languages.html">Programming Languages</a>: Eine Sammlung von Einführungen</li>
+<li><a href="https://madhadron.com/programming/seven_ur_languages.html">The seven programming ur-languages</a></li>
+<li><a href="https://www.levenez.com/lang/">Computer Languages History</a></li>
+<li><a href="http://rigaux.org/language-study/syntax-across-languages-per-language/">Syntax Across Languages per Language</a></li>
+<li><a href="https://www.cs.cmu.edu/~crary/819-f09/Strachey67.pdf">Fundamental Concepts in Programming Languages</a>, Christopher Strachey (1967)</li>
+<li>Interessante, kleinere Programmiersprachen:
+<ul class="org-ul">
+<li><a href="https://www.curry-lang.org/">Curry</a> (<a href="https://web.cecs.pdx.edu/~antoy/flp/patterns/">FLP Design Patterns</a>)</li>
+<li><a href="https://www.unison-lang.org/">Unison</a></li>
+<li><a href="https://www.idris-lang.org/">Idris</a></li>
+<li><a href="http://www.aldor.org/">Aldor</a></li>
+<li><a href="https://erights.org/">E</a></li>
+<li><a href="https://www.mathstat.dal.ca/~selinger/quipper/">Quipper</a></li>
+<li><a href="https://austral-lang.org/">Austral</a></li>
+<li><a href="https://www.uiua.org/">Uiua</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Euclid_(programming_language)">Euclid</a> und <a href="https://en.wikipedia.org/wiki/Turing_programming_language">Turing</a></li>
+<li><a href="https://chapel-lang.org/">Chapel</a></li>
+<li><a href="https://shenlanguage.org/">Shen</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Refal">Refal</a></li>
+<li><a href="https://www.eff-lang.org/">Eff</a> (nicht <a href="https://www.researchgate.net/profile/Martin-Hyland-2/publication/243779566_The_e_ective_topos/links/58ee9b74a6fdcc61cc1266ca/The-e-ective-topos.pdf">Eff</a>)
+<ul class="org-ul">
+<li><a href="https://koka-lang.github.io/koka/doc/index.html">Koka</a></li>
+</ul></li>
+<li><a href="https://www.cs.bu.edu/~hwxi/atslangweb/">ATS</a></li>
+<li><a href="https://dusa.rocks/docs/">Dusa</a></li>
+<li><a href="https://terralang.org/">Terra</a></li>
+<li><a href="https://dafny.org/">Dafny</a></li>
+<li><a href="https://entropy-lang.org/">Entropy</a></li>
+<li><a href="https://pll.cpsc.ucalgary.ca/charity1/www/home.html">Charity</a></li>
+<li><a href="https://www2.cs.arizona.edu/icon/">Icon</a>, ein Nachfolger von <a href="http://snobol4.com/">SNOBOL</a></li>
+<li><a href="https://picat-lang.org/">Picat</a></li>
+</ul></li>
+<li><a href="https://plzoo.andrej.com/">Programming Language Implementation Zoo</a></li>
+<li><a href="https://benchmarksgame-team.pages.debian.net/benchmarksgame/index.html">The Computer Language Benchmarks Game</a></li>
+<li><a href="https://www.programming-idioms.org/cheatsheets">Cheatsheets</a> von &bdquo;programming-idioms.org&ldquo;</li>
+<li><a href="https://poignant.guide/">Poignant Guide to Ruby</a> von <a href="https://viewsourcecode.org/why/">_why</a> (einfach so lesbar)</li>
+<li><a href="https://www.cis.upenn.edu/~bcpierce/courses/670Fall04/GreatWorksInPL.shtml">Great Works in Programming Languages</a></li>
+<li><a href="https://literateprograms.org/">LiterateProgramms</a> Wiki, Sammlung und Kommentare von Programmen in verschiedenen Sprachen</li>
+<li>Wikipedia Seite <a href="https://en.wikipedia.org/wiki/Generational_list_of_programming_languages">Generational list of programming languages</a></li>
+</ul>
+</div>
+<div id="outline-container-prog:ada" class="outline-4">
+<h4 id="prog:ada">Ada</h4>
+<div class="outline-text-4" id="text-prog:ada">
+<ul class="org-ul">
+<li><a href="http://www.iment.com/maida/computer/redref/index.htm">Overview of the Ada Language Competition</a> (<a href="https://web.archive.org/web/20200914235620/https://dwheeler.com/steelman/steelman.htm">context</a>)</li>
+<li><a href="https://www.gnu.org/software/gnat/">GNAT (GNU Ada)</a></li>
+<li><a href="https://www.adacore.com/about-spark">SPARK</a> (Sehr strenges Fragment von Ada)</li>
+<li>&bdquo;<a href="https://ada-lang.io/">ada-lang.io</a>&ldquo;</li>
+<li><a href="https://learn.adacore.com/pdf_books/courses/intro-to-embedded-sys-prog.pdf">Introduction to Systems Programming</a></li>
+<li><a href="https://www.adaic.org/resources/add_content/standards/95lrm/ARM_HTML/RM-TTL.html">Ada Reference Manual</a> (1995)</li>
+<li><a href="http://www.ada-auth.org/standards/">Ada Standard</a> (2012, 2022)</li>
+<li><a href="https://dl.acm.org/doi/pdf/10.1145/6424.6425">Why Ada® is not Just Another Programming Language</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-prog:algol" class="outline-4">
+<h4 id="prog:algol">Algol</h4>
+<div class="outline-text-4" id="text-prog:algol">
+<blockquote>
+<p>
+Here is a language so far ahead of its time that it was not only an
+improvement on its predecessors but also on nearly all its
+successors. (Tony Hoare)
+</p>
+</blockquote>
+
+<ul class="org-ul">
+<li><a href="https://jmvdveer.home.xs4all.nl/en.algol-68-genie.html">Algol 68 Genie</a>, ein Algol 68 Compiler</li>
+<li><a href="https://jmvdveer.home.xs4all.nl/learning-algol-68-genie.pdf">Learning Algol 68 Genie</a> Buch</li>
+<li><a href="https://www.softwarepreservation.org/projects/ALGOL/report/Algol68_revised_report-AB-600dpi.pdf">Revised Report on the Algorithmic Language Algol 68</a> (1978, <a href="https://jmvdveer.home.xs4all.nl/en.post.algol-68-revised-report.html">html</a>)</li>
+<li><a href="https://archive.computerhistory.org/resources/text/algol/algol_bulletin/">The Algol Bulletin</a></li>
+<li><a href="https://dl.acm.org/doi/pdf/10.1145/155360.155365">A History of Algol 68</a></li>
+<li><a href="https://dcreager.net/wirth/1968-closing-word/">Closing word of the ALGOL Colloquium</a>, Niklaus Wirth (1968)</li>
+<li><a href="https://www.bitsavers.org/pdf/burroughs/LargeSystems/B5000_5500_5700/5000-21001-D_An_Introduction_to_Algol_60_for_the_B5000_Information_Processing_System_196112.pdf">An Introduction to ALGOL 60</a>, für die <a href="https://en.wikipedia.org/wiki/Burroughs_Large_Systems">Burroughs Large Systems</a> (<a href="https://www.phkimpel.us/B5500/">B5000</a>)</li>
+<li><a href="https://algol68-lang.org/">https://algol68-lang.org/</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-prog:apl" class="outline-4">
+<h4 id="prog:apl">APL &amp; co.</h4>
+<div class="outline-text-4" id="text-prog:apl">
+<ul class="org-ul">
+<li><a href="https://aplwiki.com/wiki/Conway%27s_Game_of_Life">Conway&rsquo;s Game of Life</a> in APL, und eine <a href="https://www.youtube.com/watch?v=a9xAKttWgP4">Video</a> Erklärung</li>
+<li><a href="https://aplwiki.com/wiki/Main_Page">APLWiki</a></li>
+<li><a href="https://aplwiki.com/wiki/Mnemonics">Mnemonics</a></li>
+<li><a href="http://mgeiss.de/apl_euler.pdf">Getting started in APL by solving Project Euler problems 1 to 50</a></li>
+<li><a href="https://dl.acm.org/doi/10.1145/358896.358899">Notation as a tool of thought</a> (<a href="https://www.jsoftware.com/papers/tot.htm">html</a>), <i>ACM Turing Award Lecture</i> von <a href="https://en.wikipedia.org/wiki/Kenneth_E._Iverson">Kenneth E. Iverson</a></li>
+<li><a href="https://aplcart.info/">APLcart</a>, eine Sammlung häufiger Methoden</li>
+<li><a href="https://www.jsoftware.com/help/jforc/contents.htm">J for C Programmers</a></li>
+<li><a href="https://code.jsoftware.com/wiki/NuVoc">J Primitives</a></li>
+<li><a href="https://github.com/kevinlawler/kona">Kona</a>, eine freie Implementierung von <a href="https://en.wikipedia.org/wiki/K_(programming_language)">K</a> (<a href="https://vrabi.web.elte.hu/k/kbyeg.k">&#x2026; by example</a>)</li>
+<li><a href="https://www.youtube.com/watch?v=8kUQWuK1L4w">The Origins of APL</a> (1974)</li>
+<li><a href="https://www.youtube.com/watch?v=_DTpQ4Kk2wA">APL demonstration 1975</a>, von dem Imperial College</li>
+<li><a href="http://www.softwarepreservation.net/projects/apl/Books/198512_Multics%20APL%20Users%20Guide_AK95-02.pdf">Multics APL User Guide</a> (1985)</li>
+<li><a href="https://archive.org/details/byte-magazine-1977-08">APL Ausgabe</a> von Byte Magazine (1977)</li>
+<li><a href="https://github.com/phantomics/april">April</a>, <i>Array Programming Re-Imagined in Lisp</i></li>
+<li><a href="http://archive.vector.org.uk/art10011550">APL &#x2013; a Glimpse of Heaven</a></li>
+<li><a href="https://www.ibm.com/downloads/cas/ZOKMYKOY">APL2 Reference Manual</a> (1994)</li>
+<li><a href="https://dl.acm.org/doi/pdf/10.1145/242711.242713">Linear Programming in APL</a></li>
+<li><a href="https://combinatorylogic.com/">Combinatory Logic</a></li>
+<li>Vortrag <a href="https://www.youtube.com/watch?v=F1q-ZxXmYbo">Techniques For Removing Explicit Loops And Recursion</a></li>
+<li><a href="https://xpqz.github.io/cultivations/Intro.html">APL Cultivations</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-prog:assembler" class="outline-4">
+<h4 id="prog:assembler">Assembler</h4>
+<div class="outline-text-4" id="text-prog:assembler">
+<ul class="org-ul">
+<li><a href="https://web.archive.org/web/20010903173628/http://cs.smith.edu:80/~thiebaut/ArtOfAssembly/fwd/fwd.html">The Art of Assembly Language</a></li>
+<li>Video Serie: <a href="https://www.youtube.com/playlist?list=PLp_QNRIYljFodYzuBukhRRGHhzP1ZS4DI">Learn PDP-11 Assembly</a></li>
+<li><a href="http://highgate.comm.sfu.ca/pdp8/">Highgate&rsquo;s PDP-8 Page</a></li>
+<li><a href="https://www.pdp8online.com/">Online PDP-8 Home Page</a></li>
+<li>Buch <a href="https://www.xorpd.net/pages/xchg_rax/snip_00.html">xchg rax,rax</a>, Assembler Rätsel</li>
+<li><a href="http://skilldrick.github.io/easy6502/">Easy 6502</a>, eine Einführung zum Programmieren vom
+<a href="https://en.wikipedia.org/wiki/MOS_Technology_6502">MOS Technology 6502</a> (benutzt im NES, Commodore, BBC Basic, &#x2026;)</li>
+<li><a href="https://flatassembler.net/">Flat Assembler</a>, <i>Assembly language resources</i></li>
+</ul>
+</div>
+<div id="outline-container-prog:assembler:x86" class="outline-5">
+<h5 id="prog:assembler:x86">x86 Assembler</h5>
+<div class="outline-text-5" id="text-prog:assembler:x86">
+<ul class="org-ul">
+<li><a href="https://github.com/vsergeev/apfcp">x86 Assembly Primer for C Programmers</a></li>
+<li><a href="https://flint.cs.yale.edu/cs421/papers/x86-asm/asm.html">x86 Assembly Guide</a>, von Yale <img new="new link" src="../smileys/idea.png"/></li>
+<li><a href="https://www.intel.com/content/www/us/en/developer/articles/technical/intel-sdm.html">Intel® 64 and IA-32 Architectures Software Developer Manuals</a></li>
+<li><a href="https://pdos.csail.mit.edu/6.828/2008/readings/i386/toc.htm">Intel 80386 Reference Programmer&rsquo;s Manual</a></li>
+<li><a href="https://cs.lmu.edu/~ray/notes/nasmtutorial/">NASM Tutorial</a>, für den <a href="https://nasm.us/">Netwide Assembler</a></li>
+<li><a href="https://www.felixcloutier.com/x86/">x86 and amd64 instruction reference</a> oder <a href="https://c9x.me/x86/">x86 Instruction Set Reference</a></li>
+<li><a href="https://www.swansontec.com/sregisters.html">The Art of Picking Intel Registers</a></li>
+<li><a href="https://www.agner.org/optimize/">Software optimization resources</a></li>
+<li><a href="https://db.in.tum.de/~finis/x86-intrin-cheatsheet-v2.1.pdf">x86 Intrinsics Cheat Sheet</a></li>
+<li><a href="https://net.cs.uni-bonn.de/fileadmin/user_upload/plohmann/x86_opcode_structure_and_instruction_overview.pdf">x86 Opcode Structure and Instruction Overview</a></li>
+<li><a href="https://www.officedaytime.com/simd512e/">x86/x64 SIMD Instruction List</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-prog:assembler:riscv" class="outline-5">
+<h5 id="prog:assembler:riscv">RISC-V Assembler</h5>
+<div class="outline-text-5" id="text-prog:assembler:riscv">
+<ul class="org-ul">
+<li><a href="https://riscv.org/">RISC-V</a> Webseite</li>
+<li><a href="https://www.cp.eng.chula.ac.th/~prabhas/teaching/comparch/2022/Programming-RISC-V-assembly.htm">Programming in RISC-V assembly and Compiling C to RISC-V assembly</a></li>
+<li><a href="https://www.cs.cornell.edu/courses/cs3410/2019sp/riscv/interpreter/">RISC-V Interpreter</a>, von Cornell</li>
+<li>Buch: <a href="https://riscv-programming.org/book.html">An Introduction to Assembly Programming with RISC-V</a></li>
+<li><a href="https://github.com/mnurzia/rv">RISC-V CPU in C89</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-prog:awk" class="outline-4">
+<h4 id="prog:awk">AWK</h4>
+<div class="outline-text-4" id="text-prog:awk">
+<ul class="org-ul">
+<li><a href="http://www.awklang.org/">Website zu allem AWK</a></li>
+<li>Das Buch <a href="https://archive.org/details/pdfy-MgN0H1joIoDVoIC7/">The AWK programming language</a>, von Aho, Kernighan und Weinberger</li>
+<li><a href="https://awk.dev/">The AWK Programming Language, Second Edition</a> (neu)</li>
+<li><a href="https://catonmat.net/blog/wp-content/uploads/2008/09/awk1line.txt">Handy One-Liners For AWK</a></li>
+<li><a href="https://catonmat.net/awk-one-liners-explained-part-one">Awk One-Liners Explained</a></li>
+<li><a href="https://github.com/TheMozg/awk-raycaster">Ray Casting in AWK</a></li>
+<li><a href="https://github.com/djanderson/aho">Git in AWK</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-prog:c" class="outline-4">
+<h4 id="prog:c">C</h4>
+<div class="outline-text-4" id="text-prog:c">
+<p>
+Siehe &bdquo;<a href="https://wwwcip.cs.fau.de/~oj14ozun/sp/siehe-auch/c.html">Links zu C</a>&ldquo; auf meiner Tutor-Seite, wie auch &bdquo;<a href="https://wwwcip.cs.fau.de/~oj14ozun/sp/siehe-auch/stdlib.html">Standard Library
+Implementierungen</a>&ldquo;, &bdquo;<a href="https://wwwcip.cs.fau.de/~oj14ozun/sp/siehe-auch/userland.html">Userland Implementierungen</a>&ldquo; und &bdquo;<a href="https://wwwcip.cs.fau.de/~oj14ozun/sp/siehe-auch/compiler.html">Compiler
+Implementierungen</a>&ldquo;.
+</p>
+
+<ul class="org-ul">
+<li><a href="https://robbertkrebbers.nl/research/thesis.pdf">The C standard formalized in Coq</a></li>
+<li><a href="https://www.open-std.org/JTC1/SC22/WG14/www/docs/historic/C++_as_close_as_possible.pdf">C++: A close as posible to C &#x2013; but no closer</a> (1989)</li>
+<li><a href="https://www.cl.cam.ac.uk/research/security/ctsrd/pdfs/201503-asplos2015-cheri-cmachine.pdf">Beyond the PDP-11: Architectural support for a memory-safe C abstract machine</a></li>
+<li><a href="https://www.lysator.liu.se/c/pikestyle.html">Notes on Programming in C</a>, Rob Pike (Pike-Style)</li>
+<li><a href="https://jorenar.com/blog/less-known-c">Few lesser known tricks, quirks and features of C</a></li>
+<li><a href="https://frama-c.com/">Frama-C</a> Ein fortgeschrittenes Werkzeug zur statischen Analyse</li>
+<li><a href="https://web.archive.org/web/20120619201518/http://homepage.mac.com:80/sigfpe/Computing/continuations.html">Continuations in C</a> (<code>call/cc</code>)</li>
+<li><a href="https://www.chiark.greenend.org.uk/~sgtatham/coroutines.html">Coroutines in C</a></li>
+<li><a href="https://www.cs.dartmouth.edu/~doug/sieve/sieve.pdf">Coroutine prime number sieve</a>; Doug McIlroy geht hier darauf ein wie Unix Pipes als eine Art Coroutine angesehen werden können.</li>
+<li><a href="https://www.microsoft.com/en-us/research/wp-content/uploads/2017/06/algeff-in-c-tr-v2.pdf">Implementing Algebraic Effects in C</a></li>
+<li><a href="https://github.com/jart/cosmopolitan">Cosmopolitan Libc</a> welches Cross-Platform (Linux, BIOS, Windows, macOS, &#x2026;) ausführbare Dateien generiert</li>
+<li><a href="https://hboehm.info/gc/">A garbage collector for C and C++</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-prog:erlang" class="outline-4">
+<h4 id="prog:erlang">Erlang</h4>
+<div class="outline-text-4" id="text-prog:erlang">
+<ul class="org-ul">
+<li><a href="https://www.erlang.org/">Erlang/OTP</a> Website</li>
+<li>Buch <a href="https://pragprog.com/titles/jaerlang2/programming-erlang-2nd-edition/">Programming Erlang</a>, vom Erlang Erfinder Joe Armstrong</li>
+<li><a href="https://lfe.io/">Lisp Flavored Erlang</a></li>
+<li><a href="https://www.erlang.org/blog/core-erlang-by-example/">Core Erlang in Examples</a></li>
+<li>Der <a href="https://xmpp.org/">XMPP</a> Server <a href="https://github.com/processone/ejabberd">ejabberd</a>, eines der prominentesten Freien Erlang Anwendungen (auch die Basis von dem IM Dienstleister &bdquo;WhatsApp&ldquo;)</li>
+<li><a href="https://wiki.c2.com/?SmugErlangWeenie=">Smug Erlang Weenie</a></li>
+<li><a href="https://joearms.github.io/published/2013-11-21-My-favorite-erlang-program.html">My favorite Erlang program</a> (&bdquo;Universal Server&ldquo;)</li>
+<li>Bewertung von Erlang aus dem Ericsson Memo <a href="https://web.archive.org/web/20211019112923/http://www.erlang.se/publications/Ulf_Wiger.pdf#page=10">Four-fold Increase in Productivity and Quality</a></li>
+<li>Das Buch <a href="https://learnyousomeerlang.com/content">Learn you some Erlang</a></li>
+<li><a href="https://www.erldocs.com/">erldocs.com</a>, alternative to the official Erlang documentation</li>
+<li>Demonstration: <a href="https://www.youtube.com/watch?v=xrIjfIjssLE">Erlang: The Movie</a></li>
+<li><a href="https://erlang.org/pipermail/erlang-questions/2011-May/058768.html">Why do we need modules at all?</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-prog:forth" class="outline-4">
+<h4 id="prog:forth">Forth</h4>
+<div class="outline-text-4" id="text-prog:forth">
+<ul class="org-ul">
+<li><a href="https://www.forth.com/wp-content/uploads/2018/01/Starting-FORTH.pdf">Starting Forth</a></li>
+<li><a href="https://thinking-forth.sourceforge.net/">Thinking Forth</a></li>
+<li><a href="https://forth-standard.org/">Website des Forth Standards</a></li>
+<li>Einführungen</li>
+<li><a href="https://web.archive.org/web/20080612234512/http://www.albany.net/~hello/simple.htm">Simple Forth</a> (2004)</li>
+<li><a href="https://thebeez.home.xs4all.nl/ForthPrimer/Forth_primer.html">And So Forth&#x2026;</a> (2001)</li>
+<li><a href="https://galileo.phys.virginia.edu/classes/551.jvn.fall01/primer.htm#contents">A Beginner&rsquo;s Guide to Forth</a></li>
+<li><a href="http://www.figuk.plus.com/build/heart.htm">The Heart of Forth</a></li>
+<li><a href="http://git.annexia.org/?p=jonesforth.git;a=blob;f=jonesforth.S;h=45e6e854a5d2a4c3f26af264dfce56379d401425;hb=HEAD">Jonesforth</a> (2009) <img new="new link" src="../smileys/idea.png"/></li>
+<li><a href="https://skilldrick.github.io/easyforth/">Easy Forth</a></li>
+<li><a href="https://web.archive.org/web/20190303024439/http://astro.pas.rochester.edu/Forth/forth-words.html">Alphabetical List of Forth Words</a></li>
+<li><a href="http://www.aholme.co.uk/Mk1/Architecture.htm">Mark 1 FORTH Computer</a></li>
+<li><a href="https://web.archive.org/web/19991022233047/www.itvc.com/Technology/4os.htm">4os</a>, ein Betriebsystem in Forth</li>
+<li><a href="https://archive.org/details/byte-magazine-1980-08">Forth Ausgabe</a> von Byte Magazine (1980)</li>
+<li><a href="https://colorforth.github.io/">colorForth</a></li>
+<li><a href="https://colorforth.github.io/HOPL.html">Forth &#x2013; The Early Years</a>, Chuck Moore</li>
+<li><a href="https://factorcode.org/">Factor</a>, eine Sprache die von Forth inspiriert wurde</li>
+<li><a href="https://concatenative.org/wiki/view/Front%20Page">Concatenative language wiki</a></li>
+<li><a href="https://retroforth.org/">Retro Forth</a></li>
+<li><a href="https://archive.org/details/PSBlueBook">PostScript language tutorial and cookbook</a> (PostScript, als Basis des PDF, ist auch Stack-basiert)</li>
+<li><a href="https://tangentstorm.github.io/winfield-pascal-83.html">Pascal in Forth</a> (1983)</li>
+<li><a href="http://mynor.org/my4th_forthdeck.htm">Forth Deck</a>, ein kleiner Rechner nur für Forth</li>
+<li><a href="https://www.ultratechnology.com/method.htm">Forth Methodology Applied to Programming</a></li>
+<li><a href="https://github.com/gmpalter/cl-forth">cl-forth</a>, eine Implementierung in Common Lisp</li>
+<li><a href="https://www.forth.org/forth_intro/stackflo.htm">An Introduction to Forth using StackFlow</a></li>
+<li>Buch: <a href="https://archive.org/details/R.G.LoeligerThreadedInterpretiveLanguagesTheirDesignAndImplementationByteBooks1981/">Threaded Interpretive Languages Their Design And
+Implementation</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-prog:fortran" class="outline-4">
+<h4 id="prog:fortran">Fortran</h4>
+<div class="outline-text-4" id="text-prog:fortran">
+<ul class="org-ul">
+<li><a href="https://fortran-lang.org/">fortran-lang.org</a></li>
+<li><a href="https://cyber.dabamos.de/programming/modernfortran/">Modern Fortran</a></li>
+<li><a href="https://www.math-cs.gordon.edu/courses/cs323/FORTRAN/fortran.html">FORTRAN IV Reference Page</a></li>
+<li><a href="https://fortranwiki.org/fortran/show/HomePage">Fortran Wiki</a></li>
+<li><a href="https://arxiv.org/pdf/2203.15110.pdf">The State of Fortran</a></li>
+<li><a href="https://archive.org/details/9780262610261">A FORTRAN Coloring Book</a> (1978)</li>
+<li><a href="https://web.stanford.edu/class/me200c/tutorial_77/">Fortran 77 Tutorial</a></li>
+<li><a href="https://docs.oracle.com/cd/E19957-01/805-4939/index.html">Fortran 77 Reference</a></li>
+<li><a href="https://michaelgoerz.net/refcards/fortran_refcard_a4.pdf">Modern Fortran Reference Card</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-prog:haskell" class="outline-4">
+<h4 id="prog:haskell">Haskell</h4>
+<div class="outline-text-4" id="text-prog:haskell">
+<ul class="org-ul">
+<li><a href="http://www.cse.chalmers.se/edu/year/2018/course/TDA555/tourofprelude.html">A Tour of the Haskell Prelude</a></li>
+<li><a href="https://okmij.org/ftp/Computation/IO-monad-history.html">IO monad realized in 1965</a></li>
+<li><a href="https://hackage.haskell.org/package/parsec">Parsec</a>, ein Parser-Combinator</li>
+<li><a href="https://book.realworldhaskell.org/">Real World Haskell</a>  (Buch)</li>
+<li><a href="https://wiki.haskell.org/Typeclassopedia">Typeclassopedia</a></li>
+<li><a href="https://www.haskell.org/arrows/">Arrows: A General Interface to Computation</a></li>
+<li>Vortragaufnahme <a href="https://www.youtube.com/watch?v=06x8Wf2r2Mc">A History of Haskell: being lazy with class</a>, Simon Peyton Jones</li>
+<li><a href="https://www.willamette.edu/~fruehr/haskell/evolution.html">The Evolution of a Haskell Programmer</a></li>
+<li><a href="https://hackage.haskell.org/package/recursion-schemes"><code>recursion-schemes</code></a> Bibliothek, bzgl. &bdquo;<a href="https://research.utwente.nl/en/publications/functional-programming-with-bananas-lenses-envelopes-and-barbed-w">Functional Programming with Bananas, Lenses, Envelopes and Barbed Wire</a>&ldquo;</li>
+<li><a href="https://www.cs.cmu.edu/afs/cs/project/ai-repository/ai/lang/lisp/code/syntax/haskell/0.html">Yale Haskell</a>; Alte Haskell Implementierung in Lisp</li>
+<li><a href="https://web.archive.org/web/20191222151512/http://www.cs.york.ac.uk/fp/reduceron/">The Reduceron</a>; Eine FPGA/<a href="https://en.wikipedia.org/wiki/Graph_reduction_machine">graph reduction machine</a> um Haskell auszuwerten.</li>
+<li><a href="https://haskellbook.com/">Haskell Programming from First Principles</a></li>
+<li><a href="https://smunix.github.io/dev.stephendiehl.com/hask/index.html">What I Wish I Knew When Learning Haskell</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-prog:www" class="outline-4">
+<h4 id="prog:www">HTML/CSS/etc. und das WWW</h4>
+<div class="outline-text-4" id="text-prog:www">
+<p>
+Siehe den Abschnitt &bdquo;<a href="https://wwwcip.cs.fau.de/~oj14ozun/notizen/wwwcip.html#weitere-verweise">Weitere Verweise</a>&ldquo; auf meinen Notizen zu CIP
+Seiten.  Siehe auch den Abschnitt <a href="links.html#firefox">Firefox Extensions</a> weiter unten.
+</p>
+
+<ul class="org-ul">
+<li><a href="https://worldwideweb.cern.ch/">CERN 2019 WorldWideWeb Rebuild</a></li>
+<li><a href="https://coveryourtracks.eff.org/">Cover Your Tracks</a>, ein Tool zum Demonstrieren von <a href="https://en.wikipedia.org/wiki/Device_fingerprint#Browser_fingerprint">Browser fingerprints</a></li>
+<li><a href="https://www.amiunique.org/">Am I Unique</a>, ein ähnliches Werkzeug</li>
+<li><a href="http://toastytech.com/evil/index.html">Internet Explorer is EVIL</a></li>
+<li><a href="http://1997.webhistory.org/home.html">The World Wide Web History Project</a> (<a href="http://1997.webhistory.org/www.lists/">mailing list archives</a>)</li>
+<li><a href="https://oldweb.today/">JS Browser Emulation</a>, von alten Browsern mit Webseiten Archiven</li>
+<li><a href="http://www.martinrinehart.com/frontend-engineering/engineers/html/html-tag-history.html">HTML Tags: Past, Present, Proposed</a></li>
+<li><a href="http://eyeasme.com/Joe/MathML/MathML_browser_test.html">MathML Browser Test</a></li>
+<li><a href="https://bellard.org/quickjs/">QuickJS Javascript Engine</a></li>
+<li><a href="https://github.com/Heydon/REVENGE.CSS/tree/master">REVENGE.CSS</a>, eine Stylesheet welches schlechtes HTML betont</li>
+<li><a href="https://www.useragents.me/">Useragents.me</a>, <i>A self-updating list of the latest and most common useragents seen on the web</i>.</li>
+<li><a href="https://html.spec.whatwg.org/multipage/named-characters.html">Named character references</a>, als teil von <a href="https://whatwg.org/">WHATWG</a>&rsquo;s <a href="https://html.spec.whatwg.org/multipage/">HTML Spezifikation</a>
+<ul class="org-ul">
+<li><a href="http://www.dionysia.org/html/entities/">HTML Character Entity Charts</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-prog:tex" class="outline-4">
+<h4 id="prog:tex">{La,}TeX</h4>
+<div class="outline-text-4" id="text-prog:tex">
+<ul class="org-ul">
+<li><a href="https://tikz.dev/">&bdquo;The TikZ and PGF Packages&ldquo; Manual</a> in HTML Form</li>
+<li><a href="https://www.ctan.org/tex-archive/info/lshort/english/">The not so Short Introduction to LaTeX</a></li>
+<li><a href="https://texblog.org/2013/02/13/latex-documentclass-options-illustrated/">LaTeX documentclass options illustrated</a></li>
+<li><a href="https://www.ctan.org/pkg/savetrees?lang=en"><code>savetrees</code></a> Paket</li>
+<li><a href="https://ctan.org/pkg/microtype"><code>microtype</code></a> Paket</li>
+<li><a href="https://ctan.mc1.root.project-creative.net/macros/latex/contrib/nag/nag.pdf"><code>nag</code></a> Paket <img new="new link" src="../smileys/idea.png"/></li>
+<li><a href="http://mirrors.ctan.org/macros/latex/contrib/cleveref/cleveref.pdf"><code>cleveref</code></a> Paket</li>
+<li><a href="https://www.ctan.org/pkg/nath"><code>nath</code></a> Paket</li>
+<li><a href="https://www.youtube.com/playlist?list=PLoROMvodv4rN1PKcXvzjor-Bl6o6eSNTN">TeX For Beginners</a> (Knuth Vorlesung, 1981)</li>
+<li><a href="https://www-cs-faculty.stanford.edu/~knuth/abcde.html#texbk">TeXbook</a>, Knuth (<a href="https://archive.org/details/texbook00dona"><code>archive.org</code></a>, <a href="https://visualmatheditor.equatheque.net/doc/texbook.pdf">online</a>)</li>
+<li><a href="https://tug.ctan.org/info/symbols/comprehensive/symbols-a4.pdf">The Comprehensive LaTeX Symbol List</a> <img new="new link" src="../smileys/idea.png"/></li>
+<li><a href="https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols">List of LaTeX mathematical symbols</a></li>
+<li><a href="https://detexify.kirelabs.org/classify.html">Detexify</a>; Eine handschriftliche Suche von LaTeX Symbolen</li>
+<li><a href="https://www.tug.org/texshowcase/">The TeX showcase</a></li>
+<li><a href="http://www.weinelt.de/latex/index.html">Der LaTeX-Index</a>; Etwas veraltet aber qualitativ hochwertig</li>
+<li><a href="https://temml.org/">TeX-to-MathML</a> in Javascript (<a href="https://temml.org/docs/en/comparison.html">Vergleich</a>)</li>
+<li><a href="https://ctan.org/pkg/latexdiff">latexdiff</a>; <i>determine and mark up significant differences between LaTeX files</i></li>
+<li><a href="https://math.nist.gov/~BMiller/LaTeXML/">LaTeXML</a>; <i>A LaTeX to XML/HTML/MathML Converter</i> (benutzt von ArXiv),
+kann als neuere Version von <a href="https://www.latex2html.org/">LaTeX2HTML</a> angesehen werden.</li>
+<li>(Plain) <a href="https://www.math.brown.edu/johsilve/ReferenceCards/TeXRefCard.v1.5.pdf">TeX Reference Card</a></li>
+<li><a href="https://petr.olsak.net/opmac-e.html">OPmac, extended plainTeX macros</a> (kann man als low-level alternative zu LaTeX ansehen)</li>
+<li><a href="https://latexref.xyz/">LaTeX2e: An unofficial reference manual</a></li>
+<li>Buch <a href="https://www.eijkhout.net/tex/tex-by-topic.html">TeX by Topic</a></li>
+<li><a href="https://tectonic-typesetting.github.io/en-US/">Tectonic</a>, ein (Xe)LaTeX Paket welches unter anderem automatisch Abhängigkeiten
+besorgt</li>
+<li>Vortrag <a href="https://archive.org/details/xerox-parc-tapes-v49/Mezzanine/V49.dv">Errors of \TeX</a>, von Donald Knuth (1980)</li>
+<li><a href="https://assets.bitbashing.io/modern-latex.pdf">Modern LaTeX</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-prog:lisp" class="outline-4">
+<h4 id="prog:lisp">Lisp</h4>
+<div class="outline-text-4" id="text-prog:lisp">
+<ul class="org-ul">
+<li><a href="https://web.archive.org/web/20160927201527/http://www.aiai.ed.ac.uk/~jeff/lisp/cl-pitfalls">Common Lisp Pitfalls</a></li>
+<li><a href="https://www.xach.com/naggum/articles/">Erik Naggum comp.lang.lisp archive</a>, <a href="http://xahlee.info/Netiquette_dir/death_of_a_troll.html">siehe auch</a></li>
+<li><a href="https://lwn.net/Articles/778550/">Lisp and the foundations of computing</a></li>
+<li><a href="https://www.t3x.org/lsi/index.html">Lisp System Implementation</a></li>
+<li><a href="http://lambda.bugyo.tk/cdr/mwl/">Manga Guide to Lisp</a> (???)</li>
+<li><a href="http://clqr.boundp.org/">Common Lisp Quick Reference</a> <img new="new link" src="../smileys/idea.png"/></li>
+<li><a href="https://gist.github.com/digikar99/a1925ad3249a431c9eecf09af2fdef8a">Opinionated Common Lisp Resources</a></li>
+<li>Buch <a href="https://en.wikipedia.org/wiki/The_Art_of_the_Metaobject_Protocol">The Art of the Metaobject Protocol</a></li>
+<li><a href="https://google.github.io/styleguide/lispguide.xml">Google Common Lisp Style Guide</a> (und das darauf basierte  <a href="https://lisp-lang.org/style-guide/">Common Lisp Style Guide</a>)</li>
+<li><a href="http://random-state.net/features-of-common-lisp.html">Features of Common Lisp</a></li>
+<li><a href="http://tommarkson.com/lisp/ansicl/ansicl.htm">ANSI Common Lisp</a></li>
+<li><a href="http://clhs.lisp.se/Body/01_ab.htm">History of Common Lisp</a></li>
+<li><a href="https://jtra.cz/stuff/lisp/sclr/index.html">Simplified Common Lisp reference</a></li>
+<li><a href="https://www.hexstreamsoft.com/articles/common-lisp-format-reference/clhs-summary/"><code>format</code>-string table</a></li>
+<li><a href="https://stevelosh.com/blog/2018/08/a-road-to-common-lisp/">A Road to Common Lisp</a></li>
+<li><a href="http://metamodular.com/common-lisp-semantics.html">Common Lisp Semantics</a></li>
+<li>&bdquo;<a href="https://lisp-lang.org/">lisp-lang.org</a>&ldquo;</li>
+<li><a href="https://www.youtube.com/watch?v=H-yuZ2pejGU">Casio AI-1000 Pocket Lisp Computer from 1989</a></li>
+<li><a href="https://github.com/thephoeron/llthw">Learn Lisp The Hard Way</a></li>
+<li><a href="https://www.cs.cmu.edu/~dst/LispBook/">Common Lisp: A Gentle Introduction to Symbolic Computation</a></li>
+<li>Buch <a href="https://norvig.github.io/paip-lisp/">Paradigms of Artificial Intelligence Programming</a>, Peter Norvig</li>
+<li><a href="https://www.norvig.com/Lisp-retro.html">A Retrospective on Paradigms of AI Programming</a></li>
+<li>Buch <a href="https://sep.turbifycdn.com/ty/cdn/paulgraham/onlisp.pdf?t=1688221954&amp;">On Lisp</a>, Paul Graham</li>
+<li>Buch <a href="https://letoverlambda.com/index.cl">Let Over Lambda</a>, Doug Hoyte</li>
+<li><a href="https://bernsteinbear.com/blog/lisp/">Lisp implementations</a> Artikel Serie</li>
+<li><a href="https://www.dreamsongs.com/Files/clcrit.pdf">A Critique of Common Lisp</a></li>
+<li><a href="https://www-formal.stanford.edu/jmc/history/lisp/lisp.html">History of Lisp</a>, John McCarthy</li>
+<li><a href="https://dl.acm.org/doi/pdf/10.1145/800055.802047">Early LISP History (1956-1959)</a>, Herbert Stoyan</li>
+<li><a href="https://interlisp.org/">Medley Interlisp Project</a> (<a href="https://online.interlisp.org/">Online Emulator</a> )</li>
+<li><a href="https://www.plover.com/~mjd/misc/hbaker-archive/MetaCircular.html">Metacircular Semantics for Common Lisp Special Forms</a></li>
+<li><a href="https://www.norvig.com/luv-slides.pdf">Tutorial on Good Lisp Programming Style</a>, Norvig &amp; Pitman von 1993</li>
+<li><a href="https://novaspec.org/cl/">Common Lisp Nova Spec</a>, eine neuere HTML Version vom CL Standard</li>
+<li><a href="http://christian.jullien.free.fr/">OpenLisp</a>, eine Implementierung von ISO <a href="http://www.islisp.org/">ISLISP</a></li>
+<li><a href="https://people.eecs.berkeley.edu/~bh/v1-toc2.html">Computer Science Logo Style Volume 1: Symbolic Computing</a> (indirekt)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-prog:ocaml/ml" class="outline-4">
+<h4 id="prog:ocaml/ml">ML Familie (Ocaml, Standard ML)</h4>
+<div class="outline-text-4" id="text-prog:ocaml/ml">
+<ul class="org-ul">
+<li><a href="https://cs3110.github.io/textbook/cover.html">OCaml Programming: Correct + Efficient + Beautiful</a></li>
+<li><a href="https://github.com/ocaml-multicore/ocaml-multicore">Multicore OCaml</a></li>
+<li><a href="https://dev.realworldocaml.org/">Real World OCaml</a></li>
+<li><a href="https://ocaml.org/exercises">OCaml Exercises</a></li>
+<li><a href="https://ocaml.github.io/ocamlunix/">Unix system programming in OCaml</a></li>
+<li><a href="https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.438.6924&amp;rep=rep1&amp;type=pdf">A Gentle Introduction to Multi-stage Programming</a></li>
+<li><a href="https://v2.ocaml.org/manual/expr.html">The OCaml language</a> (Syntax)</li>
+<li><a href="https://www.cs.cmu.edu/~rwh/isml/book.pdf">Programming in Standard ML</a></li>
+<li><a href="http://adam.chlipala.net/mlcomp/">Comparing Objective Caml and Standard ML</a></li>
+<li><a href="https://smlfamily.github.io/">Standard ML Family GitHub Project</a></li>
+<li><a href="https://dl.acm.org/doi/10.1145/3386336">The history of Standard ML</a></li>
+<li>Implementierungen:
+<ul class="org-ul">
+<li><a href="https://www.smlnj.org/">Standard ML of New Jersey</a>, die de-facto Standard Implementierung</li>
+<li><a href="https://cakeml.org/">CakeML</a>, eine Verifizierte Implementierung von SML</li>
+<li><a href="http://mlton.org/">MLton</a>, ein Compiler mit <i>whole-program</i> Optimierungen</li>
+<li><a href="https://people.mpi-sws.org/~rossberg/hamlet/">HaMLet</a>, eine präzise Implementierung des SML Standards</li>
+</ul></li>
+<li>&bdquo;<a href="https://forge.ocamlcore.org/projects/batteries/">Batteries Included</a>&ldquo;, eine OCaml Stdlib</li>
+<li><a href="https://archive.org/details/pdfy-6DBBnhyQ_Fo39-Zy/mode/2up">Unix System Programming in Standard ML</a></li>
+<li><a href="https://saityi.github.io/sml-tour/tour/welcome">A Tour of Standard ML</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-prog:prolog" class="outline-4">
+<h4 id="prog:prolog">Prolog</h4>
+<div class="outline-text-4" id="text-prog:prolog">
+<ul class="org-ul">
+<li>Buch <a href="https://mitpress.mit.edu/9780262691635/the-art-of-prolog/">The Art of Prolog</a></li>
+<li>Buch <a href="https://mitpress.mit.edu/9780262535519/the-reasoned-schemer/">The Reasoned Schemer</a> (eigentlich kein Prolog)</li>
+<li><a href="https://www.metalevel.at/prolog">The Power of Prolog</a> <img new="new link" src="../smileys/idea.png"/> (<a href="https://www.youtube.com/watch?v=8XUutFBbUrg">Übersicht</a>)</li>
+<li><a href="https://www.ic.unicamp.br/~meidanis/courses/mc336/2009s2/prolog/problemas/">Ninety-Nine Prolog Problems</a></li>
+<li><a href="https://sites.google.com/site/prologsite/prolog-problems">Prolog Problems</a>, Überarbeitung vom letzten Link</li>
+<li><a href="https://web.archive.org/web/20220403114655/https://www.cis.upenn.edu/~matuszek/Concise%20Guides/Concise%20Prolog.html">A Concise Introduction to Prolog</a></li>
+<li><a href="https://logicprogramming.org/">Association for Logic Programming</a></li>
+<li><a href="https://www.hpl.hp.com/techreports/Compaq-DEC/PRL-RR-36.pdf">1983–1993: The Wonder Years of Sequential Prolog Implementation</a></li>
+<li>Prolog Implementierungen:
+<ul class="org-ul">
+<li><a href="https://www.scryer.pl/">Scryer Prolog</a></li>
+<li><a href="http://gprolog.org">GNU Prolog</a></li>
+<li><a href="https://www.swi-prolog.org/">SWI Prolog</a></li>
+<li><a href="https://sr.ht/~eshel/sweep/">Sweep</a>, SWI-Prolog Embedded in Emacs</li>
+<li><a href="https://www.swi-prolog.org/pldoc/man?section=clpfd">Constraint Logic Programming over Finite Domains</a></li>
+<li><a href="https://github.com/prolog8/awkprolog">Prolog in AWK</a></li>
+<li><a href="https://ciao-lang.org/">Ciao Prolog</a></li>
+<li><a href="http://tau-prolog.org/">Tau Prolog</a></li>
+<li><a href="https://www.info.ucl.ac.be/~pvr/aquarius.html">Aquarius Prolog</a> (non-free)</li>
+<li><a href="https://en.wikipedia.org/wiki/Comparison_of_Prolog_implementations">&#x2026;und viele mehr</a></li>
+<li><a href="https://www.complang.tuwien.ac.at/ulrich/prolog_misc/systems.html">Overview of Prolog Systems</a></li>
+</ul></li>
+<li>Online Buch <a href="https://book.simply-logical.space/src/simply-logical.html">Simply Logical</a></li>
+<li><a href="https://www.researchgate.net/publication/2820431_Efficient_Prolog_A_Practical_Guide">Efficient Prolog: A Practical Guide</a></li>
+<li><a href="https://www.deransart.fr/prolog/docs.html">Prolog: The ISO Standard Documents</a></li>
+<li><a href="https://www.metalevel.at/prolog/faq/"><code>comp.lang.prolog</code> FAQ</a></li>
+<li><a href="https://dl.acm.org/doi/pdf/10.1145/234286.1057820">The Birth of Prolog</a></li>
+<li><a href="https://aitopics.org/download/classics:4A93472A">LOGLISP: An Alternative to Prolog</a></li>
+<li><a href="https://legacy.cs.indiana.edu/ftp/techreports/TR182.pdf">Transliterating Prolog into Scheme</a></li>
+<li><a href="https://t3x.org/prolog6/prolog-6-slides.pdf">Prolog Control In Six Slides</a> (auch Scheme)</li>
+<li><a href="https://www.lix.polytechnique.fr/Labo/Dale.Miller/lProlog/">λProlog</a>, logic programming in higher-order logic</li>
+<li>Paper <a href="https://www.cs.cmu.edu/~fp/papers/elpsml90.pdf">A Semi-Functional Implementation of a Higher-Order Logic Programming Language</a></li>
+<li><a href="https://web.archive.org/web/20031004100957/http://www.vanx.org/archive/wam/wambook.pdf">Warren&rsquo;s Abstract Machine</a></li>
+<li><a href="https://www.j-paine.org/prolog/library.html">Public Domain Prolog Library</a></li>
+<li><a href="https://dl.acm.org/doi/pdf/10.1145/321978.321991">The Semantics of Predicate Logic as a Programming Language</a></li>
+<li><a href="https://mitpress.mit.edu/9780262192552/concurrent-prolog/">Concurrent Prolog</a> Sammlung</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-prog:scheme" class="outline-4">
+<h4 id="prog:scheme">Scheme</h4>
+<div class="outline-text-4" id="text-prog:scheme">
+<ul class="org-ul">
+<li><a href="https://mitpress.mit.edu/9780262510875/structure-and-interpretation-of-computer-programs/">The Structure and Interpretation of Computer Programms</a> Genannt <i>Wizard Book</i>, auch in <a href="https://sarabander.github.io/sicp/html/index.xhtml">neu</a>, auch in <a href="https://link.springer.com/book/10.1007/978-3-642-97727-5">Deutsch</a>
+<ul class="org-ul">
+<li><a href="https://mitpress.mit.edu/9780262045490/software-design-for-flexibility/">Software Design for Flexibility</a>, Nachfolgebuch</li>
+</ul></li>
+<li><a href="https://mitpress.mit.edu/books/how-design-programs-second-edition">How to Design Programs</a> (HtDP, <a href="https://htdp.org/">Website</a>)</li>
+<li><a href="https://www.scheme.org/">Scheme</a> (ggf. inoffiziell, aber schön?)</li>
+<li><a href="https://small.r7rs.org/">R7RS Small</a> <img new="new link" src="../smileys/idea.png"/> (<a href="https://misc.lassi.io/2022/map-of-r7rs-small.html">übersicht</a>)</li>
+<li><a href="https://research.scheme.org/lambda-papers/">The Original &rsquo;Lambda Papers&rsquo; by Guy Steele and Gerald Sussman</a> siehe auch allgemein <a href="https://dspace.mit.edu/handle/1721.1/5460">AI Memos</a>.</li>
+<li><a href="https://srfi.schemers.org/">SRFI Website</a></li>
+<li><a href="https://ds26gte.github.io/tyscheme/">Teach Yourself Scheme in Fixnum Days</a></li>
+<li><a href="http://peter.michaux.ca/articles/scheme-from-scratch-introduction">Scheme from Scratch</a></li>
+<li><a href="http://htmlpreview.github.io/?https://github.com/schemedoc/srfi-metadata/blob/master/table.html">SRFI Table</a></li>
+<li><a href="https://ia800108.us.archive.org/4/items/Schemer/The.Scheme.Programming.Language.4th.Edition.pdf">The Scheme Programming Language</a></li>
+<li>Video Serie <a href="https://www.youtube.com/playlist?list=PLgyU3jNA6VjRMB-LXXR9ZWcU3-GCzJPm0">Scheme: Feel the Cool</a></li>
+<li><a href="https://en.wikibooks.org/wiki/Write_Yourself_a_Scheme_in_48_Hours">Write Yourself a Scheme in 48 Hours</a> (auch Haskell)</li>
+<li><a href="https://spritely.institute/static/papers/scheme-primer.html">A Scheme Primer</a> (auch auf <a href="https://spritely.institute/static/papers/scheme-primer.de.html">Deutsch</a>)</li>
+<li><a href="http://scheme-reports.org/">Scheme Report</a>, die Gruppe die an R7RS-large arbeitet (siehe <a href="https://www.youtube.com/watch?v=sRn9UxCEo0Q">status</a> (2022))</li>
+<li><a href="https://ecraven.github.io/r7rs-benchmarks/">Scheme Benchmarks</a></li>
+<li>Buch <a href="https://christian.queinnec.org/WWW/LiSP.html">Lisp in Small Pieces</a></li>
+<li><a href="https://norvig.com/jscheme.html">JScheme</a>, ein Scheme in Java von <a href="https://norvig.com/">Peter Norvig</a></li>
+<li><a href="https://people.csail.mit.edu/jhbrown/scheme/">Advanced Scheme: Some Naughty Bits</a></li>
+<li>Buch <a href="https://mitpress.mit.edu/9780262019347/functional-differential-geometry/">Functional Differential Geometry</a> (<a href="https://archive.org/details/FunctionalDifferentialGeometry">online</a>)</li>
+<li><a href="http://www.paulgraham.com/thist.html">The history of T</a>, Olin Shivers</li>
+<li><a href="https://www.cs.utexas.edu/ftp/garbage/cs345/schintro-v14/schintro_toc.html">An Introduction to Scheme and its Implementation</a></li>
+<li><a href="https://mnieper.github.io/scheme-macros/README.html">Extending a Language &#x2013; Writing Powerful Macros in Scheme</a></li>
+<li><a href="https://groups.csail.mit.edu/mac/users/gjs/propagators/">Revised Report on the Propagator Model</a></li>
+<li><a href="https://index.scheme.org/">Scheme Index</a></li>
+<li><a href="https://prescheme.org/">Pre-Scheme</a>, ist Scheme mit statischen Typen + Inferrenz und ohne GC.</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-prog:smalltalk" class="outline-4">
+<h4 id="prog:smalltalk">Smalltalk</h4>
+<div class="outline-text-4" id="text-prog:smalltalk">
+<ul class="org-ul">
+<li><a href="http://stephane.ducasse.free.fr/FreeBooks/BlueBook/Bluebook.pdf">Smalltalk-80: The language and it&rsquo;s implementation</a></li>
+<li><a href="https://rmod-files.lille.inria.fr/FreeBooks/TheInteractiveProgrammingEnv/TheInteractiveProgrammingEnv.pdf">Smalltalk-80: The Interactive Programming Environment</a></li>
+<li><a href="https://www.youtube.com/watch?v=uknEhXyZgsg">Alto System Project: Dan Ingalls demonstrates Smalltalk</a></li>
+<li><a href="https://www.gnu.org/software/smalltalk/">GNU Smalltalk</a></li>
+<li><a href="https://pharo.org/">Pharao</a> (&bdquo;The immersive programming experience&ldquo;, <a href="https://www.pharo.org/features">feature</a>)
+<ul class="org-ul">
+<li><a href="https://upload.wikimedia.org/wikipedia/commons/a/a7/Pharo_syntax_postcard.svg">Syntax on a Postcard</a> (Beispiel für die einfache Syntax)</li>
+<li><a href="https://www.youtube.com/watch?v=HOuZyOKa91o">7 minutes of Pharo Smalltalk for Rubyists</a></li>
+</ul></li>
+<li><a href="https://squeak.org/">Squeak</a> <i>a modern, open-source Smalltalk programming system with fast execution environments for all major platforms</i>.
+<ul class="org-ul">
+<li><a href="https://wiki.squeak.org/squeak/377">Introductions to Squeak</a></li>
+</ul></li>
+<li><a href="https://gtoolkit.com/">Glamorous Toolkit</a></li>
+<li><a href="https://github.com/dbanay/Smalltalk">Bluebook implementation of Smalltalk-80</a> <img new="new link" src="../smileys/idea.png"/></li>
+<li><a href="https://archive.org/details/ALittleSmalltalkBook/mode/2up">A Little Smalltalk</a></li>
+<li><a href="https://drcuis.github.io/TheCuisBook/">The Cuis-Smalltalk Book</a></li>
+<li><a href="https://rmod-files.lille.inria.fr/Lectures/StephaneDucasse/200809-Turino/STOOP-005-SmalltalkInANushellSmaller3.pdf">Smalltalk in a Nutshell</a> (Folien)</li>
+<li><a href="https://live.exept.de/doc/online/english/programming/stForLispers.html">Smalltalk for Lispers (and Schemers)</a></li>
+<li><a href="https://link.springer.com/book/10.1007/978-1-4613-9067-1">Practical Smalltalk</a></li>
+<li><a href="https://archive.org/details/byte-magazine-1981-08/Smalltalk%20Ausgabe">The Smalltalk-80 System</a> von Byte Magazine (1981)</li>
+<li><a href="https://en.wikipedia.org/wiki/Strongtalk">Strongtalk</a> VM, inspirierte die Java Virtual Machine</li>
+<li><a href="https://dl.acm.org/doi/10.1145/234286.1057828">The early history of Smalltalk</a>, von Alan Kay (1996)</li>
+<li><a href="https://www.humprog.org/~stephen/research/papers/kell19unix-personal.pdf">Unix, Plan 9 and the Lurking Smalltalk</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-science" class="outline-3">
+<h3 id="science">Zu <i>Computer Science</i> als Wissenschaft</h3>
+<div class="outline-text-3" id="text-science">
+<ul class="org-ul">
+<li><a href="https://arxiv.org/archive/cs">ArXiv Archiv</a> für CS (auch interessant <a href="https://ar5iv.labs.arxiv.org/"><code>ar5iv.org</code></a>)
+<ul class="org-ul">
+<li><a href="https://scirate.com/">SciRate</a>: eine &bdquo;Top Papers&ldquo; Seite</li>
+<li><a href="https://arxiv-sanity.com/">ArXiv Sanity</a>: empfehlungs Seite für Paper</li>
+<li><a href="https://www.alphaxiv.org/">alphaXiv</a>: Diskussionen zu Paperen</li>
+</ul></li>
+<li><a href="https://www.youtube.com/watch?v=_ahvzDzKdB0">Growing a Language</a> (Guy Steele, Video) <img new="new link" src="../smileys/idea.png"/></li>
+<li>&bdquo;<a href="https://www.youtube.com/watch?v=dCuZkaaou0Q">Invited Talk</a>&ldquo; (Guy Steele, Video)</li>
+<li><a href="https://fermatslibrary.com/">Fermat’s Library</a> kommentiert unter anderem CS paper</li>
+<li><a href="https://paperswelove.org/">Papers We Love</a></li>
+<li><a href="https://jmlr.csail.mit.edu/reviewing-papers/knuth_mathematical_writing.pdf">Mathematical Writing</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-theory" class="outline-3">
+<h3 id="theory">Zu Theoretische Informatik</h3>
+<div class="outline-text-3" id="text-theory">
+<ul class="org-ul">
+<li>&bdquo;<a href="https://busy-beavers.tigyog.app/">Busy Beavers!</a>&ldquo;, An interactive intro to Computability Theory
+<ul class="org-ul">
+<li><a href="https://bbchallenge.org/">The Busy Beaver Challange</a> ein Projekt um das <a href="https://turbotm.de/~heiner/BB/mabu90.html">BB(5)</a>-Problem zu Lösen.</li>
+</ul></li>
+<li><a href="https://jeffe.cs.illinois.edu/teaching/algorithms/models/all-models.pdf">Models of Computation</a></li>
+<li><a href="https://www-igm.univ-mlv.fr/~lecroq/string/">Exact String Matching Algorithms</a></li>
+<li><a href="https://www.youtube.com/watch?v=vo8izCKHiF0">Mechanical Turing Machine in Wood</a></li>
+<li><a href="https://adriann.github.io/npc/npc.html">Graph of NP-Complete Problems</a></li>
+<li><a href="https://www.cs.cmu.edu/~crary/819-f09/Moggi91.pdf">Notions of computation and monads</a>, Eugenio Moggi</li>
+<li><a href="https://www.cs.cmu.edu/~lblum/PAPERS/TuringMeetsNewton.pdf">Computing over the Reals: Where Turing Meets Newton</a></li>
+<li><a href="https://dl.acm.org/doi/10.1145/363744.363749">Correspondence between ALGOL 60 and Church&rsquo;s Lambda-notation</a>, <a href="https://en.wikipedia.org/wiki/Peter_Landin">Peter Landin</a></li>
+<li>Buch: <a href="http://www.theannotatedturing.com/">The Annotated Turing</a>, mit Kommentaren zu der <a href="https://www.cs.virginia.edu/~robins/Turing_Paper_1936.pdf">ursprünglicher Arbeit</a> von  Turing.</li>
+<li>Website zu <a href="https://www.turing.org.uk/index.html">Alan Turing</a>.</li>
+<li><a href="https://www.ingo-blechschmidt.eu/assets/bachelor-thesis-undecidability-bb748.pdf">The Undecidability of BB(748)</a>, <i>Understanding Gödel&rsquo;s Incompleteness Theorems</i></li>
+<li><a href="https://www.cs.nott.ac.uk/~pszgmh/123.pdf">Programming language semantics: It&rsquo;s easy as 1, 2, 3</a></li>
+</ul>
+</div>
+<div id="outline-container-org2416b28" class="outline-4">
+<h4 id="org2416b28">Zu Automaten Theorie</h4>
+<div class="outline-text-4" id="text-org2416b28">
+<ul class="org-ul">
+<li><a href="https://www.irif.fr/~jep/PDF/MPRI/MPRI.pdf">Mathematical Foundations of Automata Theory</a></li>
+<li>Buch <a href="https://michaelblondin.com/automata/files/book_authors.pdf">Automata Theory: An Algorithmic Approach</a></li>
+<li><a href="https://parsing.stereobooster.com/extended-chomsky-hierarchy/">Extended Chomsky Hierarchy</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-hardware" class="outline-3">
+<h3 id="hardware">Zu Geräte, Hardware, Schaltungen und Elektrik</h3>
+<div class="outline-text-3" id="text-hardware">
+<p>
+(Die schwammige Kategorie)
+</p>
+
+<ul class="org-ul">
+<li>Buch <a href="https://artofelectronics.net/">The Art of Electronics</a></li>
+<li><a href="https://www.beyondlogic.org/usbnutshell/usb1.shtml">USB in a NutShell</a></li>
+<li><a href="http://www.vintagecalculators.com/">Vintage Calculators Web Museum</a>
+<ul class="org-ul">
+<li><a href="https://www.youtube.com/watch?v=OTPruRVV-e8">Learning About the HP 48</a></li>
+</ul></li>
+<li><a href="https://github.com/hrvach/fpg1">FPG-1 is a PDP-1 implementation in FPGA</a></li>
+<li><a href="https://vimeo.com/858385">What If Bacteria Designed Computers?</a></li>
+<li><a href="http://fare.tunes.org/LispM.html">A few things I know about LISP Machines</a></li>
+<li><a href="https://www.ifis.uni-luebeck.de/~moeller/symbolics-info/development-environment/index.html">The Lisp Machine Software Development Environment</a></li>
+<li><a href="https://www.damninteresting.com/on-the-origin-of-circuits/">On the Origin of Circuits</a></li>
+<li>Comic <a href="https://nostarch.com/mg_electricity.htm">The Manga Guide to Electricity</a></li>
+<li><a href="https://www.eizo.com/products/flexscan/ev2730q/">FlexScan EV2730Q</a>, Bildschirm mit 1:1 Proportionen</li>
+<li><a href="https://archive.org/details/gettingstartedin00mims">Getting started in electronics</a> (<a href="https://www.forrestmims.com/">website</a>)</li>
+<li><a href="https://ndl.ethernet.edu.et/bitstream/123456789/1739/1/38.pdf">The Architecture of Symbolic Computers</a></li>
+<li><a href="https://people.freebsd.org/~lstewart/articles/cpumemory.pdf">What Every Programmer Should Know About Memory</a></li>
+<li><a href="https://qr.blinry.org/">Learn to decode QR codes by hand!</a></li>
+<li><a href="https://nandgame.com/">Nand Game</a></li>
+<li><a href="https://en.algorithmica.org/hpc/">Algorithms for Modern Hardware</a></li>
+<li><a href="https://flipperzero.one/">Flipper Zero</a></li>
+<li><a href="https://pidp.net/">Classical Computer Replicas</a> (<a href="https://en.wikipedia.org/wiki/Whirlwind_I">Whirlwind</a>, PDP-{1,8,10,11})</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-compiler" class="outline-3">
+<h3 id="compiler">Zu Übersetzer</h3>
+<div class="outline-text-3" id="text-compiler">
+<p>
+Siehe auch meine Sammlung von Links zu &bdquo;<a href="https://wwwcip.cs.fau.de/~oj14ozun/sp/siehe-auch/compiler.html">Compilern</a>&ldquo;, auf meiner
+Tutor-Seite.
+</p>
+
+<ul class="org-ul">
+<li>Buch: <a href="https://suif.stanford.edu/dragonbook/">Compilers: Principles, Techniques, and Tools</a> (<i>Dragon Book</i>)</li>
+<li>Buch: <a href="https://craftinginterpreters.com/">Crafting Interpreters</a></li>
+<li><a href="https://c9x.me/compile/">QBE</a>; <i>is a compiler backend that aims to provide 70% of the performance of industrial optimizing compilers in 10% of the code</i>.
+<ul class="org-ul">
+<li><a href="https://c9x.me/compile/bib/">Resources for Amateur Compiler Writers</a></li>
+</ul></li>
+<li>Buch: <a href="https://pfalcon.github.io/ssabook/latest/book-full.pdf">SSA Book</a></li>
+<li><a href="https://github.com/xoreaxeaxeax/movfuscator">movfuscator</a>, ein C-Übersetzer welches nur die x86 <code>mov</code> Instruktion benutzt
+<ul class="org-ul">
+<li><a href="https://github.com/jbangert/trapcc">trapcc</a>, ein C-Übersetzer welches auf dem Auslösen von Traps auf x86 basiert</li>
+</ul></li>
+<li><a href="https://www.cs.cmu.edu/~rdriley/487/papers/Thompson_1984_ReflectionsonTrustingTrust.pdf">Reflections on Trusting Trust</a>, Ken Thompson (Turing Award Lecture)</li>
+<li>Buch: <a href="https://t3x.org/reload/index.html">Practical Compiler Construction</a></li>
+<li>Bücher: <a href="https://www.cs.princeton.edu/~appel/modern/">Modern Compiler Implementation in {Java,C,ML}</a> (1997)</li>
+<li><a href="http://schemeworkshop.org/2006/11-ghuloum.pdf">An Incremental Approach to Compiler Construction</a> <img new="new link" src="../smileys/idea.png"/>
+<ul class="org-ul">
+<li><a href="https://raw.githubusercontent.com/namin/inc/master/docs/tutorial.pdf">Compilers: Backend to Frontend; and Back to Front Again</a> (erweiterte Version)</li>
+</ul></li>
+<li><a href="http://homepages.cs.ncl.ac.uk/brian.randell/Papers-Articles/427.pdf">Confessions Of A Compiler Writer</a> (1964)</li>
+<li><a href="https://compilers.iecc.com/crenshaw/">Let&rsquo;s Build a Compiler</a> (1988-1995)</li>
+<li><a href="https://applied-langua.ge/posts/the-next-700-virtual-machines.html">The next 700 virtual machines</a>, in Referenz auf <a href="https://www.cs.cmu.edu/~crary/819-f09/Landin66.pdf">The Next 700 Programming Languages</a> von Peter Ladin</li>
+<li><a href="https://www.philipzucker.com/compile_constraints/">Compiling With Constraints</a></li>
+<li><a href="http://moscova.inria.fr/~maranget/papers/ml05e-maranget.pdf">Compiling Pattern Matching to Good Decision Trees</a> (&bdquo;Maranget
+Algorithmus&ldquo;)</li>
+<li><a href="https://rosstate.org/publications/proofgen/proofgen_tate_popl10.pdf">Generating Compiler Optimizations from Proofs</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-sp" class="outline-3">
+<h3 id="sp">Zur Systemprogrammierung</h3>
+<div class="outline-text-3" id="text-sp">
+<ul class="org-ul">
+<li><a href="https://www.linusakesson.net/programming/tty/">The TTY demystified</a>
+<ul class="org-ul">
+<li><a href="http://catern.com/posts/terminal_quirks.html">Terminals Are Weird</a></li>
+<li><a href="https://www.xfree86.org/current/ctlseqs.html">XTerm Control Sequences</a></li>
+</ul></li>
+<li><a href="https://cyber.dabamos.de/unix/x11/">Cool, but obscure X11 tools</a></li>
+<li><a href="https://fossil-scm.org/home/doc/trunk/www/index.wiki">Fossil</a> VCS</li>
+<li><a href="https://pijul.org/">Pijul</a> VCS (&bdquo;basierend&ldquo; auf <a href="http://arxiv.org/abs/1311.3903">diesem paper</a>)</li>
+<li><a href="https://github.com/martinvonz/jj">Jujutsu</a> VCS (trennt Speicherung von VCS Algorithmen) (<a href="https://lwn.net/Articles/958468/">LWN</a>)</li>
+<li><a href="https://gameoftrees.org/">Game of Trees</a>, ein Git-Kompatibles VCS mit Ähnlichkeiten zu CVS</li>
+<li><a href="http://sed.sourceforge.net/sed1line.txt">Useful One-Line Scripts For <code>sed</code></a></li>
+<li><a href="https://mbreen.com/m4.html">Notes on the M4 Macro Language</a></li>
+<li><a href="https://www.brain-dump.org/projects/dvtm/">dvtm</a>, ein &bdquo;window manager&ldquo; im Terminal</li>
+<li><a href="https://systemd-by-example.com/">Systemd by example</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-os" class="outline-3">
+<h3 id="os">Zu Betriebsysteme (im weiteren Sinne)</h3>
+<div class="outline-text-3" id="text-os">
+<ul class="org-ul">
+<li><a href="https://multicians.org/">Multicians</a>, eine Webseite über das <a href="https://en.wikipedia.org/wiki/Multics">Multics</a> Betriebssystem
+<ul class="org-ul">
+<li><a href="https://toobnix.org/w/79Yx224FQt48w5eAAqusvS">Multics Demonstration</a> (Video, 1972) <img new="new link" src="../smileys/idea.png"/></li>
+<li><a href="https://www.multicians.org/fjcc1.html">Introduction and Overview of the Multics System</a></li>
+<li><a href="https://www.multicians.org/myths.html">Multics Myths</a></li>
+<li><a href="https://multicians.org/simulator.html">Multics Simulator</a></li>
+<li><a href="https://github.com/dancrossnyc/multics">Source code for Multics Release 12.7</a></li>
+<li><a href="https://www.acsac.org/2002/papers/classic-multics.pdf">Thirty Years Later: Lessons from the Multics Security Evaluation</a></li>
+</ul></li>
+<li>Quelltext vom <a href="https://github.com/PDP-10/its">Incompatible Timesharing System</a> (ITS)
+<ul class="org-ul">
+<li><a href="https://obsolescenceguaranteed.blogspot.com/2020/02/a-turists-guide-to-its.html">A Turist&rsquo;s Guide to ITS</a></li>
+</ul></li>
+<li><a href="https://plan9.io/plan9/">Plan 9 from Bell Labs</a> (und die &bdquo;moderne&ldquo; Inkarnation, <a href="https://www.9front.org/releases/">9front</a>)
+<ul class="org-ul">
+<li><a href="https://aiju.de/plan_9/plan9-syscalls">Plan 9 System Calls</a></li>
+</ul></li>
+<li><a href="https://www.scootersoftware.com/RegEx.html">A Tao of Regular Expressions</a></li>
+</ul>
+<p>
+Siehe auch meine Sammlung von Links zu &bdquo;<a href="https://wwwcip.cs.fau.de/~oj14ozun/sp/siehe-auch/bs.html">Betriebsystemen</a>&ldquo;, auf meiner
+Tutor-Seite.
+</p>
+
+<p>
+Sollte man mit Windows™ zu tun haben, empfiehlt es sich <a href="https://www.autohotkey.com/">AutoHotKey</a>
+anzuschauen.
+</p>
+</div>
+<div id="outline-container-os:unix" class="outline-4">
+<h4 id="os:unix">Zu (und gegen) U*ix</h4>
+<div class="outline-text-4" id="text-os:unix">
+<ul class="org-ul">
+<li><a href="https://www.levenez.com/unix/">Unix History Timeline</a> <img new="new link" src="../smileys/idea.png"/></li>
+<li><a href="https://github.com/dspinellis/unix-history-repo/">unix-history-repo</a>, <i>continuous Unix commit history from 1970 until today</i>.
+<ul class="org-ul">
+<li><a href="https://www.bell-labs.com/usr/dmr/www/hist.html">The Evolution of the Unix Time-sharing System</a></li>
+</ul></li>
+<li><a href="https://www.microsoft.com/en-us/research/uploads/prod/2019/04/fork-hotos19.pdf">A <code>fork()</code> in the road</a></li>
+<li><a href="https://ss64.com/bash/syntax-pronounce.html">Pronunciation guide for UNIX</a></li>
+<li><a href="https://archive.org/details/UnixProgrammingEnviornment">UNIX Programming Enviornment</a></li>
+<li><a href="https://stevens.netmeister.org/631/">Advanced Programming in the UNIX Environment</a></li>
+<li><a href="https://www.grymoire.com/Unix/">UNIX Tutorials</a></li>
+<li><a href="https://web.mit.edu/~simsong/www/ugh.pdf">The UNIX-HATERS Handbook</a>
+<ul class="org-ul">
+<li><a href="https://wwwcip.cs.fau.de/~oj14ozun/src+etc/os-alt.html">List of UNIX alternatives with desirable capabilities</a></li>
+</ul></li>
+<li>Video: <a href="https://www.youtube.com/watch?v=EY6q5dv_B-o">Ken Thompson zu der frühen Geschichte von C und Unix</a></li>
+<li>Unterhaltungsartikel &bdquo;<a href="https://www.gnu.org/fun/jokes/unix-hoax.html">Unix, a Hoax?</a>&ldquo;</li>
+<li><a href="https://research.swtch.com/v6/">Research Unix Sixth Edition</a> im Browser</li>
+<li><a href="https://frippery.org/make/">Public domain POSIX make</a>, eine POSIX-treue Implementierung von <code>make(1)</code></li>
+<li><a href="https://www.talisman.org/">TALISMAN General Information Unix Server</a></li>
+<li><a href="http://heirloom-ng.pindorama.dob.jp/">Heirloom Toolchest</a> &bdquo;New Generation&ldquo;, ein Fork des <a href="https://heirloom.sourceforge.net/">Heirloom Project</a>s</li>
+<li>Web-Version von <a href="https://www.arp242.net/the-art-of-unix-programming.html">The Art of Unix Programming</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-linux" class="outline-4">
+<h4 id="linux">Zu Linux</h4>
+<div class="outline-text-4" id="text-linux">
+<ul class="org-ul">
+<li><a href="https://makelinux.github.io/kernel/map/">Linux Kernel Map</a></li>
+<li><a href="https://bellard.org/jslinux/">JSLinux</a>, ein Emulator im Browser</li>
+<li><a href="https://download.oldlinux.org/CLK-5.0-WithCover.pdf">A Heavily Commented Linux Source Code</a></li>
+<li><a href="https://lkml.org/">Linux Kernel Mailing List Archive</a></li>
+<li><a href="https://filippo.io/linux-syscall-table/">Searchable Linux Syscall Table for x86 and x86_64</a></li>
+<li><a href="https://lwn.net/Articles/928581/">The early days of Linux</a></li>
+<li><a href="https://www.brendangregg.com/linuxperf.html">Linux Performance</a></li>
+<li><a href="https://www.kernel.org/doc/Documentation/memory-barriers.txt">Linux Kernel Memory Barriers</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-internet" class="outline-2">
+<h2 id="internet">Internet und Technische Kultur</h2>
+<div class="outline-text-2" id="text-internet">
+</div>
+<div id="outline-container-archiv" class="outline-3">
+<h3 id="archiv">Zur Archivierung</h3>
+<div class="outline-text-3" id="text-archiv">
+<ul class="org-ul">
+<li><a href="https://web.archive.org/">https://web.archive.org/</a></li>
+<li><a href="https://archive.is/">https://archive.is/</a></li>
+<li><a href="https://archive.ph/">https://archive.ph/</a> (aka &bdquo;archive.today&ldquo;)</li>
+<li><a href="https://ghostarchive.org/">Ghost Archive</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-wiki:wikipedia" class="outline-3">
+<h3 id="wiki:wikipedia">Zu Wikipedia Seiten</h3>
+<div class="outline-text-3" id="text-wiki:wikipedia">
+<ul class="org-ul">
+<li><a href="https://en.wikipedia.org/wiki/List_of_lists_of_lists">List of lists of lists</a>, spezifisch
+<ul class="org-ul">
+<li><a href="https://en.wikipedia.org/wiki/List_of_Latin_phrases_(full)">List of Latin phrases (full)</a></li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_common_misconceptions">List of common misconceptions</a></li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_animal_sounds">List of animal sounds</a>
+<ul class="org-ul">
+<li><a href="https://en.wikipedia.org/wiki/List_of_animal_names">List of animal names</a></li>
+</ul></li>
+<li><a href="https://en.wikipedia.org/wiki/List_of_unsolved_problems_in_physics">List of unsolved problems in physics</a></li>
+</ul></li>
+<li>Meta-Artikel
+<ul class="org-ul">
+<li><a href="https://en.wikipedia.org/wiki/Wikipedia:Unusual_articles">Wikipedia:Unusual articles</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Wikipedia:Good_articles">Wikipedia:Good_articles</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Special:LongPages">Special:LongPages</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Wikipedia:Wikipedia_records">Wikipedia:Wikipedia_records</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Wikipedia:Six_degrees_of_Wikipedia">Wikipedia:Six degrees of Wikipedia</a> (siehe <a href="https://www.sixdegreesofwikipedia.com/">auch</a>)</li>
+</ul></li>
+<li><a href="https://en.wikipedia.org/wiki/Comparison_of_European_traffic_signs">Comparison of European road signs</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Illegal_number">Illegal number</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Energy_efficiency_in_transport">Energy efficiency in transport</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Syllogism#Types">Syllogism#Types</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Wallpaper_group">Wallpaper group</a></li>
+<li>Interessante Artikel:
+<ul class="org-ul">
+<li><a href="https://en.wikipedia.org/wiki/Perverse_incentive">Perverse incentive</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Desire_path">Desired path</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Friendship_paradox">Friendship paradox</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Semantic_satiation">Semantic satiation</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Third_place">Third Place</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-pastebin" class="outline-3">
+<h3 id="pastebin">Zu (Anonymen) Pastebins</h3>
+<div class="outline-text-3" id="text-pastebin">
+<p>
+Eine alternativer Ansatz: <a href="https://github.com/magic-wormhole/magic-wormhole">Magic Wormhole Protocol</a> oder <a href="https://schollz.com/blog/croc6/">croc</a>, welche
+P2P Übertragungen ermöglichen
+</p>
+
+<ul class="org-ul">
+<li><a href="https://0x0.st">https://0x0.st</a></li>
+<li><a href="https://ttm.sh/">https://ttm.sh/</a></li>
+<li><a href="https://paste.rs/">https://paste.rs/</a></li>
+<li><a href="https://dpaste.com/">https://dpaste.com/</a></li>
+<li><a href="https://paste.mozilla.org/">https://paste.mozilla.org/</a></li>
+<li><a href="https://bpa.st/">https://bpa.st/</a></li>
+<li><a href="https://paste.textboard.org/">https://paste.textboard.org/</a></li>
+<li><a href="https://bashupload.com/">https://bashupload.com/</a></li>
+<li><a href="https://mathb.in/">https://mathb.in/</a> (Für TeX)</li>
+<li><a href="https://temp.sh/">https://temp.sh/</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-folk" class="outline-3">
+<h3 id="folk">Zur Geschichte und Folklore der Informatik</h3>
+<div class="outline-text-3" id="text-folk">
+<ul class="org-ul">
+<li><a href="https://www.dourish.com/goodies/jargon.html">Jargon File</a> (nicht die ESR <a href="https://catb.org/jargon/html/go01.html">Version</a>!, <a href="https://zerfleddert.de/jargon-1/">Sammlung verschiedener Versionen</a>) <img new="new link" src="../smileys/idea.png"/></li>
+<li>Geschichten
+<ul class="org-ul">
+<li><a href="https://www.catb.org/jargon/html/story-of-mel.html">The Story of Mel</a> <img new="new link" src="../smileys/idea.png"/> (<a href="https://melsloop.com/">40. Jahrestag</a>)</li>
+<li><a href="https://www.ibiblio.org/harris/500milemail.html">The case of the 500-mile email</a></li>
+<li><a href="https://www.ee.ryerson.ca/~elf/hack/realmen.html">Real Programmers Don&rsquo;t Use PASCAL</a></li>
+</ul></li>
+<li><a href="https://astrobe.com/Modula2/Lilith.pdf">The Personal Compiler Lilith</a></li>
+<li><a href="http://www.catb.org/~esr/halloween/">The Halloween Documents</a></li>
+<li><a href="https://www.cs.utexas.edu/users/EWD/transcriptions/EWD04xx/EWD498.html">How do we tell truths that might hurt?</a> (Dijkstra)</li>
+<li><a href="https://cacm.acm.org/magazines/2021/3/250710-the-decline-of-computers-as-a-general-purpose-technology/fulltext">The Decline of Computers as a General Purpose Technology</a> <img new="new link" src="../smileys/idea.png"/></li>
+<li><a href="http://www.catb.org/%7Eesr/faqs/smart-questions.html">How To Ask Questions The Smart Way</a></li>
+<li><a href="https://www.free-soft.org/gpl_history/">The History of the GPL</a></li>
+<li><a href="http://catb.org/esr/writings/unix-koans/">Rootless Root</a>: The Unix Koans of Master Foo</li>
+<li><a href="https://web.archive.org/web/20220803221602/https://people.cs.uchicago.edu/~wiseman/humor/ai-koans.html">AI Koans</a>
+<ul class="org-ul">
+<li><a href="https://www.cs.cmu.edu/afs/cs/project/ai-repository/ai/areas/classics/0.html">Classical AI Programs</a></li>
+</ul></li>
+<li><a href="https://www.gnu.org/fun/humor.html">Laugh along with GNU</a></li>
+<li><a href="https://archive.org/details/computer-lib-dream-machines">Computer Lib/Dream Machines</a>, Ted Nelson</li>
+<li><a href="http://www.bash.org/">Quote Database</a></li>
+<li><a href="https://www.youtube.com/watch?v=8pTEmbeENF4">The Future of Programming</a> (Bret Victor, Video, <a href="https://worrydream.com/dbx/">Referenzen</a>) <img new="new link" src="../smileys/idea.png"/></li>
+<li><a href="http://www.cs.cmu.edu/~dst/DeCSS/Gallery/">Gallery of CSS Descramblers</a> <img new="new link" src="../smileys/idea.png"/></li>
+<li><a href="https://web.archive.org/web/20220315012918/https://james-iry.blogspot.com/2009/05/brief-incomplete-and-mostly-wrong.html">A Brief, Incomplete, and Mostly Wrong History of Programming Languages</a></li>
+<li><a href="https://wiki.c2.com/">WikiWikiWeb</a> (<i>Die</i> klassische Wiki mit vielen interessanten Artikel)</li>
+<li><a href="http://meatballwiki.org/wiki/WhatIsaWiki">What is a Wiki?</a></li>
+<li><a href="https://infinitemac.org/">infinitemac.org</a>, Emulatoren für alte Macintosh Systeme</li>
+<li><a href="https://archive.org/details/softwarelibrary_mac">Sammlung alter Macintosh Programme</a>, im Browser ausführbar</li>
+<li>Kurzfilm: <a href="https://www.youtube.com/watch?v=zOP1LNr70aU">Hackers: Wizards of the Electronic Age</a> (1985)</li>
+<li>Humoristische <i>Request for Comments</i>,
+<ul class="org-ul">
+<li>RFC 1149: <a href="https://www.rfc-editor.org/rfc/rfc1149">A Standard for the Transmission of IP Datagrams on Avian Carriers</a></li>
+<li>RFC 2324: <a href="https://www.rfc-editor.org/rfc/rfc2324">Hyper Text Coffee Pot Control Protocol</a></li>
+</ul></li>
+<li><a href="http://textfiles.com/directory.html">textfiles.com</a>, eine Sammlung von Textdateien zu verschiedenen Themen</li>
+<li><a href="https://www.youtube.com/watch?v=yJDv-zdhzMY">The Mother of All Demos</a> (1968, <a href="https://dougengelbart.org/content/view/209/">website</a>) von <a href="https://en.wikipedia.org/wiki/Douglas_Engelbart">Doug Engelbart</a></li>
+<li><a href="https://web.archive.org/web/20230525170251/https://www.loper-os.org/?p=861">Engelbart&rsquo;s Violin</a></li>
+<li><a href="https://xyproblem.info/">The XY Problem</a></li>
+<li>Konzept von dem <a href="https://en.wikipedia.org/wiki/Eternal_September">Eternal September</a></li>
+<li><a href="https://www.ibiblio.org/pub/academic/communications/logs/">IRC logs aus den 90ern</a>, während geschichtlichen Ereignissen (Zerfall der Sovient Union, Zweiter Golfkrieg)</li>
+<li><a href="https://foldoc.org/">Free On-line Dictionary of Computing</a></li>
+<li><a href="https://icm.museum/">The Interim Computer Museum</a> des <a href="https://sdf.org/">SDF</a></li>
+<li><a href="http://www.typewritten.org/Media/">Screenshots of Desktops</a> (zeigt <i>früher sah alles besser aus</i>)</li>
+<li><a href="https://www.activism.net/cypherpunk/manifesto.html">A Cypherpunk&rsquo;s Manifesto</a></li>
+<li>Vortrag <a href="https://www.youtube.com/watch?v=fhOHn9TClXY">Joe Armstrong interviews Alan Kay</a>, wo diese Texte erwähnt werden:
+<ul class="org-ul">
+<li><a href="http://www.bitsavers.org/pdf/mit/tx-2/Sketchpad_TR296_Jan63.pdf">Sketchpad: A Man-Machine Graphical Communication System</a> (Sutherland, 1963)</li>
+<li><a href="https://archive.org/details/computationfinit0000mins/page/n5/mode/2up">Computation: finite and infinite machines</a> (Minsky, 1967)</li>
+<li><a href="https://apps.dtic.mil/sti/tr/pdf/AD0785031.pdf">Situations, Actions, And Causal Laws</a> (McCarthy, 1963)</li>
+<li><a href="https://mitpress.mit.edu/9780262516853/semantic-information-processing/">Semantic Information Processing</a> (Minsky, 1968)</li>
+<li><a href="https://dl.acm.org/doi/10.1145/800257.808896">META II: Syntax-Oriented Compiler Writing Language</a> (Schorre, 1964)</li>
+<li><a href="https://dspace.mit.edu/handle/1721.1/6171">PLANNER: A Language for Manipulating Models and Proving Theorems in a Robot</a> (Hewitt, 1970)</li>
+<li><a href="https://www.thekurzweillibrary.com/memorandum-for-members-and-affiliates-of-the-intergalactic-computer-network">Members and Affiliates of the Intergalactic Computer Network</a> (Licklider, 1963)</li>
+</ul></li>
+<li>Vortrag <a href="https://www.youtube.com/watch?v=oKg1hTOQXoY">The computer revolution hasnt happened yet</a>, Alan Kay (1997)</li>
+<li><a href="https://drive.google.com/file/d/1ebj6vK7iHlLippI8hVtVPiqyhRV7MVoj/edit">Outline of a Paper to accompany Prof. Weizenbaum&rsquo;s Paper on ELIZA</a>
+(<a href="https://arxiv.org/abs/2406.17650">Kommentar</a>)</li>
+<li><a href="https://arxiv.org/html/cs/9901011">A Brief History of the Internet</a></li>
+<li><a href="https://vintageapple.org/byte/">Vintage Byte Magazine Library</a></li>
+<li><a href="https://wiki.livingcomputers.org/doku.php">livingcomputers.org</a>, ein Dienst welches alte Betriebsysteme via SSH bereitstellt</li>
+<li>Aufnahmen der Sendung <a href="https://archive.org/details/computerchronicles">Computer Chronicles</a> (<a href="https://en.wikipedia.org/wiki/Computer_Chronicles">1983-2002</a>)</li>
+<li><a href="https://gunkies.org/wiki/Main_Page">Computer History Wiki</a></li>
+<li><a href="https://stevejobsarchive.com/exhibits/objects-of-our-life">Objects of our Life</a>, Steve Jobs bei der <i>Aspen Conference</i> (1983)</li>
+<li><a href="https://wiki.unix-haters.org/">Unix HATERS Wiki</a></li>
+<li><a href="https://jackrusher.com/strange-loop-2022/">Stop Writing Dead Programms</a> (Jack Rusher) <img new="new link" src="../smileys/idea.png"/></li>
+<li><a href="https://www.twenex.org/starter.html">TOPS-20 Starter Guide for UNIX users</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-editor" class="outline-3">
+<h3 id="editor">Zu Textbearbeitungsprogrammen</h3>
+<div class="outline-text-3" id="text-editor">
+<ul class="org-ul">
+<li><a href="https://www.nano-editor.org/">GNU Nano</a></li>
+<li><a href="https://orbitalquark.github.io/textadept/">Textadept</a></li>
+<li><a href="https://acme.cat-v.org/">Acme</a>
+<ul class="org-ul">
+<li>Video <a href="https://research.swtch.com/acme">A Tour of the Acme Editor</a>, von <a href="https://swtch.com/~rsc/">Russ Cox</a> <img new="new link" src="../smileys/idea.png"/></li>
+<li>Verfügbar via <a href="https://9fans.github.io/plan9port/">Plan 9 from User Space</a></li>
+</ul></li>
+<li><a href="https://en.wikipedia.org/wiki/Ed_(text_editor)">ed</a></li>
+<li><a href="https://www.gnu.org/fun/jokes/ed-msg.html">Ed, man! !man ed</a></li>
+<li><a href="https://sam.cat-v.org/">Sam</a></li>
+<li><a href="https://www.vim.org/">Vim</a>/<a href="https://neovim.io/">Neovim</a>
+<ul class="org-ul">
+<li>&bdquo;<a href="https://stackoverflow.com/questions/1218390/what-is-your-most-productive-shortcut-with-vim/1220118#1220118">Your problem with Vim is that you don&rsquo;t grok vi.</a>&ldquo;</li>
+<li><a href="https://blog.sanctum.geek.nz/vim-koans/">Vim Kōans</a></li>
+<li><a href="https://blog.sanctum.geek.nz/series/unix-as-ide/">Unix as an IDE</a></li>
+<li>Heirloom&rsquo;s <a href="https://github.com/n-t-roff/heirloom-ex-vi">Traditional Vi</a></li>
+<li><a href="https://github.com/johnsonjh/OpenVi">Open Vi</a> (portabele Version aus OpenBSD)</li>
+</ul></li>
+<li><a href="https://www.brain-dump.org/projects/vis/">Vis</a></li>
+<li><a href="https://micro-editor.github.io/">Micro</a></li>
+<li><a href="https://helix-editor.com/">Helix</a></li>
+</ul>
+
+<p>
+Siehe auch <a href="https://texteditors.org/cgi-bin/wiki.pl">TextEditors.org</a> für eine umfassende Übersicht.  Im weiteren
+Sinne kann die <a href="https://qaz.wtf/u/">Unicode Toys</a> interessant sein.
+</p>
+</div>
+<div id="outline-container-editor:emacs" class="outline-4">
+<h4 id="editor:emacs">Zu Emacs</h4>
+<div class="outline-text-4" id="text-editor:emacs">
+<ul class="org-ul">
+<li><a href="https://www.gnu.org/software/emacs/">GNU Emacs</a>
+<ul class="org-ul">
+<li><p>
+<a href="https://man.openbsd.org/mg">mg</a> (auch bekannt als MicroGnuEmacs), Zitat Manpage:
+</p>
+<blockquote>
+<p>
+<i>It is compatible with emacs because there shouldn&rsquo;t be any reason to learn more editor types than emacs or vi(1).</i>
+</p>
+</blockquote></li>
+</ul></li>
+<li><a href="https://github.com/troglobit/mg">Portable Implementierung</a></li>
+<li><a href="https://www.emacswiki.org/">Emacs Wiki</a> (<a href="https://www.emacswiki.org/emacs/PhilipKaludercic">meine Seite</a>)</li>
+<li><a href="https://www.oreilly.com/openbook/freedom/ch06.html">The Emacs Commune</a> <img new="new link" src="../smileys/idea.png"/></li>
+<li><a href="https://sachachua.com/blog/category/emacs-news/">Emacs News</a></li>
+<li><a href="https://planet.emacslife.com/">Planet Emacslife</a></li>
+<li><a href="http://www.damtp.cam.ac.uk/user/sje30/emacs/ell.html">Emacs Lisp List</a> (veraltet)</li>
+<li><a href="https://www.finseth.com/emacs.html">Emacs Implementations and Literature</a></li>
+<li><a href="https://github.com/larsbrinkhoff/emacs-history">Historical Emacs Software Preservation</a></li>
+<li><a href="https://web.archive.org/web/20110723033542/http://www.burlingtontelecom.net/~ashawley/gnu/emacs/doc/emacs-1978.html">An Introduction to the Emacs Editor</a> (1978)</li>
+<li>Multics&rsquo; <a href="http://www.bitsavers.org/pdf/honeywell/large_systems/multics/CJ27-00_Emacs_Users_Guide_Dec79.pdf">Emacs Text Editor Users&rsquo; Guide</a></li>
+<li><a href="https://emacs.amodernist.com">Emacs Configuration Generator</a></li>
+<li><a href="https://dl.acm.org/doi/pdf/10.1145/3386324">Evolution of Emacs Lisp</a></li>
+<li><a href="https://emacs.brause.cc/timeline.html">Emacs Timeline</a> (updated)</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-android" class="outline-3">
+<h3 id="android">Zu Android Anwendungen</h3>
+<div class="outline-text-3" id="text-android">
+<p>
+Ich verweise in diesem Abschnitt absichtlich nur auf <a href="https://www.android.com/">Android</a>
+Anwendungen welche mit <a href="https://f-droid.org/">F-Droid</a> verwaltet werden können.  Wer
+Anwendungen aus dem <i>Google-Play Store</i> installiert, kann mittels
+<a href="https://exodus-privacy.eu.org/en/">Exodus Privacy</a> schauen wie viele Tracker in den jeweiligen Anwendungen
+enthalten sind.
+</p>
+
+<ul class="org-ul">
+<li><a href="https://termux.dev/en/">Termux</a>, Terminal Emulator mit Paket Manager</li>
+<li><a href="https://gitlab.com/divested-mobile/mull-fenix">Mull</a>, ein gehärteter Firefox (bzw. <a href="https://f-droid.org/packages/org.mozilla.fennec_fdroid/">Fennec</a>) Fork vom <a href="https://divestos.org/">DivestOS</a> Projekt
+<ul class="org-ul">
+<li><a href="https://gitlab.com/divested-mobile/mulch">Mulch</a>, analog für Chromium</li>
+</ul></li>
+<li><a href="https://newpipe.net/">NewPipe</a>, ein Client für Seiten wie YouTube vergleichbar zu <a href="https://ytdl-org.github.io/youtube-dl/">youtube-dl</a>/<a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a>
+<ul class="org-ul">
+<li>Alternativ auch mit <a href="https://github.com/polymorphicshade/NewPipe">SponsorBlock</a> integration (Fork)</li>
+</ul></li>
+<li><a href="https://molly.im/">Molly</a>, Signal-Fork mit zusätzlichen Sicherheit Vorkehrungen</li>
+<li><a href="https://f-droid.org/en/packages/com.b44t.messenger/">Delta Chat</a>, ein Android Client für ein <a href="https://delta.chat/en/">Chat System</a>, basierend auf Email</li>
+<li><a href="https://organicmaps.app/">Organic Maps</a>, ein <a href="https://www.openstreetmap.org">OpenStreetMaps</a> Client</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-firefox" class="outline-3">
+<h3 id="firefox">Zu Firefox Extensions</h3>
+<div class="outline-text-3" id="text-firefox">
+<p>
+Die meisten dieser <a href="https://www.mozilla.org/en-US/firefox/new/">Firefox</a> Erweiterungen gibt es auch in
+(ggf. geschwächter Form) auf anderen Browsern.  Alternativ kann ich
+auch <a href="https://ungoogled-software.github.io/">Ungoogled Chromium</a> empfehlen.
+</p>
+
+<p>
+Ansonsten kann ich auch empfehlen <a href="https://kb.mozillazine.org/Using_keyword_searches">Keyword Search</a> für häufig benutzte
+Seiten einzurichten.
+</p>
+
+<div class="org-center">
+<p>
+Nicht vergessen die <code>dom.private-attribution.submission.enabled</code>
+Option in <code>about:config</code> zu deaktivieren, welche <a href="https://www.heise.de/en/news/For-advertising-Firefox-now-collects-user-data-by-default-9801345.html">Nutzerdaten sammelt</a>
+für Werbezwecke!
+</p>
+
+<p>
+Seit 08Sep24 Spiele ich auch mit dem Firefox Fork <a href="https://librewolf.net/">LibreWolf</a> , was ich
+bisher empfehlen kann.
+</p>
+</div>
+
+<ul class="org-ul">
+<li><a href="https://ublockorigin.com/">uBlock Origin;</a> Ad-Blocker, es empfiehlt sich zusätzliche Blacklists wie &bdquo;Annoyances&ldquo; zu aktivieren</li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/clearurls/">ClearURLs</a>; Bereinigt URLs von Tracker-Info</li>
+<li><a href="https://sponsor.ajay.app/">SponsorBlock</a>; Automatisches Überspringen von Teilen eines Videos auf YouTube</li>
+<li><a href="https://dearrow.ajay.app/">DeArrow</a>; Automatisches Ersetzen von Titeln und Thumbnails auf YouTube, mit weniger &bdquo;Click Bait&ldquo;</li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/consent-o-matic/">Consent-O-Matic</a>; Automatisches ablehnen von DS-GVO Anfragen</li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/cookie-autodelete/">Cookie Autodelete</a>; Verwaltet das löschen von Cookies</li>
+<li><a href="https://jshelter.org/">jShelter</a>; Javascript-Beschänker</li>
+<li><a href="https://noscript.net/">NoScript</a>; Javascript-Entferner</li>
+<li><a href="https://github.com/SimonBrazell/privacy-redirect">Privacy Redirect</a>; Automatisches Umleiten zu sicheren Alternativen</li>
+<li><a href="https://www.localcdn.org/">LocalCDN</a>; <a href="https://en.wikipedia.org/wiki/Content_delivery_network">CDN</a> Emulation, ein Fork von <a href="https://decentraleyes.org/">Decentraleyes</a></li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/firefox-translations/">Firefox Translations</a>; In-Browser Website Übersetzer, <a href="https://support.mozilla.org/en-US/kb/website-translation">eingebaut</a> seit Firefox 118</li>
+<li><a href="https://addons.mozilla.org/de/firefox/addon/greasemonkey/">Greasemonkey</a>; Verwalten von &bdquo;<a href="https://en.wikipedia.org/wiki/Userscript">User Scripts</a>&ldquo;, welche das einfache Erweitern von Webseiten ermöglicht
+<ul class="org-ul">
+<li>Userscript &bdquo;<a href="https://greasyfork.org/en/scripts/38628-publication-auto-pdf">Publication Auto PDF</a>&ldquo;</li>
+<li>Userscript &bdquo;<a href="https://greasyfork.org/en/scripts/28497-%E7%BD%91%E9%A1%B5%E9%99%90%E5%88%B6%E8%A7%A3%E9%99%A4-%E6%94%B9">Remove web limits</a>&ldquo;</li>
+<li>Userscript &bdquo;<a href="https://greasyfork.org/en/scripts/789-select-text-inside-a-link-like-opera">Select text inside a link</a>&ldquo;</li>
+<li>Userscript &bdquo;<a href="https://greasyfork.org/scripts/1682-google-hit-hider-by-domain-search-filter-block-sites">Google Hit Hider by Domain</a>&ldquo;</li>
+</ul></li>
+<li><a href="https://snowflake.torproject.org/">Tor Snowflake</a>; Hilft Menschen ohne Zugriff auf Tor via deinen Browser als Entry-Guard Zensur zu Umgehen</li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/auth-helper/">Authenticator</a>; ein <a href="https://en.wikipedia.org/wiki/Time-based_one-time_password">TOTP</a>/<a href="https://en.wikipedia.org/wiki/Multi-factor_authentication">2FA</a>-client im Browser, mit <a href="https://www.mozilla.org/en-US/firefox/features/sync/">Firefox Sync</a> integration</li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/view-page-archive/">Web Archives</a>; eine Abkürzung um Seiten auf populären Archiven
+nachzuschauen</li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/private-relay/">Firefox Relay</a>; eine Dienstleistung um seine Email Adresse mit einem
+Proxy zu Maskieren</li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/private-grammar-checker-harper/">Harper</a>: Ein Offline Grammatik Programm</li>
+</ul>
+
+<p>
+Als explizite anti-Empfehlung kann ich davon abraten <a href="https://en.wikipedia.org/wiki/PayPal_Honey">&bdquo;Honey&ldquo; von
+PalPal</a> zu benutzen, wie in <a href="https://www.youtube.com/watch?v=vc4yL3YTwWk">diesem Video</a> erklärt wird.
+</p>
+</div>
+</div>
+<div id="outline-container-privacy" class="outline-3">
+<h3 id="privacy">Zu Datenschutz und Privatssphäre</h3>
+<div class="outline-text-3" id="text-privacy">
+<ul class="org-ul">
+<li><a href="https://media.ccc.de/v/35c3-9941-how_facebook_tracks_you_on_android/#t=603">How Facebook tracks you on Android</a>, CCC18</li>
+<li><a href="https://degooglisons-internet.org/en/alternatives/">Alternativen zu Google Dienstleistugen</a></li>
+<li><a href="https://spyware.neocities.org/">Online Spyware Watchdog</a></li>
+<li><a href="https://www.privacyguides.org/en/">Privacy Guides</a></li>
+<li><a href="https://tosdr.org/en">Terms of Service; Did not Read</a>, Zusammenfassungen von
+Nutzungsbedingungen populärer Web-Dienste</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-math" class="outline-2">
+<h2 id="math">Mathematik</h2>
+<div class="outline-text-2" id="text-math">
+<ul class="org-ul">
+<li><a href="https://mathcs.clarku.edu/~djoyce/java/elements/toc.html">Elemente von Euklid</a>
+<ul class="org-ul">
+<li><a href="https://archive.org/details/firstsixbooksofe00eucl">(Colored) Elements</a> <img new="new link" src="../smileys/idea.png"/></li>
+<li><a href="https://downloads.tuxfamily.org/openmathdep/euclid/Euclid-Todhunter-Synopsis-Harris.pdf">Euclid Synopsis</a></li>
+</ul></li>
+<li><a href="https://worrydream.com/refs/Lockhart_2002_-_A_Mathematician%27s_Lament.pdf">A Mathematician’s Lament</a></li>
+<li><a href="https://www.3blue1brown.com/topics/linear-algebra">Linear Algebra</a>, von 3Blue1Brown</li>
+<li><a href="https://www.youtube.com/watch?v=21qPOReu4FI">Five Stages of Accepting Constructive Mathematics</a> (Video, <a href="https://www.ams.org/journals/bull/2017-54-03/S0273-0979-2016-01556-4/S0273-0979-2016-01556-4.pdf">PDF</a>)</li>
+<li><a href="https://www.symbolab.com/">Symbolab</a></li>
+<li><a href="https://mathics.org/">Mathics</a>, eine freie Alternative zu  <a href="https://de.wikipedia.org/wiki/Mathematica">Wolfram Mathematica</a></li>
+<li><a href="https://octave.org/">Octave</a>, eine freie Alternative <a href="https://en.wikipedia.org/wiki/MATLAB">MATLAB</a></li>
+<li><a href="https://maxima.sourceforge.io/">Maxima</a>, ein freies Computer Algebra System, ein Abkomme des ersten CAS <a href="https://en.wikipedia.org/wiki/Macsyma">Macsyma</a></li>
+<li><a href="https://www.sagemath.org/">SageMath</a>, ein CAS welches auf zahlreichen anderen freien Paketen basiert</li>
+<li><a href="http://pirate.shu.edu/~kahlnath/Top100.html">The Hundred Greatest Theorems</a> (&#x2026; und verschiedene <a href="https://www.cs.ru.nl/~freek/100/">Formalisierungen</a>)</li>
+<li><a href="https://www.planetmath.org/msc.html">PlanetMath</a></li>
+<li>&bdquo;<a href="https://de.wikibooks.org/wiki/Mathe_f%C3%BCr_Nicht-Freaks">Mathe für Nicht-Freaks</a>&ldquo;</li>
+<li>Video Serie <a href="https://www.youtube.com/playlist?list=PLCTMeyjMKRkqTM2-9HXH81tvpdROs-nz3">Modern Foundations of Mathematics</a></li>
+<li>Springer&rsquo;s bzw. <a href="https://ems.press/">EMS</a>&rsquo;s <a href="https://encyclopediaofmath.org">Encyclopedia of Mathematics</a></li>
+<li>Buch <a href="https://discrete.openmathbooks.org/dmoi3.html">Discrete Mathematics</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Nicolas_Bourbaki">Nicolas Bourbaki</a> Gruppe (<a href="https://www.bourbaki.fr/">website</a>)</li>
+<li><a href="https://oeis.org/">The On-Line Encyclopedia of Integer Sequences</a></li>
+<li><a href="https://www.genealogy.math.ndsu.nodak.edu/">Mathematics Genealogy Project</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Glossary_of_mathematical_symbols">Glossary of mathematical symbols</a></li>
+<li><a href="https://calculusmadeeasy.org/">Calculus Made Easy</a>, Silvanus P. Thompson</li>
+<li><a href="https://www.mathematische-basteleien.de/">Mathematische Basteleien</a></li>
+<li><a href="https://groupprops.subwiki.org/wiki/Category:Standard_terminology">Standard terminology</a> in Group Theory</li>
+<li><a href="https://courses.grainger.illinois.edu/CS476/fa2022/readings/meseguer-set-theory-algebra-computer-science.pdf">Set Theory and Algebra in Computer Science</a>, <i>A Gentle Introduction to Mathematical Modeling</i></li>
+<li><a href="https://stacks.math.columbia.edu/">The Stacks project</a>, <i>an open source textbook and reference work on algebraic geometry</i></li>
+<li><a href="https://textbooks.aimath.org/">Open Textbook Initiative</a>, empfohlene offener Lehrbücher</li>
+<li><a href="https://discrete.openmathbooks.org/dmoi4/dmoi4.html">Discrete Mathematics: An Open Introduction</a></li>
+<li><a href="https://openmathdep.tuxfamily.org/">Open Mathematics Depository</a>, eine geordnete Sammlung von PDFs</li>
+<li><a href="https://cs.uwaterloo.ca/~csk/spectre/">A chiral aperiodic monotile</a> und die dazu passende <a href="https://www.printables.com/model/437413-aperiodic-monotile-cookie-cutters">3d druckbare
+Ausstechformen</a></li>
+<li><a href="https://www.euclideanspace.com/">EuclideanSpace</a>, eine Seite über Mathematik und Berechenbarkeit</li>
+</ul>
+</div>
+<div id="outline-container-logik" class="outline-3">
+<h3 id="logik">Zu Logik</h3>
+<div class="outline-text-3" id="text-logik">
+<ul class="org-ul">
+<li><a href="https://proofwiki.org/wiki/Main_Page">ProofWiki</a> (Übersicht verschiedener Kalküle)</li>
+<li><a href="http://teachinglogic.liglab.fr/DN/">Natural Deduction Proof Generator</a></li>
+<li><a href="https://openlogicproject.org/">Open Logic Project</a> Bücher Reihe</li>
+<li><a href="https://www.cs.cmu.edu/~fp/courses/15317-f00/handouts/logic.pdf">Constructive Logic</a> Vorlesungsskript</li>
+<li>Buch <a href="https://logic.tamu.edu/">Logic Primer</a> (<a href="https://mitpress.mit.edu/9780262543644/">MIT Press</a>)</li>
+<li><a href="https://www.johnwoods.ca/hhl/">The Handbook of the History of Logic</a> (<a href="https://archive.org/details/greek-indian-arabic-logic-gabbay-woods">Volume 1</a>, <a href="https://archive.org/details/DovM.GabbayJohnWoodsEds.HandbookOfTheHistoryOfLogic.Volume05LogicFromRussellToChurch/mode/2up">Volume 5</a>)</li>
+<li><a href="https://mrieppel.net/prog/truthtable.html">Truth Table Generator</a></li>
+<li><a href="https://www.people.vcu.edu/~rhammack/BookOfProof/">Book Of Proof</a></li>
+<li><a href="https://www.cs.nmsu.edu/historical-projects/Projects/FoLundecidability.pdf">Undecidability of First-Order Logic</a></li>
+<li><a href="https://knightscholar.geneseo.edu/geneseo-authors/6/">A Friendly Introduction to Mathematical Logic</a></li>
+<li><a href="https://www.cs.cmu.edu/~rwh/papers/unreasonable/basl.pdf">On the Unusual Effectiveness of Logic in Computer Science</a></li>
+<li><a href="https://link.springer.com/book/10.1007/978-3-662-57265-8">Proofs from the Book</a></li>
+<li><a href="https://girard.perso.math.cnrs.fr/linear.pdf">Linear Logik</a>, Girard</li>
+<li><a href="https://link.springer.com/book/10.1007/978-3-662-00049-6">Grundzüge der theoretischen Logik</a>, Hilbert &amp; Ackermann</li>
+<li>Comic <a href="https://www.logicomix.com/en/index.html">Logicomix</a>, über Logik und die Geschichte der Logik (recht oberflächlich)</li>
+<li><a href="https://cbw124.github.io/">Logic in color</a></li>
+<li><a href="https://www.jstor.org/stable/2964058">Languages in Which Self Reference is Possible</a>, Raymond M. Smullyan (Verallgemeinerung von Gödels Unvollständigkeitsbeweisen)</li>
+</ul>
+</div>
+<div id="outline-container-logik:proofassistant" class="outline-4">
+<h4 id="logik:proofassistant">Zu Beweis-Assistenten/Theorem-Beweisern</h4>
+<div class="outline-text-4" id="text-logik:proofassistant">
+<ul class="org-ul">
+<li>Buch <a href="https://raw.githubusercontent.com/blanchette/logical_verification_2020/master/hitchhikers_guide.pdf">The Hitchhiker&rsquo;s Guide to Logical Verification</a> (<a href="https://leanprover-community.github.io/">Lean</a>)
+<ul class="org-ul">
+<li><a href="https://www.ma.imperial.ac.uk/~buzzard/xena/natural_number_game/">The Natural Number Game</a></li>
+<li><a href="https://leanprover-community.github.io/mathlib_docs/">mathlib</a> bzw. <a href="https://leanprover-community.github.io/mathlib4_docs/">mathlib4</a></li>
+</ul></li>
+<li><a href="https://incredible.pm/">The Incredible Proof Machine</a></li>
+<li><a href="https://www.cs.utexas.edu/users/moore/acl2/">ACL2</a>: <i>A Computational Logic for Applicative Common Lisp</i></li>
+<li><a href="https://www.cs.cornell.edu/courses/cs3110/2018fa/lec/21-coq-logic/notes.html">Logic in Coq</a>
+<ul class="org-ul">
+<li><a href="https://people.cs.kuleuven.be/~bart.jacobs/coq-essence.pdf">The Essence of Coq as a Formal System</a>, Jacobs</li>
+</ul></li>
+<li><a href="https://mizar.uwb.edu.pl/">Mizar</a> System</li>
+<li><a href="http://adam.chlipala.net/cpdt/">Certified Programming with Dependent Types</a>, Adam Chlipala</li>
+<li><a href="https://www.cl.cam.ac.uk/~jrh13/papers/joerg.pdf">History of Interactive Theorem Proving</a></li>
+<li><a href="https://www.cse.chalmers.se/research/group/logic/TypesSS05/Extra/wiedijk_2.pdf">QED Manifesto</a></li>
+<li><a href="https://www.ma.imperial.ac.uk/~buzzard/xena/computers2.pdf">Proving theorems with computers</a>, Kevin Buzzard</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-logik:solver" class="outline-4">
+<h4 id="logik:solver">Zu Solvern</h4>
+<div class="outline-text-4" id="text-logik:solver">
+<ul class="org-ul">
+<li>Buch: <a href="https://www.iospress.com/catalog/books/handbook-of-satisfiability-2">Handbook of Satisfiability</a>
+<ul class="org-ul">
+<li><a href="http://minisat.se/">MiniSat</a>, ein SAT Solver</li>
+<li><a href="https://github.com/msoos/cryptominisat">cryptominsat</a>, eine Alternative</li>
+<li><a href="https://github.com/arminbiere/cadical">CaDiCaL</a>, eine weitere Alternative, basierend auf einer <a href="https://fmv.jku.at/kissat/">früheren alternative</a> (kissat)</li>
+</ul></li>
+<li><a href="https://www.coin-or.org/">COIN-OR</a>, eine Solver Familie</li>
+<li><a href="https://www.gnu.org/software/glpk/">GLPK</a>, GNU Linear Programming Kit</li>
+<li><a href="https://www.microsoft.com/en-us/research/project/z3-3/">Z3</a>, ein SMT Solver mit schöner <a href="https://pypi.org/project/z3-solver/">Python API</a> (<a href="https://ericpony.github.io/z3py-tutorial/guide-examples.htm">guide</a>)
+<ul class="org-ul">
+<li><a href="https://jfmc.github.io/z3-play/">Z3 Playground</a></li>
+</ul></li>
+<li><a href="https://github.com/stp/stp">stp</a>, ein SMT solver auf Bitvektoren</li>
+<li><a href="https://github.com/LLNL/hiop">hiop</a>, ein Solver für nicht-linere Probleme</li>
+<li><a href="https://scipopt.org/">scipsmt</a>, ein Integer Contraint Problem solver</li>
+<li><a href="https://potassco.org/">Potassco</a>, eine Sammlung von <a href="https://en.wikipedia.org/wiki/Answer_set_programming">ASP</a> Solvern
+<ul class="org-ul">
+<li>Buch: <a href="https://potassco.org/book/">Answer Set Solving in Practice</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-cattheory" class="outline-3">
+<h3 id="cattheory">Zu Category Theory</h3>
+<div class="outline-text-3" id="text-cattheory">
+<ul class="org-ul">
+<li><a href="https://ncatlab.org/">nLab</a>, eine &bdquo;Wiki&ldquo; zu Category Theory <img new="new link" src="../smileys/idea.png"/>
+<ul class="org-ul">
+<li><a href="https://ncatlab.org/nlab/show/stuff,+structure,+property">Stuff, structure, and properties</a></li>
+<li><a href="https://ncatlab.org/nlab/show/concept+with+an+attitude">Concept with an Attitude</a></li>
+<li><a href="https://ncatlab.org/nlab/show/computational+trilogy">Computational Trilogy</a></li>
+<li>Hegel&rsquo;sche <a href="https://ncatlab.org/nlab/show/Science+of+Logic">Science of Logic</a> (Wissenschaft der Logik)</li>
+<li><a href="https://cemulate.github.io/the-mlab/">mLab</a>, eine automatisch-generierte Parodie von nLab</li>
+</ul></li>
+<li>Einführungen
+<ul class="org-ul">
+<li><a href="https://mitpress.mit.edu/9780262660716/basic-category-theory-for-computer-scientists/">Basic Category Theory for Computer Scientists</a>, Benjamin C. Pierce</li>
+<li><a href="https://arxiv.org/pdf/1612.09375.pdf">Basic Category Theory</a></li>
+<li><a href="https://categorytheory.gitlab.io/index.html">Category Theory: a concise course</a> <img new="new link" src="../smileys/idea.png"/></li>
+<li><a href="https://hal.science/hal-02190027/document">A crash course on Category Theory</a></li>
+<li><a href="https://www.cs.ox.ac.uk/ralf.hinze/SSGIP10/Notes.pdf">A category theory primer</a></li>
+</ul></li>
+<li><a href="https://math.ucr.edu/home/baez/rosetta.pdf">Physics, Topology, Logic and Computation: A Rosetta Stone</a> <img new="new link" src="../smileys/idea.png"/></li>
+<li><a href="http://www.newartisans.com/2017/05/monads-are-monoids/">Monads are monoid objects</a></li>
+<li><a href="https://www.ams.org/journals/notices/202202/rnoti-p292.pdf">Applied Category Theory in Chemistry, Computing, and Social Networks</a></li>
+<li>Video: <a href="https://www.youtube.com/watch?v=yAi3XWCBkDo">A Sensible Introduction to Category Theory</a></li>
+<li><a href="https://garlandus.co/OfGroupsAndMonads.html">Of Groups And Monads</a></li>
+<li><a href="https://www.ams.org/journals/tran/1945-058-00/S0002-9947-1945-0013131-6/S0002-9947-1945-0013131-6.pdf">General Theory Of Natural Equivalences</a>, erstes Paper zum Thema</li>
+<li>Buch <a href="http://www.mtm.ufsc.br/~ebatista/2016-2/maclanecat.pdf">Categories for the working mathematician</a>, von Saunders Mac Lane
+(<a href="https://pages.jh.edu/rrynasi1/NewFoundations4Math/Literature/Textbooks/Mac_Lane1998CategoriesForTheWorkingMathematician.2ndEdition.pdf">online</a>, <a href="https://d-nb.info/955028914/04">alt</a>, <a href="https://math.mit.edu/~hrm/palestine/maclane-categories.pdf">alt&rsquo;</a>)</li>
+<li>Topos-Theorie
+<ul class="org-ul">
+<li><a href="https://math.ucr.edu/home/baez/topos.html">Topos Theory in a Nutshell</a></li>
+<li>Kurz-Video Serie zu <a href="https://www.youtube.com/playlist?list=PL4FD0wu2mjWM3ZSxXBj4LRNsNKWZYaT7k">Topos Theorie</a></li>
+<li><a href="https://arxiv.org/pdf/1012.5647.pdf">An informal introduction to topos theory</a></li>
+<li><a href="https://web.archive.org/web/20180519003037/https://case.edu/artsci/phil/UsesandAbuses%20HistoryToposTheory.pdf">Uses and Abuses of Topos Theory</a></li>
+</ul></li>
+<li><a href="https://web.archive.org/web/20230301160845/https://people.math.harvard.edu/~mazur/preprints/when_is_one.pdf">When is one thing equal to some other thing?</a>, eine Philosophishe
+Sicht auf Isomorphie</li>
+<li><a href="http://katmat.math.uni-bremen.de/acc/acc.pdf">The Joy of Cats</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-topology" class="outline-3">
+<h3 id="topology">Zu Topologie</h3>
+<div class="outline-text-3" id="text-topology">
+<ul class="org-ul">
+<li><a href="https://topology.mitpress.mit.edu/">Topology: A Categorical Approach</a></li>
+<li><a href="https://ncatlab.org/nlab/show/Introduction+to+Topology">Introduction to Topology</a>, von nLab</li>
+<li><a href="https://pi.math.cornell.edu/~matsumura/math4530/IntroToTopology.pdf">Introduction to Topology</a>, Tomoo Matsumura</li>
+<li>Video Serie <a href="https://www.youtube.com/playlist?list=PL9ERqa15B9_v10p-Agp4yq-90tRYoEUv6">Intuitive Topology</a></li>
+<li><a href="https://mathshistory.st-andrews.ac.uk/HistTopics/Topology_in_mathematics/">A history of Topology</a></li>
+<li><a href="https://www.cs.bham.ac.uk/~mhe/TypeTopology/index.html">TypeTopology</a>, eine Formalisierung in <a href="https://wiki.portal.chalmers.se/agda/pmwiki.php">Agda</a></li>
+<li><a href="http://at.yorku.ca/ask-a-topologist.html">Ask a Topologist</a>, altes Forum</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-typetheory" class="outline-3">
+<h3 id="typetheory">Zu Type Theory</h3>
+<div class="outline-text-3" id="text-typetheory">
+<ul class="org-ul">
+<li>The <a href="https://homotopytypetheory.org/book/">HoTT Book</a>, Univalent Foundations of Mathematics</li>
+<li><a href="https://www.cs.bham.ac.uk/~mhe/HoTT-UF-in-Agda-Lecture-Notes/HoTT-UF-Agda.html">Introduction to Univalent Foundations of Mathematics with Agda</a></li>
+<li><a href="https://mathweb.ucsd.edu/~ebelmont/hott.pdf">A Basic Introduction To Homotopy Type Theory</a></li>
+<li><a href="https://arxiv.org/abs/2212.11082">Introduction to Homotopy Type Theory</a></li>
+<li><a href="https://www.cis.upenn.edu/~bcpierce/tapl/">Types and Programming Languages</a></li>
+<li><a href="https://plato.stanford.edu/entries/type-theory-intuitionistic/">Intuitionistic Type Theory</a></li>
+<li><a href="https://mitpress.mit.edu/9780262536431/the-little-typer/">The Little Typer</a> <img new="new link" src="../smileys/idea.png"/></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-gametheory" class="outline-3">
+<h3 id="gametheory">Zu Game Theory</h3>
+<div class="outline-text-3" id="text-gametheory">
+<ul class="org-ul">
+<li><a href="https://arxiv.org/pdf/1512.06808.pdf">Game Theory: An Open Textbook</a>, von <a href="http://www.econ.ucdavis.edu/faculty/bonanno/">Giacomo Bonanno</a></li>
+<li>Video Serie: <a href="https://www.youtube.com/playlist?list=PLKI1h_nAkaQoDzI4xDIXzx6U2ergFmedo">Game Theory 101</a></li>
+<li>Video Serie: <a href="https://www.youtube.com/playlist?list=PL6EF60E1027E1A10B">Game Theory</a>, Ben Polak</li>
+<li><a href="https://www.cs.cmu.edu/~sandholm/cs15-892F13/algorithmic-game-theory.pdf">Algorithmic Game Theory</a> (dazugehörige <a href="https://ygiannak.gitlab.io/AGT_FAU/2022.html">Vorlesung</a> an der FAU)</li>
+<li>Video <a href="https://www.youtube.com/watch?v=YNMkADpvO4w">Simulating the Evolution of Aggression</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-philos" class="outline-2">
+<h2 id="philos">Philosophie</h2>
+<div class="outline-text-2" id="text-philos">
+<ul class="org-ul">
+<li><a href="https://plato.stanford.edu/">Stanford Encyclopedia of Philosophy</a>
+<ul class="org-ul">
+<li><a href="https://plato.stanford.edu/entries/computer-science/">The Philosophy of Computer Science</a></li>
+<li>Interessante Denker:
+<ul class="org-ul">
+<li><a href="https://plato.stanford.edu/entries/augustine/">Augustinus</a></li>
+<li><a href="https://plato.stanford.edu/entries/spinoza/">Baruch Spinoza</a></li>
+<li><a href="https://plato.stanford.edu/entries/epicurus/">Epikur</a></li>
+<li><a href="https://plato.stanford.edu/entries/hegel/">Georg Wilhelm Friedrich Hegel</a></li>
+<li><a href="https://plato.stanford.edu/entries/deleuze/">Gilles Deleuze</a></li>
+<li><a href="https://plato.stanford.edu/entries/heidegger/">Heidegger</a></li>
+<li><a href="https://plato.stanford.edu/entries/baudrillard/">Jean Baudrillard</a></li>
+<li><a href="https://plato.stanford.edu/entries/laozi/">Laozi</a>
+<ul class="org-ul">
+<li><a href="https://terebess.hu/english/tao/ron.html">Tao Te Ching</a> Online</li>
+</ul></li>
+<li><a href="https://plato.stanford.edu/entries/wittgenstein/">Ludwig Wittgenstein</a></li>
+<li><a href="https://plato.stanford.edu/entries/meister-eckhart/">Meister Eckhart</a></li>
+<li><a href="https://plato.stanford.edu/entries/philo/">Philon von Alexandria</a></li>
+<li><a href="https://plato.stanford.edu/entries/plotinus/">Plotin</a></li>
+<li><a href="https://plato.stanford.edu/entries/llull/">Ramon Llull</a></li>
+<li><a href="https://plato.stanford.edu/entries/simone-weil/">Simone Weil</a></li>
+<li><a href="https://plato.stanford.edu/entries/benjamin/">Walter Benjamin</a></li>
+</ul></li>
+</ul></li>
+<li><a href="http://www.jimpryor.net/teaching/guidelines/writing.html">Guidelines on Writing a Philosophy Paper</a></li>
+<li>Vorlesungen von <a href="http://rickroderick.org/">Rick Roderick</a></li>
+<li><a href="https://www.marxists.org/archive/index.htm#philosophy">Philosophy Archive</a> auf marxists.org
+<ul class="org-ul">
+<li><a href="https://www.marxists.org/reference/archive/perlman-fredy/1969/misc/reproduction-daily-life.htm">The Reproduction of Daily Life</a></li>
+<li><a href="https://kapitalism101.wordpress.com/law-of-value-the-series/">Law of Value</a></li>
+</ul></li>
+<li>Gewisse Texte auf <a href="https://theanarchistlibrary.org/library">The Anarchist Library</a></li>
+<li><a href="https://www.notbored.org/commentaires.html">Comments on the Society of the Spectacle</a>
+<ul class="org-ul">
+<li><a href="https://archive.org/search?query=subject%3A%22spectacular+times%22">Spectacular Times</a></li>
+</ul></li>
+<li>Podcast <a href="https://historyofphilosophy.net/">The History of Philosophy Without Any Gaps</a> <img new="new link" src="../smileys/idea.png"/></li>
+<li>Podcast <a href="https://shwep.net/">The Secret History of Western Esotericism</a></li>
+<li>Podcast <a href="https://www.bbc.co.uk/programmes/p01f0vzr">In Our Time</a>, zu Philosophie</li>
+<li><a href="https://ryanfb.github.io/loebolus/">Loebolus</a> Archive</li>
+<li><a href="https://philpapers.org/">PhilPapers</a></li>
+<li><a href="https://www.hs-augsburg.de/~harsch/augustana.html">Bibliotheca Augustana</a></li>
+<li><a href="https://pbellon.github.io/tractatus-tree/">Tractatus&rsquo; Tree</a> von Wittgenstein</li>
+<li><a href="https://mitpress.mit.edu/9780262542234/lectures-on-the-philosophy-of-mathematics/">Lectures on the Philosophy of Mathematics</a></li>
+<li><a href="https://www.jstor.org/stable/41560220">Object-Oriented Programming and Objectivist Epistemology: Parallels and Implications</a> (scheinbar ernst gemeint)</li>
+<li>Bilinguale <a href="https://aquinas.cc/la/en/~ST.I">Summa Theologiae</a> (Aquinas) in HTML</li>
+<li>Dokumentarfilme/serien von Adam Curtis wie &bdquo;<a href="https://www.bbc.co.uk/iplayer/episodes/p093wp6h/cant-get-you-out-of-my-head">Can&rsquo;t Get You Out of My Head</a>&ldquo;,
+&bdquo;<a href="https://www.bbc.co.uk/iplayer/episodes/p00ghx6g/the-century-of-the-self">The Century of the Self</a>&ldquo; oder &bdquo;<a href="https://www.bbc.co.uk/iplayer/episode/p04b183c/hypernormalisation">HyperNormalisation</a>&ldquo;</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-physik" class="outline-2">
+<h2 id="physik">Physik (und Astronomie)</h2>
+<div class="outline-text-2" id="text-physik">
+<ul class="org-ul">
+<li>&bdquo;<a href="https://www.scottaaronson.com/democritus/lec9.html">Quantum</a>&ldquo; Lecture von Scott Aaronson</li>
+<li><a href="https://www.youtube.com/watch?v=MTY1Kje0yLg">Gravity Visualized</a> (Video)</li>
+<li><a href="https://exoplanets.nasa.gov/life-and-death/intro/">Life and Death of a Planetary System</a></li>
+<li><a href="https://web.archive.org/web/20210508045740/https://www.mat.univie.ac.at/~neum/physik-faq.txt">Ein Theoretische-Physik-FAQ</a></li>
+<li><a href="https://math.ucr.edu/home/baez/physics/">The Original Usenet Physics FAQ</a> (mit links zu mehr FAQs)</li>
+<li><a href="https://www.youtube.com/watch?v=pyP59YPtiIo">Mysteries in Fundamental Physics</a> (Video)</li>
+<li><a href="https://www.muppetlabs.com/~breadbox/txt/al.html">Albert Einstein&rsquo;s Theory of Relativity</a> (In Words of Four Letters or Less)</li>
+<li>Online-Buch <a href="https://www.feynmanlectures.caltech.edu/">The Feynman Lectures on Physics</a></li>
+<li><a href="https://archive.org/details/CosmosAPersonalVoyage">Cosmos: A Personal Voyage</a>, Carl Sagan <img new="new link" src="../smileys/idea.png"/></li>
+<li><a href="https://davidsenouf.com/wp-content/uploads/2012/01/The-quaternion-group-and-modern-physics-Girard.pdf">The quaternion group and modern Physics</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Mechanical%E2%80%93electrical_analogies">Mechanical–electrical analogies</a></li>
+<li><a href="https://apod.nasa.gov/apod/">Astronomy Picture of the Day</a></li>
+<li><a href="https://inria.hal.science/inria-00429965/file/dynsys.pdf">Decidability and Undecidability in Dynamical Systems</a></li>
+<li>NASA&rsquo;s <a href="https://epic.gsfc.nasa.gov/">Earth Polychromatic Imaging Camera</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-spiele" class="outline-2">
+<h2 id="spiele">Spiele</h2>
+<div class="outline-text-2" id="text-spiele">
+<ul class="org-ul">
+<li><a href="https://www.pagat.com/">Card Game Rules</a></li>
+<li><a href="https://senseis.xmp.net/">Sensei&rsquo;s Library</a>, über das Brett-Spiel <a href="https://en.wikipedia.org/wiki/Go_(game)">Go</a>
+<ul class="org-ul">
+<li><a href="https://blacktoplay.com/">Black to Play</a>, eine Seite mit <a href="https://senseis.xmp.net/?Tsumego">Go Rätseln</a> <img new="new link" src="../smileys/idea.png"/></li>
+<li><a href="https://tsumego.tasuki.org/">Go Rätsel</a> Sammlung in PDF Form</li>
+<li><a href="https://go.kahv.io/">Variant Go Server</a>, ein Server um Go zu spielen</li>
+</ul></li>
+<li><a href="https://punkx.org/unix-pipe-game/">The UNIX Pipe Card Game</a></li>
+<li><a href="https://www.youtube.com/watch?v=DpXy041BIlA">30 Weird Chess Algorithms</a></li>
+<li><a href="https://mazegenerator.net/">Maze Generator</a>, mit Lösungen</li>
+<li><a href="https://hopkinspokercourse.com/">Johns Hopkins Poker Course</a>
+<ul class="org-ul">
+<li><a href="https://people.csail.mit.edu/rivest/pubs/SRA81.pdf">Mental Poker</a>, als Anwendung von RSA</li>
+</ul></li>
+</ul>
+</div>
+<div id="outline-container-org332ca1b" class="outline-3">
+<h3 id="org332ca1b">&bdquo;Video Spiele&ldquo;</h3>
+<div class="outline-text-3" id="text-org332ca1b">
+<ul class="org-ul">
+<li><a href="https://en.wikipedia.org/wiki/Colossal_Cave_Adventure">Colossal Cave Adventure</a> (<a href="https://github.com/troglobit/advent4">Quelltext</a>)</li>
+<li><a href="https://www.thegreatestgameyouwilleverplay.com/">The Greatest Game You Will Ever Play</a> (eine Webseite über <a href="https://www.nethack.org/">Nethack</a>)
+<ul class="org-ul">
+<li><a href="https://www.nethack.org/v366/Guidebook.html">Guidebook</a> von <a href="https://www.catb.org/~esr/">Eric S. Raymond</a></li>
+<li><a href="https://alt.org/nethack/">Public Nethack Server</a></li>
+<li><a href="https://nethackwiki.com/wiki/NetHack">NetHack Wiki</a></li>
+</ul></li>
+<li><a href="https://vimm.net/">Vimm&rsquo;s Layer</a>, eine Webseite zu alten Konsolen-Spielen</li>
+<li><a href="https://en.wikipedia.org/wiki/Penn_%26_Teller%27s_Smoke_and_Mirrors#Desert_Bus">Desert Bus</a> (proprietär!)</li>
+<li><a href="https://shatteredpixel.com/shatteredpd/">Shattered Pixel Dungeon</a>, basierend auf dem nicht mehr maintaint&rsquo;em</li>
+<li><a href="https://pixeldungeon.watabou.ru/">Pixel Dungeon</a></li>
+<li><a href="https://vidyascape.org/">Vidyascape</a>, ein Runescape 2007 Remake (d.h. ohne <a href="https://runescape.wiki/w/Grand_Exchange">Grand Exchange</a>)</li>
+<li>Buch <a href="http://vintage-basic.net/games.html">BASIC Computer Games</a>, 1973</li>
+<li>&bdquo;<a href="https://www.betterthanadventure.net/">Better Than Adventure</a>&ldquo;, ein nicht-offizieller Fork von dem
+Sandbox-Spiel <a href="https://en.wikipedia.org/wiki/Minecraft">Minecraft</a> aufbauend auf <a href="https://minecraft.fandom.com/wiki/Java_Edition_Beta_1.7.3">Beta 1.7.3</a> (der letzten guten
+Version)</li>
+<li><a href="https://noclip.website/">noclip.website</a>, ein &bdquo;digitales Museum&ldquo; von Video-Spiel Räumen</li>
+<li><a href="https://www.teeworlds.com/">Teeworlds</a>, ein FLOSS platformer-shooter Spiel (gibts im CIP)</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-ebook" class="outline-2">
+<h2 id="ebook">AUDIO- und Ebook Seiten</h2>
+<div class="outline-text-2" id="text-ebook">
+<ul class="org-ul">
+<li><a href="https://www.gutenberg.org/">Project Gutenberg</a> <img new="new link" src="../smileys/idea.png"/></li>
+<li><a href="https://standardebooks.org/">Standard Ebooks</a> <img new="new link" src="../smileys/idea.png"/></li>
+<li><a href="https://wiki.mobileread.com/wiki/Main_Page">MobileRead Wiki</a></li>
+<li><a href="https://openlibrary.org/">Open Library</a>; Teil von <code>archive.org</code>.</li>
+<li><a href="https://web.archive.org/web/20180327235035/https://ebooks.adelaide.edu.au/">eBooks@Adelaide</a> Archiv</li>
+<li><a href="https://www.globalgreyebooks.com/index.html">Global Grey</a></li>
+<li><a href="http://classics.mit.edu/Browse/index.html">The Internet Classics Archive</a></li>
+<li><a href="https://librivox.org/search">LibriVox</a> (Audiobooks)</li>
+<li><a href="https://freeclassicaudiobooks.com/">Free Classic Audio Books</a></li>
+<li><a href="https://github.com/EbookFoundation/free-programming-books">Freely available programming books</a></li>
+<li><a href="https://archive.org/search.php?query=publisher%3A%22Mir+Publishers%22">Sammlung von &bdquo;Mir Publishers&ldquo; Büchern</a>; Ein <a href="https://en.wikipedia.org/wiki/Mir_Publishers">sovietischen Verlag</a> zu mathematischen und technischen Themen.</li>
+<li><a href="https://www.dbooks.org/">dbooks.org</a>; Sammlung von gratis eBüchern</li>
+<li><a href="https://www.holybooks.com/">HolyBooks.com</a>; Sammlung von philosophischen und religiösen Texten
+<ul class="org-ul">
+<li><a href="https://archive.sacred-texts.com/">Internet Sacred Text Archive</a></li>
+</ul></li>
+<li><a href="https://www.classicshorts.com/">Classic Short Stories</a></li>
+<li>&bdquo;<a href="https://www.readanybook.com/">Read Any Book</a>&ldquo;</li>
+<li><a href="https://ebookfriendly.com/">Ebook Friendly</a></li>
+<li><a href="https://unglue.it/">unglue.it</a>; Sammlung von CC Ebooks</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-lang" class="outline-2">
+<h2 id="lang">Gesprochene, Natürliche und Konstruierte Sprachen</h2>
+<div class="outline-text-2" id="text-lang">
+<ul class="org-ul">
+<li><a href="https://omniglot.com/index.htm">Omniglot</a></li>
+<li><a href="https://lernu.net/">Lernu</a>, eine Seite für <a href="https://esperanto.net/en/">Esperanto</a>
+<ul class="org-ul">
+<li>Link-Sammlung von der <a href="https://uea.org/info/en/ligiloj">Universal Esperanto Association</a></li>
+<li><a href="https://bertilow.com/pmeg/">Plena Manlibro de Esperanta Gramatiko</a> (Eine Beschreibung der
+Grammatik)</li>
+</ul></li>
+<li><a href="https://en.wikipedia.org/wiki/Lojban">Lojban</a>; eine Künstliche Sprache welche Versucht syntaktische Ambiguitäten zu vermeiden.</li>
+<li>Buch <a href="https://archive.org/details/conspectus-grammaticus-familia-romana/Conspectus_Grammaticus_Familia_Romana_LLPSI__Cepelak">Lengua Latina Per Se Illustrata</a> von <a href="https://en.wikipedia.org/wiki/Hans_%C3%98rberg">Hans Ørberg</a> (<a href="https://lingualatina.dk/wp/">website</a>)
+<ul class="org-ul">
+<li>Buch <a href="https://seumasjeltzz.github.io/LinguaeGraecaePerSeIllustrata/">Ἡ Ἑλληνικὴ γλῶσσα καθ᾿ αὑτὴν φωτιζομένη</a> (&bdquo;Lingua Graeca Per Se Illustrata&ldquo;)
+<ul class="org-ul">
+<li><a href="https://lsj.gr/wiki/Main_Page">Liddell, Scott, Jones Ancient Greek Lexicon</a> als eine Wiki</li>
+</ul></li>
+</ul></li>
+<li><a href="https://jisho.org/">Jisho</a>; eine Englisch-Japanisches Wörterbuch</li>
+<li><a href="https://www.languagetransfer.org/">Language Transfer</a>; ein Projekt zur alternativen Vermittlung von Sprachkenntnissen</li>
+<li><a href="https://www.textkit.com/greek-latin-forum/viewtopic.php?t=70592">The Textkit Book Collection</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Basic_English">Basic English</a>; als Beispiel einer Konstruierten Sprache basierend auf einer Natürlichen Sprache</li>
+<li><a href="https://libretranslate.com">LibreTranslate</a>; eine freie Alternative zu Google Translate</li>
+<li><a href="https://mw.lojban.org/">Lojban</a>; eine &bdquo;logische&ldquo; konstruierte Sprache</li>
+<li>&bdquo;<a href="https://www.degruyter.com/document/doi/10.1515/thli.1979.6.1-3.221/html">A Mathematician Looks At Latin Conjugation</a>&ldquo;, Lambek</li>
+<li><a href="https://tokipona.org/">Toki Pona</a>; eine relativ neue Konsprache mit ~120 Wörtern</li>
+<li><a href="https://historyofenglishpodcast.com/">History of English Podcast</a></li>
+<li><a href="https://www.plainlanguage.gov/">Plainlanguage.gov</a>, eine US Seite zu <a href="https://en.wikipedia.org/wiki/Plain_language">einfacher Englischer sprache</a>.</li>
+<li><a href="http://www.lel.ed.ac.uk/~gpullum/passive_loathing.pdf">Fear and Loathing of the English Passive</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgce852af" class="outline-2">
+<h2 id="orgce852af">Navigation, Reisen und Verwandtes</h2>
+<div class="outline-text-2" id="text-orgce852af">
+<ul class="org-ul">
+<li><a href="https://direkt.bahn.guru/">direkt.bahn.guru</a>, Übersicht von Direktverbindungen mit der DB</li>
+<li><a href="https://bahnvorhersage.de/">Bahn-Vorhersage</a>, schätzt aus historischen Daten Verspätungen</li>
+<li><a href="https://transitous.org">Transitous</a>, API für Nah- und Verkverkehr (benutzt unter
+anderem von <a href="https://apps.gnome.org/Maps/">GNOME Maps</a>)</li>
+<li><a href="https://www.rome2rio.com/">Rome2Rio</a>, internationaler Routenplaner</li>
+<li><a href="https://www.wikivoyage.org/">Wikivoyage</a>, das Reiseinformationen-Schwester-Projekt von Wikimedia</li>
+<li><a href="https://trans-europe-planner.eu/">Trans Europe Planner</a>, eine Seite um Bahn-Reisen innerhalb von Europa
+zu planen (derzeit nur Berlin, Köln, Hamburg und München
+als Start-Positionen&#x2026;)</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-cooking" class="outline-2">
+<h2 id="cooking">Kochen, &amp;c.</h2>
+<div class="outline-text-2" id="text-cooking">
+<ul class="org-ul">
+<li><a href="https://arxiv.org/abs/1806.08790">The Physics of baking good Pizza</a></li>
+<li>&bdquo;<a href="https://publicdomainrecipes.com/">Public Domain Recipes</a>&ldquo;, einfache Website für Rezepte</li>
+<li><a href="https://portal.mozz.us/gemini/medusae.space/index.gmi%3F20">Sammlung</a> von Webseitem zum Thema Kochen auf <a href="https://gemini.circumlunar.space/">Gemini</a></li>
+<li><a href="https://www.increasinglyadequate.com/recipes.html">Recipes I like</a></li>
+<li><a href="https://archive.org/details/huntingpractical00unde">Hunting and practical hints for hunting men</a> (1897)</li>
+<li><a href="https://archive.org/details/artcookerymadep02glasgoog/">The Art of Cookery, Made Plain and Easy</a> (1774)</li>
+<li><a href="https://www.justtherecipe.com/">Just the Recipe</a>, um nur Rezepte aus anderen Seiten herauszuziehen</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-art" class="outline-2">
+<h2 id="art">Kunst und Design</h2>
+<div class="outline-text-2" id="text-art">
+<ul class="org-ul">
+<li><a href="https://typography.network/typographypapers/">Typography papers</a></li>
+<li><a href="https://archive.org/search?query=creator%3A%22Shuzo+Fujimoto%22">Origami Bücher</a> von Shuzo Fujimoto
+<ul class="org-ul">
+<li><a href="https://www.origamiheaven.com/index.htm">Origami Heaven</a>, von David Mitchell</li>
+</ul></li>
+<li><a href="https://www.wikiart.org/">WikiArt</a>, Sammlung von Künstlern und Werken</li>
+<li><a href="https://www.10paperairplanes.com/">Paper Airplanes</a></li>
+<li>Sammlung von <a href="https://www.wassilykandinsky.net/">Wassily Kandinsky</a></li>
+<li><a href="https://archillect.com/">Archillect</a></li>
+<li>BBC Serie <a href="https://archive.org/details/WaysofSeeing/">Ways of Seeing</a>, John Berger</li>
+<li><a href="https://www.artnet.com/">artnet</a>, <i>[&#x2026;] online resource for the international art market [&#x2026;]</i>.</li>
+<li>Artikel <a href="https://www.amygoodchild.com/blog/computer-art-50s-and-60s">Early Computer Art in the 50&rsquo;s &amp; 60&rsquo;s</a></li>
+<li><a href="https://www.meisterdrucke.de/">Meisterdrucke</a></li>
+<li><a href="https://artvee.com/">Artvee</a>, <i>Browse and download high-resolution, public domain
+paintings, posters and illustrations</i>.</li>
+<li><a href="https://commons.wikimedia.org/wiki/Commons:Pearson_Scott_Foresman/Complete_List">Pearson Scott Foresman</a> Sammlung von Liniengrafiken</li>
+<li><a href="https://fontsinuse.com/">Fonts in Use</a>, eine Seite über Typographie</li>
+<li><a href="https://public.work/">Public Work</a>, eine Suchmaschine für <i>Public Domain</i> Werke</li>
+<li><a href="https://aesthetics.fandom.com/wiki/Aesthetics_Wiki">Aesthetics Wiki</a></li>
+<li><a href="https://bottosson.github.io/posts/oklab/">OKLab</a>, A perceptual color space for image processing</li>
+</ul>
+</div>
+<div id="outline-container-art:comics" class="outline-3">
+<h3 id="art:comics">Web Comics</h3>
+<div class="outline-text-3" id="text-art:comics">
+<ul class="org-ul">
+<li><a href="https://pbfcomics.com/">The Perry Bible Fellowship</a> <img new="new link" src="../smileys/idea.png"/></li>
+<li><a href="https://xkcd.com/">XKCD</a></li>
+<li><a href="https://www.smbc-comics.com/">SMBC</a> (Saturday Morning Breakfast Cereal)</li>
+<li><a href="https://poorlydrawnlines.com/">Poorly Drawn Lines</a></li>
+<li><a href="https://falseknees.com/">False Knees</a></li>
+<li><a href="https://abstrusegoose.com/">Abstruse Goose</a></li>
+<li><a href="https://warandpeas.com/">War and Peas</a></li>
+<li><a href="https://bsky.app/profile/beetlemoses.bsky.social">Beetle Moses</a></li>
+<li><a href="https://mrlovenstein.com/">Mr Lovenstein</a></li>
+<li><a href="https://phdcomics.com">PhD Comics</a></li>
+<li><a href="https://joancornella.net/en/">Joan Cornella</a> (suboptimale Seite)</li>
+<li><a href="https://x.com/KartoonistKelly">Stan Kelly</a></li>
+</ul>
+
+<p>
+Mit einem Proxy wie <a href="https://www.comicsrss.com/">comicsrss.com</a>, können auch suboptimale Seiten mit
+einem RSS Feed abonniert werden.
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-musik" class="outline-2">
+<h2 id="musik">Musik</h2>
+<div class="outline-text-2" id="text-musik">
+<ul class="org-ul">
+<li>Sammlung von Stationen, <a href="https://somafm.com/">Soma FM</a> <img new="new link" src="../smileys/idea.png"/></li>
+<li><a href="https://www.radioparadise.com/">Radio Paradise</a> <img new="new link" src="../smileys/idea.png"/></li>
+<li>Internet-Radio Station <a href="https://www.byte.fm/">ByteFM</a></li>
+<li><a href="https://poolsuite.net/">Poolsuit FM</a> (bzw. direkt via <a href="https://soundcloud.com/poolsuite">Soundcloud</a>)</li>
+<li><a href="https://www.internet-radio.com/">InternetRadio</a></li>
+<li><a href="https://www.radio-browser.info/">RadioBrowser</a></li>
+<li><a href="https://sonic-pi.net/">Sonic Pi</a>, basierend auf dem Audio-Programmier-System <a href="https://supercollider.github.io/">SuperCollider</a></li>
+<li>Paper <a href="https://arxiv.org/html/1202.4212">Harmony Explained: Progress Towards A Scientific Theory of Music</a></li>
+<li>Public Domain <a href="http://publicdomainradio.org/en/channel.html?channelid=/jazz_swing.mp3">Jazz</a> und <a href="http://publicdomainradio.org/en/channel.html?channelid=/classical.mp3">Klassik</a> Radio</li>
+<li>Radio <a href="https://www.radioswissjazz.ch/en">Swiss Jazz</a> und <a href="https://www.radioswissclassic.ch/en">Klassik</a></li>
+<li><a href="https://web.archive.org/web/20230325174532/http://www.pianopractice.org/">Fundamentals of Piano Practice</a></li>
+<li><a href="https://imslp.org/">Petrucci Music Library</a>, eine Sammlung von Notenblättern</li>
+<li><a href="https://freesound.org">Freesound</a>, eine Datenbank von freien Audio Aufnahmen</li>
+</ul>
+</div>
+<div id="outline-container-musik:lieder" class="outline-3">
+<h3 id="musik:lieder">Lieder und Kompositionen</h3>
+<div class="outline-text-3" id="text-musik:lieder">
+<p>
+Dieser Abschnitt ist etwas lang, aber ich finde oft interessante
+Lieder die ich wieder verliere.  Damit das wenig häufig passiert
+sammele ich die hier.
+</p>
+
+<p>
+Die <del>meisten</del> alle Links hier verweisen auf YouTube.  Ich empfehle
+sich im die Firefox Addons im Abschnitt &bdquo;<a href="links.html#firefox">Firefox Extensions</a>&ldquo;
+anzuschauen.
+</p>
+
+<ul class="org-ul">
+<li><a href="https://www.youtube.com/watch?v=1t4KLOm7pO0">Achilles Last Stand</a>, Led Zeppelin</li>
+<li><a href="https://www.youtube.com/watch?v=0ouMaLRth-s">A Fifth of Beethoven</a>, Walter Murphy</li>
+<li><a href="https://www.youtube.com/watch?v=m57gzA2JCcM">Alice&rsquo;s Restaurant</a>, Arlo Guthrie</li>
+<li><a href="https://www.youtube.com/watch?v=THph5Lx2FOo">All Good Things (Come to an End)</a>, Nelly Furtado</li>
+<li><a href="https://www.youtube.com/watch?v=lI5ORDi7yOs">All Of Me</a>, Billie Holiday</li>
+<li><a href="https://www.youtube.com/watch?v=XAJ3rlIFM5c">Am Fenster</a>, City</li>
+<li><a href="https://www.youtube.com/watch?v=1fcNNEIeWNE">Antenne</a>, Kraftwerk (Version vom Album <a href="https://de.wikipedia.org/wiki/Radio-Aktivit%C3%A4t">Radio-Aktivität</a>, 1975)</li>
+<li><a href="https://www.youtube.com/watch?v=y-mGcfWXe0Y">Any Colour You Like</a>, Pink Floyd, Live in Brighton</li>
+<li><a href="https://www.youtube.com/watch?v=k1AYdUd9E8g">Aus meinem Tagebuch</a>, Reinhard Mey</li>
+<li><a href="https://www.youtube.com/watch?v=CpB7-8SGlJ0">Autumn Leaves</a>, von Cannonball Adderley (auch gut, Interpretationen von <a href="https://www.youtube.com/watch?v=Gnp58oepHUQ">Nat King Cole</a>,
+<a href="https://www.youtube.com/watch?v=Gsz3mrnIBd0">Chet Baker/Paul Desmond</a>, <a href="https://www.youtube.com/watch?v=Xo1C6E7jbPw">Yves Montand</a>)</li>
+<li><a href="https://www.youtube.com/watch?v=X1zFnyEe3nE">Ball &amp; Chain</a>, Janis Joplin beim <a href="https://en.wikipedia.org/wiki/Monterey_International_Pop_Festival">Monterey International Pop Festival</a> (1967)</li>
+<li><a href="https://www.youtube.com/watch?v=BGM0v44Yszk">Bam Bam</a>, Sister Nancy</li>
+<li><a href="https://www.youtube.com/watch?v=K9mbC0cm69k">Bandiera Rossa</a></li>
+<li><a href="https://www.youtube.com/watch?v=Yy9h2q_dr9k">Bela Lugosi is Dead</a>, Bauhaus</li>
+<li><a href="https://www.youtube.com/watch?v=470sjKiKVZQ">Big Electronic Beat</a>, SSQ</li>
+<li><a href="https://www.youtube.com/watch?v=SzXe0H0pr1s">Bluebird</a>, Lana Del Rey</li>
+<li><a href="https://www.youtube.com/watch?v=2Py37G9qsfY">Born Under a Bad Sign</a>, Albert King</li>
+<li><a href="https://www.youtube.com/watch?v=n25v3tHDu-o">Bring on the Night</a>, The Police, Rockpalast (1980)</li>
+<li><a href="https://www.youtube.com/watch?v=eJyhVKfThVA">Bundeswehr</a>, Brausepöter</li>
+<li><a href="https://www.youtube.com/watch?v=UcEJzOHH1mw">Čaje Šukarije</a> und <a href="https://www.youtube.com/watch?v=fP9FYpp6p6s">Romano Horo</a>, Esma Redžepova</li>
+<li><a href="https://www.youtube.com/watch?v=2KW61od0o5g">C.A.Y.A.</a>, Geoffroy</li>
+<li><a href="https://www.youtube.com/watch?v=T0ZgABAmGbs">City Girls</a>, J.J. Cale</li>
+<li><a href="https://www.youtube.com/watch?v=0VZuA7iJY4Y">Cocaine Blues</a>, Johnny Cash as dem Album <a href="https://en.wikipedia.org/wiki/At_Folsom_Prison">&bdquo;Live at Folsom State Prison&ldquo;</a></li>
+<li><a href="https://www.youtube.com/watch?v=7NnSpff_VqA">Computerliebe</a>, Paso Doble</li>
+<li><a href="https://www.youtube.com/watch?v=-7saxHqkVxU">Computer Sind Doof</a>, Spliff</li>
+<li><a href="https://www.youtube.com/watch?v=9srw5FRm5eA">Corcovado</a>, Astrud Gilberto</li>
+<li><a href="https://www.youtube.com/watch?v=GxeN2H0vM0Q">Cry Baby</a>, Janis Jopin in <a href="https://concerts.fandom.com/wiki/Transcontinental_Pop_Festival">Toronto</a> (1970)</li>
+<li><a href="https://www.youtube.com/watch?v=eTI8hgWJh-I">Cuban Pete</a>, Jim Carrey</li>
+<li><a href="https://www.youtube.com/watch?v=WL8rvLxqmE4">Da rata ne bude</a>, Djordje Balasevic (1998, erster Auftritt eines
+serbischen Künstlers nach dem Krieg in Sarajevo), <a href="https://www.youtube.com/watch?v=HjVdeFuxWyI&amp;pp=ygUTb3BydHJhaXQgbW9nIHZpdm90YQ%3D%3D">Portret mog zivota</a>
+(<a href="https://lyricstranslate.com/en/portret-zivota-mog-portrait-my-life.html-0">lyrics</a>)</li>
+<li><a href="https://www.youtube.com/watch?v=T-fz6TAipqo">Day Dreaming</a>, Aretha Franklin</li>
+<li><a href="https://www.youtube.com/watch?v=L3yv7gR_3tU">D&gt;E&gt;A&gt;T&gt;H&gt;M&gt;E&gt;T&gt;A&gt;L</a>, Panchiko (Album mit interessanter <a href="https://en.wikipedia.org/wiki/Panchiko#Resurgence_(2016%E2%80%93current)">Geschichte</a>)</li>
+<li><a href="https://www.youtube.com/watch?v=Qew9cYR3t0g">Desaparecido</a>, Manu Chao</li>
+<li><a href="https://www.youtube.com/watch?v=Uoox9fpmDP0">Devut</a>, Bôa</li>
+<li><a href="https://www.youtube.com/watch?v=XqzX-uZUtI4">Die Nacht ist nicht allein zum Schlafen da</a>, Gustaf Gründgens (auch
+bekannt für seine Inszenierung von Goethes <a href="https://www.youtube.com/playlist?list=PLkk7nEOSyjEdVSnQwgAHtBkkIRKqj4NPN">Faust</a>)</li>
+<li><a href="https://www.youtube.com/watch?v=Cl9Axko_ahE">Dom Omladine</a> Konzert von EKV (Novi Sad, 1989)</li>
+<li><a href="https://www.youtube.com/watch?v=KBca3xf-j3o">Echoes</a>, Pink Floyd</li>
+<li><a href="https://www.youtube.com/watch?v=p9g4Md_huII">Ein bißchen Goethe, ein bißchen Bonaparte</a>, France Gall</li>
+<li><a href="https://www.youtube.com/watch?v=ZliX5mP7ATA">El Paso</a>, Marty Robbins</li>
+<li><a href="https://www.youtube.com/watch?v=9iw_BE_X9sA">Emotional Rescue</a>, The Rolling Stones</li>
+<li><a href="https://www.youtube.com/watch?v=rJq80yxHeAQ">English Suites</a>, J.S. Bach interpretiert von Glenn Gould</li>
+<li><a href="https://www.youtube.com/watch?v=s_vwYSZl4Xw">Erschießen</a>, Ideal</li>
+<li><a href="https://www.youtube.com/watch?v=Crz1PpKk3dU">Etazhi</a>, Molchat Doma</li>
+<li><a href="https://www.youtube.com/watch?v=IXsiOnhIarc">Every Word Means No</a>, Smash Mouth</li>
+<li><a href="https://www.youtube.com/watch?v=56hqrlQxMMI">Eye in the Sky</a>, The Alan Parsons Project</li>
+<li><a href="https://www.youtube.com/watch?v=1vxs35CaBKw">Falling Apart (Drake&rsquo;s Theme)</a>, Hesoyamjhithi</li>
+<li><a href="https://www.youtube.com/watch?v=iM8x3lKXetw">Farewell Cheyenne</a>, Ennio Morricone (aus <a href="https://en.wikipedia.org/wiki/Once_Upon_a_Time_in_the_West">Once Upon a Time in the West</a> von Sergio Leone)</li>
+<li><a href="https://www.youtube.com/watch?v=j3RJY70li3M">Fly</a>, Roman Kouder &amp; Patawawa</li>
+<li><a href="https://www.youtube.com/watch?v=ECiMhe4E0pI">Genius of Love</a>, Tom Tom Club</li>
+<li><a href="https://www.youtube.com/watch?v=gOjyGy1NR4Y">Gethsemane</a>, Ian Gillan (Frontsänger von <i>Deep Purple</i>)</li>
+<li><a href="https://www.youtube.com/watch?v=O47ck80D53g">Go Exciting</a>, Quando Quango</li>
+<li><a href="https://www.youtube.com/watch?v=t3a1FKPJ36s">Goodbye Moscow/Goodbye Sochi</a></li>
+<li><a href="https://www.youtube.com/watch?v=CGt-rTDkMcM">Gyöngyhajú lány</a>, Omega</li>
+<li><a href="https://www.youtube.com/watch?v=lbIi8ZiW5qI">Heartattack And Vine</a>, Tom Waits</li>
+<li><a href="https://www.youtube.com/watch?v=oRzfhbOH4E8">Help Me Make It Through the Night</a>, Willie Nelson</li>
+<li><a href="https://www.youtube.com/watch?v=qPmxrMo7tkI">Herz ist Trumpf</a>, Trio</li>
+<li><a href="https://www.youtube.com/watch?v=VExw77xJsBQ">He Stopped Loving Her Today</a>, George Jones</li>
+<li><a href="https://www.youtube.com/watch?v=KSZU8h-Pr8Y">Histoire D&rsquo;1 Soir</a>, Bibi Flash</li>
+<li><a href="https://www.youtube.com/watch?v=LIUzXzQVK40">Huajra</a>, Inti Illimani</li>
+<li><a href="https://www.youtube.com/watch?v=6cW4TaEIGxM">Humming</a>, Portishead</li>
+<li><a href="https://www.youtube.com/watch?v=vAUJf9Sfc9Q">Ich ging einmal spazieren</a> (Marschlied)</li>
+<li><a href="https://www.youtube.com/watch?v=OJBnzZBdH7E">I Deserve This</a>, Madonna</li>
+<li><a href="https://www.youtube.com/watch?v=93UeMzgB1e0">I Don&rsquo;t Care</a>, Chimpo</li>
+<li><a href="https://www.youtube.com/watch?v=rmREDIEePBU">I&rsquo;d Rather Go Blind</a>, Etta James</li>
+<li><a href="https://www.youtube.com/watch?v=ziz_2mIgY04">If It Wasn&rsquo;t For The Nights</a>, Abba vom Album &bdquo;Voulez-Vous&ldquo;</li>
+<li><a href="https://www.youtube.com/watch?v=KYNa70jYWbg">If Love Is a Red Dress (Hang Me in Rags)</a>, Maria McKee,
+angeblich das einzige &bdquo;Original Soundtrack&ldquo; Lied für den Film &bdquo;Pulp Fiction&ldquo;</li>
+<li><a href="https://www.youtube.com/watch?v=QTzWEHQP-y4">I Get a Kick Out of You</a>, Dolly Parton</li>
+<li><a href="https://www.youtube.com/watch?v=dHapkjP4fMk">Israeli Salad</a>, The Alchemist</li>
+<li><a href="https://www.youtube.com/watch?v=4S3369BG2z4">It&rsquo;s like Love</a>, Coubo</li>
+<li><a href="https://www.youtube.com/watch?v=JFH4kZXnC1A">I Want You to Know</a>, Remix von Tobi Higgs basierend auf Masha Qrella</li>
+<li><a href="https://www.youtube.com/watch?v=pe_zuHcwRko">I Wish You Love</a>, Dean Martin (oder <a href="https://www.youtube.com/watch?v=nmx_81wkDXE">Joe Bataan</a>)</li>
+<li><a href="https://www.youtube.com/watch?v=gVWmKG_eBPo">I Wonder</a>, Sixto Rodriguez (siehe auch die Doku <a href="https://www.themoviedb.org/movie/84334-searching-for-sugar-man">Searching for Sugar Man</a>)</li>
+<li><a href="https://www.youtube.com/watch?v=nxeELBl8N5U">Jetplane</a>, Sorry</li>
+<li><a href="https://www.youtube.com/watch?v=X6Tlo5jWN1Q">Jimi Hendrix</a>, Stockholm 1969</li>
+<li><a href="https://www.youtube.com/watch?v=RyCd1MCVp0E">안개</a>, Jung Hoon Hee</li>
+<li><a href="https://www.youtube.com/watch?v=dYEzvUdIyOc">Keep Your Head Up</a>, Laurnea</li>
+<li><a href="https://www.youtube.com/watch?v=PTtmsYrsSQ8">L&rsquo;appuntamento</a>, Ornella Vanoni</li>
+<li><a href="https://www.youtube.com/watch?v=gvM1a72Dcqw">Last Chance to Dance</a>, EKKAH</li>
+<li><a href="https://www.youtube.com/watch?v=6A_lOwSnS8c">La vie en rose</a>, Zaz</li>
+<li><a href="https://www.youtube.com/watch?v=k-WSbMW7BPc">Led Zeppelin</a> im &bdquo;Gladsaxe Teen Club&ldquo;, Dänemark (1969)</li>
+<li><a href="https://www.youtube.com/watch?v=0u0M4CMq7uI">Les Contes d&rsquo;Hoffmann: Barcarolle</a>, Offenbach aufgeführt von Anna Netrebko &amp; Elīna Garanča</li>
+<li><a href="https://www.youtube.com/watch?v=CYkWIVPRH6E">Les Délices de la Solitude</a>, Michel Corrette</li>
+<li><a href="https://www.youtube.com/watch?v=nkXOrkeZyqQ">Liebestraum nº3</a>, von Franz Liszt aufgeführt von <a href="https://www.youtube.com/watch?v=gex0sOR7XZ0">Artur Rubinstein</a></li>
+<li><a href="https://www.youtube.com/watch?v=YqhhG2XXn58">Lied ohne Namen</a>, von Branimir Štulić</li>
+<li><a href="https://www.youtube.com/watch?v=ETEg-SB01QY">Little Dark Age</a>, MGMT</li>
+<li><a href="https://www.youtube.com/watch?v=j_sG_Juncn8">Lovers Rock</a>, TV Girl</li>
+<li><a href="https://www.youtube.com/watch?v=GlZqlbz5XPc">Love To Love You Baby</a>, Donna Summer (48-Minuten Remix von
+<a href="https://www.youtube.com/user/DJDiscoCatV2">DJDiscoCat</a>)</li>
+<li><a href="https://www.youtube.com/watch?v=vyjRslYlC3A">Maison De Radio</a> Konzert von Muddy Waters (Paris 1976)</li>
+<li><a href="https://www.youtube.com/watch?v=s-R3GTzZU14">Mañana (Is Soon Enough For Me)</a>, Jackie Davis</li>
+<li><a href="https://www.youtube.com/watch?v=M_ZDGFBKbBM">Mean Old World</a>, T-Bone Walker</li>
+<li><a href="https://www.youtube.com/watch?v=YTunNyb9CFk">Méditation</a>, aus der Oper <a href="https://en.wikipedia.org/wiki/Tha%C3%AFs_(opera)">Thaïs</a></li>
+<li><a href="https://www.youtube.com/watch?v=nm5HSZOXJBo">Mirno Idem Krivim Putem</a>, Rezonansa</li>
+<li><a href="https://www.youtube.com/watch?v=SOFCQ2bfmHw">Monster Mash</a>, Bobby Pickett</li>
+<li><a href="https://www.youtube.com/watch?v=rjq1aTLjrOE">Moonlight Serenade</a>, Glenn Miller</li>
+<li><a href="https://www.youtube.com/watch?v=3RyS0e4Ppg4">Music from Saharan Cellphones</a></li>
+<li><a href="https://www.youtube.com/watch?v=bhD5hmN86G4">My Own Way</a>, Duran Duran</li>
+<li><a href="https://www.youtube.com/watch?v=WUukC6o5bsk">Neue Männer braucht das Land</a>, Ina Deter Band</li>
+<li><a href="https://www.youtube.com/watch?v=i3F8OBK1YO4">Nice</a>, Kleenex</li>
+<li><a href="https://www.youtube.com/watch?v=ZbcvhnC1BC0">Nikriz Sirto</a>, Tanburi Cemil Bey</li>
+<li><a href="https://www.youtube.com/watch?v=f9QOecPlYNw">Nothing Touches Me</a>, Sam Burton</li>
+<li><a href="https://www.youtube.com/watch?v=HEGRwUuWn64">Nur geträumt</a>, Nena</li>
+<li><a href="https://www.youtube.com/watch?v=W1LsRShUPtY">Old Time Rock &amp; Roll</a>, Bob Seger</li>
+<li><a href="https://www.youtube.com/watch?v=dU28l-eC9cI">On &amp; On</a>, Piri &amp; Tommy</li>
+<li><a href="https://www.youtube.com/watch?v=RVQQARTpzfs">On the Face of the Place</a>, The Remotes</li>
+<li><a href="https://www.youtube.com/watch?v=lyk-6QalwHM">Orange County Suite</a>, The Doors</li>
+<li><a href="https://www.youtube.com/watch?v=XPLwPRhHw0M">Pain</a>, Boy Harsher</li>
+<li><a href="https://www.youtube.com/watch?v=FrPCbPyfMXw">Parastoohaye Khasteh</a>, Faramarz Aslani</li>
+<li><a href="https://www.youtube.com/watch?v=LF912pdQPSk">Pourquoi Pourquoi</a>, Corine</li>
+<li><a href="https://www.youtube.com/watch?v=GsaRfnZCHCo">Rakıya Su Katamam</a>, Altın Gün</li>
+<li><a href="https://www.youtube.com/watch?v=lk60ObnbIOk">Ravi Shankar</a> bei dem <a href="https://en.wikipedia.org/wiki/Monterey_International_Pop_Festival">Monterey International Pop Festival</a></li>
+<li><a href="https://www.youtube.com/watch?v=6kr54uR8P14">Real Love</a>, Funk LeBlanc ft. Holland Greco</li>
+<li><a href="https://www.youtube.com/watch?v=Xl9xq1VYJgA">Red Room</a>, Hiatus Kaiyote</li>
+<li><a href="https://www.youtube.com/watch?v=5e1zT7miep8">Rises the Moon</a>, Liana Flores</li>
+<li><a href="https://www.youtube.com/watch?v=nUn5Pyay6Qs">Rock N Roll</a>, The Runaways</li>
+<li><a href="https://www.youtube.com/watch?v=j5AUm_xaE9A">Samba Pa Ti</a>, Carlos Santana</li>
+<li><a href="https://www.youtube.com/watch?v=8yShvAeh7C8">Sat</a>, Boban Markovic</li>
+<li><a href="https://www.youtube.com/watch?v=p32OEIazBew">Seems Like Old Times</a>, Diane Keaton im Film <a href="https://en.wikipedia.org/wiki/Annie_Hall">Annie Hall</a> (1977)</li>
+<li><a href="https://www.youtube.com/watch?v=yq-lgYe0Pz4">Sehnsucht</a>, Die neue Heimat</li>
+<li><a href="https://www.youtube.com/watch?v=GAowqA-g7oo">Seven Souls</a>, William S. Burroughs/Bill Laswell</li>
+<li><a href="https://www.youtube.com/watch?v=2cRFFuQWcb4">She Talks in Stereo</a>, Gary Myrick and The Figures</li>
+<li><a href="https://www.youtube.com/watch?v=-tLLKT0BP1I">Sitar Chop</a> und <a href="https://www.youtube.com/watch?v=yYfQeqXgiU0">Pizzi Chop</a>, Gramatik</li>
+<li><a href="https://www.youtube.com/watch?v=jiRUH9b33dA">Sonate Pacifique</a>, L&rsquo;Impératrice</li>
+<li><a href="https://www.youtube.com/watch?v=mO3IEDRsP2Q">Sounds Like A Melody</a>, Alphaville</li>
+<li><a href="https://www.youtube.com/watch?v=CfMH34dexZ0">Soundtrack</a> vom Spiel <a href="https://archive.org/details/legosupersonicrcgame">LEGO Supersonic RC</a></li>
+<li><a href="https://www.youtube.com/watch?v=enIdTGckjKs">Spanish Eyes</a>, Al Martino (Darsteller von &bdquo;Johnny Fontane&ldquo; in <i>der Pate</i>)</li>
+<li><a href="https://www.youtube.com/watch?v=Ivm9yUxT86k">Star Dust</a>, Erroll Garner</li>
+<li><a href="https://www.youtube.com/watch?v=-T360PIm4O0">Stranac</a>, <a href="https://www.youtube.com/watch?v=qa5ybE832rw">Arsen Dedić</a> (Reinterpretation von
+Georges Moustaki&rsquo;s <a href="https://www.youtube.com/watch?v=MV8fGf-N06A">Le Meteque</a>) oder <a href="https://www.youtube.com/watch?v=wcUx0ATtY1E">Tvoje nježne godine</a></li>
+<li><a href="https://www.youtube.com/watch?v=KEgVCXxaUS8">Summer Lament</a>, Ken Muramuatsu</li>
+<li><a href="https://www.youtube.com/watch?v=2SFt7JHwJeg">Summer Madness</a>, Kool &amp; The Gang</li>
+<li><a href="https://www.youtube.com/watch?v=RzYAjBq1yB0">Sve Smo Mogli Mi</a>, Jadranka Stojakovic (siehe auch, <a href="https://www.youtube.com/watch?v=hIiIrY7D8Ow">japanisch</a>
+Version)</li>
+<li><a href="https://www.youtube.com/watch?v=dH7YnxAdvTc">The Hit</a>, Crazy P Present the Syndromes</li>
+<li><a href="https://www.youtube.com/watch?v=kH43n36U6mQ">The Look of Love</a>, Dusty Springfield</li>
+<li>The Open <a href="https://www.opengoldbergvariations.org/">Goldberg
+Variations</a>, Kimiko Ishizaka (CC0)</li>
+<li><a href="https://www.youtube.com/watch?v=RCdneDxFRYQ">There Must Be An Angel</a>, Eurythmics</li>
+<li><a href="https://www.youtube.com/watch?v=F7STDBJgUpQ">These Eyes (Crying Every Night)</a>, Stranger Cole</li>
+<li><a href="https://www.youtube.com/watch?v=jdV8_NE36xw">The Tribute</a>, Colossus</li>
+<li><a href="https://www.youtube.com/watch?v=eDFFUIGoBUc">Toccata and Fugue</a> von J. S. Bach aufgeführt von Sergei Teleshev (Akkordeon)</li>
+<li><a href="https://www.youtube.com/watch?v=i1Q2kKBphIQ">Too-Ra-Loo-Ra-Loo-Ral (Thats an Irish Lullaby)</a>, Bing Crosby</li>
+<li><a href="https://www.youtube.com/watch?v=LymNICNvaH8">To Love Somebody</a>, Nina Simone</li>
+<li><a href="https://www.youtube.com/watch?v=SJaNOrG__6A">Ulysses and the sea</a>, PAPOOZ</li>
+<li><a href="https://www.youtube.com/watch?v=ZRY_8Q6hPp0">U nedogled</a>, Darkwood Dub</li>
+<li>&bdquo;<a href="https://www.youtube.com/watch?v=Lw6Wjd9lALM">Untitled</a>&ldquo;, Areknuteknyterne</li>
+<li><a href="https://www.youtube.com/watch?v=tQ3HWIsZXPM">Vérité</a>, Claire Laffut</li>
+<li><a href="https://www.youtube.com/watch?v=pnK6R5ej6Hg">Violin Partita no. 2 in D minor</a>, J.S. Bach interpretiert von Shunske Sato</li>
+<li><a href="https://www.youtube.com/watch?v=aqAOLkSHVc4">War</a>, The Sound Defects</li>
+<li><a href="https://www.youtube.com/watch?v=q5lXhfhHOes">What a Day That Was</a>, Talking Heads vom Konzert-Film &bdquo;<a href="https://en.wikipedia.org/wiki/Stop_Making_Sense">Stop Making Sense</a>&ldquo;</li>
+<li><a href="https://www.youtube.com/watch?v=OmBxVfQTuvI">What Difference A Day Makes</a>, Dinah Washington</li>
+<li><a href="https://www.youtube.com/watch?v=3TIpg6bCHTY">What I Needed</a>, Bombay Beach Revival</li>
+<li><a href="https://www.youtube.com/watch?v=Pu5c4aEg3NM">Wonderful Tonight</a>, Eric Clapton</li>
+<li><a href="https://www.youtube.com/watch?v=LzEzE3cpuvg">You got time and I got money</a>, Smerz</li>
+<li><a href="https://www.youtube.com/watch?v=eV4Njx_oIkk">You Stepped Into My Life</a>, Melba Moore</li>
+<li><a href="https://www.youtube.com/watch?v=w6lc8wmjCds">О. Копенков. Воспоминания</a> (<a href="https://www.musicaneo.com/ru/sheetmusic/sm-529029_vospominaniya_or_48_no_17.html">&bdquo;Erinnerungen&ldquo;</a>, von Oleg Kopenkov)</li>
+<li><a href="https://www.youtube.com/watch?v=E5Jnnz1bM-A">哀しみは夜の向こう</a> (Sorrow Is Beyond The Night), Takako Mamiya</li>
+<li><a href="https://www.youtube.com/watch?v=22VFPZVN3tQ">痛みの永遠</a>, Macroblank</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="outline-container-filme" class="outline-2">
+<h2 id="filme">Filme</h2>
+<div class="outline-text-2" id="text-filme">
+<p>
+&#x2026; die ich mag, interessant fand und/oder empfehlen kann.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-right" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Titel</th>
+<th scope="col" class="org-right">Jahr</th>
+<th scope="col" class="org-left">Regie</th>
+<th scope="col" class="org-left">Sprache</th>
+<th scope="col" class="org-left">Genre</th>
+<th scope="col" class="org-left">Kommentare</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/626-un-chien-andalou">Un Chien Andalou</a> (<a href="https://archive.org/details/un-chien-andalou__1929-film__luis_bunuel">online</a>)</td>
+<td class="org-right">1929</td>
+<td class="org-left">Buñuel</td>
+<td class="org-left">Französisch</td>
+<td class="org-left">Avant-Garde Surrealist</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=67KXkJQpZL4">R. Short</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/3078-it-happened-one-night">It Happened One Night</a> (<a href="https://archive.org/details/it.-happened.-one.-night.-1934.1080p.-blu-ray.x-264.-yify">online</a>)</td>
+<td class="org-right">1934</td>
+<td class="org-left">Capra</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Romantic-Comedy</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/995-stagecoach">Stagecoach</a> (<a href="https://www.youtube.com/watch?v=m597TtqsFkQ">online</a>)</td>
+<td class="org-right">1939</td>
+<td class="org-left">Ford</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Western</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/223-rebecca">Rebecca</a> (<a href="https://www.youtube.com/watch?v=Q_HeyfRCdVs">online</a>)</td>
+<td class="org-right">1940</td>
+<td class="org-left">Hitchcock</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Romantic-Psychological Thriller</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/289-casablanca">Casablanca</a> (<a href="https://www.dailyscript.com/scripts/casablanca.pdf">skript</a>)</td>
+<td class="org-right">1942</td>
+<td class="org-left">Curtiz</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Romantic-Drama</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=zMNodO6zP1U">R. Ebert</a>, <a href="https://www.youtube.com/watch?v=hUR0oFPJpsY">R. Haver</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/27040-meshes-of-the-afternoon">Meshes of the Afternoon Meshes of the Afternoon</a> (<a href="https://en.wikipedia.org/wiki/File:Meshes_of_the_Afternoon_(1943).webm">online</a>)</td>
+<td class="org-right">1943</td>
+<td class="org-left">Deren</td>
+<td class="org-left">-</td>
+<td class="org-left">Avant-Garde Surrealist</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/996-double-indemnity">Double Indemnity</a></td>
+<td class="org-right">1944</td>
+<td class="org-left">Wilder</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Crime-Triller</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/16391-black-narcissus">Black Narcissus</a> (<a href="https://archive.org/details/black-narcissus-1947">online</a>)</td>
+<td class="org-right">1947</td>
+<td class="org-left">Powell</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Psychological-Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/5156-ladri-di-biciclette">Bicycle Thieves</a> (<a href="https://archive.org/details/bicycle-thieves-1948-restored-movie-720p-hd">online</a>)</td>
+<td class="org-right">1948</td>
+<td class="org-left">De Sica</td>
+<td class="org-left">Italienisch</td>
+<td class="org-left">Neo-Realistisches Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/1092-the-third-man">The Third Man</a> (<a href="https://archive.org/details/the-third-man-1949">online</a>)</td>
+<td class="org-right">1949</td>
+<td class="org-left">Reed</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Film-Noir</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=am8yWkUOW4I">S. Soderbergh, T. Gilroy</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/32568-the-man-in-the-white-suit">The Man in the White Suit</a></td>
+<td class="org-right">1951</td>
+<td class="org-left">Mackendrick</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Sci-Fi</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/818944-land-of-the-long-day">Land of the Long Day</a> (<a href="https://www.nfb.ca/film/land_of_the_long_day/">online</a>)</td>
+<td class="org-right">1952</td>
+<td class="org-left">Wilkinson</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Dokumentar</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/804-roman-holiday">Roman Holiday</a></td>
+<td class="org-right">1953</td>
+<td class="org-left">Wyler</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Romance-Comedy</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/6844-the-ten-commandments">The Ten Commandments</a></td>
+<td class="org-right">1956</td>
+<td class="org-left">DeMille</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Epic Religious Drama</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=TFbK3TVdq58">K. Orrison</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/975-paths-of-glory">Paths of Glory</a></td>
+<td class="org-right">1957</td>
+<td class="org-left">Kubrik</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Anti-War</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=9fJM8htSOJE">G. Giddins</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/614-smultronst-llet">Wild Strawberries</a></td>
+<td class="org-right">1957</td>
+<td class="org-left">Bergman</td>
+<td class="org-left">Schwedisch</td>
+<td class="org-left">Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/38360">The Cranes Are Flying</a> (<a href="https://www.youtube.com/watch?v=2rINnJat-5k">online</a>)</td>
+<td class="org-right">1957</td>
+<td class="org-left">Kalatozov</td>
+<td class="org-left">Russisch</td>
+<td class="org-left">Romantic War Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/389-12-angry-men">12 Angry Men</a> (<a href="https://www.dailyscript.com/scripts/12AngryMen.pdf">skript</a>)</td>
+<td class="org-right">1957</td>
+<td class="org-left">Rose</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Courtroom Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/426">Vertigo</a> (<a href="https://archive.org/details/vertigo-1958">online</a>, <a href="https://www.dailyscript.com/scripts/vertigo.html">skript</a>)</td>
+<td class="org-right">1958</td>
+<td class="org-left">Hitchcock</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Psychological Thriller</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=3_LXYz8B5r8">W. Friedkin</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/5544-hiroshima-mon-amour">Hiroshima Mon Amou</a> (<a href="https://archive.org/details/HiroshimaMonAmour1959LEG">online</a>)</td>
+<td class="org-right">1959</td>
+<td class="org-left">Resnais</td>
+<td class="org-left">Französisch</td>
+<td class="org-left">Romantic Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/collection/85473">The Human Condition</a> Trilogie</td>
+<td class="org-right">1959-61</td>
+<td class="org-left">Kobayashi</td>
+<td class="org-left">Japanisch</td>
+<td class="org-left">Historical War Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/269-bout-de-souffle">À bout de souffle</a> (<a href="https://archive.org/details/breathless-1960">online</a>)</td>
+<td class="org-right">1960</td>
+<td class="org-left">Godard</td>
+<td class="org-left">Französisch</td>
+<td class="org-left">Crime-Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/41050-la-notte">La Notte</a></td>
+<td class="org-right">1961</td>
+<td class="org-left">Antonioni</td>
+<td class="org-left">Italienisch</td>
+<td class="org-left">&bdquo;Drama&ldquo;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/821-judgment-at-nuremberg">Judgment at Nuremberg</a></td>
+<td class="org-right">1961</td>
+<td class="org-left">Kramer</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Historical Courtroom Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/967-spartacus">Spartacus</a></td>
+<td class="org-right">1962</td>
+<td class="org-left">Kubrik</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Epic Historical Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/662-la-jet-e">La Jetée</a> (<a href="https://vimeo.com/658254211">online</a>)</td>
+<td class="org-right">1962</td>
+<td class="org-left">Marker</td>
+<td class="org-left">Französisch</td>
+<td class="org-left">Romantic SciFi</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=UO21XtLOsD4">Criterion</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/4808-charade">Charade</a> (<a href="https://en.wikipedia.org/wiki/File:Charade_(1963).webm">online</a>, <a href="https://www.dailyscript.com/scripts/Charade.txt">skript</a>)</td>
+<td class="org-right">1963</td>
+<td class="org-left">Donen</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Comedy-Mystery</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=zoYGD7Aza60">S. Donen, P. Stone</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/10604-alexis-zorbas">Zorba the Greek</a></td>
+<td class="org-right">1964</td>
+<td class="org-left">Kakogiannis</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/429-il-buono-il-brutto-il-cattivo">The Good, the Bad and the Ugly</a></td>
+<td class="org-right">1966</td>
+<td class="org-left">Leone</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Spaghetti-Western</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/45706-t-ky-nagaremono">Tokyo Drifter</a></td>
+<td class="org-right">1966</td>
+<td class="org-left">Suzuki</td>
+<td class="org-left">Japanisch</td>
+<td class="org-left">Gangster Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/5511-le-samoura">Le Samouraï</a> (<a href="https://archive.org/details/le-samourai-1967_202309">online</a>)</td>
+<td class="org-right">1967</td>
+<td class="org-left">Melville</td>
+<td class="org-left">Französisch</td>
+<td class="org-left">Crime-Thriller</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/839-duel">Duel</a></td>
+<td class="org-right">1971</td>
+<td class="org-left">Spielberg</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Action-Triller</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=Vcf9PoxXgPo">S. Spielberg</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/55847-quatre-nuits-d-un-reveur">Four Nights of a Dreamer</a></td>
+<td class="org-right">1971</td>
+<td class="org-left">Bresson</td>
+<td class="org-left">Französisch</td>
+<td class="org-left">Romantic Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/593">Solaris</a> (<a href="https://www.youtube.com/watch?v=Z8ZhQPaw4rE">online</a>)</td>
+<td class="org-right">1972</td>
+<td class="org-left">Tarkovsky</td>
+<td class="org-left">Russisch</td>
+<td class="org-left">SciFi Mystery Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/829-chinatown">Chinatown</a> (<a href="https://www.dailyscript.com/scripts/Chinatown.txt">skript</a>)</td>
+<td class="org-right">1974</td>
+<td class="org-left">Polanski</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Crime-Mystery</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=f3_q0dXOtu4">R. Towne, D. Fincher</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/50186">Gypsies Are Found Near Heaven</a> (<a href="https://archive.org/details/gypsies-are-found-near-heaven-1976">online</a>)</td>
+<td class="org-right">1975</td>
+<td class="org-left">Loteanu</td>
+<td class="org-left">Russisch</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=7Tivt73a-X0">Musical</a> Romance-Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/103-taxi-driver">Taxi Driver</a></td>
+<td class="org-right">1976</td>
+<td class="org-left">Scorsese</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Crime-Drama</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=ep72KyEbUDk">M. Scorsese, P. Schrader</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/9764">Dersu Uzala</a> (<a href="https://www.youtube.com/watch?v=sFaL03SKEzE">online</a>)</td>
+<td class="org-right">1976</td>
+<td class="org-left">Kurosawa</td>
+<td class="org-left">Russisch</td>
+<td class="org-left">Adventure-Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/703-annie-hall">Annie Hall</a> (<a href="https://www.dailyscript.com/scripts/Annie%20Hall.txt">skript</a>)</td>
+<td class="org-right">1977</td>
+<td class="org-left">Allen</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Romatic-Comedy</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/326156-killing-us-softly-advertising-s-image-of-women">Killing us Softly</a> (<a href="https://archive.org/details/stillkillingussoftlyadvertisingsimageofwomen">online</a>)</td>
+<td class="org-right">1979</td>
+<td class="org-left">Kilbourne</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Documentary</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/17909-ko-to-tamo-peva">Who&rsquo;s Singin&rsquo; Over There?</a> (<a href="https://www.youtube.com/watch?v=ZwozSLas8DM">online</a>)</td>
+<td class="org-right">1980</td>
+<td class="org-left">Šijan</td>
+<td class="org-left">Serbisch</td>
+<td class="org-left">Comedy-Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/21028-moskva-slezam-ne-verit">Moscow Does Not Believe in Tears</a> (<a href="https://www.youtube.com/watch?v=NTWA_7-ld_U">online</a>)</td>
+<td class="org-right">1980</td>
+<td class="org-left">Menshov</td>
+<td class="org-left">Russisch</td>
+<td class="org-left">Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/1563-sans-soleil">Sans Soleil</a> (<a href="https://archive.org/details/sans-soleil-1983-stereo">online</a>, <a href="https://archive.org/details/ChrisMarkerSansSoleil1">online</a> (englisch), <a href="https://www.markertext.com/sans_soleil.htm">text</a> (englisch))</td>
+<td class="org-right">1983</td>
+<td class="org-left">Marker</td>
+<td class="org-left">Französisch</td>
+<td class="org-left">Dokumentar-Film</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/279-amadeus">Amadeus</a></td>
+<td class="org-right">1984</td>
+<td class="org-left">Forman</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Historical Music Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/11645-ran">Ran</a></td>
+<td class="org-right">1985</td>
+<td class="org-left">Kurosawa</td>
+<td class="org-left">Japanisch</td>
+<td class="org-left">Historical Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/11051-the-last-temptation-of-christ">The Last Temptation of Christ</a> (<a href="https://www.dailyscript.com/scripts/Last%20Temptation%20Of%20Christ,%20The.txt">skript</a>)</td>
+<td class="org-right">1988</td>
+<td class="org-left">Scorsese</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Religious Drama</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=5Xl-IZJvec0">M. Scorsese, P. Schrader</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/%20639">When Harry Met Sally</a></td>
+<td class="org-right">1989</td>
+<td class="org-left">Reiner</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Romantic Comedy</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/274-the-silence-of-the-lambs">The Silence of the Lambs</a></td>
+<td class="org-right">1991</td>
+<td class="org-left">Demme</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Crime Thriller</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=AWlgYMdiGN0">J. Foster, A. Hopkins, etc.</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/108-trois-couleurs-bleu">Three Colors: Blue</a></td>
+<td class="org-right">1993</td>
+<td class="org-left">Kieślowski</td>
+<td class="org-left">Französisch</td>
+<td class="org-left">Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/21057-umi-ga-kikoeru">Ocean Waves</a></td>
+<td class="org-right">1993</td>
+<td class="org-left">Mochizuki</td>
+<td class="org-left">Japanisch</td>
+<td class="org-left">Animated Romance</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/9571-dazed-and-confused">Dazed and Confused</a></td>
+<td class="org-right">1993</td>
+<td class="org-left">Linklater</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Slice of Life</td>
+<td class="org-left"><a href="https://www.youtube.com/watch?v=V2KS_s2ttLw">R. Linklater</a></td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/424-schindler-s-list">Schindler&rsquo;s List</a></td>
+<td class="org-right">1993</td>
+<td class="org-left">Spielberg</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Historical War Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/4584-sense-and-sensibility">Sense and Sensibility</a></td>
+<td class="org-right">1995</td>
+<td class="org-left">Lee</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Romance Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/58032-dial-h-i-s-t-o-r-y">Dial H-I-S-T-O-R-Y</a> (<a href="https://www.youtube.com/watch?v=FSeYWGAAJyI">online</a>)</td>
+<td class="org-right">1997</td>
+<td class="org-left">Grimonprez</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Documentary</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/473">Pi</a></td>
+<td class="org-right">1998</td>
+<td class="org-left">Aronofsky</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Psychological Thriller</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/14626-beau-travail">Beau Travail</a></td>
+<td class="org-right">2000</td>
+<td class="org-left">Denis</td>
+<td class="org-left">Französisch</td>
+<td class="org-left">Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/161-ocean-s-eleven">Ocean&rsquo;s Eleven</a></td>
+<td class="org-right">2002</td>
+<td class="org-left">Soderbergh</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Crime Thriller</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/80-before-sunset">Before Sunrise</a></td>
+<td class="org-right">2004</td>
+<td class="org-left">Linklater</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Romance-Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/38-eternal-sunshine-of-the-spotless-mind">Eternal Sunshine of the Spotless Mind</a></td>
+<td class="org-right">2004</td>
+<td class="org-left">Gondry</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">SciFi Romance</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/350-the-devil-wears-prada">The Devil Wears Prada</a></td>
+<td class="org-right">2006</td>
+<td class="org-left">Frankel</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Drama Comedy</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/6977-no-country-for-old-men">No Country for Old Men</a></td>
+<td class="org-right">2007</td>
+<td class="org-left">Coen</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Crime Neo-Western</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/19913-500-days-of-summer">500 Days of Summer</a></td>
+<td class="org-right">2009</td>
+<td class="org-left">Webb</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">Romantic Comedy</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/329865-arrival">Arrival</a></td>
+<td class="org-right">2016</td>
+<td class="org-left">Villeneuve</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">SciFi Drama</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left"><a href="https://www.themoviedb.org/movie/443463-leave-no-trace">Leave No Trace</a></td>
+<td class="org-right">2018</td>
+<td class="org-left">Granik</td>
+<td class="org-left">Englisch</td>
+<td class="org-left">&bdquo;Drama&ldquo;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Um Untertitel für diese und andere Filme zu finden, kann ich
+<a href="https://www.opensubtitles.org/">OpenSubtitles.org</a> empfehlen.  Viele dieser Filme und Kommentare sind
+teil der &bdquo;<a href="https://www.criterion.com/">Criterion Collection</a>&ldquo;.
+</p>
+
+<p>
+Mehr Seiten mit Filmen:
+</p>
+
+<ul class="org-ul">
+<li><a href="https://publicdomainmovie.net/">publicdomainmovie.net</a></li>
+<li><a href="https://rarefilmm.com/browse/">rarefilmm.com</a></li>
+<li><a href="https://www.youtube.com/@CultCinemaClassics/featured">Cult Cinema Classics</a></li>
+<li><a href="https://www.youtube.com/@Mosfilm_eng">Mosfilm</a>, Sammlung von Sovietisch/Russischen Filmen</li>
+<li><a href="https://35mm.online/en">35mm.online</a>, Sammlung von Polnischen Filmen</li>
+<li>Wikipedia Artikel <a href="https://en.wikipedia.org/wiki/List_of_films_with_a_100%25_rating_on_Rotten_Tomatoes">List of films with a 100% rating on Rotten
+Tomatoes</a></li>
+<li><a href="https://www.filmsite.org/">filmsite</a>, <i>the greatest and best in movie history</i></li>
+</ul>
+
+<p>
+Siehe auch &bdquo;<a href="https://atogt.com/">And the Oscar goes to&#x2026;</a>&ldquo; (everything you ever wanted to
+know about the Academy Awards).
+</p>
+</div>
+</div>
+<div id="outline-container-fau" class="outline-2">
+<h2 id="fau">FAU</h2>
+<div class="outline-text-2" id="text-fau">
+<ul class="org-ul">
+<li><a href="https://www.fau.de/files/2020/12/studierende_nach_lehreinheiten.pdf">&bdquo;Todesstatistik&ldquo;</a>, bzw. <i>Studierendenzahlen aller Lehreinheiten</i></li>
+<li><a href="https://wwwcip.cs.fau.de/temperature/">CIP Temperatur Daten</a> (<a href="https://fsi.cs.fau.de/forum/thread/16321-Temperatursensoren-CIPs">via</a>)</li>
+<li><a href="https://www.sigfood.de/">Sigfood</a> (händisch und mit mehr Bewertungen, &bdquo;moralisch gut&ldquo;) oder <a href="https://www.mensatt.de/">Mensatt</a> (automatisiert, &bdquo;moralisch schlecht&ldquo;)</li>
+<li><a href="https://fsi.cs.fau.de/_media/pruefungen/fau_link_sammlung.pdf">FAU Link Sammlung</a></li>
+<li><a href="https://regenampel.de/">Regenampel</a> (Berechnen, wann man los muss, um nicht nass zu werden)</li>
+<li><a href="https://osm.rrze.fau.de">RRZE OpenStreetMaps</a>, mit Satelliten-Aufnahmen von Erlangen und der Umgebung</li>
+<li><a href="https://duckduckgo.com/l/?uddg=https%3A%2F%2Fwww.rrze.fau.de%2Fmedien%2Dentwicklung%2Fdruckzentrum%2F&amp;rut=5715d8debfe0e6cd9831fd3ee74c11de81c2fe6450106149963ad4cfb91b53f3">RRZE Druckerzentrum</a>, bieten hochqualitatives Drucken</li>
+<li><a href="https://gitlab.cs.fau.de/since/bayerncaptive/-/raw/master/bayerncaptive.sh">BayernWLAN Login Shellscript</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orgas" class="outline-2">
+<h2 id="orgas">Organisationen</h2>
+<div class="outline-text-2" id="text-orgas">
+<ul class="org-ul">
+<li><a href="https://www.eff.org/">Electronic Frontier Foundation</a></li>
+<li><a href="https://www.fsf.org/">Free Software Foundation</a> (cf. <a href="https://fsfe.org/">Free Software Foundation <i>Europe</i></a>)
+<ul class="org-ul">
+<li>Verwandt: <a href="https://patentabsurdity.com">Patent Absurdity: How Software Patents Broke the System?</a></li>
+</ul></li>
+<li><a href="https://www.ccc.de/">Chaos Computer Club</a></li>
+<li><a href="https://sfconservancy.org/">Software Freedom Conservancy</a></li>
+<li><a href="https://www.softwarepreservation.org/">Software Preservation Group</a>, des <a href="https://computerhistory.org/">Computer History Museum</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-evil" class="outline-2">
+<h2 id="evil">Böse Links</h2>
+<div class="outline-text-2" id="text-evil">
+<p>
+Zu den folgenden Seiten möchte ich nicht verlinken, da diese Böse
+sind.  Ich erwähne sie nur damit man nicht aus versehen auf diese
+Seiten stößt oder sogar benutzt.
+</p>
+
+<dl class="org-dl">
+<dt>&bdquo;Sci-Hub&ldquo; (<a href="https://en.wikipedia.org/wiki/Sci-Hub">Wikipedia</a>)</dt><dd>Eine Seite die wissenschaftliche Artikel
+von Journalen stiehlt, und unmoralischen Menschen die nicht dafür
+Zahlen zugänglich machen.  Zum Glück werden seit 2021 <a href="https://www.reddit.com/r/scihub/comments/lofj0r/announcement_scihub_has_been_paused_no_new/">keine neuen
+Artikel</a> hochgeladen!</dd>
+<dt>&bdquo;Library Genesis&ldquo; (<a href="https://en.wikipedia.org/wiki/Library_Genesis">Wikipedia</a>)</dt><dd>Ein Archiv wo illegale Fachbücher
+geteilt werden, so wie andere widerrechtlich verbreitete
+PDFs/DjVu/Epub/&#x2026; Dateien.</dd>
+<dt>&bdquo;Z-Library&ldquo; (<a href="https://en.wikipedia.org/wiki/Z-Library">Wikipedia</a>)</dt><dd>Eine alternative zu Library Genesis mit
+zusätzlichen gestohlenen Büchern.</dd>
+<dt>&bdquo;Pirate Library Mirror&ldquo;</dt><dd>Ein <a href="https://en.wikipedia.org/wiki/BitTorrent">Torrent</a>-basierter Mirror von Z-Library.</dd>
+<dt>&bdquo;IRCHighWay&ldquo;</dt><dd>Ein IRC Netzwerk indem böse Bots Bücher herumteilen!</dd>
+<dt>&bdquo;Anna&rsquo;s Archive&ldquo; (<a href="https://en.wikipedia.org/wiki/Anna%27s_Archive">Wikipedia</a>)</dt><dd>Eine böse Suchmachine die es erleichtert
+illegale Bücher auf den vorherigen Seiten zu suchen.</dd>
+</dl>
+
+<p>
+Sollte man dennoch diese Seiten benutzen, sei es aus Zwang oder
+fehlender Aufmerksamkeit, bitte achtet darauf keine Programme wie den
+<a href="https://www.torproject.org/de/download/">Tor Browser</a>, <a href="https://freenetproject.org/">Freenet</a> oder <a href="https://geti2p.net/en/">I2P</a> zu benutzen, oder ein VPN Anbieter wie
+<a href="https://mullvad.net/">Mullvad</a>.  Dieses ist wichtig, damit eure IP Adresse verfolgt werden
+kann und ihr die gerechte Strafe bekommt.
+</p>
+
+<p>
+Auch empfehle ich es <b>nicht</b> <a href="https://thepiratebook.net/">The Pirate Book</a> und <a href="https://web.law.duke.edu/musiccomic/">Theft! A History of
+Music</a> zu lesen.
+</p>
+
+<p>
+Nicht vergessen, <i>Information would prefer to be restricted</i>.
+</p>
+</div>
+</div>
+<div id="outline-container-sonstig" class="outline-2">
+<h2 id="sonstig">Weitere Link Seiten</h2>
+<div class="outline-text-2" id="text-sonstig">
+<ul class="org-ul">
+<li><a href="https://wwwcip.cs.fau.de/~oc45ujef/links.html">Links zu interessanten Themen</a> <img new="new link" src="../smileys/idea.png"/></li>
+<li><a href="https://wwwcip.cs.fau.de/~qy15sije/links.html">Links</a></li>
+<li><a href="https://wwwcip.cs.fau.de/~yn49ugeg/links/">Eine Kompilation interessanter Links.</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Autor: Philip KALUĐERČIĆ</p>
+<p class="email">Email: <a href="mailto:oj14ozun@cip.fau.de">oj14ozun@cip.fau.de</a></p>
+<p class="date">Created: 2025-07-29 Tue 23:59</p>
+<p class="creator"><a href="https://www.gnu.org/software/emacs/">Emacs</a> 31.0.50 (<a href="https://orgmode.org">Org</a> mode 9.7.11)</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

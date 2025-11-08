@@ -15,9 +15,12 @@ $links = [
                 '_' => '
                     <a href="https://en.wikipedia.org/wiki/Dart_(programming_language)">Dart</a> ist eine
                     recht unbekannte Programmiersprache, die aber eigentlich ganz cool ist, weil sie viele
-                    OOP-Konzepte aus Java übernimmt und erweitert. Ein großer Vorteil von Dart gegenüber
-                    Java ist, dass es nach JavaScript, WASM sowie zu nativen Maschinencode kompiliert werden
-                    kann. Alternativ kann es aber auch in der Dart VM Just-in-Time ausgeführt werden.
+                    <a href="https://en.wikipedia.org/wiki/Object-oriented_programming">OOP</a>-Konzepte aus
+                    Java übernimmt und erweitert. Ein großer Vorteil von Dart gegenüber Java ist, dass es
+                    nach JavaScript, <a href="https://en.wikipedia.org/wiki/WebAssembly">WASM</a> sowie zu
+                    nativen Maschinencode kompiliert werden kann. Alternativ kann es aber auch in der
+                    Dart VM <a href="https://en.wikipedia.org/wiki/Just-in-time_compilation">Just-in-Time</a>
+                    ausgeführt werden.
                 ',
                 'DartPad;;Online-Entwicklungsumgebung' => 'https://dartpad.dev/',
             ],
@@ -41,14 +44,14 @@ $links = [
         ],
         'Competitive Programming' => [
             'Algorithms for Competitive Programming' => 'https://cp-algorithms.com/',
-            'Antti Laaksonen: Competitive Programmer’s Handbook' => 'https://cses.fi/book/book.pdf',
+            'Competitive Programmer’s Handbook;;Antti Laaksonen (<a href="/backup/cses.fi/book/book.pdf">Backup</a>)' => 'https://cses.fi/book/book.pdf',
             'Starting Competitive Programming - Steps and Mistakes' => 'https://youtu.be/bVKHRtafgPc',
         ],
         'Forensik/Dateisysteme' => [
-            'B. Carrier: File System Forensic Analysis' => 'https://raw.githubusercontent.com/Urinx/Books/master/Forensic/File%20System%20Forensic%20Analysis.pdf',
+            'File System Forensic Analysis;;Brian Carrier (<a href="/backup/raw.githubusercontent.com/Urinx/Books/master/Forensic/File%20System%20Forensic%20Analysis.pdf">Backup</a>)' => 'https://raw.githubusercontent.com/Urinx/Books/master/Forensic/File%20System%20Forensic%20Analysis.pdf',
         ],
         'Compiler' => [
-            'Michael I. Schwartzbach: Lecture Notes on Static Analysis' => 'https://lara.epfl.ch/w/_media/sav08:schwartzbach.pdf',
+            'Lecture Notes on Static Analysis;;Michael I. Schwartzbach (<a href="/backup/lara.epfl.ch/w/_media/sav08:schwartzbach.pdf">Backup</a>)' => 'https://lara.epfl.ch/w/_media/sav08:schwartzbach.pdf',
             'Mapping High Level Constructs to LLVM IR' => 'https://mapping-high-level-constructs-to-llvm-ir.readthedocs.io',
             'godbolt.org Compiler Explorer' => 'https://godbolt.org/',
             'dogbolt.org Decompiler Explorer' => 'https://dogbolt.org/',
@@ -61,6 +64,10 @@ $links = [
             'OSS-Fuzz' => 'https://github.com/google/oss-fuzz',
             'WinAFL;;Windows-Port von AFL' => 'https://github.com/googleprojectzero/winafl',
             'DynamoRIO;;Standard-Instrumentierung für WinAFL' => 'https://dynamorio.org/',
+        ],
+        'Systemprogrammierung' => [
+            'SP1 Quiz;;von Philip KALUĐERČIĆ (<a href="/backup/wwwcip.cs.fau.de/~oj14ozun/sp1/quiz/">Backup</a>)' => 'https://wwwcip.cs.fau.de/~oj14ozun/sp1/quiz/',
+            'SP2 Quiz;;von Philip KALUĐERČIĆ (<a href="/backup/wwwcip.cs.fau.de/~oj14ozun/sp2/quiz/">Backup</a>)' => 'https://wwwcip.cs.fau.de/~oj14ozun/sp2/quiz/',
         ],
         'Signalverarbeitung' => [
             'Nyquist-Shannon-Abtasttheorem' => 'https://en.wikipedia.org/wiki/Nyquist%E2%80%93Shannon_sampling_theorem'
@@ -171,13 +178,14 @@ $links = [
         'Ein MANN, Ein BUCH;;Eduard Augustin, Philipp V. Keisenberg, Christian Zaschke' => 'https://www.penguin.de/buecher/ein-mann-ein-buch/taschenbuch/9783442471829',
         'No Place to Hide;;Glenn Greenwald' => 'https://en.wikipedia.org/wiki/No_Place_to_Hide_%28Greenwald_book%29',
         'Anleitung zur Selbstüberlistung;;Prof. Dr. Christian Rieck' => 'https://www.m-vg.de/yes/shop/article/24155-anleitung-zur-selbstueberlistung/',
+        'The Pirate Book;;Nicolas Maigret &amp; Maria Roszkowska (<a href="/backup/thepiratebook.net/wp-content/uploads/The_Pirate_Book.pdf">Backup</a>)' => 'https://thepiratebook.net/wp-content/uploads/The_Pirate_Book.pdf',
     ],
     'Musik(theorie)' => [
         'Musipedia;;Musik-Wiki (und -Suchmaschine)' => 'https://www.musipedia.org/',
         'Musiktheorie-Quiz für D1 (Bronze)' => 'https://linus-gnan.de/musiktheorie/',
     ],
     'Andere Linksammlungen' => [
-        'Linksammlung von Philip KALUĐERČIĆ' => 'https://wwwcip.cs.fau.de/~oj14ozun/links.html',
+        'Linksammlung von Philip KALUĐERČIĆ;;(<a href="/backup/wwwcip.cs.fau.de/~oj14ozun/links.html">Backup</a>)' => 'https://wwwcip.cs.fau.de/~oj14ozun/links.html',
         'Linksammlung des BKA' => 'https://www.bka.de/DE/IhreSicherheit/WichtigeLinks/wichtigelinks_node.html',
         'BSI Home-Office Check' => 'https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Cyber-Sicherheit/Themen/checkliste-home-office_linkliste.pdf?__blob=publicationFile&v=5',
     ],

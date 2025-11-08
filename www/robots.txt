@@ -3,5 +3,6 @@ User-agent: *
 Disallow: /assets
 Disallow: /static
 Disallow: /dummy
+Disallow: /backup
 
 Sitemap: https://lehnert.dev/sitemap.xml

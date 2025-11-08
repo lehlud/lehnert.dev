@@ -1,0 +1,309 @@
+/* Copyright (C) 2024, 2025	Philip Kaludercic
+
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation, either version 3 of the License, or
+   (at your option) any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program.  If not, see <https://www.gnu.org/licenses/>. */
+
+:root {
+    font-family: system-ui, "Open Sans", "Noto Sans", "Lato", Arial, sans-serif;
+
+    --default-tint: ghostwhite;
+    --highlight: red;
+    --correct: honeydew;
+    --wrong: mistyrose;
+    --ambiguous: ivory;
+    --radius: 6px;
+}
+
+* {
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    font-variant-ligatures: common-ligatures;
+    font-kerning: auto;
+}
+
+body {
+    margin: 0em auto 0 auto;
+    padding: 1em;
+    max-width: 50rem;
+}
+
+main {
+    border: 2px solid rgba(0,0,0,0.25);
+    background: var(--default-tint);
+    padding: 16px;
+    position: relative;
+    min-height: 48px;
+    border-radius: var(--radius);
+}
+
+main.broken, .answer.wrong main {
+    background: var(--wrong);
+}
+
+main.broken ~ * {
+    display: none !important;
+}
+
+.answer.right main {
+    background: var(--correct);
+}
+
+.open main {
+    background: var(--default-tint) !important;
+}
+
+/* QUESTION PANEL */
+
+main img#media {
+    margin: 0.5em auto;
+}
+
+main section#text {
+    width: 90%;
+}
+
+main section#text > *:first-child {
+    margin-top: 0;
+}
+
+main section#text > *:last-child {
+    margin-bottom: 0;
+}
+
+/* INFO PANEL */
+
+div#info, div#info > aside {
+    background: var(--default-tint);
+    border-radius: var(--radius);
+    display: inline;
+}
+
+div#info > aside > h1:first-of-type,
+main > h1:first-of-type {
+    margin-top: 0;
+}
+
+button#info-toggle {
+    border: none;
+    background: none;
+
+    width: 32px;
+    height: 32px;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+:not(.open) #info > aside, .open #text, .open #metadata {
+    display: none;
+}
+
+.open #info > aside {
+    display: initial;
+}
+
+.open body > :not(.info-box),
+.open main > :not(.info-box) {
+    display: none !important;
+}
+
+/* METADATA PANEL */
+
+.next div#metadata::after,
+div#metadata {
+    display: inline;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 4px 8px;
+}
+
+div#metadata {
+    opacity: 80%;
+    font-size: 70%;
+}
+
+/* ANSWERS */
+
+#answers {
+    margin-bottom: 0;
+}
+
+#answers li {
+    padding-bottom: 1em;
+}
+
+#answers li::marker {
+    opacity: 80%;
+}
+
+#answers li .option {
+    display: flex;
+    align-items: flex-start;
+    margin: 4px;
+}
+
+#answers li > * {
+    display: flex;
+}
+
+#answers li > * > input {
+    margin-right: 0.7em;
+}
+
+#answers li .option p {
+    margin: 0;
+    display: inline;
+}
+
+#answers li .comment { display: none; }
+.answer #answers li .comment { display: block; }
+
+#answers li .comment {
+    border: 2px solid rgba(0,0,0,0.25);
+    border-radius: var(--radius);
+    background: var(--wrong);
+    padding: 8px;
+    margin-top: 16px;
+}
+
+#answers li .comment.correct {
+    background: var(--correct);
+}
+
+#answers li .comment.maybe {
+    background: var(--ambiguous);
+}
+
+#answers li .comment > p:first-of-type {
+    margin: 0;			/* avoid redundant padding due to markdown */
+}
+
+/* STATISTICS */
+
+#stats ~ * { font-size: 75%; }
+#stats { font-size: 60%; display: inline; }
+
+#stats progress, #stats meter { width: 2cm; }
+
+#stats > #correct { background: var(--correct); }
+#stats > #wrong   { background: var(--wrong); }
+
+/* ACTION BUTTON */
+
+button {
+    padding: 8px;
+    margin-bottom: 8px;
+    border-width: 0;
+    border-radius: var(--radius);
+}
+
+#action {
+    float: right;
+}
+
+#action::after {
+    content: "Weiter?";
+}
+
+.answer #action::after {
+    content: "Weiter!";
+}
+
+:not(.tried) #action {
+    cursor: no-drop;
+    animation: none;
+}
+
+.answer #action,
+.tried #action {
+    cursor: pointer;
+    animation: blinker 2s linear infinite;
+}
+
+/* ETC. */
+
+mark {
+    background: unset;
+    color: unset;
+}
+
+/* We use the new non-standardised pseudo property :has to allow
+   reversing the direction of the standard subsequent sibling
+   combinator, since the checkbox appears after the options section,
+   where we want some words to be optionally highlighted. */
+*:has(~ #display-hl:checked) .option mark,
+*:has(~ #display-hl:checked) #text mark {
+    color: revert;
+    background: revert;
+}
+
+/* HACK: Firefox just started supporting the pseudo-selector :has (as
+   of 2023-12), we use this fact to hide the "Hebe Warnwörter hervor"
+   option from being displayed in the first place, avoiding
+   confusion. */
+.display-hl {
+    display: none;
+}
+.display-hl:has(~ #display-hl-hack) {
+    display: initial;
+}
+
+/* This is the initial value, that indicates no link has been set and
+   therefore the "report problems" and "permalink" links is not of interest. */
+a.shy[href="#"] {
+    display: none;
+}
+
+/* Some browser engines reduce the size of fixed-with elements by
+   default, and this appears to be a hack to circumvent this issue:
+   https://github.com/necolas/normalize.css/issues/519#issuecomment-197131966
+   */
+code, tt, kbd {
+    font-family: monospace, monospace;
+}
+
+pre {
+    overflow-x: auto;
+}
+
+/* based on https://stackoverflow.com/questions/16344354/ */
+@keyframes blinker {
+    50% {
+	opacity: 50%;
+    }
+}
+
+/* basic "dark theme" support */
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+	--default-tint: darkslategray;
+	--highlight: cyan;
+	--correct: seagreen;
+	--wrong: maroon;
+	--ambiguous: sienna;
+    }
+
+    html {
+	background: black;
+	color: white;
+    }
+
+    a, button, input {
+	filter: invert(90%);
+    }
+}

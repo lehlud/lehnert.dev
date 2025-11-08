@@ -1,0 +1,209 @@
+/* whew, this is a mess of a stylesheet */
+
+* {
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    font-kerning: auto;
+}
+
+body {
+    max-width: 98ch;
+    padding: 1ch;
+}
+
+/* Fun fact: "[...] It may help to realize that both are valid and
+   semantic elements in HTML and that it's a coincidence that they
+   both have the same default styling (boldface) in most browsers
+   (although some older browsers actually underline <strong>). [...]"
+
+   09Jul24, https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong
+   06Sep24, yeah, but I abused <strong> as <b> too often to do this... */
+/* strong { font-weight: unset; text-decoration: underline; } */
+
+.footnotes sup {
+    width: 20px;
+    display: inline-block;
+    text-align: right;
+}
+
+#table-of-contents, .focus {
+    border: 1px solid gray;
+    max-width: 100%;
+    background: lemonchiffon;
+    margin: 0 auto;
+    padding: 1em;
+    display: table;
+}
+
+blockquote { max-width: 80%; }
+.focus { padding: 1em; border-radius: 4px; }
+.focus a { background: unset; }
+
+#table-of-contents {
+    float: right;
+    margin: 0 0 1em 1em;
+    padding: 1em 1em;
+    font-size: 80%;
+}
+#table-of-contents h2 { margin: 0; }
+#table-of-contents a { background: lemonchiffon; }
+#table-of-contents ul {
+    margin: unset !important;
+    padding-inline-start: 20px;
+}
+
+h1:first-of-type, .title, figure {
+    text-align: center;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.small { font-size: small; }
+.sc { font-variant: small-caps; }
+div > div > p > img { max-width: 100%; border: 1px solid gray; }
+figure > p { margin-bottom: 8px; }
+figure > figcaption { margin-bottom: 16px; }
+blockquote, > *:first-child, figure > *:first-child { margin-top: 0; }
+
+/* p + p { text-indent: 2ch; }	/\* serial paragraphs indent the first line *\/ */
+
+footer, div#postamble, #ident {
+    float: right;
+    margin-bottom: 1em;
+    width: 100%;
+}
+div#postamble { padding-top: 0.5em; width: 100%; }
+div#postamble > *, footer { text-align: right;}
+hr, footer, div#postamble { border-width: 0; border-top: 1px dashed darkgray; }
+footer { padding-top: 0.5em; }
+
+#ident { opacity: 50%; }
+#ident:hover { opacity: 100%; cursor: wait; }
+
+.m, .math em,
+.lmodern {
+    font-family: "Latin Modern Math",
+		 "Palatino Linotype",
+		 "Book Antiqua",
+		 Palatino,
+		 serif;
+    font-size: 120%;
+}
+.lmodern code,
+.lmodern pre { font-family: "Latin Modern Mono", monospace, monospace; }
+
+:target { padding: 0.25em; background: rgba(20, 220, 20, 0.25); }
+
+a:not(.self)::after {
+    display: inline-block;
+    color: white;
+    font-size: x-small;
+    margin-left: 4px;
+    padding: 1px;
+    font-family: system-ui;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    vertical-align: super;
+}
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/named-color#standard_colors */
+a:not(.self)::after {
+    display: inline-block;
+    color: white;
+    font-size: x-small;
+    margin-left: 4px;
+    padding: 1px;
+    font-family: system-ui;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    vertical-align: super;
+}
+
+
+a[href^="https://web.archive.org/"]::after {
+    background: green;
+    content: "WBM";
+}
+a[href^="https://archive.org/"]::after {
+    background: teal;
+    content: "IA";
+}
+a[href^="https://www.youtube.com/"]::after,
+a[href^="https://youtu.be/"]::after{
+    background: red;		/* meant as a warning */
+    content: "YT!";
+}
+a[href^="https://github.com/"]::after {
+    background: purple;
+    content: "GH!";
+}
+a[href^="https://en.wikipedia.org/"]::after,
+a[href^="https://de.wikipedia.org/"]::after {
+    background: gray;
+    content: "WIKI";
+}
+a[href^="https://wwwcip.cs.fau.de/"]::after,
+a[href^="/"]::after, a[href^="."]::after {
+    background: olive;
+    content: "CIP";
+}
+a[href$=".pdf"]::after {
+    background: navy;
+    content: "PDF";
+}
+a[href^="https://arxiv.org/"]::after {
+    background: maroon;
+    content: "AR";
+}
+
+#org-div-home-and-up a::after,
+nav a::after { content: none !important; }
+
+.shade, del {
+    /* from https://stackoverflow.com/a/17893380 */
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABZJREFUeNpi2r9//38gYGAEESAAEGAAasgJOgzOKCoAAAAASUVORK5CYII=);
+}
+
+dt { font-weight: bold; }
+
+table {
+
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+/* SMALL SCREEN */
+@media (max-width: 40em) {
+    #table-of-contents { float: none; margin: auto; }
+    #table-of-contents a { background: unset; }
+}
+
+/* PRINTER */
+@media print {
+    body
+    {
+
+	font-size: unset;
+	margin: unset;
+	padding: unset;
+	background-image: unset;
+    }
+
+    a code, code, pre, tt, kbd { font-family: monospace, monospace; }
+    code, sup { color: unset; }
+    h1, h2, h3, h4, h1:first-of-type { margin-left: unset; }
+    ul { margin-left: unset; padding-left: unset; }
+    .footnotes sup { margin-left: unset; }
+
+    table { border-collapse: collapse; }
+    hr, table, td { border-style: solid; }
+
+    #table-of-contents { display: none; }
+
+    .shade, del { background: #eee; }
+}
+
+/* FOR PEOPLE WITH BAD TASTE */
+@media screen and (prefers-color-scheme: dark) {
+    html { background: white; filter: invert(95%); }
+}
