@@ -2,6 +2,11 @@
 
 require_once __DIR__ . '/../lib/_index.php';
 
+if (!isset($_GET['id'])) {
+    header("HTTP/1.1 400 Bad Request");
+    exit;
+}
+
 $id = $_GET['id'];
 $deck = Deck::get($id);
 
