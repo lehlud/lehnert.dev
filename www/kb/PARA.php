@@ -13,6 +13,10 @@ require_once __DIR__ . "/../lib/_index.php";
 
     <style>
         <?= default_styles() ?>
+
+        th {
+            padding-right: 0.5em;
+        }
     </style>
 </head>
 
