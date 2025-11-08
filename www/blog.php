@@ -5,9 +5,8 @@ require_once __DIR__ . '/lib/_index.php';
 $id = $_GET['id'];
 
 $blog = Blog::get($id);
-if ($blog === null) {
-    $_GET['code'] = 404;
-    require __DIR__ . '/error.php';
+if (!$blog) {
+    header("HTTP/1.1 404 Not Found");
     exit;
 }
 

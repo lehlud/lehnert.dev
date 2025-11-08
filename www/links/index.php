@@ -34,6 +34,8 @@ $links = [
             'Java-/TypeScript' => [
                 'MDN JavaScript Guides' => 'https://developer.mozilla.org/en-US/docs/Web/JavaScript#javascript_guides',
                 'TypeScript Handbook;;offizielles TypeScript-Handbuch' => 'https://www.typescriptlang.org/docs/handbook/intro.html',
+                'Can I use;;Browser-Support-Checker für alle erdenklichen Features' => 'https://caniuse.com/',
+                'Sate of JS;;jährliche Umfragen über das JavaScript-Ökosystem' => 'https://stateofjs.com/',
             ],
             'Prolog' => [
                 'The Power of Prolog' => 'https://www.metalevel.at/prolog',
