@@ -12,7 +12,7 @@ async function main() {
     const res = await fetch(WIKI_URL);
     const html = await res.text();
 
-    const regex = /<td>\s*<b>\s*<a.*?title=\"(.*?)\".*?(\/wiki\/Datei\:.*?\.svg)/g;
+    const regex = /<b>\s*<a.*?title=\"(.*?)\".*?(\/wiki\/Datei\:.*?\.svg)/g;
     const flagDetails = await Promise.all([...html.matchAll(regex)].map(async match => {
         const [,title,svgPageUrl] = match;
 

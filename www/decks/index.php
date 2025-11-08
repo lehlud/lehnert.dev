@@ -14,6 +14,8 @@ $decks = Deck::getAll();
     <style>
         <?= default_styles() ?>
     </style>
+
+    <script async src="/static/js/mathjax-tex-mml-chtml.js"></script>
 </head>
 <body style="max-width: 900px; margin: 0 auto 0 auto; padding: 16px;">
     <h1>Decks</h1>
