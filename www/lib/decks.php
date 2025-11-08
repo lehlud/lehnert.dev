@@ -56,6 +56,9 @@ class Deck {
     }
 
     public function getCard(string $id): DeckCard|null {
+        if (str_contains($id, '..'))
+            return null;
+
         $card_file_name = "$id.htm";
         $card_file_path = __DIR__."/data/decks/$this->id/$card_file_name";
 
@@ -69,6 +72,9 @@ class Deck {
     }
 
     public static function get(string $id): Deck|null {
+        if (str_contains($id, '..'))
+            return null;
+        
         $dirPath = __DIR__ . "/data/decks/$id";
         $dirJsonPath = "$dirPath/_deck.json";
 

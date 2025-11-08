@@ -63,6 +63,9 @@ class Blog
 
     public static function get(string $id): Blog|null
     {
+        if (str_contains($id, '..'))
+            return null;
+
         $path = __DIR__ . "/../blog/$id/_definition.json";
         if (!file_exists($path))
             return null;
