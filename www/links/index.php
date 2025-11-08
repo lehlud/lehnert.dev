@@ -44,6 +44,9 @@ $links = [
                 'The Art of Prolog' => 'https://mitpress.mit.edu/9780262691635/the-art-of-prolog/',
             ],
         ],
+        'Algorithmik' => [
+            'Introduction to Algorithms;;Thomas Cormen, Charles Leiserson, Ronald Rivest, Clifford Stein' => 'https://edutechlearners.com/download/Introduction_to_algorithms-3rd%20Edition.pdf',
+        ],
         'Competitive Programming' => [
             'Algorithms for Competitive Programming' => 'https://cp-algorithms.com/',
             'Competitive Programmer’s Handbook;;Antti Laaksonen (<a href="/backup/cses.fi/book/book.pdf">Backup</a>)' => 'https://cses.fi/book/book.pdf',
