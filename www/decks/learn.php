@@ -30,7 +30,7 @@ $card_ids = $deck->getCardIds();
         #front, #back {
             padding: 1.3em;
             border-radius: 0.8em;
-            background-color: #e0e0e0;
+            background-color: #f0f0f0;
         }
 
         #back {

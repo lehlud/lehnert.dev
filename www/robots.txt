@@ -1,8 +1,9 @@
 User-agent: *
 
+Sitemap: https://lehnert.dev/sitemap.xml
+
 Disallow: /assets
 Disallow: /static
 Disallow: /dummy
 Disallow: /backup
-
-Sitemap: https://lehnert.dev/sitemap.xml
+Disallow: /vor*
