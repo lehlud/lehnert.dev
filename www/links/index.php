@@ -76,6 +76,7 @@ $links = [
 
         ],
         'LaTeX' => [
+            'Modern Latex;;Matt Kline (<a href="/backup/assets.bitbashing.io/modern-latex.pdf">Backup</a>)' => 'https://assets.bitbashing.io/modern-latex.pdf',
             'Detexify;;Erkennung gezeichneter LaTeX-Symbole' => 'https://detexify.kirelabs.org/classify.html',
         ],
         'Nicht kategorisiert' => [
