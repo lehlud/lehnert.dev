@@ -303,6 +303,9 @@ function links_html(array $links, array $path = []): string {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Linksammlung</title>
 
+    <link rel="shortcut icon" href="/favicon.svg" type="image/svg">
+    <meta name="theme-color" content="#fff" />
+
     <style>
         <?= default_styles() ?>
     </style>
