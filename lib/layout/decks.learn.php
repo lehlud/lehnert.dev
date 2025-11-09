@@ -139,14 +139,21 @@ $card_ids = $deck->getCardIds();
             // limit to a circle of 13 "new" cards
             const probabilities = getProbabilities([...availableCardIds]);
 
-            const rand = Math.random();
-            let cumulative = 0;
-            for (const [id, prob] of Object.entries(probabilities)) {
-                cumulative += prob;
-                if (rand < cumulative) return id;
-            }
+            const choose = () => {
+                const rand = Math.random();
+                let cumulative = 0;
+                for (const [id, prob] of Object.entries(probabilities)) {
+                    cumulative += prob;
+                    if (rand < cumulative) return id;
+                }
+            };
 
-            throw new Error('failed to pick card id');
+            let chosen;
+            do {
+                chosen = choose();
+            } while (chosen === currentCardId);
+
+            return chosen;
         }
 
         async function getCard(id) {
