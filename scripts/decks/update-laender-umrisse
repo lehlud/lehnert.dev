@@ -1,0 +1,288 @@
+#!/usr/bin/env bun
+
+import path from 'path';
+import fs from 'fs/promises';
+import { $ } from "bun";
+
+const MAPPING = {
+    'Abchasien': 'https://commons.wikimedia.org/wiki/File:Abkhazia_in_its_region.svg',
+    'Ägypten': 'https://commons.wikimedia.org/wiki/File:Egypt_in_its_region_(claimed_hatched).svg',
+    'Äthiopien': 'https://commons.wikimedia.org/wiki/File:Ethiopia_in_its_region.svg',
+    'Äquatorialguinea': 'https://commons.wikimedia.org/wiki/File:Equatorial_Guinea_in_its_region.svg',
+    'Afghanistan': 'https://commons.wikimedia.org/wiki/File:Afghanistan_in_its_region.svg',
+    'Albanien': 'https://commons.wikimedia.org/wiki/File:Albania_in_its_region.svg',
+    'Algerien': 'https://commons.wikimedia.org/wiki/File:Algeria_in_its_region.svg',
+    'Andorra': 'https://commons.wikimedia.org/wiki/File:Andorra_in_its_region.svg',
+    'Angola': 'https://commons.wikimedia.org/wiki/File:Angola_in_its_region.svg',
+    'Antigua und Barbuda': 'https://commons.wikimedia.org/wiki/File:Antigua_and_Barbuda_in_its_region_(zoomed).svg',
+    'Argentinien': 'https://commons.wikimedia.org/wiki/File:Argentina_in_its_region_(de-facto).svg',
+    'Armenien': 'https://commons.wikimedia.org/wiki/File:Armenia_in_its_region.svg',
+    'Aserbaidschan': 'https://commons.wikimedia.org/wiki/File:Azerbaijan_in_its_region.svg',
+    'Australien': 'https://commons.wikimedia.org/wiki/File:Australia_in_its_region.svg',
+    'Bahamas': 'https://commons.wikimedia.org/wiki/File:Bahamas_in_its_region.svg',
+    'Bahrain': 'https://commons.wikimedia.org/wiki/File:Bahrain_in_its_region.svg',
+    'Bangladesch': 'https://commons.wikimedia.org/wiki/File:Bangladesh_in_its_region.svg',
+    'Barbados': 'https://commons.wikimedia.org/wiki/File:Barbados_in_its_region.svg',
+    'Belarus': 'https://commons.wikimedia.org/wiki/File:Belarus_in_its_region.svg',
+    'Belize': 'https://commons.wikimedia.org/wiki/File:Belize_in_its_region.svg',
+    'Belgien': 'https://commons.wikimedia.org/wiki/File:Belgium_in_its_region.svg',
+    'Benin': 'https://commons.wikimedia.org/wiki/File:Benin_in_its_region.svg',
+    'Bhutan': 'https://commons.wikimedia.org/wiki/File:Bhutan_in_its_region.svg',
+    'Bolivien': 'https://commons.wikimedia.org/wiki/File:Bolivia_in_its_region.svg',
+    'Bosnien und Herzegowina': 'https://commons.wikimedia.org/wiki/File:Bosnia_and_Herzegovina_in_its_region.svg',
+    'Botswana': 'https://commons.wikimedia.org/wiki/File:Botswana_in_its_region.svg',
+    'Brasilien': 'https://commons.wikimedia.org/wiki/File:Brazil_in_its_region.svg',
+    'Brunei': 'https://commons.wikimedia.org/wiki/File:Brunei_in_its_region_(special_marker).svg',
+    'Bulgarien': 'https://commons.wikimedia.org/wiki/File:Bulgaria_in_its_region.svg',
+    'Burkina Faso': 'https://commons.wikimedia.org/wiki/File:Burkina_Faso_in_its_region.svg',
+    'Burundi': 'https://commons.wikimedia.org/wiki/File:Burundi_in_its_region.svg',
+    'Costa Rica': 'https://commons.wikimedia.org/wiki/File:Costa_Rica_in_its_region.svg',
+    'Chile': 'https://commons.wikimedia.org/wiki/File:Chile_in_its_region.svg',
+    'Cookinseln': 'https://commons.wikimedia.org/wiki/File:Cook_Islands_in_New_Zealand_(zoom).svg',
+    'Dänemark': 'https://commons.wikimedia.org/wiki/File:Kingdom_of_Denmark_in_its_region.svg',
+    'Demokratische Arabische Republik Westsahara': 'https://commons.wikimedia.org/wiki/File:Sahrawi_Arab_Democratic_Republic_in_its_region_(claimed_hatched).svg',
+    'Demokratische Republik Kongo': 'https://commons.wikimedia.org/wiki/File:Democratic_Republic_of_the_Congo_in_its_region.svg',
+    'Deutschland': 'https://commons.wikimedia.org/wiki/File:Germany_in__its_region.svg',
+    'Dominica': 'https://commons.wikimedia.org/wiki/File:Dominica_in_its_region.svg',
+    'Dominikanische Republik': 'https://commons.wikimedia.org/wiki/File:Dominican_Republic_in_its_region.svg',
+    'Dschibuti': 'https://commons.wikimedia.org/wiki/File:Djibouti_in_its_region.svg',
+    'El Salvador': 'https://commons.wikimedia.org/wiki/File:El_Salvador_in_its_region.svg',
+    'Elfenbeinküste': 'https://commons.wikimedia.org/wiki/File:Cote_d_Ivoire_in_its_region.svg',
+    'Eritrea': 'https://commons.wikimedia.org/wiki/File:Eritrea_in_its_region.svg',
+    'Equador': 'https://commons.wikimedia.org/wiki/File:Ecuador_in_its_region.svg',
+    'Estland': 'https://commons.wikimedia.org/wiki/File:Estonia_in_its_region.svg',
+    'Eswatini': 'https://commons.wikimedia.org/wiki/File:Eswatini_in_its_region.svg',
+    'Fidschi': 'https://commons.wikimedia.org/wiki/File:Fiji_in_its_region_(special_marker).svg',
+    'Finnland': 'https://commons.wikimedia.org/wiki/File:Finland_in_its_region.svg',
+    'Föderierten Staaten von Mikronesien': 'https://commons.wikimedia.org/wiki/File:Micronesia_in_its_region.svg',
+    'Frankreich': 'https://commons.wikimedia.org/wiki/File:France_in_its_region.svg',
+    'Gabun': 'https://commons.wikimedia.org/wiki/File:Gabon_in_its_region.svg',
+    'Gambia': 'https://commons.wikimedia.org/wiki/File:Gambia_in_its_region.svg',
+    'Georgien': 'https://commons.wikimedia.org/wiki/File:Georgia_in_its_region_(claimed_hatched).svg',
+    'Ghana': 'https://commons.wikimedia.org/wiki/File:Ghana_in_its_region.svg',
+    'Grenada': 'https://commons.wikimedia.org/wiki/File:Grenada_in_its_region.svg',
+    'Griechenland': 'https://commons.wikimedia.org/wiki/File:Greece_in_its_region.svg',
+    'Guatemala': 'https://commons.wikimedia.org/wiki/File:Guatemala_in_its_region.svg',
+    'Guernsey': 'https://commons.wikimedia.org/wiki/File:Guernsey_in_its_region_(zoom).svg',
+    'Guinea': 'https://commons.wikimedia.org/wiki/File:Guinea_in_its_region.svg',
+    'Guinea-Bissau': 'https://commons.wikimedia.org/wiki/File:Guinea-Bissau_in_its_region.svg',
+    'Guyana': 'https://commons.wikimedia.org/wiki/File:Guyana_in_its_region_(disputed_hatched).svg',
+    'Haiti': 'https://commons.wikimedia.org/wiki/File:Haiti_in_its_region.svg',
+    'Honduras': 'https://commons.wikimedia.org/wiki/File:Honduras_in_its_region.svg',
+    'Indien': 'https://commons.wikimedia.org/wiki/File:India_in_its_region_(claimed_and_disputed_hatched).svg',
+    'Indonesien': 'https://commons.wikimedia.org/wiki/File:Indonesia_in_its_region.svg',
+    'Iran': 'https://commons.wikimedia.org/wiki/File:Iran_in_its_region.svg',
+    'Irak': 'https://commons.wikimedia.org/wiki/File:Iraq_in_its_region.svg',
+    'Island': 'https://commons.wikimedia.org/wiki/File:Iceland_in_its_region.svg',
+    'Isle of Man': 'https://commons.wikimedia.org/wiki/File:United_Kingdom_in_its_region_(Isle_of_Man_special).svg',
+    'Israel': 'https://commons.wikimedia.org/wiki/File:Israel_in_its_region_(de-facto).svg',
+    'Irland': 'https://commons.wikimedia.org/wiki/File:Ireland_in_its_region.svg',
+    'Italien': 'https://commons.wikimedia.org/wiki/File:Italy_in_its_region.svg',
+    'Jamaika': 'https://commons.wikimedia.org/wiki/File:Jamaica_in_its_region.svg',
+    'Japan': 'https://commons.wikimedia.org/wiki/File:Japan_in_its_region_(de-facto).svg',
+    'Jemen': 'https://commons.wikimedia.org/wiki/File:Yemen_in_its_region.svg',
+    'Jersey': 'https://commons.wikimedia.org/wiki/File:Jersey_in_its_region_(zoom).svg',
+    'Jordanien': 'https://commons.wikimedia.org/wiki/File:Jordan_in_its_region.svg',
+    'Kambodscha': 'https://commons.wikimedia.org/wiki/File:Cambodia_in_its_region.svg',
+    'Kamerun': 'https://commons.wikimedia.org/wiki/File:Cameroon_in_its_region.svg',
+    'Kanada': 'https://commons.wikimedia.org/wiki/File:Canada_in_its_region.svg',
+    'Kap Verde': 'https://commons.wikimedia.org/wiki/File:Cape_Verde_in_its_region.svg',
+    'Kasachstan': 'https://commons.wikimedia.org/wiki/File:Kazakhstan_in_its_region.svg',
+    'Katar': 'https://commons.wikimedia.org/wiki/File:Qatar_in_its_region.svg',
+    'Kenia': 'https://commons.wikimedia.org/wiki/File:Kenya_in_its_region_(disputed_hatched).svg',
+    'Kirgistan': 'https://commons.wikimedia.org/wiki/File:Kyrgyzstan_in_its_region.svg',
+    'Kiribati': 'https://commons.wikimedia.org/wiki/File:Kiribati_in_its_region.svg',
+    'Kolumbien': 'https://commons.wikimedia.org/wiki/File:Colombia_in_its_region.svg',
+    'Komoren': 'https://commons.wikimedia.org/wiki/File:Comoros_in_its_region.svg',
+    'Kosovo': 'https://commons.wikimedia.org/wiki/File:Kosovo_in_its_region.svg',
+    'Kroatien': 'https://commons.wikimedia.org/wiki/File:Croatia_in_its_region.svg',
+    'Kuba': 'https://commons.wikimedia.org/wiki/File:Cuba_in_its_region.svg',
+    'Kuwait': 'https://commons.wikimedia.org/wiki/File:Kuwait_in_its_region.svg',
+    'Laos': 'https://commons.wikimedia.org/wiki/File:Laos_in_its_region.svg',
+    'Lesotho': 'https://commons.wikimedia.org/wiki/File:Lesotho_in_its_region.svg',
+    'Lettland': 'https://commons.wikimedia.org/wiki/File:Latvia_in_its_region.svg',
+    'Libanon': 'https://commons.wikimedia.org/wiki/File:Lebanon_in_its_region.svg',
+    'Liberia': 'https://commons.wikimedia.org/wiki/File:Liberia_in_its_region.svg',
+    'Libyen': 'https://commons.wikimedia.org/wiki/File:Libya_in_its_region.svg',
+    'Liechtenstein': 'https://commons.wikimedia.org/wiki/File:Liechtenstein_in_Europe_(zoomed).svg',
+    'Litauen': 'https://commons.wikimedia.org/wiki/File:Lithuania_in_its_region.svg',
+    'Luxemburg': 'https://commons.wikimedia.org/wiki/File:Luxembourg_in_its_region.svg',
+    'Madagaskar': 'https://commons.wikimedia.org/wiki/File:Madagascar_in_its_region.svg',
+    'Malawi': 'https://commons.wikimedia.org/wiki/File:Malawi_in_its_region.svg',
+    'Malaysia': 'https://commons.wikimedia.org/wiki/File:Malaysia_in_its_region.svg',
+    'Malediven': 'https://commons.wikimedia.org/wiki/File:Maldives_in_its_region_(small_islands_magnified).svg',
+    'Mali': 'https://commons.wikimedia.org/wiki/File:Mali_in_its_region.svg',
+    'Malta': 'https://commons.wikimedia.org/wiki/File:Malta_in_its_region_(special_marker).svg',
+    'Marokko': 'https://commons.wikimedia.org/wiki/File:Morocco_in_its_region_(de-facto_and_disputed_hatched).svg',
+    'Marshallinseln': 'https://commons.wikimedia.org/wiki/File:Marshall_Islands_in_its_region.svg',
+    'Mauretanien': 'https://commons.wikimedia.org/wiki/File:Mauritania_in_its_region.svg',
+    'Mauritius': 'https://commons.wikimedia.org/wiki/File:Mauritius_in_its_region.svg',
+    'Mexiko': 'https://commons.wikimedia.org/wiki/File:Mexico_in_its_region.svg',
+    'Monaco': 'https://commons.wikimedia.org/wiki/File:Monaco_in_its_region.svg',
+    'Mongolei': 'https://commons.wikimedia.org/wiki/File:Mongolia_in_its_region.svg',
+    'Montenegro': 'https://commons.wikimedia.org/wiki/File:Montenegro_in_its_region.svg',
+    'Mosambik': 'https://commons.wikimedia.org/wiki/File:Mozambique_in_its_region.svg',
+    'Myanmar': 'https://commons.wikimedia.org/wiki/File:Myanmar_in_its_region.svg',
+    'Namibia': 'https://commons.wikimedia.org/wiki/File:Namibia_in_its_region.svg',
+    'Nauru': 'https://commons.wikimedia.org/wiki/File:Nauru_in_its_region.svg',
+    'Nepal': 'https://commons.wikimedia.org/wiki/File:Nepal_in_its_region.svg',
+    'Neuseeland': 'https://commons.wikimedia.org/wiki/File:New_Zealand_in_its_region.svg',
+    'Nicaragua': 'https://commons.wikimedia.org/wiki/File:Nicaragua_in_its_region.svg',
+    'Niederlande': 'https://commons.wikimedia.org/wiki/File:Netherlands_in_its_region.svg',
+    'Niger': 'https://commons.wikimedia.org/wiki/File:Niger_in_its_region.svg',
+    'Nigeria': 'https://commons.wikimedia.org/wiki/File:Nigeria_in_its_region.svg',
+    'Niue': 'https://commons.wikimedia.org/wiki/File:Niue_in_its_region.svg',
+    'Nordkorea': 'https://commons.wikimedia.org/wiki/File:North_Korea_in_its_region.svg',
+    'Nordmazedonien': 'https://commons.wikimedia.org/wiki/File:Macedonia_in_its_region.svg',
+    'Norwegen': 'https://commons.wikimedia.org/wiki/File:Norway_in_its_region.svg',
+    'Oman': 'https://commons.wikimedia.org/wiki/File:Oman_in_its_region.svg',
+    'Österreich': 'https://commons.wikimedia.org/wiki/File:Austria_in_its_region.svg',
+    'Osttimor': 'https://commons.wikimedia.org/wiki/File:East_Timor_in_its_region.svg',
+    'Pakistan': 'https://commons.wikimedia.org/wiki/File:Pakistan_in_its_region_(claimed_and_disputed_hatched).svg',
+    'Palästina': 'https://commons.wikimedia.org/wiki/File:Palestinian_controlled_areas_(zones_A_and_B)_in_its_region.svg',
+    'Palau': 'https://commons.wikimedia.org/wiki/File:Palau_in_its_region.svg',
+    'Panama': 'https://commons.wikimedia.org/wiki/File:Panama_in_its_region.svg',
+    'Papua Neu-Guinea': 'https://commons.wikimedia.org/wiki/File:Papua_New_Guinea_in_its_region.svg',
+    'Paraguay': 'https://commons.wikimedia.org/wiki/File:Paraguay_in_its_region.svg',
+    'Peru': 'https://commons.wikimedia.org/wiki/File:Peru_in_its_region.svg',
+    'Philippinen': 'https://commons.wikimedia.org/wiki/File:Philippines_in_its_region.svg',
+    'Polen': 'https://commons.wikimedia.org/wiki/File:Poland_in_its_region.svg',
+    'Portugal': 'https://commons.wikimedia.org/wiki/File:Portugal_in_the_European_Union_and_in_its_region_(Atlantic_islands_special).svg',
+    'Republik China (Taiwan)': 'https://commons.wikimedia.org/wiki/File:Taiwan_in_its_region.svg',
+    'Republik Kongo': 'https://commons.wikimedia.org/wiki/File:Republic_of_the_Congo_in_its_region.svg',
+    'Republik Moldau': 'https://commons.wikimedia.org/wiki/File:Moldova_in_its_region.svg',
+    'Ruanda': 'https://commons.wikimedia.org/wiki/File:Rwanda_in_its_region.svg',
+    'Rumänien': 'https://commons.wikimedia.org/wiki/File:Romania_in_its_region.svg',
+    'Russland': 'https://commons.wikimedia.org/wiki/File:Russia_in_its_region.svg',
+    'Sambia': 'https://commons.wikimedia.org/wiki/File:Zambia_in_its_region.svg',
+    'San Marino': 'https://commons.wikimedia.org/wiki/File:San_Marino_in_its_region.svg',
+    'São Tomé und Príncipe': 'https://commons.wikimedia.org/wiki/File:Sao_Tome_and_Principe_in_its_region.svg',
+    'Salomonen': 'https://commons.wikimedia.org/wiki/File:Solomon_Islands_in_its_region_(special_marker).svg',
+    'Samoa': 'https://commons.wikimedia.org/wiki/File:Samoa_in_its_region.svg',
+    'Saudi-Arabien': 'https://commons.wikimedia.org/wiki/File:Saudi_Arabia_in_its_region.svg',
+    'Schweden': 'https://commons.wikimedia.org/wiki/File:Sweden_in_its_region.svg',
+    'Schweiz': 'https://commons.wikimedia.org/wiki/File:Switzerland_in_its_region.svg',
+    'Senegal': 'https://commons.wikimedia.org/wiki/File:Senegal_in_its_region.svg',
+    'Serbien': 'https://commons.wikimedia.org/wiki/File:Serbia_in_its_region_(claimed_hatched).svg',
+    'Seychellen': 'https://commons.wikimedia.org/wiki/File:Seychelles_in_its_region.svg',
+    'Sierra Leone': 'https://commons.wikimedia.org/wiki/File:Sierra_Leone_in_its_region.svg',
+    'Simbabwe': 'https://commons.wikimedia.org/wiki/File:Zimbabwe_in_its_region.svg',
+    'Singapur': 'https://commons.wikimedia.org/wiki/File:Singapore_in_its_region_(zoom).svg',
+    'Slowakei': 'https://commons.wikimedia.org/wiki/File:Slovakia_in_its_region.svg',
+    'Slowenien': 'https://commons.wikimedia.org/wiki/File:Slovenia_in_its_region.svg',
+    'Somalia': 'https://commons.wikimedia.org/wiki/File:Somalia_in_its_region_(claimed_hatched).svg',
+    'Somaliland': 'https://commons.wikimedia.org/wiki/File:Somaliland_in_its_region_(de-facto).svg',
+    'Spanien': 'https://commons.wikimedia.org/wiki/File:Spain_in_its_region_(mainland).svg',
+    'Sri Lanka': 'https://commons.wikimedia.org/wiki/File:Sri_Lanka_in_its_region.svg',
+    'St. Kitts und Nevis': 'https://commons.wikimedia.org/wiki/File:Saint_Kitts_and_Nevis_in_its_region_(zoomed).svg',
+    'St. Lucia': 'https://commons.wikimedia.org/wiki/File:Saint_Lucia_in_its_region.svg',
+    'St. Vincent und die Grenadinen': 'https://commons.wikimedia.org/wiki/File:Saint_Vincent_and_the_Grenadines_in_its_region.svg',
+    'Südafrika': 'https://commons.wikimedia.org/wiki/File:South_Africa_in_its_region.svg',
+    'Südkorea': 'https://commons.wikimedia.org/wiki/File:South_Korea_in_its_region.svg',
+    'Südossetien': 'https://commons.wikimedia.org/wiki/File:South_Ossetia_in_its_region.svg',
+    'Südsudan': 'https://commons.wikimedia.org/wiki/File:South_Sudan_in_its_region_(claimed_hatched).svg',
+    'Sudan': 'https://commons.wikimedia.org/wiki/File:Sudan_in_its_region_(claimed_hatched).svg',
+    'Surinam': 'https://commons.wikimedia.org/wiki/File:Suriname_in_its_region_(disputed_hatched).svg',
+    'Syrien': 'https://commons.wikimedia.org/wiki/File:Syria_in_its_region_(claimed_hatched).svg',
+    'Tadschikistan': 'https://commons.wikimedia.org/wiki/File:Tajikistan_in_its_region.svg',
+    'Tansania': 'https://commons.wikimedia.org/wiki/File:Tanzania_in_its_region.svg',
+    'Thailand': 'https://commons.wikimedia.org/wiki/File:Thailand_in_its_region.svg',
+    'Togo': 'https://commons.wikimedia.org/wiki/File:Togo_in_its_region.svg',
+    'Tonga': 'https://commons.wikimedia.org/wiki/File:Tonga_in_its_region.svg',
+    'Trinidad und Tobago': 'https://commons.wikimedia.org/wiki/File:Trinidad_and_Tobago_in_its_region_(zoom).svg',
+    'Tschad': 'https://commons.wikimedia.org/wiki/File:Chad_in_its_region.svg',
+    'Tschechische Republik': 'https://commons.wikimedia.org/wiki/File:Czech_Republic_in_its_region.svg',
+    'Türkei': 'https://commons.wikimedia.org/wiki/File:Turkey_in_its_region.svg',
+    'Türkische Republik Nordzypern': 'https://commons.wikimedia.org/wiki/File:Northern_Cyprus_in_its_region_(de-facto).svg',
+    'Tunesien': 'https://commons.wikimedia.org/wiki/File:Tunisia_in_its_region.svg',
+    'Turkmenistan': 'https://commons.wikimedia.org/wiki/File:Turkmenistan_in_its_region.svg',
+    'Tuvalu': 'https://commons.wikimedia.org/wiki/File:Tuvalu_in_its_region.svg',
+    'Uganda': 'https://commons.wikimedia.org/wiki/File:Uganda_in_its_region.svg',
+    'Ukraine': 'https://commons.wikimedia.org/wiki/File:Ukraine_in_its_region.svg',
+    'Ungarn': 'https://commons.wikimedia.org/wiki/File:Hungary_in_its_region.svg',
+    'Uruguay': 'https://commons.wikimedia.org/wiki/File:Uruguay_in_its_region.svg',
+    'Usbekistan': 'https://commons.wikimedia.org/wiki/File:Uzbekistan_in_its_region.svg',
+    'Vanuatu': 'https://commons.wikimedia.org/wiki/File:Vanuatu_in_its_region.svg',
+    'Vatikanstadt': 'https://commons.wikimedia.org/wiki/File:Vatican_in_its_region.svg',
+    'Venezuela': 'https://commons.wikimedia.org/wiki/File:Venezuela_in_its_region.svg',
+    'Vereinigte Arabische Emirate': 'https://commons.wikimedia.org/wiki/File:United_Arab_Emirates_in_its_region.svg',
+    'Vereinigtes Königreich': 'https://commons.wikimedia.org/wiki/File:United_Kingdom_in_its_region.svg',
+    'Vereinigte Staaten von Amerika': 'https://commons.wikimedia.org/wiki/File:United_States_in_its_region.svg',
+    'Vietnam': 'https://commons.wikimedia.org/wiki/File:Vietnam_in_its_region.svg',
+    'Volksrepublik China': 'https://commons.wikimedia.org/wiki/File:China_in_its_region_(claimed_hatched).svg',
+    'Zentralafrikanische Republik': 'https://commons.wikimedia.org/wiki/File:Central_African_Republic_in_its_region.svg',
+    'Zypern': 'https://commons.wikimedia.org/wiki/File:Cyprus_in_its_region_(claimed_hatched).svg',
+};
+
+async function asyncMapLimit(array, asyncFn, concurrency = 10) {
+  const results = [];
+  let index = 0;
+
+  async function worker() {
+    while (index < array.length) {
+      const currentIndex = index++;
+      results[currentIndex] = await asyncFn(array[currentIndex], currentIndex, array);
+    }
+  }
+
+  // Create an array of workers up to concurrency limit
+  const workers = Array.from({ length: Math.min(concurrency, array.length) }, () => worker());
+  await Promise.all(workers);
+
+  return results;
+}
+
+async function main() {
+    const dirPath = path.resolve(`${__dirname}/../../www/decks/laender-umrisse/cards`);
+
+    const mapDetails = await asyncMapLimit(Object.entries(MAPPING), async ([country, svgPageUrl]) => {
+        let id = country.toLowerCase();
+        id = id.replaceAll(/\s+/g, ' ').replaceAll(' ', '_');
+        id = id.replaceAll('ü', 'ue');
+        id = id.replaceAll('ö', 'oe');
+        id = id.replaceAll('ä', 'ae');
+        id = id.replaceAll('ß', 'ss');
+        id = id.replaceAll(/[^a-z0-9_\-]+/g, '');
+
+        console.log(svgPageUrl);
+
+        const svgPageRes = await fetch(svgPageUrl);
+        if (!svgPageRes.ok) throw new Error('failed to fetch ' + svgPageUrl);
+        const svgPageHtml = await svgPageRes.text();
+        
+
+        const svgUrlRegex = /<a.*?href=\"(https(.*?)\.svg)\".*?>\s*Original file\s*<\/a>/g;
+        const svgUrlMatch = svgPageHtml.matchAll(svgUrlRegex).next().value;
+        const svgUrl = svgUrlMatch[1];
+
+        const svgRes = await fetch(svgUrl);
+        if (!svgRes.ok) throw new Error('failed to fetch ' + svgUrl);
+        const svg = await svgRes.text();
+
+        await fs.writeFile(`/tmp/${id}.svg`, svg);
+        await $`rsvg-convert /tmp/${id}.svg -o /tmp/${id}.png -a -w 1800`;
+        await $`convert /tmp/${id}.png -quality 80 /tmp/${id}.webp`;
+
+        const webpBuffer = await fs.readFile(`/tmp/${id}.webp`);
+        const imageUrl = `data:image/webp;base64,${webpBuffer.toString('base64')}`;
+
+        return {id, country, imageUrl};
+    });
+    
+    await ($`rm -f ${dirPath}/*.htm`).catch(() => {});
+
+    await Promise.all(mapDetails.map(async ({ id, country, imageUrl }) => {
+        const html = `
+<img src="${imageUrl}" />
+
+-----
+
+<p style="text-align: center; font-weight: bold; font-size: 1.3em;">${country}</p>
+        `.trim();
+
+        await fs.writeFile(`${dirPath}/${id}.htm`, html);
+    }));
+
+}
+
+main();

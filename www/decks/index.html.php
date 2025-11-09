@@ -2,7 +2,12 @@
 
 require_once __DIR__ . '/../../lib/_index.php';
 
-$decks = Deck::getAll();
+$decks = [
+    Deck::get('nationalflaggen'),
+    Deck::get('nationalwappen'),
+    Deck::get('laender-umrisse'),
+    // Deck::get('itsmkh'),
+];
 
 ?><!DOCTYPE html>
 <html lang="de">

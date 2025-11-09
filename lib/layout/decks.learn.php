@@ -33,6 +33,11 @@ $card_ids = $deck->getCardIds();
         #front img, #back img {
             width: 100%;
             height: auto;
+
+            max-height: 60vh;
+            object-fit: contain;
+
+            display: block;
         }
 
         #front, #back, #next-buttons {
@@ -69,11 +74,11 @@ $card_ids = $deck->getCardIds();
         <hr>
         <div id="back"></div>
 
-        <button id="reveal">Aufdecken</button>
+        <button id="reveal">[␣] Aufdecken</button>
 
         <div id="next-buttons">
             <button id="false-answer">[q] Falsch</button>
-            <button id="true-answer">[w] Gewusst</button>
+            <button id="true-answer">[␣] Gewusst</button>
         </div>
     </div>
 
@@ -190,11 +195,6 @@ $card_ids = $deck->getCardIds();
             if (e.code === 'KeyQ') {
                 e.preventDefault();
                 if (hidden(revealEl)) falseAnswerEl.click();
-            }
-
-            if (e.code === 'KeyW') {
-                e.preventDefault();
-                if (hidden(revealEl)) trueAnswerEl.click();
             }
         });
 
