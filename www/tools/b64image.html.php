@@ -71,15 +71,15 @@ require_once __DIR__ . "/../../lib/_index.php";
                     let height = img.height;
 
                     // Downscale large images
-                    if (width > 1850 || height > 1850) {
-                        const ratio = Math.min(1850 / width, 1850 / height);
+                    if (width > 2100 || height > 2100) {
+                        const ratio = Math.min(2100 / width, 2100 / height);
                         width = Math.round(width * ratio);
                         height = Math.round(height * ratio);
                     }
 
                     // Upscale small SVGs
-                    if (isSVG && (width < 950 || height < 950)) {
-                        const ratio = Math.max(950 / width, 950 / height);
+                    if (isSVG && (width < 1200 || height < 1200)) {
+                        const ratio = Math.max(1200 / width, 1200 / height);
                         width = Math.round(width * ratio);
                         height = Math.round(height * ratio);
                     }

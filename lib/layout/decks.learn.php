@@ -32,21 +32,28 @@ $card_ids = $deck->getCardIds();
             height: auto;
         }
 
-        #front, #back {
-            padding: 1.3em;
-            border-radius: 0.8em;
-            background-color: #f0f0f0;
+        #front, #back, #next-buttons {
+            padding: 0.8em;
         }
 
         #back {
-            padding: 0.3em 1.3em 0.3em 1.3em;
+            padding: 0.3em 0.8em 0.3em 0.8em;
             margin-top: 0.5em;
         }
 
         button {
             padding: 0.2em;
             font-size: 1em;
-            margin: 0.35em;
+            margin-right: 0.35em;
+        }
+
+        #reveal {
+            margin-top: 1em;
+            margin-left: 0.8em;
+        }
+
+        hr {
+            opacity: 0.7;
         }
     </style>
 </head>
@@ -56,6 +63,7 @@ $card_ids = $deck->getCardIds();
 
     <div>
         <div id="front"></div>
+        <hr>
         <div id="back"></div>
 
         <button id="reveal">Aufdecken</button>
