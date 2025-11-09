@@ -115,9 +115,9 @@ $card_ids = $deck->getCardIds();
             setCardScore(id, cardScore(id) + (1 - cardScore(id)) / 2);
         };
 
-        function getProbabilities() {
+        function getProbabilities(_cardIds = cardIds) {
             const invScores = {};
-            cardIds.forEach(id => invScores[id] = Math.pow(1 - cardScore(id), 3))
+            _cardIds.forEach(id => invScores[id] = Math.pow(1 - cardScore(id), 3))
 
             const totalScore = Object.values(invScores).reduce((x, y) => x + y, 0);
             return Object.fromEntries(
@@ -126,7 +126,18 @@ $card_ids = $deck->getCardIds();
         }
 
         function pickNextCardId() {
-            const probabilities = getProbabilities();
+            const availableCardIds = new Set(cardIds);
+
+            let newCardCount = 0;
+            for (const cardId of [...cardIds].toSorted()) {
+                if (cardScore(cardId) > 0.7) continue;
+
+                newCardCount += 1;
+                if (newCardCount > 20) availableCardIds.delete(cardId);
+            }
+
+            // limit to a circle of 20 "new" cards
+            const probabilities = getProbabilities([...availableCardIds]);
 
             const rand = Math.random();
             let cumulative = 0;
