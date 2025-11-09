@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-DIR=$(realpath "$(dirname "$0")")
-
-podman run --rm -p 8080:80 -v "$DIR/../www":/var/www/html:Z php:8.2-apache /bin/bash \
-    -c "a2enmod rewrite && a2enmod autoindex && a2enmod include && apache2-foreground"
-

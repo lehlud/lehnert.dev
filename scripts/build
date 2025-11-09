@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -e
+
+cd "$(dirname "$0")"
+cd ..
+
+rm -rf dist/* dist/.*
+cp -r www/. dist/
+cd dist/
+
+for file in $(find -name "*.*.php"); do
+    echo "Building $file"
+    php "$file" > "${file:0:-4}"
+    rm "$file"
+done
+

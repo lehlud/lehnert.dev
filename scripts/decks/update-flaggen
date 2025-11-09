@@ -7,7 +7,7 @@ import { $ } from "bun";
 const WIKI_URL = 'https://de.wikipedia.org/wiki/Liste_der_Nationalflaggen';
 
 async function main() {
-    const dirPath = path.resolve(`${__dirname}/../../www/lib/data/decks/flaggen`);
+    const dirPath = path.resolve(`${__dirname}/../../www/decks/flaggen/cards`);
 
     const res = await fetch(WIKI_URL);
     const html = await res.text();

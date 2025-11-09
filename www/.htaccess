@@ -4,28 +4,6 @@ RewriteEngine On
 RewriteBase /
 
 # -------------------------------------------
-# Rewrite /blog/<ID> to /blog.php?id=<ID>
-# -------------------------------------------
-RewriteRule ^blog/([^/]+)$ /blog/$1/ [L]
-RewriteRule ^blog/([^/]+)/$ blog.php?id=$1 [L]
-
-# -------------------------------------------------------------
-# Rewrite /blog/<ID>/transcript to /blog.transcript.php?id=<ID>
-# -------------------------------------------------------------
-RewriteRule ^blog/([^/]+)/transcript$ /blog/$1/transcript/ [L]
-RewriteRule ^blog/([^/]+)/transcript/$ blog.transcript.php?id=$1 [L]
-
-# -------------------------------------------
-# Rewrite /sitemap.xml to /sitemap.php
-# -------------------------------------------
-RewriteRule ^sitemap\.xml$ /sitemap.php [L]
-
-# -------------------------------------------
-# Rewrite /rss.xml to /rss.php
-# -------------------------------------------
-RewriteRule ^rss\.xml$ /rss.php [L]
-
-# -------------------------------------------
 # Rewrite some dummy urls to some funny af
 # shit
 # -------------------------------------------
@@ -35,17 +13,11 @@ RewriteRule ^.*?profile\.php$ /dummy/profile.php.txt [L]
 RewriteRule ^.*?phpinfo\.php$ /dummy/phpinfo.php.html [L]
 
 RewriteCond %{REQUEST_URI} !^/dummy/sftp-login.json$
-RewriteRule ^\..*?\.json$ /dummy/sftp-login.json [L]
+RewriteRule ^\.vscode/sftp\.json$ /dummy/sftp-login.json [L]
 
 RewriteCond %{REQUEST_URI} !^/dummy/\.env$
 RewriteRule ^.*?\.env$ /dummy/.env [L]
 
 RewriteRule ^(typo|admin|login|dashboard).*$ /dummy/kaffee.php [L]
 
-# ----------------------------------------------------
-# Rewrite /lib/* as NotFound 404
-# with 404 response code (internal rewriting)
-# ----------------------------------------------------
-RewriteCond %{REQUEST_URI} ^/(lib)(/.*)?$
-RewriteRule ^ - [R=404,L]
 
