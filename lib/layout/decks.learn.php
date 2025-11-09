@@ -27,6 +27,11 @@ $card_ids = $deck->getCardIds();
     <style>
         <?= default_styles() ?>
 
+        #front img, #back img {
+            width: 100%;
+            height: auto;
+        }
+
         #front, #back {
             padding: 1.3em;
             border-radius: 0.8em;
