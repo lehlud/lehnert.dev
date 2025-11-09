@@ -24,6 +24,9 @@ $card_ids = $deck->getCardIds();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Deck: <?= $deck->title() ?></title>
 
+    <link rel="shortcut icon" href="/favicon.svg" type="image/svg">
+    <meta name="theme-color" content="#fff" />
+
     <style>
         <?= default_styles() ?>
 

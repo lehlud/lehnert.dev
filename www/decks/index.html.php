@@ -11,6 +11,9 @@ $decks = Deck::getAll();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Decks – Spaced Repitition</title>
 
+    <link rel="shortcut icon" href="/favicon.svg" type="image/svg">
+    <meta name="theme-color" content="#fff" />
+
     <style>
         <?= default_styles() ?>
     </style>
@@ -21,7 +24,7 @@ $decks = Deck::getAll();
     <h1>Decks</h1>
     <ul>
         <?php foreach ($decks as $deck) : ?>
-            <li><a href="/decks/<?= $deck->id ?>/"><?= $deck->title() ?></a></li>
+            <li><a href="/decks/<?= $deck->id ?>/"><?= $deck->title() ?></a> (<?= $deck->getCardCount() ?>)</li>
         <?php endforeach; ?>
     </ul>
 </body>
