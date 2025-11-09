@@ -61,13 +61,13 @@ $card_ids = $deck->getCardIds();
         </div>
     </div>
 
-    <script>
+    <script type="module">
         const deckId = <?= json_encode($deck->id) ?>;
         const cardIds = <?= json_encode($card_ids) ?>;
 
-        let cardScores = JSON.parse(localStorage['_cardScores'] || '{}');
-        if (typeof cardScores !== 'object') cardScores = {};
-        const saveScores = () => localStorage['_cardScores'] = JSON.stringify(cardScores);
+        let _cardScores = JSON.parse(localStorage['_cardScores'] || '{}');
+        if (typeof _cardScores !== 'object') _cardScores = {};
+        const saveScores = () => localStorage['_cardScores'] = JSON.stringify(_cardScores);
 
         const frontEl = document.getElementById('front');
         const revealEl = document.getElementById('reveal');
@@ -81,26 +81,22 @@ $card_ids = $deck->getCardIds();
         const hidden = (el) => el.style.display === 'none';
 
         // init card scores
-        cardIds.forEach(id => cardScores[`${deckId}::${id}`] ||= 0);
+        cardIds.forEach(id => _cardScores[`${deckId}::${id}`] ||= 0);
         saveScores();
 
-        const cardScore = (id) => cardScores[`${deckId}::${id}`] ?? 0;
-        const recordFalse = (id) => cardScores[`${deckId}::${id}`] /= 4;
+        const _boundScore = (score) => Math.max(0, Math.min(63/64, score ?? 0))
+        const cardScore = (id) => _boundScore(_cardScores[`${deckId}::${id}`]);
+        const setCardScore = (id, value) => _cardScores[`${deckId}::${id}`] = _boundScore(value);
+        
+        const recordFalse = (id) => setCardScore(id, cardScore(id) / 4);
         const recordTrue = (id) => {
-            const prevScore = cardScores[`${deckId}::${id}`];
-            cardScores[`${deckId}::${id}`] = Math.min(31/32, prevScore + Math.pow(1 - prevScore, 2))
+            const prevScore = cardScore(id);
+            setCardScore(id, cardScore(id) + (1 - cardScore(id)) / 2);
         };
 
         function getProbabilities() {
-            const invScores = {...cardScores};
-            Object.keys(invScores).forEach(key => {
-                if (!key.startsWith(`${deckId}::`)) {
-                    delete invScores[key];
-                    return;
-                }
-
-                invScores[key] = Math.pow(1 - invScores[key], 3);
-            });
+            const invScores = {};
+            cardIds.forEach(id => invScores[id] = Math.pow(1 - cardScore(id), 3))
 
             const totalScore = Object.values(invScores).reduce((x, y) => x + y, 0);
             return Object.fromEntries(
@@ -113,9 +109,9 @@ $card_ids = $deck->getCardIds();
 
             const rand = Math.random();
             let cumulative = 0;
-            for (const [key, prob] of Object.entries(probabilities)) {
+            for (const [id, prob] of Object.entries(probabilities)) {
                 cumulative += prob;
-                if (rand < cumulative) return key.split('::').at(-1);
+                if (rand < cumulative) return id;
             }
 
             throw new Error('failed to pick card id');
@@ -188,7 +184,7 @@ $card_ids = $deck->getCardIds();
 
         next();
 
-        window.logScores = () => console.log(cardScores);
+        window.logScores = () => console.log(Object.fromEntries(cardIds.map(id => [id, cardScore(id)])));
         window.logProbabilities = () => console.log(getProbabilities());
     </script>
 </body>
