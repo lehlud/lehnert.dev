@@ -20,4 +20,10 @@ RewriteRule ^.*?\.env$ /dummy/.env [L]
 
 RewriteRule ^(typo|admin|login|dashboard).*$ /dummy/kaffee.php [L]
 
+# 1 day cache control for htm files
+<IfModule mod_headers.c>
+    <FilesMatch "\.htm$">
+        Header set Cache-Control "max-age=86400, public"
+    </FilesMatch>
+</IfModule>
 
