@@ -133,10 +133,10 @@ $card_ids = $deck->getCardIds();
                 if (cardScore(cardId) > 0.7) continue;
 
                 newCardCount += 1;
-                if (newCardCount > 20) availableCardIds.delete(cardId);
+                if (newCardCount > 13) availableCardIds.delete(cardId);
             }
 
-            // limit to a circle of 20 "new" cards
+            // limit to a circle of 13 "new" cards
             const probabilities = getProbabilities([...availableCardIds]);
 
             const rand = Math.random();
