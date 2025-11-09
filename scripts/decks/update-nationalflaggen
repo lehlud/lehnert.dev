@@ -50,7 +50,7 @@ async function main() {
 
         const svgUrlRegex = /<a\s*href=\"(\/\/(.*?)\.svg)\".*?>\s*Originaldatei\s*<\/a>/g;
         const svgUrlMatch = svgPageHtml.matchAll(svgUrlRegex).next().value;
-        const svgUrl = 'https:' + svgUrlMatch![1];
+        const svgUrl = 'https:' + svgUrlMatch[1];
 
         const svgRes = await fetch(svgUrl);
         if (!svgRes.ok) throw new Error('failed to fetch ' + svgUrl);
