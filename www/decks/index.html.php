@@ -6,6 +6,8 @@ $decks = [
     Deck::get('nationalflaggen'),
     Deck::get('nationalwappen'),
     Deck::get('laender-umrisse'),
+    Deck::get('stadt-und-landkreiswappen'),
+    Deck::get('kantone-schweiz'),
     // Deck::get('itsmkh'),
 ];
 

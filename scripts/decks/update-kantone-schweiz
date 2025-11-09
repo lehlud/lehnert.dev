@@ -1,0 +1,107 @@
+#!/usr/bin/env bun
+
+import path from 'path';
+import fs from 'fs/promises';
+import { $ } from "bun";
+
+const MAPPING = {
+    'Aargau': 'https://commons.wikimedia.org/wiki/File:Aargau_in_Switzerland_(river_location_map_scheme).svg',
+    'Appenzell Ausserrhoden': 'https://commons.wikimedia.org/wiki/File:Appenzell_Ausserrhoden_in_Switzerland_(river_location_map_scheme).svg',
+    'Appenzell Innerrhoden': 'https://commons.wikimedia.org/wiki/File:Appenzell_Innerrhoden_in_Switzerland_(river_location_map_scheme).svg',
+    'Basel-Landschaft': 'https://commons.wikimedia.org/wiki/File:Basel-Landschaft_in_Switzerland.svg',
+    'Basel-Stadt': 'https://commons.wikimedia.org/wiki/File:Basel-Stadt_in_Switzerland_(special_marker).svg',
+    'Bern': 'https://commons.wikimedia.org/wiki/File:Bern_in_Switzerland.svg',
+    'Fribourg (Freiburg)': 'https://commons.wikimedia.org/wiki/File:Fribourg_in_Switzerland.svg',
+    'Geneva (Genf)': 'https://commons.wikimedia.org/wiki/File:Geneva_in_Switzerland.svg',
+    'Glarus': 'https://commons.wikimedia.org/wiki/File:Glarus_in_Switzerland.svg',
+    'Graubünden': 'https://commons.wikimedia.org/wiki/File:Graub%C3%BCnden_in_Switzerland.svg',
+    'Jura': 'https://commons.wikimedia.org/wiki/File:Jura_in_Switzerland.svg',
+    'Luzern': 'https://commons.wikimedia.org/wiki/File:Lucerne_in_Switzerland.svg',
+    'Neuchatel (Neuenburg)': 'https://commons.wikimedia.org/wiki/File:Neuchatel_in_Switzerland.svg',
+    'Nidwalden': 'https://commons.wikimedia.org/wiki/File:Nidwalden_in_Switzerland.svg',
+    'Obwalden': 'https://commons.wikimedia.org/wiki/File:Obwalden_in_Switzerland.svg',
+    'Schaffhausen': 'https://commons.wikimedia.org/wiki/File:Schaffhausen_in_Switzerland.svg',
+    'Schwyz': 'https://commons.wikimedia.org/wiki/File:Schwyz_in_Switzerland.svg',
+    'Solothurn': 'https://commons.wikimedia.org/wiki/File:Solothurn_in_Switzerland.svg',
+    'St. Gallen': 'https://commons.wikimedia.org/wiki/File:St._Gallen_in_Switzerland.svg',
+    'Thurgau': 'https://commons.wikimedia.org/wiki/File:Thurgau_in_Switzerland.svg',
+    'Ticino (Tessin)': 'https://commons.wikimedia.org/wiki/File:Ticino_in_Switzerland.svg',
+    'Uri': 'https://commons.wikimedia.org/wiki/File:Uri_in_Switzerland.svg',
+    'Valais (Wallis)': 'https://commons.wikimedia.org/wiki/File:Valais_in_Switzerland.svg',
+    'Vaud (Waadt)': 'https://commons.wikimedia.org/wiki/File:Vaud_in_Switzerland.svg',
+    'Zug': 'https://commons.wikimedia.org/wiki/File:Zug_in_Switzerland.svg',
+    'Zürich': 'https://commons.wikimedia.org/wiki/File:Zurich_in_Switzerland.svg',
+};
+
+async function asyncMapLimit(array, asyncFn, concurrency = 10) {
+  const results = [];
+  let index = 0;
+
+  async function worker() {
+    while (index < array.length) {
+      const currentIndex = index++;
+      results[currentIndex] = await asyncFn(array[currentIndex], currentIndex, array);
+    }
+  }
+
+  // Create an array of workers up to concurrency limit
+  const workers = Array.from({ length: Math.min(concurrency, array.length) }, () => worker());
+  await Promise.all(workers);
+
+  return results;
+}
+
+async function main() {
+    const dirPath = path.resolve(`${__dirname}/../../www/decks/kantone-schweiz/cards`);
+
+    const mapDetails = await asyncMapLimit(Object.entries(MAPPING), async ([country, svgPageUrl]) => {
+        let id = country.toLowerCase();
+        id = id.replaceAll(/\s+/g, ' ').replaceAll(' ', '_');
+        id = id.replaceAll('ü', 'ue');
+        id = id.replaceAll('ö', 'oe');
+        id = id.replaceAll('ä', 'ae');
+        id = id.replaceAll('ß', 'ss');
+        id = id.replaceAll(/[^a-z0-9_\-]+/g, '');
+
+        console.log(svgPageUrl);
+
+        const svgPageRes = await fetch(svgPageUrl);
+        if (!svgPageRes.ok) throw new Error('failed to fetch ' + svgPageUrl);
+        const svgPageHtml = await svgPageRes.text();
+        
+
+        const svgUrlRegex = /<a.*?href=\"(https(.*?)\.svg)\".*?>\s*Original file\s*<\/a>/g;
+        const svgUrlMatch = svgPageHtml.matchAll(svgUrlRegex).next().value;
+        const svgUrl = svgUrlMatch[1];
+
+        const svgRes = await fetch(svgUrl);
+        if (!svgRes.ok) throw new Error('failed to fetch ' + svgUrl);
+        const svg = await svgRes.text();
+
+        await fs.writeFile(`/tmp/${id}.svg`, svg);
+        await $`rsvg-convert /tmp/${id}.svg -o /tmp/${id}.png -a -w 1800`;
+        await $`convert /tmp/${id}.png -quality 80 /tmp/${id}.webp`;
+
+        const webpBuffer = await fs.readFile(`/tmp/${id}.webp`);
+        const imageUrl = `data:image/webp;base64,${webpBuffer.toString('base64')}`;
+
+        return {id, country, imageUrl};
+    });
+    
+    await ($`rm -f ${dirPath}/*.htm`).catch(() => {});
+
+    await Promise.all(mapDetails.map(async ({ id, country, imageUrl }) => {
+        const html = `
+<img src="${imageUrl}" />
+
+-----
+
+<p style="text-align: center; font-weight: bold; font-size: 1.3em;">${country}</p>
+        `.trim();
+
+        await fs.writeFile(`${dirPath}/${id}.htm`, html);
+    }));
+
+}
+
+main();
