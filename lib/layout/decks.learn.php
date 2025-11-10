@@ -109,7 +109,7 @@ $card_ids = $deck->getCardIds();
         const cardScore = (id) => _boundScore(_cardScores[`${deckId}::${id}`]);
         const setCardScore = (id, value) => _cardScores[`${deckId}::${id}`] = _boundScore(value);
         
-        const recordFalse = (id) => setCardScore(id, cardScore(id) / 4);
+        const recordFalse = (id) => setCardScore(id, 1/128 + cardScore(id) / 4);
         const recordTrue = (id) => {
             const prevScore = cardScore(id);
             setCardScore(id, cardScore(id) + (1 - cardScore(id)) / 2);
