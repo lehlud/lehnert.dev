@@ -41,8 +41,8 @@ if ($blog === null) {
 
     <footer style="margin-top: 2rem;">
         <p>
-            <a href="/imprint">Imprint</a>&nbsp;
-            <a href="/privacy">Privacy Policy</a>&nbsp;
+            <a href="/imprint.html">Imprint</a>&nbsp;
+            <a href="/privacy.html">Privacy Policy</a>&nbsp;
             <a href="/sitemap.xml">Sitemap</a>&nbsp;
         </p>
     </footer>

@@ -187,11 +187,11 @@ function is_external_url(string $url): bool
         <div style="height: 100px"></div>
 
         <div class="legal-links">
-            <a href="/imprint">
+            <a href="/imprint.html">
                 <img src="/_assets/blog/imprint<?= $rand_imprint ?>.webp" alt="Imprint">
             </a>
 
-            <a href="/privacy">
+            <a href="/privacy.html">
                 <img src="/_assets/blog/privacy<?= $rand_privacy ?>.webp" alt="Privacy Policy">
             </a>
         </div>

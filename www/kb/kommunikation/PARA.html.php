@@ -104,8 +104,8 @@ require_once __DIR__ . "/../../../lib/_index.php";
 
     <footer>
         <p style="margin-top: 2em;">
-            <a href="/imprint">Imprint</a>&nbsp;
-            <a href="/privacy">Privacy Policy</a>&nbsp;
+            <a href="/imprint.html">Imprint</a>&nbsp;
+            <a href="/privacy.html">Privacy Policy</a>&nbsp;
             <a href="/sitemap.xml">Sitemap</a>&nbsp;
         </p>
     </footer>

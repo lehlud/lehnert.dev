@@ -160,8 +160,8 @@ $glossary = [
 
     <footer>
         <p style="margin-top: 2em;">
-            <a href="/imprint">Impressum</a>&nbsp;
-            <a href="/privacy">Datenschutz</a>&nbsp;
+            <a href="/imprint.html">Impressum</a>&nbsp;
+            <a href="/privacy.html">Datenschutz</a>&nbsp;
             <a href="/sitemap.xml">Sitemap</a>&nbsp;
         </p>
     </footer>
