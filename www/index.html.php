@@ -75,12 +75,7 @@ usort($blogs, function ($a, $b) {
     <h2 style="margin-bottom: 0;">Content</h2>
     <ul style="margin-top: 0.5em;">
         <li><a href="/links.html">Linksammlung</a></li>
-        <li>
-            Tools
-            <ul>
-                <li><a href="/tools/b64image.html">Image to <code>base64</code></a></li>
-            </ul>
-        </li>
+        <li><a href="/tools/">Tools</a></li>
     </ul>
 
     <h2 style="margin-bottom: 0;"><span class="none">Handwritten </span>Blog</h2>

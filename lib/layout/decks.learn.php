@@ -117,7 +117,7 @@ $card_ids = $deck->getCardIds();
 
         function getProbabilities(_cardIds = cardIds) {
             const invScores = {};
-            _cardIds.forEach(id => invScores[id] = Math.pow(1 - cardScore(id), 3))
+            _cardIds.forEach(id => invScores[id] = Math.pow(1 - cardScore(id), 2))
 
             const totalScore = Object.values(invScores).reduce((x, y) => x + y, 0);
             return Object.fromEntries(
@@ -125,19 +125,39 @@ $card_ids = $deck->getCardIds();
             );
         }
 
-        function pickNextCardId() {
+        /**
+         * Pick a next card id.
+         * 
+         * The return value may never equal the values of `lastCardId` and `currentCardId`.
+         * This behaviour can be changed by supplying the first parameter.
+         * 
+         * For unseen cards (score = 0), the lexicographically coming first
+         * of them is chosen.
+         * This is good for introduction purposes and deterministic behaviour.
+         */
+        function pickNextCardId(avoidIds = [lastCardId, currentCardId]) {
             const availableCardIds = new Set(cardIds);
+            const unseenCardIds = new Set();
 
+            // limit to a circle of 10 "new" cards
             let newCardCount = 0;
             for (const cardId of [...cardIds].toSorted()) {
                 if (cardScore(cardId) > 0.7) continue;
 
                 newCardCount += 1;
-                if (newCardCount > 13) availableCardIds.delete(cardId);
+                if (newCardCount > 10) availableCardIds.delete(cardId);
+                else if (!cardScore(cardId)) unseenCardIds.add(cardId);
             }
 
-            // limit to a circle of 13 "new" cards
             const probabilities = getProbabilities([...availableCardIds]);
+
+            if (unseenCardIds.size) {
+                probabilities['___unseen'] = 0;
+                for (const cardId of unseenCardIds) {
+                    probabilities['___unseen'] += probabilities[cardId];
+                    delete probabilities[cardId];
+                }
+            }
 
             const choose = () => {
                 const rand = Math.random();
@@ -151,7 +171,12 @@ $card_ids = $deck->getCardIds();
             let chosen;
             do {
                 chosen = choose();
-            } while (chosen === currentCardId);
+            } while (avoidIds.includes(chosen));
+
+            if (chosen === '___unseen') {
+                const sortedUnseen = [...unseenCardIds].toSorted();
+                return sortedUnseen.at(0);
+            }
 
             return chosen;
         }
@@ -164,14 +189,17 @@ $card_ids = $deck->getCardIds();
             return { front, back };
         }
 
-        let currentCardId;
+        let currentCardId = null, lastCardId = null;
         async function next() {
             hide(frontEl);
             hide(revealEl);
             hide(backEl);
             hide(nextButtonsEl);
 
+            let tmp = currentCardId;
             currentCardId = pickNextCardId();
+            lastCardId = currentCardId;
+
             const nextCard = await getCard(currentCardId);
 
             frontEl.innerHTML = nextCard.front;

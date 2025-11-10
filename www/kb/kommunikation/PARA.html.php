@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . "/../../lib/_index.php";
+require_once __DIR__ . "/../../../lib/_index.php";
 
 ?>
 <!DOCTYPE html>

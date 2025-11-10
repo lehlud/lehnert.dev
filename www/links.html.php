@@ -171,7 +171,7 @@ $links = [
         'DFB-Akademie – Taktik & Spielanalyse;;Kurze Infos über Studien zu Einzelthemen' => 'https://www.dfb-akademie.de/taktik-spielanalyse/-/id-11008483/',
     ],
     'Kommunikation' => [
-        'PARA-Framework' => '/kb/PARA.html',
+        'PARA-Framework' => '/kb/kommunikation/PARA.html',
     ],
     'Lesenswerte Bücher' => [
         '_' => '

@@ -100,7 +100,7 @@ require_once __DIR__ . "/../../lib/_index.php";
                         reader.onloadend = () => resolve(reader.result);
                         reader.onerror = reject;
                         reader.readAsDataURL(blob);
-                    }, 'image/webp', 0.8);
+                    }, 'image/webp', 0.65);
                 };
 
                 img.onerror = (err) => reject(err);

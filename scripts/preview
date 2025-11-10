@@ -5,5 +5,5 @@ set -e
 DIR=$(realpath "$(dirname "$0")")
 
 podman run --rm -p 8080:80 -v "$DIR/../dist":/var/www/html:Z php:8.2-apache /bin/bash \
-    -c "a2enmod rewrite && a2enmod autoindex && a2enmod include && apache2-foreground"
+    -c "a2enmod rewrite && a2enmod headers && apache2-foreground"
 
