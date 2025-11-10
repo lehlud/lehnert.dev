@@ -46,7 +46,7 @@ $card_ids = $deck->getCardIds();
 
         #back {
             padding: 0.3em 0.8em 0.3em 0.8em;
-            margin-top: 0.5em;
+            margin-top: 1em;
         }
 
         button {
