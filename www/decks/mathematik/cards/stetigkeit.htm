@@ -1,0 +1,34 @@
+Wann ist eine Funktion $f$ <i>stetig</i>?
+
+-----
+
+<p>Eine Funktion $f$ ist an einer Stelle $x_0$ stetig, wenn sie dort keine Sprünge, Lücken oder Unterbrechungen aufweist. Das bedeutet, dass der Funktionswert an der Stelle $x_0$ dem Grenzwert der Funktion für $x$ gegen $x_0$ entspricht.</p>
+
+<h3>Formelle Definition</h3>
+
+<p>Sei $f: D \to \mathbb{R}$ eine Funktion und $x_0 \in D$ ein Punkt. Die Funktion $f$ ist an der Stelle $x_0$ stetig, wenn die folgenden drei Bedingungen erfüllt sind:</p>
+<ol>
+<li>Der Funktionswert $f(x_0)$ ist definiert.</li>
+<li>Der Grenzwert $\lim_{x \to x_0} f(x)$ existiert.</li>
+<li>Der Grenzwert ist gleich dem Funktionswert:
+$$
+\lim_{x \to x_0} f(x) = f(x_0)
+$$
+</li>
+</ol>
+<p>Alternativ, mit der $\epsilon$-$\delta$-Definition:</p>
+<p>Die Funktion $f$ ist an der Stelle $x_0$ stetig, wenn für jedes $\epsilon > 0$ ein $\delta > 0$ existiert, sodass für alle $x \in D$ gilt:</p>
+$$
+|x - x_0| < \delta \implies |f(x) - f(x_0)| < \epsilon
+$$
+
+<h3>Geometrische Interpretation</h3>
+
+<p>Eine Funktion ist stetig, wenn man ihren Graphen ohne den Stift abzusetzen zeichnen kann. Es gibt keine "Löcher" oder "Sprünge" im Graphen.</p>
+
+<h3>Beispiel</h3>
+
+<ul>
+<li>Die Funktion $f(x) = x^2$ ist an jeder Stelle $x \in \mathbb{R}$ stetig, da der Graph eine durchgehende Parabel ist und keine Unterbrechungen aufweist.</li>
+<li>Die Funktion $g(x) = \begin{cases} 1 & \text{für } x \ge 0 \\ 0 & \text{für } x < 0 \end{cases}$ ist an der Stelle $x=0$ nicht stetig, da an dieser Stelle ein Sprung vorliegt. Der Grenzwert von links ist 0, der Grenzwert von rechts ist 1, und $f(0)=1$. Der Grenzwert existiert nicht, da links- und rechtsseitiger Grenzwert nicht übereinstimmen.</li>
+</ul>

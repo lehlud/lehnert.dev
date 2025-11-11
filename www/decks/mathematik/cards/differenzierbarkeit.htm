@@ -1,0 +1,28 @@
+Wann ist eine Funktion $f$ <i>differenzierbar</i>?
+
+-----
+
+<p>Eine Funktion $f$ ist an einer Stelle $x_0$ differenzierbar, wenn der Grenzwert des Differenzenquotienten an dieser Stelle existiert und endlich ist.</p>
+
+<h3>Formelle Definition</h3>
+
+<p>Sei $f: D \to \mathbb{R}$ eine Funktion und $x_0 \in D$ ein Punkt. Die Funktion $f$ ist an der Stelle $x_0$ differenzierbar, wenn der Grenzwert</p>
+
+$$
+f'(x_0) = \lim_{h \to 0} \frac{f(x_0 + h) - f(x_0)}{h}
+$$
+
+<p>existiert.</p>
+
+<p>Existiert dieser Grenzwert, so wird er als <i>Ableitung</i> von $f$ an der Stelle $x_0$ bezeichnet und mit $f'(x_0)$ notiert.</p>
+
+<h3>Geometrische Interpretation</h3>
+
+<p>Geometrisch bedeutet die Differenzierbarkeit, dass an der Stelle $x_0$ eine eindeutige Tangente an den Funktionsgraphen existiert.</p>
+
+<h3>Beispiel</h3>
+
+<ul>
+<li>Die Funktion $f(x) = x^2$ ist an jeder Stelle $x \in \mathbb{R}$ differenzierbar, da der Grenzwert des Differenzenquotienten immer existiert und $f'(x) = 2x$ ist.</li>
+<li>Die Funktion $g(x) = |x|$ ist an der Stelle $x=0$ nicht differenzierbar, da die links- und rechtsseitigen Grenzwerte des Differenzenquotienten an dieser Stelle nicht übereinstimmen: $$\lim_{h \to 0^-} \frac{|0+h|-|0|}{h} = -1$$ und $$\lim_{h \to 0^+} \frac{|0+h|-|0|}{h} = 1$$</li>
+</ul>

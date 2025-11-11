@@ -16,9 +16,9 @@ class Deck {
         return $this->json['title'];
     }
 
-    public function requireMathJax(): bool {
-        if (!isset($this->json['requireMathJax'])) return false;
-        return $this->json['requireMathJax'] || false;
+    public function requireKatex(): bool {
+        if (!isset($this->json['requireKatex'])) return false;
+        return $this->json['requireKatex'] || false;
     }
     /**
      * @return DeckCard[]

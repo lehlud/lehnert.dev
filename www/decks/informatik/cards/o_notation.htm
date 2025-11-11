@@ -2,20 +2,20 @@ Was ist die <i>kleine o-Notation</i>?
 
 -----
 
-<p>Die kleine o-Notation beschreibt eine strengere Obergrenze für das asymptotische Verhalten einer Funktion \(f(n)\) im Vergleich zu einer Funktion \(g(n)\). Sie wird verwendet, um anzugeben, dass \(f(n)\) schneller wächst als \(g(n)\), wenn \(n\) gegen unendlich geht.</p>
+<p>Die kleine o-Notation beschreibt eine strengere Obergrenze für das asymptotische Verhalten einer Funktion $f(n)$ im Vergleich zu einer Funktion $g(n)$. Sie wird verwendet, um anzugeben, dass $f(n)$ schneller wächst als $g(n)$, wenn $n$ gegen unendlich geht.</p>
 
 <h3>Definition</h3>
 
-<p>Eine Funktion \(f(n)\) ist in \(o(g(n))\), wenn für jede positive Konstante \(c\) ein \(n_0\) existiert, so dass für alle \(n > n_0\) gilt:</p>
+<p>Eine Funktion $f(n)$ ist in $o(g(n))$, wenn für jede positive Konstante $c$ ein $n_0$ existiert, so dass für alle $n > n_0$ gilt:</p>
 
-\[
+$$
 f(n) < c \cdot g(n)
-\]
+$$
 
 <h3>Erklärung</h3>
 
-<p>Das bedeutet, dass \(f(n)\) asymptotisch kleiner ist als \(g(n)\), was bedeutet, dass \(g(n)\) die dominierende Funktion ist.</p>
+<p>Das bedeutet, dass $f(n)$ asymptotisch kleiner ist als $g(n)$, was bedeutet, dass $g(n)$ die dominierende Funktion ist.</p>
 
 <h3>Beispiel</h3>
 
-<p>Wenn \(f(n) = n\) und \(g(n) = n^2\), dann ist \(f(n) \in o(n^2)\), da \(n\) für sehr große \(n\) immer schneller wächst als ein Vielfaches von \(n^2\).</p>
+<p>Wenn $f(n) = n$ und $g(n) = n^2$, dann ist $f(n) \in o(n^2)$, da $n$ für sehr große $n$ immer schneller wächst als ein Vielfaches von $n^2$.</p>

@@ -57,3 +57,8 @@ td, th {
 :target {
     background-color: rgb(255, 255, 108) !important;
 }
+
+ul li, ol li {
+    margin-top: 0.15em;
+    margin-bottom: 0.15em;
+}

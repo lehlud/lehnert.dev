@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
 
 cd "$(dirname "$0")"
 cd ..
@@ -9,32 +9,100 @@ rm -rf dist/* dist/.*
 cp -r www/. dist/
 cd dist/
 
-for file in $(find -name "*.*.php"); do
-    echo "Building ${file:0:-4}"
-    php "$file" > "${file:0:-4}"
-    rm "$file"
-done
+echo "----------------------------"
+echo "--- Rendering .php files ---"
+echo "----------------------------"
+echo
 
-for _each in $(find -name "_each.php"); do
+find -type f -name "*.*.php" | while read -r file; do
     (
-        DIR="$(dirname "$_each")"
-    
-        for file in "$DIR"/*; do
-            [ -f $file ] || continue
-            [ "$(basename "$file")" = "_each.php" ] && continue
-
-            if [[ "$file" == *.htm ]]; then
-                destfile="${file}l"
-            else
-                destfile="${file}.html"
-            fi
-
-            echo "Building $destfile"
-            php "$_each" "$(basename "$file")" > "$destfile"
-        done
-
-        rm "$_each"
+        echo "[php] Building ${file:0:-4}"
+        php "$file" > "${file:0:-4}"
+        rm "$file"
     ) &
 done
 
 wait
+
+# find -type f -name "_each.php" | while read -r _each; do
+for _each in $(find -type f -name "_each.php"); do
+    DIR="$(dirname "$_each")"
+
+    for file in "$DIR"/*; do
+        [ -f $file ] || continue
+        [ "$(basename "$file")" = "_each.php" ] && continue
+
+        if [[ "$file" == *.htm ]]; then
+            destfile="${file}l"
+        else
+            destfile="${file}.html"
+        fi
+
+        echo "[php] Building $destfile"
+        php "$_each" "$(basename "$file")" > "$destfile" &
+    done
+done
+
+wait
+
+for _each in $(find -type f -name "_each.php"); do
+    rm "$_each"
+done
+
+echo
+echo "-----------------------------"
+echo "--- Rendering <dot> nodes ---"
+echo "-----------------------------"
+echo
+
+command -v dot >/dev/null || { echo "error: graphviz 'dot' not installed"; exit 1; }
+
+TMP_DIR="$(mktemp -d)"
+trap 'rm -rf "$TMP_DIR"' EXIT
+
+for file in $(find . -type f \( -iname "*.htm" -o -iname "*.html" \)); do
+  (
+    if grep -q "<dot>" "$file"; then
+        echo "[dot] Building $file"
+
+        awk -v tmp="$TMP_DIR" -v filename="$(basename $file)" '
+        BEGIN { in_dot=0; dot_content=""; count=0 }
+        /<dot>/ { in_dot=1; dot_content=""; next }
+        /<\/dot>/ {
+            in_dot=0
+            count++
+            dotf = sprintf("%s/%s.dot_%03d.dot", tmp, filename, count)
+            print dot_content > dotf
+            close(dotf)  # Datei schließen, damit dot alles sieht
+
+            cmd = "dot -Tsvg " quote(dotf)
+
+            # Nur den SVG-Block ausgeben
+            in_svg = 0
+            while ((cmd | getline line) > 0) {
+            if (!in_svg) {
+                if (line ~ /<svg[ >]/) { in_svg = 1; print line }
+            } else {
+                print line
+                if (line ~ /<\/svg>/) { in_svg = 0 }
+            }
+            }
+            close(cmd)
+
+            dot_content=""
+            next
+        }
+        in_dot { dot_content = dot_content $0 "\n"; next }
+        { print }
+
+        function quote(s,    t){ gsub(/["\\]/,"\\\\&",s); return "\"" s "\"" }
+        ' "$file" > "$file.tmp"
+
+        mv "$file.tmp" "$file"
+    fi
+  ) &
+done
+
+wait
+
+rm -rf "$TMP_DIR"

@@ -11,7 +11,7 @@ Eine Karteikarte ist folgendermaßen kodiert:
 Dabei ist sowohl die Vorderseite, als auch die Rückseite in HTML kodiert.
 
 Umgebung:
-- Du kannst und sollst MathJax (also LaTex) verwenden: `\(<INLINE-TeX>\)` oder `\[<OUTLINE-TeX>\]`.
+- Du kannst und sollst KaTeX (also LaTex) verwenden: `$<INLINE-TeX>$` oder `$$<OUTLINE-TeX>$$`.
 - Außerdem kannst du mittels `<dot>[CONTENT]</dot>` GraphViz-Diagramme einbinden. Dabei muss/darf der Inhalt einer `<dot>`-Node _nicht_ escaped werden.
 
 Anmerkungen:
@@ -20,8 +20,10 @@ Anmerkungen:
 - Die Karteikarten sind - solange nicht anders erwünscht - in deutscher Sprache anzufertigen.
 - Nutze wenn möglich Beispiele (nach der Erklärung).
 - Formatiere gesuchte Begriffe in Fragen kursiv (z.B. `Was sind die <i>Eigenwerte einer Matrix</i>?`).
-- Nutze MathJax/TeX überall, wo es Sinn ergeben _könnte_, also **immer dann, wenn es ginge**!
+- Nutze KaTeX/TeX überall, wo es Sinn ergeben _könnte_, also **immer dann, wenn es ginge**!
 - Bedenke, dass du in HTML und nicht in Markdown bist, d.h. nutze z.B. `<ul>`, `<ol>` für Aufzählungen etc. - z.B. funktionieren Markdown-Aufzählungen mittels `- Punkt A\n- Punkt B\n...` audrücklich nicht!
+- Achte auf formal korrekte Definitionen!
+- Kein `Antwort: ...` etc. auf der Rueckseite, einfach direkt die Antwort!
 
 Ablauf:
 1. Der Nutzer nennt dir ein Thema und möglicherweise weitere Einzelheiten, die beim Erstellen zu beachten sind.
@@ -29,73 +31,107 @@ Ablauf:
 
 Beispiele:
 ```html
-Was sind die <i>Eigenschaften der Determinante einer Matrix</i>?
+Was ist der <i>Abschluss einer Menge</i>?
 
 -----
 
-<h3>Invertierbarkeit</h3>
-<p>Eine Matrix \(A\) ist invertierbar, wenn \(\text{det}(A) \neq 0\).</p>
+<p>Der Abschluss einer Menge $A$, bezeichnet als $\overline{A}$, ist die Menge aller Punkte, die entweder in $A$ liegen oder Grenzpunkte von $A$ sind.</p>
 
-<h3>Volumen</h3>
-\(|\text{det}(A)|\) repräsentiert das Volumen des durch die Spaltenvektoren aufgespannten Parallelepipeds.
+<h3>Formelle Definition</h3>
+<p>Der Abschluss einer Menge $A$ ist gegeben durch:</p>
+$$
+\overline{A} = A \cup A'
+$$
+wobei $A'$ die Menge der Grenzpunkte von $A$ ist.</p>
 
-<h3>Zeilenoperationen</h3>
-
-<h4>Vertauschen zweier Zeilen</h4>
-<p>\(\text{det}(A) \to -\text{det}(A)\)</p>
-
-<h4>Multiplikation einer Zeile mit \(k\)</h4>
-<p>\(\text{det}(A) \to k \cdot \text{det}(A)\)</p>
-
-<h4>Hinzufügen eines Vielfachen einer Zeile</h4>
-<p>\(\text{det}(A)\) bleibt unverändert</p>
-
-<br><br>
-
-Für die Matrix 
-
-\[
-A = \begin{pmatrix}
-1 & 2 \\
-3 & 4
-\end{pmatrix}
-\]
-
-ist \(\text{det}(A) = 1\cdot4 - 2\cdot3 = -2\)<br>
-\(\Longrightarrow A\) nicht invertierbar.
+<h3>Beispiel</h3>
+<p>Sei $A = (0, 1)$ (das offene Intervall von 0 bis 1). Der Abschluss ist:</p>
+$$
+\overline{A} = [0, 1]
+$$
+da die Grenzpunkte 0 und 1 eingeschlossen werden.</p>
 ```
 
 ```html
-Was ist eine <i>Gruppe</i>?
+Was ist eine <i>Orthogonalmatrix</i>?
 
 -----
 
-<p>Eine Gruppe ist eine Menge \(G\) zusammen mit einer Binäroperation \(\ast\), die die folgenden Eigenschaften erfüllt:</p>
+<p>Eine quadratische Matrix $Q\in\mathbb{R}^{n\times n}$ heißt orthogonal, wenn $Q^\top Q = Q Q^\top = I_n$.</p>
 
-<h3>Gruppeneigenschaften</h3>
+<p>Bzw. $Q^{-1}=Q^\top$ und die Spalten (bzw. Zeilen) von $Q$ bilden eine Orthonormalbasis von $\mathbb{R}^n$.</p>
+
+<h3>Eigenschaften</h3>
+<ol>
+    <li>$\|Qx\| = \|x\|$ für alle $x\in\mathbb{R}^n$ (Längenerhaltend).</li>
+    <li>Skalarprodukte bleiben erhalten: $(Qx)\cdot(Qy)=x\cdot y$.</li>
+    <li>$\det(Q)=\pm1$ (Rotationen $\det(Q)=1$, Spiegelungen $\det(Q)=-1$).</li>
+    <li>Eigenwerte liegen auf dem Einheitskreis in der komplexen Ebene (Betrag $1$).</li>
+</ol>
+
+<h3>Beispiele</h3>
 <ul>
-    <li>
-        <b>Abgeschlossenheit</b><br>
-        \(\forall a, b \in G: a \ast b \in G\)
-    </li>
-    <li>
-        <b>Assoziativität</b><br>
-        \(\forall a, b, c \in G: (a \ast b) \ast c = a \ast (b \ast c)\)
-    </li>
-    <li>
-        <b>Identitätselement</b><br>
-        Es gibt ein \(e \in G\), sodass \(\forall a \in G: e \ast a = a \ast e = a\)
-    </li>
-    <li>
-        <b>Inverses Element</b><br>
-        Zu jedem \(a \in G\) gibt es ein \(b \in G\), sodass \(a \ast b = b \ast a = e\)
-    </li>
+  <li>$I_n$ ist orthogonal ($I_n^\top I_n=I_n$).</li>
+  <li>Rotation in $\mathbb{R}^2$ um Winkel $\theta$:
+  $$
+  Q=\begin{pmatrix}\cos\theta & -\sin\theta\\[4pt]\sin\theta & \cos\theta\end{pmatrix},\quad Q^\top Q=I_2.
+  $$
+  </li>
+  <li>Reflexion an der $x$-Achse in $\mathbb{R}^2$: $\begin{pmatrix}1&0\\0&-1\end{pmatrix}$ (orthogonal, $\det=-1$).</li>
+</ul>
+```
+
+```html
+Wie funktioniert <i>Quicksort</i>?
+
+-----
+
+<p><i>Quicksort</i> ist ein Divide &amp; Conquer Sortierverfahren: Man wählt ein Pivot $p$, partitioniert in Elemente $e \leq p$ und Elemente $e > p$, sortiert die Teilbereiche rekursiv und setzt zusammen.</p>
+
+<h3>Schritte</h3>
+<ul>
+  <li>Pivot $p$ wählen</li>
+  <li>Partitionieren: <code>links</code> ($\leq$), <code>rechts</code> ($>$)</li>
+  <li>Rekursiv sortieren: <code>quicksort(links) + [pivot] + quicksort(rechts)</code></li>
 </ul>
 
 <h3>Beispiel</h3>
-<p>Die Menge der ganzen Zahlen \((\mathbb{Z}, +)\) bildet eine Gruppe, da die Addition die Gruppeneigenschaften erfüllt: Sie ist abgeschlossen, assoziativ, hat die Null als Identität und jede Zahl hat ein Inverses (z.B. \(-a\) für \(a \in \mathbb{Z}\)).</p>
+<p>Input: <code>[3,7,2,5,1]</code></p>
+
+<dot>
+digraph {
+    node [shape=record];
+    array [label="3 | 7 | 2 | 5 | 1"];
+}
+</dot>
+
+<p>$p = 3$; Partitionieren:</p>
+<dot>
+digraph {
+    node [shape=record];
+    left [label="2 | 1"];
+    pivot [label="3"];
+    right [label="7 | 5"];
+} 
+</dot>
+
+<p>Rekursiv sortieren</p>
+<dot>
+digraph {
+    node [shape=record];
+    left [label="1 | 2"];
+    pivot [label="3"];
+    right [label="5 | 7"];
+} 
+</dot>
+
+<p>Zusammenfügen</p>
+<dot>
+digraph {
+    node [shape=record];
+    array [label="1 | 2 | 3 | 5 | 7"];
+} 
+</dot>
 ```
 
 Nutzer: <Thema>
-
-

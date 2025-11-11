@@ -1,0 +1,30 @@
+Was ist eine <i>Orthogonalmatrix</i>?
+
+-----
+
+<p>Eine quadratische Matrix $Q\in\mathbb{R}^{n\times n}$ heißt orthogonal, wenn $Q^\top Q = Q Q^\top = I_n$.</p>
+
+<p>Bzw. $Q^{-1}=Q^\top$ und die Spalten (bzw. Zeilen) von $Q$ bilden eine Orthonormalbasis von $\mathbb{R}^n$.</p>
+
+<h3>Eigenschaften</h3>
+
+<ol>
+    <li>$\|Qx\| = \|x\|$ für alle $x\in\mathbb{R}^n$ (Längenerhaltend).</li>
+    <li><strong>Skalarprodukte bleiben erhalten:</strong> Für das euklidische Skalarprodukt $\langle u,v\rangle = u^\top v$ gilt
+    \[
+      \langle Qx,\,Qy\rangle = (Qx)^\top (Qy) = x^\top (Q^\top Q)\,y = x^\top y = \langle x,y\rangle.
+    \]
+    </li>
+    <li>$\det(Q)=\pm1$ (Rotationen $\det(Q)=1$, Spiegelungen $\det(Q)=-1$).</li>
+    <li>Eigenwerte liegen auf dem Einheitskreis in der komplexen Ebene (Betrag $1$).</li>
+</ol>
+
+<h3>Beispiele</h3>
+
+<ul>
+  <li>$I_n$ ist orthogonal ($I_n^\top I_n=I_n$).</li>
+  <li>Rotation in $\mathbb{R}^2$ um Winkel $\theta$:
+    $$Q=\begin{pmatrix}\cos\theta & -\sin\theta\\[4pt]\sin\theta & \cos\theta\end{pmatrix},\quad Q^\top Q=I_2.$$
+  </li>
+  <li>Reflexion an der $x$-Achse in $\mathbb{R}^2$: $\begin{pmatrix}1&0\\0&-1\end{pmatrix}$ (orthogonal, $\det=-1$).</li>
+</ul>

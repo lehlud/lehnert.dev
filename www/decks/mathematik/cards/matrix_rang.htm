@@ -1,0 +1,18 @@
+Was ist der <i>Rang</i> einer Matrix?
+
+-----
+
+<p>Der Rang einer Matrix $A$ ist die maximale Anzahl linear unabhängiger Zeilen- (oder Spalten-)vektoren von $A$; kurz: $\text{Rang}(A)\in\mathbb{N}_0$.</p>
+
+<h3>Eigenschaften</h3>
+<ul>
+  <li>Äquivalent: $\text{Rang}(A)=\dim(\text{Bild}(A))$, also die Dimension des Bildes der linearen Abbildung $x\mapsto A x$.</li>
+  <li>Für $A\in\mathbb{K}^{m\times n}$ gilt $0\le\text{Rang}(A)\le\min(m,n)$.</li>
+  <li>Praktisch bestimmbar durch Zeilenstufenform (Gauß):<br>die Anzahl der Nicht-Null-Zeilen ist der Rang.</li>
+</ul>
+
+<h3>Beispiele</h3>
+<ul>
+  <li>$A=\begin{pmatrix}1&2\\2&4\end{pmatrix}$ hat $\text{Rang}(A)=1$ (zweite Zeile $= 2\,\cdot\,$erste Zeile).</li>
+  <li>$B=\begin{pmatrix}1&0&0\\0&1&0\end{pmatrix}$ hat $\text{Rang}(B)=2$ (zwei unabhängige Zeilen).</li>
+</ul>

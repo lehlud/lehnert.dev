@@ -1,0 +1,35 @@
+Was ist die <i>Pumpeigenschaft für reguläre Sprachen</i>?
+
+-----
+
+<p>Die Pumpeigenschaft (Pumping Lemma) besagt, dass für jede reguläre Sprache $L$ eine natürliche Zahl $n$ (die Pump-Länge) existiert, für die jedes Wort $w \in L$, dessen Länge $|w| \ge n$ ist, in drei Teile $w = xyz$ zerlegt werden kann, sodass die folgenden Bedingungen erfüllt sind:</p>
+
+<ol>
+    <li>$|xy| \le n$<br>($xy$ ist nicht länger als die Pump-Länge)</li>
+    <li>$|y| \ge 1$<br>($y$ ist nicht leer)</li>
+    <li>Für alle $k \ge 0$ ist $xy^kz \in L$<br>($y$ kann beliebig oft gepumpt werden, und das resultierende Wort bleibt in $L$)</li>
+</ol>
+
+<h3>Erklärung</h3>
+<p>Die Pumpeigenschaft ist ein wichtiges Werkzeug in der theoretischen Informatik, um zu beweisen, dass eine gegebene Sprache <i>nicht</i> regulär ist. Dies geschieht in der Regel durch einen Widerspruchsbeweis:</p>
+<ol>
+    <li>Man nimmt an, dass die Sprache $L$ regulär ist.</li>
+    <li>Aufgrund der Pumpeigenschaft muss dann eine Pump-Länge $n$ existieren.</li>
+    <li>Man wählt ein geeignetes Wort $w \in L$ mit $|w| \ge n$, dessen Struktur einen Widerspruch beim Pumpen ermöglicht.</li>
+    <li>Man zeigt, dass das Pumpen des Wortes $w$ (d.h., die Erzeugung von $xy^kz$ für ein geeignetes $k$) ein Wort erzeugt, das <i>nicht</i> in $L$ enthalten ist.</li>
+    <li>Da dies ein Widerspruch zur Annahme ist, muss die ursprüngliche Annahme falsch sein, und die Sprache $L$ ist folglich nicht regulär.</li>
+</ol>
+
+<h3>Beispiel</h3>
+<p>Die Sprache $L = \{a^k b^k \mid k \ge 0\}$ ist nicht regulär.</p>
+<p><b>Beweis (skizziert):</b></p>
+<ol>
+    <li>Angenommen, $L$ ist regulär. Dann existiert eine Pump-Länge $n$.</li>
+    <li>Wähle das Wort $w = a^n b^n \in L$. Offensichtlich ist $|w| = 2n \ge n$.</li>
+    <li>Gemäß der Pumpeigenschaft kann $w$ in $xyz$ zerlegt werden mit $|xy| \le n$ und $|y| \ge 1$.</li>
+    <li>Da $|xy| \le n$ und $w = a^n b^n$, muss der Teil $xy$ vollständig aus $a$'s bestehen. Das bedeutet, $y$ besteht ebenfalls nur aus $a$'s ($y = a^m$ für $m \ge 1$).</li>
+    <li>Betrachte nun das Wort $xy^2z$. Dies würde bedeuten, wir fügen weitere $a$'s zum Wort hinzu. Das neue Wort hat die Form $a^{n+m} b^n$.</li>
+    <li>Da $m \ge 1$, ist $n+m \ne n$. Somit ist die Anzahl der $a$'s ungleich der Anzahl der $b$'s.</li>
+    <li>Das Wort $a^{n+m} b^n$ ist nicht in $L$. Dies ist ein Widerspruch zur Pumpeigenschaft.</li>
+</ol>
+<p>Daher ist die Sprache $L = \{a^k b^k \mid k \ge 0\}$ nicht regulär.</p>

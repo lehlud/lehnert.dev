@@ -4,10 +4,10 @@ require_once __DIR__ . "/../../lib/_index.php";
 
 $glossary = [
     'Taktik' => '
-        \(T = (S_P, f_A, \Omega)\), wobei<br>
-        [\(S_P\)]: Menge der Anweisungen des Trainers an die Spieler (Plan)<br>
-        [\(f_A: S_P \mapsto \Omega \)]: Abbildung von Anweisungen auf Ausführungen \(\Omega\)<br>
-        Dabei ist \(f_A\) linkstotal, jedoch nicht rechtseindeutig.
+        $T = (S_P, f_A, \Omega)$, wobei<br>
+        [$S_P$]: Menge der Anweisungen des Trainers an die Spieler (Plan)<br>
+        [$f_A: S_P \mapsto \Omega $]: Abbildung von Anweisungen auf Ausführungen $\Omega$<br>
+        Dabei ist $f_A$ linkstotal, jedoch nicht rechtseindeutig.
     ',
     'Individualtaktik' => 'Menge der taktischen Elemente, die Aktionen eines einzelnen Spielers betreffen.',
     'Mannschaftstaktik' => 'Menge der taktischen Elemente, die alle Spieler einer Mannschaft betreffen.',
@@ -38,30 +38,30 @@ $glossary = [
 
     'vertikale Kettenkonformität' => '
         Invertiertes Mittelmaß der absoluten Tiefendifferenz der Spieler einer Abwehrkette von der mittleren Tiefe der Abwehrkette.<br>
-        \(\text{KKonf}_T = n \cdot (\sum_{i=1}^n |T_i - T_\varnothing|)^{-1}\), wobei<br>
-        [\(n\)]: Anzahl der Spieler in der Abwehrkette<br>
-        [\(T_i\)]: Tiefe des \(i\)-ten Spielers der Abwehrkette<br>
-        [\(T_\varnothing = \frac{1}{n} \cdot \sum_{i=1}^n T_i\)]: mittlere Tiefe der Abwehrkette
+        $\text{KKonf}_T = n \cdot (\sum_{i=1}^n |T_i - T_\varnothing|)^{-1}$, wobei<br>
+        [$n$]: Anzahl der Spieler in der Abwehrkette<br>
+        [$T_i$]: Tiefe des $i$-ten Spielers der Abwehrkette<br>
+        [$T_\varnothing = \frac{1}{n} \cdot \sum_{i=1}^n T_i$]: mittlere Tiefe der Abwehrkette
     ',
     'horizontale Kettenkonformität' => '
         Invertiertes Mittelmaß der absoluten Differenz aus dem Abstand der Spieler einer Abwehrkette zueinander und dem Verhältnis aus Breite der Abwehrkette und Anzahl der Verteiger in der Abwehrkette.<br>
-        \(\text{KKonf}_B = n \cdot (\sum_{i=1}^{n-1} |d_{B_\varnothing} - d_{B_{i,i+1}}|)^{-1}\), wobei<br>
-        [\(n\)]: Anzahl der Spieler in der Abwehrkette<br>
-        [\(d_{B_{i,j}}\)]: tatsächliche Breitendifferenz des \(i\)-ten und des \(j\)-ten Spielers der Abwehrkette<br>
-        [\(d_{B_\varnothing} = \frac{B}{n}\)]: ideale Breitendifferenz zweier Spieler der Abwehrkette<br>
-        [\(B\)]: Breite der Abwehrkette<br>
+        $\text{KKonf}_B = n \cdot (\sum_{i=1}^{n-1} |d_{B_\varnothing} - d_{B_{i,i+1}}|)^{-1}$, wobei<br>
+        [$n$]: Anzahl der Spieler in der Abwehrkette<br>
+        [$d_{B_{i,j}}$]: tatsächliche Breitendifferenz des $i$-ten und des $j$-ten Spielers der Abwehrkette<br>
+        [$d_{B_\varnothing} = \frac{B}{n}$]: ideale Breitendifferenz zweier Spieler der Abwehrkette<br>
+        [$B$]: Breite der Abwehrkette<br>
     ',
     'Kettenkonformität' => '
         Mittelmaß aus vertikaler und horizontaler Kettenkonformität.<br>
-        \(\text{KKonf} = \frac{1}{2} (\text{KKonf}_T + \text{KKonf}_B)\)
+        $\text{KKonf} = \frac{1}{2} (\text{KKonf}_T + \text{KKonf}_B)$
     ',
     'Kettenkonform' => 'Übersteigt die Kettenkonformität einer Abwehrkette die Kettenkonformitätsschwelle, so steht sie <i>kettenkonform</i>.',
 
     'Kompaktheit' => '
         Invertiertes Mittelmaß der Abstände der Spieler einer Mannschaft zueinander.<br>
-        \(\text{Komp} = n(n-1) \cdot (\sum_{i=2}^n \sum_{j=1}^{i-1} 2 d_{ij})^{-1} \), wobei<br>
-        [\(n\)]: Anzahl der Spieler der Mannschaft auf dem Feld<br>
-        [\(d_{ij}\)]: Abstand zwischen dem \(i\)-ten und dem \(j\)-ten Spieler der Mannschaft<br>
+        $\text{Komp} = n(n-1) \cdot (\sum_{i=2}^n \sum_{j=1}^{i-1} 2 d_{ij})^{-1} $, wobei<br>
+        [$n$]: Anzahl der Spieler der Mannschaft auf dem Feld<br>
+        [$d_{ij}$]: Abstand zwischen dem $i$-ten und dem $j$-ten Spieler der Mannschaft<br>
     ',
     'Kompakt' => 'Übersteigt die Kompaktheit einer Mannschaft die Kompaktheitsschwelle, so steht sie <i>kompakt</i>.',
 
@@ -116,7 +116,9 @@ $glossary = [
         }
     </style>
 
-    <script async src="/_static/js/mathjax-tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="/_static/katex/katex.min.css">
+    <script defer src="/_static/katex/katex.min.js"></script>
+    <script defer src="/_static/katex/contrib/auto-render.min.js"></script>
 </head>
 <body style="max-width: 900px; margin: 0 auto 0 auto; padding: 16px;">
     <h1>Übersicht der Fußballtheorie</h1>
@@ -165,5 +167,16 @@ $glossary = [
             <a href="/sitemap.xml">Sitemap</a>&nbsp;
         </p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
 </body>
 </html>

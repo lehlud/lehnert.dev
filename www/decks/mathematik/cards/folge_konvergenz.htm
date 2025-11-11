@@ -1,0 +1,18 @@
+Wann ist eine Folge $(a_n)$ <i>konvergent</i>?
+
+-----
+
+<p>Genau dann, wenn es ein $L \in \mathbb{R}$ gibt mit $\lim_{n\to\infty} a_n = L$.</p>
+
+<h3>Erklärung</h3>
+<p>Das bedeutet: Für jedes $\varepsilon>0$ existiert ein $N\in\mathbb{N}$, so dass für alle $n\ge N$ gilt
+$$
+|a_n - L| < \varepsilon.
+$$
+</p>
+
+<h3>Beispiele</h3>
+<ul>
+  <li>$a_n=\tfrac{1}{n}\to 0$, denn für $\varepsilon>0$ wähle $N>\tfrac{1}{\varepsilon}$, dann $n\ge N \Rightarrow \left|\tfrac{1}{n}-0\right|<\varepsilon$.</li>
+  <li>$a_n=(-1)^n$ ist nicht konvergent (oszilliert zwischen $-1$ und $1$; kein gemeinsamer Grenzwert).</li>
+</ul>

@@ -66,8 +66,10 @@ $card_ids = $deck->getCardIds();
     </style>
 
 
-    <?php if ($deck->requireMathJax()) : ?>
-        <script async src="/_static/js/mathjax-tex-mml-chtml.js"></script>
+    <?php if ($deck->requireKatex()) : ?>
+        <link rel="stylesheet" href="/_static/katex/katex.min.css">
+        <script defer src="/_static/katex/katex.min.js"></script>
+        <script defer src="/_static/katex/contrib/auto-render.min.js"></script>
     <?php endif; ?>
 </head>
 
@@ -210,10 +212,13 @@ $card_ids = $deck->getCardIds();
             frontEl.innerHTML = nextCard.front;
             backEl.innerHTML = nextCard.back;
 
-            <?php if ($deck->requireMathJax()) : ?>
-            try {
-                window.MathJax.typesetPromise([backEl]);
-            } catch (_) {}
+            <?php if ($deck->requireKatex()) : ?>
+                [frontEl, backEl].forEach(el => window.renderMathInElement(el, {
+                    delimiters: [
+                        {left: "$$", right: "$$", display: true},
+                        {left: "$", right: "$", display: false}
+                    ],
+                }));
             <?php endif; ?>
 
             unhide(frontEl);

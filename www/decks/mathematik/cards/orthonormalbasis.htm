@@ -1,0 +1,33 @@
+Was ist eine <i>Orthonormalbasis</i>?
+
+-----
+
+<p>Eine Orthonormalbasis eines Vektorraums $V$ (mit Skalarprodukt $\langle\cdot,\cdot\rangle$) ist eine Basis $\{u_1,\dots,u_n\}$, deren Vektoren paarweise orthogonal und normiert sind, also</p>
+
+<ul>
+  <li>$\langle u_i,u_j\rangle = 0$ für $i\neq j$</li>
+  <li>$\|u_i\| = 1$ für alle $i$</li>
+  <li>und $\operatorname{span}\{u_1,\dots,u_n\}=V$. </li>
+</ul>
+
+<h3>Erklärung</h3>
+
+<p>Orthogonalität und Normierung bedeuten: $\langle u_i,u_j\rangle=\delta_{ij}$, wobei $\delta_{ij}$ das Kronecker-Delta ist. Mit einer Orthonormalbasis lassen sich Koordinaten einfach berechnen:</p>
+
+$$
+x=\sum_{i=1}^n \langle x,u_i\rangle\,u_i.
+$$
+
+<p>Ein Standardverfahren zur Konstruktion aus linear unabhängigen Vektoren $v_1,\dots,v_m$ ist das Gram–Schmidt‑Verfahren:</p>
+
+<ol>
+  <li>$u_1=\dfrac{v_1}{\|v_1\|}$. </li>
+  <li>Für $k\ge2$: $\tilde v_k = v_k-\sum_{i=1}^{k-1}\langle v_k,u_i\rangle u_i$, dann $u_k=\dfrac{\tilde v_k}{\|\tilde v_k\|}$ (falls $\tilde v_k\neq0$).</li>
+</ol>
+
+<h3>Beispiele</h3>
+
+<ul>
+  <li>Standardbasis von $\mathbb{R}^3$: $\{(1,0,0),(0,1,0),(0,0,1)\}$ ist orthonormal.</li>
+  <li>Aus $v_1=(1,1,0),\ v_2=(1,0,1)$ ergibt Gram-Schmidt kurz: $u_1=\frac{1}{\sqrt2}(1,1,0)$, $\tilde v_2=(1,0,1)-\langle(1,0,1),u_1\rangle u_1$, dann $u_2=\tilde v_2/\|\tilde v_2\|$. </li>
+</ul>

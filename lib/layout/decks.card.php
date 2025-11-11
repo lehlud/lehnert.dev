@@ -59,9 +59,10 @@ if (!$card) {
         }
     </style>
 
-
-    <?php if ($deck->requireMathJax()) : ?>
-        <script async src="/_static/js/mathjax-tex-mml-chtml.js"></script>
+    <?php if ($deck->requireKatex()) : ?>
+        <link rel="stylesheet" href="/_static/katex/katex.min.css">
+        <script defer src="/_static/katex/katex.min.js"></script>
+        <script defer src="/_static/katex/contrib/auto-render.min.js"></script>
     <?php endif; ?>
 </head>
 
@@ -79,5 +80,16 @@ if (!$card) {
             <?= $card->back_html ?>
         </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
 </body>
 </html>

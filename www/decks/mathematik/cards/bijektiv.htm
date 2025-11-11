@@ -1,0 +1,25 @@
+Was ist eine <i>bijektive Funktion</i>?
+
+-----
+
+<p>Eine Funktion $f:A\to B$ ist bijektiv, wenn sie gleichzeitig injektiv und surjektiv ist — also eine Eins-zu-eins-Zuordnung zwischen $A$ und $B$.</p>
+
+<h3>Erklärung</h3>
+
+<p>Formal:</p>
+
+$$
+\big(\forall x,x'\in A:\ f(x)=f(x')\Rightarrow x=x'\big)
+\quad\text{und}\quad
+\big(\forall y\in B\ \exists x\in A:\ f(x)=y\big).
+$$
+
+<p>Äquivalent: Es existiert eine Umkehrfunktion $f^{-1}:B\to A$ mit $f^{-1}\circ f=\mathrm{id}_A$ und $f\circ f^{-1}=\mathrm{id}_B$.</p>
+
+<h3>Beispiele</h3>
+
+<ul>
+  <li>$f:\mathbb{R}\to\mathbb{R},\ f(x)=x+1$ ist bijektiv (Invers: $f^{-1}(y)=y-1$).</li>
+  <li>$g:\mathbb{R}\to\mathbb{R},\ g(x)=x^3$ ist bijektiv (Invers: $g^{-1}(y)=\sqrt[3]{y}$).</li>
+  <li>$h:\mathbb{R}\to[0,\infty),\ h(x)=x^2$ ist nicht bijektiv (nicht injektiv auf $\mathbb{R}$ und nicht surjektiv auf $\mathbb{R}$).</li>
+</ul>

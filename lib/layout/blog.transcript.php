@@ -33,7 +33,9 @@ if ($blog === null) {
         <?= default_styles() ?>
     </style>
 
-    <script async src="/_static/js/mathjax-tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="/_static/katex/katex.min.css">
+    <script defer src="/_static/katex/katex.min.js"></script>
+    <script defer src="/_static/katex/contrib/auto-render.min.js"></script>
 </head>
 
 <body style="max-width: 900px; margin: 0 auto 0 auto; padding: 16px;">
@@ -46,6 +48,17 @@ if ($blog === null) {
             <a href="/sitemap.xml">Sitemap</a>&nbsp;
         </p>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ]
+            });
+        });
+    </script>
 </body>
 
 </html>

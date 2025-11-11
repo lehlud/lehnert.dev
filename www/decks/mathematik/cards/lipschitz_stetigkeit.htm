@@ -1,0 +1,29 @@
+Was ist <i>Lipschitz-Stetigkeit</i>?
+
+-----
+
+<p>Eine Funktion $f:(X,d_X)\to(Y,d_Y)$ heißt *Lipschitz-stetig*, wenn es eine Konstante $L\ge0$ gibt, sodass für alle $x,x'\in X$</p>
+
+$$
+d_Y\big(f(x),f(x')\big)\le L\,d_X(x,x').
+$$
+
+<p>Die kleinste solche Konstante heißt <i>Lipschitz-Konstante</i> $\operatorname{Lip}(f)$.</p>
+
+<h3>Erklärung</h3>
+
+<p>Lipschitz-Stetigkeit bedeutet: Abstände werden höchstens um den Faktor $L$ vergrößert. Insbesondere ist jede Lipschitz-stetige Funktion gleichmäßig stetig und daher stetig. Für reelle Funktionen auf Intervallen mit differenzierbaren $f$ gilt oft</p>
+
+$$
+\operatorname{Lip}(f)=\sup_{x}|f'(x)|
+$$
+
+<p>wenn die Ableitung existiert und beschränkt ist.</p>
+
+<h3>Beispiele</h3>
+
+<ul>
+  <li>$f(x)=ax+b$ auf $\mathbb{R}$ ist Lipschitz mit $L=|a|$.</li>
+  <li>$f(x)=\sqrt{x}$ auf $[0,1]$ ist Lipschitz (z.B. mit $L=\tfrac{1}{2\sqrt{0+\varepsilon}}$ auf $[\varepsilon,1]$), aber nicht global Lipschitz auf $[0,\infty)$.</li>
+  <li>Die Funktion $f(x)=x^2$ ist auf ganz $\mathbb{R}$ nicht Lipschitz, wohl aber auf jedem beschränkten Intervall $[ -M,M]$ mit $L=2M$.</li>
+</ul>

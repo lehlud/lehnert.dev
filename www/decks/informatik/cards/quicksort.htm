@@ -1,42 +1,51 @@
-Wie funktioniert der <i>Quicksort</i>?
+Wie funktioniert <i>Quicksort</i>?
 
 -----
 
-<p>Quicksort ist ein <b>Teile und herrsche</b>-Algorithmus zur Sortierung von Listen. Er funktioniert nach folgendem Schema:</p>
+<p><i>Quicksort</i> ist ein Divide &amp; Conquer Sortierverfahren: Man wählt ein Pivot $p$, partitioniert in Elemente $e \leq p$ und Elemente $e > p$, sortiert die Teilbereiche rekursiv und setzt zusammen.</p>
 
-<h3>Algorithmus</h3>
-
-<ol>
-    <li>Wähle ein <b>Pivot-Element</b> aus der Liste.</li>
-    <li>Teile die Liste in zwei Teillisten:
-        <ul>
-            <li>Elemente kleiner als das Pivot</li>
-            <li>Elemente größer als das Pivot</li>
-        </ul>
-    </li>
-    <li>Wende <i>Quicksort</i> rekursiv auf die beiden Teillisten an.</li>
-    <li>Füge die sortierten Teillisten und das Pivot zusammen.</li>
-</ol>
+<h3>Schritte</h3>
+<ul>
+  <li>Pivot $p$ wählen</li>
+  <li>Partitionieren: <code>links</code> ($\leq$), <code>rechts</code> ($>$)</li>
+  <li>Rekursiv sortieren: <code>quicksort(links) + [pivot] + quicksort(rechts)</code></li>
+</ul>
 
 <h3>Beispiel</h3>
+<p>Input: <code>[3,7,2,5,1]</code></p>
 
-<p>Für die Liste \([3, 6, 8, 10, 1, 2, 1]\) mit Pivot \(6\) ergibt sich:</p>
-<ul>
-    <li>links: \([3, 1, 2, 1]\)</li>
-    <li>rechts: \([8, 10]\)</li>
-</ul>
+<dot>
+digraph {
+    node [shape=record];
+    array [label="3 | 7 | 2 | 5 | 1"];
+}
+</dot>
 
-<p>Die Anwendung von <i>Quicksort</i> auf die linke Teilliste \([3, 1, 2, 1]\) mit Pivot \(2\) ergibt:</p>
-<ul>
-    <li>links: \([1, 1]\)</li>
-    <li>rechts: \([3]\)</li>
-</ul>
+<p>$p = 3$; Partitionieren:</p>
+<dot>
+digraph {
+    node [shape=record];
+    left [label="2 | 1"];
+    pivot [label="3"];
+    right [label="7 | 5"];
+} 
+</dot>
 
-<p>Die sortierte linke Teilliste wird also zu \([1, 1, 2, 3]\).</p>
+<p>Rekursiv sortieren</p>
+<dot>
+digraph {
+    node [shape=record];
+    left [label="1 | 2"];
+    pivot [label="3"];
+    right [label="5 | 7"];
+} 
+</dot>
 
-<p>Die rechte Teilliste \([8, 10]\) bleibt unverändert, da sie bereits sortiert ist.</p>
+<p>Zusammenfügen</p>
+<dot>
+digraph {
+    node [shape=record];
+    array [label="1 | 2 | 3 | 5 | 7"];
+} 
+</dot>
 
-<p>Durch die Zusammenfügung erhalten wir den sortierten Array:</p>
-\[
-[1, 1, 2, 3, 6, 8, 10]
-\]

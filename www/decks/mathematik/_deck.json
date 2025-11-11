@@ -1,4 +1,4 @@
 {
     "title": "Grundlagen: Mathematik",
-    "requireMathJax": true
+    "requireKatex": true
 }

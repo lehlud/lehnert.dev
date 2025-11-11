@@ -1,0 +1,23 @@
+Was ist der <i>Kern</i> einer Matrix $A$?
+
+-----
+
+<p>Der $\text{Kern}(A)$ ist die Menge aller Vektoren $x$ mit $Ax=0$.</p>
+
+<h3>Erklärung</h3>
+<ul>
+  <li>Formell: $\text{Kern}(A)=\{x\in\mathbb{K}^n \mid A x = 0\}$.</li>
+  <li>Die Dimension $\dim(\text{Kern}(A))$ beschreibt die Anzahl freier Parameter der Lösungsmenge des homogenen Systems $Ax=0$.</li>
+  <li>Rangsatz: Für $A:\mathbb{K}^n\to\mathbb{K}^m$ gilt
+  $$
+  \dim(\text{Kern}(A)) + \dim(\text{Bild}(A)) = n.
+  $$
+  </li>
+  <li>$\text{Kern}(A)=\{0\}$ genau dann, wenn $\text{Rang}(A)=n$.</li>
+</ul>
+
+<h3>Beispiele</h3>
+<ul>
+  <li>Für $A=\begin{pmatrix}1&2\\2&4\end{pmatrix}$ ist $\text{Kern}(A)=\{t(-2,1)^\top : t\in\mathbb{R}\}$ (Dimension $1$).</li>
+  <li>Für die Einheitsmatrix $I_n$ gilt $\text{Kern}(I_n)=\{0\}$.</li>
+</ul>

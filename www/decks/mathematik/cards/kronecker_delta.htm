@@ -1,0 +1,27 @@
+Was ist das <i>Kronecker-Delta</i> (Kronecker-Symbol)?
+
+-----
+
+<p>Das Kronecker-Delta $\delta_{ij}$ ist definiert durch</p>
+
+$$
+\delta_{ij}=\begin{cases}1,& i=j,\\[4pt]0,& i\neq j.\end{cases}
+$$
+
+<h3>Erklärung</h3>
+
+<p>Es ist ein diskreter Indikator, der zwei Indizes auf Identität prüft. In Matrizen- und Summenkontexten wirkt es wie die Identitätsmatrix: für eine Matrix $A\in\mathbb{R}^{n\times n}$ gilt</p>
+
+$$
+(\delta_{ij})_{i,j=1}^n = I_n,\qquad \sum_{j=1}^n \delta_{ij} a_j = a_i.
+$$
+
+<p>Das Delta wird häufig verwendet, um Summen zu vereinfachen oder Indizes zu ersetzen (Index-Kontraktion).</p>
+
+<h3>Beispiele</h3>
+
+<ul>
+  <li>$\delta_{23}=0,\ \delta_{77}=1$.</li>
+  <li>Für Vektor $v$: $\sum_{j}\delta_{ij}v_j = v_i$ (Extraktion der i-ten Komponente).</li>
+  <li>Produkt mit Permutation: $\sum_{k}\delta_{ik}\delta_{kj}=\delta_{ij}$.</li>
+</ul>

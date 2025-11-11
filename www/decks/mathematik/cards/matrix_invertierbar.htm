@@ -1,0 +1,21 @@
+Wann ist eine Matrix $A$ <i>invertierbar</i>?
+
+-----
+
+<p>Genau dann, wenn es eine Matrix $B$ mit $AB=BA=I$ gibt.<br>Äquivalent: $\det(A)\neq 0$ (für quadratische Matrizen).</p>
+
+<h3>Erklärung</h3>
+<ul>
+  <li>Für $A\in\mathbb{R}^{n\times n}$ sind äquivalent:
+    <ol>
+      <li>$\exists A^{-1}$ mit $AA^{-1}=A^{-1}A=I_n$.</li>
+      <li>$\det(A)\neq0$.</li>
+      <li>$\text{Rang}(A)=n$ (Zeilen/Spalten linear unabhängig).</li>
+      <li>$\text{Kern}(A)=\{0\}$ (nur die triviale Lösung des homogenen Systems).</li>
+    </ol>
+  </li>
+  <li>Für nicht-quadratische Matrizen gibt es keine beidseitige Inverse; man betrachtet ggf. Links- oder Rechtsinversen.</li>
+</ul>
+
+<h3>Beispiel</h3>
+<p>Für $2\times2$-Matrix $A=\begin{pmatrix}a&b\\c&d\end{pmatrix}$ gilt $A^{-1}=\frac{1}{ad-bc}\begin{pmatrix}d&-b\\-c&a\end{pmatrix}$, falls $\det(A)=ad-bc\neq0$.</p>

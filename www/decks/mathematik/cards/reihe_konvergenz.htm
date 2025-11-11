@@ -1,0 +1,32 @@
+Wann ist eine <i>Reihe</i> <i>konvergent</i>?
+
+-----
+
+<p>Eine Reihe ist konvergent, wenn die Folge ihrer Partialsummen gegen einen endlichen Grenzwert konvergiert.</p>
+
+<h3>Formelle Definition</h3>
+
+<p>Gegeben sei eine Reihe $\sum_{k=1}^{\infty} a_k$. Wir definieren die Folge der Partialsummen $(S_N)_{N \in \mathbb{N}}$ als:</p>
+$$
+S_N = \sum_{k=1}^{N} a_k = a_1 + a_2 + \dots + a_N
+$$
+<p>Die Reihe $\sum_{k=1}^{\infty} a_k$ ist <i>konvergent</i>, wenn die Folge ihrer Partialsummen $(S_N)_{N \in \mathbb{N}}$ gegen einen endlichen Grenzwert $S \in \mathbb{R}$ konvergiert. Das heißt,</p>
+$$
+\lim_{N \to \infty} S_N = S
+$$
+<p>Wenn dieser Grenzwert existiert, nennen wir $S$ den <i>Wert der Reihe</i>. Existiert dieser Grenzwert nicht, so ist die Reihe <i>divergent</i>.</p>
+
+<h3>Notwendiges Kriterium für Konvergenz</h3>
+
+<p>Wenn eine Reihe $\sum_{k=1}^{\infty} a_k$ konvergiert, dann muss die Folge ihrer Glieder gegen Null konvergieren, d.h., $\lim_{k \to \infty} a_k = 0$. Beachte, dass die Umkehrung nicht gilt (siehe Beispiel der harmonischen Reihe).</p>
+
+<h3>Beispiele</h3>
+<ul>
+<li><b>Geometrische Reihe:</b> Die Reihe $\sum_{k=0}^{\infty} q^k = 1 + q + q^2 + \dots$ konvergiert genau dann, wenn $|q| < 1$. In diesem Fall ist der Grenzwert $S = \frac{1}{1-q}$.
+$$
+\sum_{k=0}^{\infty} \left(\frac{1}{2}\right)^k = 1 + \frac{1}{2} + \frac{1}{4} + \dots = 2
+$$
+Die Partialsummenfolge ist $S_N = \frac{1 - q^{N+1}}{1-q}$. Für $|q|< 1$ gilt $\lim_{N \to \infty} q^{N+1} = 0$, also $\lim_{N \to \infty} S_N = \frac{1}{1-q}$.
+</li>
+<li><b>Harmonische Reihe:</b> Die Reihe $\sum_{k=1}^{\infty} \frac{1}{k} = 1 + \frac{1}{2} + \frac{1}{3} + \dots$ ist divergent. Obwohl ihre Glieder $a_k = \frac{1}{k}$ gegen Null konvergieren ($\lim_{k \to \infty} \frac{1}{k} = 0$), konvergiert die Folge ihrer Partialsummen nicht.</li>
+</ul>

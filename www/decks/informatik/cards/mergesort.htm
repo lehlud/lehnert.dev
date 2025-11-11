@@ -1,0 +1,59 @@
+Wie funktioniert <i>Mergesort</i>?
+
+-----
+
+<p><i>Mergesort</i> ist ein Divide-&amp;-Conquer-Sortierverfahren: Das Array wird rekursiv in Hälften geteilt, die Hälften werden sortiert und dann paarweise durch ein stabiles Merge-Verfahren zu einer sortierten Gesamtfolge zusammengeführt.</p>
+
+<h3>Erklärung</h3>
+<ul>
+  <li>Divide: Rekursiv in Hälften bis zu Segmenten der Länge $1$.</li>
+  <li>Conquer: Sortiere jede Hälfte rekursiv.</li>
+  <li>Merge: Führe die beiden sortierten Teilarrays zu einem sortierten Array zusammen.</li>
+</ul>
+
+<h3>Beispiel</h3>
+
+<p>Start</p>
+<dot>
+digraph {
+  node [shape=record];
+  start [label="4 | 2 | 3 | 1"];
+}
+</dot>
+
+<p>Teile: in <code>[4,2]</code> und <code>[3,1]</code></p>
+<dot>
+digraph {
+  node [shape=record];
+  left [label="4 | 2"];
+  right [label="3 | 1"];
+}
+</dot>
+
+<p>Teile weiter: <code>[4]</code>, <code>[2]</code>, <code>[3]</code>, <code>[1]</code></p>
+<dot>
+digraph {
+  node [shape=record];
+  a [label="4"];
+  b [label="2"];
+  c [label="3"];
+  d [label="1"];
+}
+</dot>
+
+<p>Merge der Paare: <code>[2,4]</code> und <code>[1,3]</code></p>
+<dot>
+digraph {
+  node [shape=record];
+  m1 [label="2 | 4"];
+  m2 [label="1 | 3"];
+}
+</dot>
+
+<p>Finales Merge: <code>[1,2,3,4]</code></p>
+<dot>
+digraph {
+  node [shape=record];
+  final [label="1 | 2 | 3 | 4"];
+}
+</dot>

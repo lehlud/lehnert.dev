@@ -176,10 +176,10 @@
 <p>Now let's make some assumptions:</p>
 
 <ul>
-    <li>database delay \(d_{DB} = 100\) ms</li>
-    <li>service delay \(d_s = 10\) ms</li>
+    <li>database delay $d_{DB} = 100$ ms</li>
+    <li>service delay $d_s = 10$ ms</li>
     <li>
-        processing delay \(d_p = 0\) ms<br/>
+        processing delay $d_p = 0$ ms<br/>
         "processing is free"
     </li>
 </ul>
@@ -190,7 +190,7 @@
     = RTT(<a href="#2">2</a>), where
 </p>
 
-<p>RTT(<a href="#1">1</a>) \(= 2 d_s + 4 d_{DB} = 420\) ms</p>
+<p>RTT(<a href="#1">1</a>) $= 2 d_s + 4 d_{DB} = 420$ ms</p>
 
 <p>Thus, sending as well as pulling messages takes 420 ms in this scenario.</p>
 
@@ -205,14 +205,14 @@
 </p>
 
 <ul>
-    <li>database delay \(d_{DB} = 10\) ms</li>
-    <li>service delay \(d_s = 100\) ms</li>
-    <li>processing delay \(d_p = 10\) ms (unchanged)</li>
+    <li>database delay $d_{DB} = 10$ ms</li>
+    <li>service delay $d_s = 100$ ms</li>
+    <li>processing delay $d_p = 10$ ms (unchanged)</li>
 </ul>
 
 <p>Obviously, RTT(<a href="#1">1</a>) = RTT(<a href="#2">2</a>) still holds, but</p>
 
-<p>RTT(<a href="#1">1</a>) \(= 2 d_s + 4 d_{DB} = 240\) ms</p>
+<p>RTT(<a href="#1">1</a>) $= 2 d_s + 4 d_{DB} = 240$ ms</p>
 
 <p>
     this time, which is almost 2x faster compared to

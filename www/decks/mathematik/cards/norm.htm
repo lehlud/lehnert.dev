@@ -1,0 +1,27 @@
+Was ist eine <i>Norm</i>?
+
+-----
+
+<p>Eine Norm auf einem Vektorraum $V$ ist eine Abbildung $\|\cdot\|:V\to[0,\infty)$ mit</p>
+
+<ul>
+  <li>Positivität: $\|v\|=0\iff v=0$</li>
+  <li>Homogenität: $\|\alpha v\|=|\alpha|\,\|v\|$ für alle $\alpha\in\mathbb{R}$ (oder $\mathbb{C}$)</li>
+  <li>Dreiecksungleichung: $\|v+w\|\le\|v\|+\|w\|$</li>
+</ul>
+
+<h3>Erklärung</h3>
+
+<p>Eine Norm misst die "Länge" von Vektoren und erzeugt eine Metrik $d(v,w)=\|v-w\|$, wodurch Topologie und Konvergenzbegriffe entstehen.</p>
+
+<h3>Beispiele</h3>
+
+<ul>
+  <li>Euklidische Norm: $\|x\|_2=\sqrt{\sum_i x_i^2}$.</li>
+  <li>$p$-Normen auf $\mathbb{R}^n$: $\displaystyle\|x\|_p=\bigg(\sum_{i=1}^n|x_i|^p\bigg)^{1/p}$ für $1\le p<\infty$.</li>
+  <li>Unendlich-Norm: $\|x\|_\infty=\max_i|x_i|$.</li>
+</ul>
+
+<h3>Kurzformel</h3>
+
+<p>Normaxiome: für alle $v,w\in V$, $\alpha\in\mathbb{R}$: <code>Pos, Hom, Dreieck</code> ⇔ $\|\cdot\|$ ist Norm.</p>
