@@ -1,0 +1,21 @@
+Was ist die <i>\(\Theta\)-Notation</i>?
+
+-----
+
+<p>Die Θ-Notation beschreibt die asymptotische Gleichheit einer Funktion \(f(n)\) im Vergleich zu einer Funktion \(g(n)\). Sie gibt sowohl die obere als auch die untere Grenze der Laufzeit oder Komplexität an.</p>
+
+<h3>Definition</h3>
+
+<p>Eine Funktion \(f(n)\) ist in \(\Theta(g(n))\), wenn es positive Konstanten \(c_1\), \(c_2\) und \(n_0\) gibt, sodass für alle \(n > n_0\) gilt:</p>
+
+\[
+c_1 \cdot g(n) \leq f(n) \leq c_2 \cdot g(n)
+\]
+
+<h3>Erklärung</h3>
+
+<p>Das bedeutet, dass \(f(n)\) asymptotisch proportional zu \(g(n)\) wächst.</p>
+
+<h3>Beispiel</h3>
+
+<p>Wenn \(f(n) = 4n^2 + 2n + 1\), dann ist \(f(n) \in \Theta(n^2)\), da \(n^2\) die dominierende Terme ist und \(f(n)\) zwischen zwei konstanten Vielfachen von \(n^2\) liegt.</p>

@@ -16,6 +16,10 @@ class Deck {
         return $this->json['title'];
     }
 
+    public function requireMathJax(): bool {
+        if (!isset($this->json['requireMathJax'])) return false;
+        return $this->json['requireMathJax'] || false;
+    }
     /**
      * @return DeckCard[]
      */
@@ -67,6 +71,9 @@ class Deck {
 
         $card_html = file_get_contents($card_file_path);
         [$front_html, $back_html] = explode('-----', $card_html);
+
+        $front_html = trim($front_html);
+        $back_html = trim($back_html);
 
         return new DeckCard($id, $front_html, $back_html);
     }

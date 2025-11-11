@@ -64,6 +64,11 @@ $card_ids = $deck->getCardIds();
             opacity: 0.7;
         }
     </style>
+
+
+    <?php if ($deck->requireMathJax()) : ?>
+        <script async src="/_static/js/mathjax-tex-mml-chtml.js"></script>
+    <?php endif; ?>
 </head>
 
 <body style="max-width: 900px; margin: 0 auto 0 auto; padding: 16px;">
@@ -204,6 +209,12 @@ $card_ids = $deck->getCardIds();
 
             frontEl.innerHTML = nextCard.front;
             backEl.innerHTML = nextCard.back;
+
+            <?php if ($deck->requireMathJax()) : ?>
+            try {
+                window.MathJax.typesetPromise([backEl]);
+            } catch (_) {}
+            <?php endif; ?>
 
             unhide(frontEl);
             unhide(revealEl);

@@ -1,0 +1,42 @@
+Wie funktioniert der <i>Quicksort</i>?
+
+-----
+
+<p>Quicksort ist ein <b>Teile und herrsche</b>-Algorithmus zur Sortierung von Listen. Er funktioniert nach folgendem Schema:</p>
+
+<h3>Algorithmus</h3>
+
+<ol>
+    <li>Wähle ein <b>Pivot-Element</b> aus der Liste.</li>
+    <li>Teile die Liste in zwei Teillisten:
+        <ul>
+            <li>Elemente kleiner als das Pivot</li>
+            <li>Elemente größer als das Pivot</li>
+        </ul>
+    </li>
+    <li>Wende <i>Quicksort</i> rekursiv auf die beiden Teillisten an.</li>
+    <li>Füge die sortierten Teillisten und das Pivot zusammen.</li>
+</ol>
+
+<h3>Beispiel</h3>
+
+<p>Für die Liste \([3, 6, 8, 10, 1, 2, 1]\) mit Pivot \(6\) ergibt sich:</p>
+<ul>
+    <li>links: \([3, 1, 2, 1]\)</li>
+    <li>rechts: \([8, 10]\)</li>
+</ul>
+
+<p>Die Anwendung von <i>Quicksort</i> auf die linke Teilliste \([3, 1, 2, 1]\) mit Pivot \(2\) ergibt:</p>
+<ul>
+    <li>links: \([1, 1]\)</li>
+    <li>rechts: \([3]\)</li>
+</ul>
+
+<p>Die sortierte linke Teilliste wird also zu \([1, 1, 2, 3]\).</p>
+
+<p>Die rechte Teilliste \([8, 10]\) bleibt unverändert, da sie bereits sortiert ist.</p>
+
+<p>Durch die Zusammenfügung erhalten wir den sortierten Array:</p>
+\[
+[1, 1, 2, 3, 6, 8, 10]
+\]

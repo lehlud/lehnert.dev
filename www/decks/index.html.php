@@ -8,6 +8,8 @@ $decks = [
     Deck::get('laender-umrisse'),
     Deck::get('stadt-und-landkreiswappen'),
     Deck::get('kantone-schweiz'),
+    Deck::get('mathematik'),
+    Deck::get('informatik'),
     // Deck::get('itsmkh'),
 ];
 
@@ -31,7 +33,10 @@ $decks = [
     <h1>Decks</h1>
     <ul>
         <?php foreach ($decks as $deck) : ?>
-            <li><a href="/decks/<?= $deck->id ?>/"><?= $deck->title() ?></a> (<?= $deck->getCardCount() ?>)</li>
+            <li>
+                <a href="/decks/<?= $deck->id ?>/"><?= $deck->title() ?></a>
+                (<a href="/decks/<?= $deck->id ?>/cards/"><?= $deck->getCardCount() ?></a>)
+            </li>
         <?php endforeach; ?>
     </ul>
 </body>

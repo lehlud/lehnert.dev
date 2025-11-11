@@ -10,8 +10,31 @@ cp -r www/. dist/
 cd dist/
 
 for file in $(find -name "*.*.php"); do
-    echo "Building $file"
+    echo "Building ${file:0:-4}"
     php "$file" > "${file:0:-4}"
     rm "$file"
 done
 
+for _each in $(find -name "_each.php"); do
+    (
+        DIR="$(dirname "$_each")"
+    
+        for file in "$DIR"/*; do
+            [ -f $file ] || continue
+            [ "$(basename "$file")" = "_each.php" ] && continue
+
+            if [[ "$file" == *.htm ]]; then
+                destfile="${file}l"
+            else
+                destfile="${file}.html"
+            fi
+
+            echo "Building $destfile"
+            php "$_each" "$(basename "$file")" > "$destfile"
+        done
+
+        rm "$_each"
+    ) &
+done
+
+wait

@@ -1,0 +1,21 @@
+Was ist die <i>O-Notation</i>?
+
+-----
+
+<p>Die O-Notation beschreibt das asymptotische Verhalten einer Funktion \(f(n)\) im Vergleich zu einer anderen Funktion \(g(n)\) und wird verwendet, um die Laufzeit oder Komplexität von Algorithmen zu klassifizieren.</p>
+
+<h3>Definition</h3>
+
+<p>Eine Funktion \(f(n)\) ist in \(O(g(n))\), wenn es positive Konstanten \(c\) und \(n_0\) gibt, sodass für alle \(n > n_0\) gilt:</p>
+
+\[
+f(n) \leq c \cdot g(n)
+\]
+
+<h3>Erklärung</h3>
+
+<p>Das bedeutet, dass \(f(n)\) maximal so schnell wächst wie \(g(n)\), ab einem bestimmten Punkt.</p>
+
+<h3>Beispiel</h3>
+
+<p>Wenn \(f(n) = 3n^2 + 2n + 1\), dann ist \(f(n) \in O(n^2)\), da die Funktion für große \(n\) durch \(c \cdot n^2\) beschränkt werden kann.</p>
