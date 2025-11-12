@@ -1,0 +1,42 @@
+Wie funktioniert <i>Tiefensuche</i>?
+
+-----
+
+<p>Die <i>Tiefensuche</i> (DFS, von engl. <i>Depth-First Search</i>) ist ein Algorithmus zur Durchquerung oder Suche in Graphen. Sie startet an einem Knoten, erkundet so weit wie möglich entlang eines Pfades und kehrt zurück, um unerforschte Pfade zu besuchen.</p>
+
+<h3>Algorithmus</h3>
+
+<ul>
+    <li>Wähle einen Startknoten.</li>
+    <li>Markiere den aktuellen Knoten als besucht.</li>
+    <li>Gehe zu einem benachbarten, unbesuchten Knoten und wiederhole den Prozess.</li>
+    <li>Kehrt zurück, wenn keine unbesuchten Nachbarn mehr vorhanden sind.</li>
+</ul>
+
+<h3>Pseudocode</h3>
+
+<pre>
+DFS(knoten):
+    markiere knoten als besucht
+    für jeden Nachbar in knoten:
+        wenn Nachbar nicht besucht:
+            DFS(Nachbar)
+</pre>
+
+<h3>Beispiel</h3>
+
+<p>Für den Graphen:</p>
+
+<dot>
+graph {
+    node [shape=circle];
+    A; B; C; D; E; F;
+    A -- B;
+    A -- C;
+    B -- D;
+    C -- E;
+    D -- F;
+}
+</dot>
+
+<p>Die Tiefensuche, beginnend bei Knoten $A$, könnte der Reihenfolge nach Knoten $A, B, D, F, C, E$ besuchen.</p>

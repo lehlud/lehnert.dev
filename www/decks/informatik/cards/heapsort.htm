@@ -1,0 +1,85 @@
+Wie funktioniert <i>Heapsort</i>?
+
+-----
+
+<p><i>Heapsort</i> ist ein Vergleichs-Sortierverfahren, das einen Heap (eine spezielle Baumstruktur) nutzt. Es besteht aus zwei Hauptschritten: Erstellen eines Heaps aus den Daten und wiederholtes Entnehmen des maximalen Elements und Neuanordnen.</p>
+
+<h3>Schritte</h3>
+
+<ul>
+  <li>Heap erstellen: Umwandlung des Arrays in einen Max-Heap.</li>
+  <li>Sortieren: Das größte Element wird entfernt, das letzte Element wird an die Wurzel des Heaps gesetzt. Danach wird der Heap neu strukturiert.</li>
+</ul>
+
+<h3>Pseudocode</h3>
+
+<pre>
+heapsort(array):
+    n = Länge(array)
+
+    für i von n / 2 bis 0:
+        heapify(array, n, i)
+
+    für i von n-1 bis 0:
+        swap(array[0], array[i])
+        heapify(array, i, 0)
+
+heapify(array, n, i):
+    größtes = i
+    links = 2*i + 1
+    rechts = 2*i + 2
+
+    wenn links < n und array[links] > array[größtes]:
+        größtes = links
+    wenn rechts < n und array[rechts] > array[größtes]:
+        größtes = rechts
+    wenn größtes != i:
+        swap(array[i], array[größtes])
+        heapify(array, n, größtes)
+</pre>
+
+<h3>Beispiel</h3>
+
+<p>Gegeben sei das unsortierte Array: $[4, 10, 3, 5, 1]$.</p>
+
+<h4>Schritt 1: Heap erstellen</h4>
+<p>Transformation des Arrays in einen Max-Heap:</p>
+
+<dot>
+graph {
+    node [shape=circle];
+    A [label="10"];
+    B [label="5"];
+    C [label="4"];
+    D [label="1"];
+    E [label="3"];
+    A -- B;
+    A -- C;
+    B -- D;
+    B -- E;
+}
+</dot>
+
+<h4>Schritt 2: Sortieren</h4>
+<p>Das größte Element (Wurzel des Heaps) wird entfernt und an das Ende des Arrays verschoben. Aktuell:</p>
+<p>Wir entfernen 10: $[10, 5, 4, 1, 3] \to [3, 5, 4, 1, 10]$.</p>
+
+<p>Nun wird der Heap neu strukturiert:</p>
+
+<dot>
+graph {
+    node [shape=circle];
+    A [label="5"];
+    B [label="3"];
+    C [label="4"];
+    A -- B;
+    A -- C;
+}
+</dot>
+
+<p>Nach dem Entfernen von 5 und dessen Neuordnung folgt die gleiche Prozedur:</p>
+<p>Aktuell: $[5, 3, 4, 1] \to [4, 3, 5, 1]$ (5 wird entfernt).</p>
+
+<p>Die Schritte wiederholen sich, bis das gesamte Array sortiert ist.</p>
+
+<p>Endresultat: $[1, 3, 4, 5, 10]$</p>

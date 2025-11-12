@@ -11,7 +11,7 @@ Eine Karteikarte ist folgendermaßen kodiert:
 Dabei ist sowohl die Vorderseite, als auch die Rückseite in HTML kodiert.
 
 Umgebung:
-- Du kannst und sollst KaTeX (also LaTex) verwenden: `$<INLINE-TeX>$` oder `$$<OUTLINE-TeX>$$`.
+- Du kannst und sollst KaTeX (also LaTex) verwenden: `$<INLINE-TeX>$` oder `$$<OUTLINE-TeX>$$` (nur `$` und `$$` sind für LaTeX erlaubt) .
 - Außerdem kannst du mittels `<dot>[CONTENT]</dot>` GraphViz-Diagramme einbinden. Dabei muss/darf der Inhalt einer `<dot>`-Node _nicht_ escaped werden.
 
 Anmerkungen:
@@ -88,26 +88,48 @@ Wie funktioniert <i>Quicksort</i>?
 
 <p><i>Quicksort</i> ist ein Divide &amp; Conquer Sortierverfahren: Man wählt ein Pivot $p$, partitioniert in Elemente $e \leq p$ und Elemente $e > p$, sortiert die Teilbereiche rekursiv und setzt zusammen.</p>
 
-<h3>Schritte</h3>
+<h3>Algorithmus</h3>
+
 <ul>
   <li>Pivot $p$ wählen</li>
-  <li>Partitionieren: <code>links</code> ($\leq$), <code>rechts</code> ($>$)</li>
-  <li>Rekursiv sortieren: <code>quicksort(links) + [pivot] + quicksort(rechts)</code></li>
+  <li>Partitionieren: $\text{links}\,(\leq)$, $\text{rechts}\,(>)$</li>
+  <li>Rekursiv sortieren: $\text{quicksort}(\text{links}) + [p] + \text{quicksort}(\text{rechts})$</li>
 </ul>
 
+<h3>Pseudocode</h3>
+
+<pre>
+quicksort(array):
+    wenn Länge(array) &lt;= 1:
+        return array
+
+    pivot = array[0]
+    links = []
+    rechts = []
+    für element in array[1:]:
+        wenn element &lt;= pivot:
+            links.append(element)
+        sonst:
+            rechts.append(element)
+    
+    return quicksort(links) + [pivot] + quicksort(rechts)
+</pre>
+
 <h3>Beispiel</h3>
-<p>Input: <code>[3,7,2,5,1]</code></p>
+
+<p>Input: $[3,7,2,5,1]$</p>
 
 <dot>
-digraph {
+graph {
     node [shape=record];
     array [label="3 | 7 | 2 | 5 | 1"];
 }
 </dot>
 
 <p>$p = 3$; Partitionieren:</p>
+
 <dot>
-digraph {
+graph {
     node [shape=record];
     left [label="2 | 1"];
     pivot [label="3"];
@@ -115,9 +137,10 @@ digraph {
 } 
 </dot>
 
-<p>Rekursiv sortieren</p>
+<p>Rekursiv sortieren:</p>
+
 <dot>
-digraph {
+graph {
     node [shape=record];
     left [label="1 | 2"];
     pivot [label="3"];
@@ -125,13 +148,62 @@ digraph {
 } 
 </dot>
 
-<p>Zusammenfügen</p>
+<p>Zusammenfügen:</p>
+
 <dot>
-digraph {
+graph {
     node [shape=record];
     array [label="1 | 2 | 3 | 5 | 7"];
 } 
 </dot>
 ```
+
+```html
+Was ist ein <i>Spannbaum</i>?
+
+-----
+
+<p>Ein <i>Spannbaum</i> eines zusammenhängenden Graphen $G$ ist ein Teilgraph, der alle Knoten von $G$ enthält und ein Baum ist, das heißt, er ist zusammenhängend und zyklenfrei.</p>
+
+<h3>Formelle Definition</h3>
+
+<p>Ein Spannbaum $T$ eines Graphen $G = (V, E)$ hat die Eigenschaften:</p>
+<ul>
+    <li>$V(T) = V(G)$</li>
+    <li>Der Baum hat genau $|V| - 1$ Kanten.</li>
+</ul>
+
+<h3>Beispiel</h3>
+
+<p>Gegeben sei der Graph $G$:</p>
+
+<dot>
+graph {
+    node [shape=circle];
+    A; B; C; D; E;
+
+    A -- B;
+    A -- C;
+    B -- C;
+    B -- D;
+    C -- E;
+}
+</dot>
+
+<p>Ein möglicher Spannbaum $T$ aus $G$ könnte sein:</p>
+
+<dot>
+graph {
+    node [shape=circle];
+    A; B; C; D; E;
+
+    A -- B;
+    B -- C;
+    B -- D;
+    C -- E;
+}
+</dot>
+```
+
 
 Nutzer: <Thema>

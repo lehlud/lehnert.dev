@@ -1,0 +1,44 @@
+Was ist ein <i>Spannbaum</i>?
+
+-----
+
+<p>Ein <i>Spannbaum</i> eines zusammenhängenden Graphen $G$ ist ein Teilgraph, der alle Knoten von $G$ enthält und ein Baum ist, das heißt, er ist zusammenhängend und zyklenfrei.</p>
+
+<h3>Formelle Definition</h3>
+
+<p>Ein Spannbaum $T$ eines Graphen $G = (V, E)$ hat die Eigenschaften:</p>
+<ul>
+    <li>$V(T) = V(G)$</li>
+    <li>Der Baum hat genau $|V| - 1$ Kanten.</li>
+</ul>
+
+<h3>Beispiel</h3>
+
+<p>Gegeben sei der Graph $G$:</p>
+
+<dot>
+graph {
+    node [shape=circle];
+    A; B; C; D; E;
+
+    A -- B;
+    A -- C;
+    B -- C;
+    B -- D;
+    C -- E;
+}
+</dot>
+
+<p>Ein möglicher Spannbaum $T$ aus $G$ könnte sein:</p>
+
+<dot>
+graph {
+    node [shape=circle];
+    A; B; C; D; E;
+
+    A -- B;
+    B -- C;
+    B -- D;
+    C -- E;
+}
+</dot>

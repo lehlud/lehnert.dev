@@ -4,15 +4,36 @@ Wie funktioniert <i>Quicksort</i>?
 
 <p><i>Quicksort</i> ist ein Divide &amp; Conquer Sortierverfahren: Man wählt ein Pivot $p$, partitioniert in Elemente $e \leq p$ und Elemente $e > p$, sortiert die Teilbereiche rekursiv und setzt zusammen.</p>
 
-<h3>Schritte</h3>
+<h3>Algorithmus</h3>
+
 <ul>
   <li>Pivot $p$ wählen</li>
-  <li>Partitionieren: <code>links</code> ($\leq$), <code>rechts</code> ($>$)</li>
-  <li>Rekursiv sortieren: <code>quicksort(links) + [pivot] + quicksort(rechts)</code></li>
+  <li>Partitionieren: $\text{links}\,(\leq)$, $\text{rechts}\,(>)$</li>
+  <li>Rekursiv sortieren: $\text{quicksort}(\text{links}) + [p] + \text{quicksort}(\text{rechts})$</li>
 </ul>
 
+<h3>Pseudocode</h3>
+
+<pre>
+quicksort(array):
+    wenn Länge(array) &lt;= 1:
+        return array
+
+    pivot = array[0]
+    links = []
+    rechts = []
+    für element in array[1:]:
+        wenn element &lt;= pivot:
+            links.append(element)
+        sonst:
+            rechts.append(element)
+    
+    return quicksort(links) + [pivot] + quicksort(rechts)
+</pre>
+
 <h3>Beispiel</h3>
-<p>Input: <code>[3,7,2,5,1]</code></p>
+
+<p>Input: $[3,7,2,5,1]$</p>
 
 <dot>
 digraph {
@@ -22,6 +43,7 @@ digraph {
 </dot>
 
 <p>$p = 3$; Partitionieren:</p>
+
 <dot>
 digraph {
     node [shape=record];
@@ -31,7 +53,8 @@ digraph {
 } 
 </dot>
 
-<p>Rekursiv sortieren</p>
+<p>Rekursiv sortieren:</p>
+
 <dot>
 digraph {
     node [shape=record];
@@ -41,11 +64,11 @@ digraph {
 } 
 </dot>
 
-<p>Zusammenfügen</p>
+<p>Zusammenfügen:</p>
+
 <dot>
 digraph {
     node [shape=record];
     array [label="1 | 2 | 3 | 5 | 7"];
 } 
 </dot>
-

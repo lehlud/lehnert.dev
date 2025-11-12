@@ -1,0 +1,27 @@
+Was ist ein <i>Baum</i>?
+
+-----
+
+<p><i>Ein Baum</i> ist ein zusammenhängender, azyklischer, ungerichteter Graph.</p>
+
+<h3>Eigenschaften</h3>
+
+<ul>
+  <li>Für einen Baum mit $n$ Knoten gilt: Anzahl Kanten $=n-1$.</li>
+  <li>Zwischen je zwei Knoten existiert genau ein einfacher Weg.</li>
+  <li>Äquivalent: zusammenhängend + keine Zyklen oder minimal zusammenhängend (Entfernt man eine Kante, wird er unzusammenhängend).</li>
+</ul>
+
+<h3>Beispiel</h3>
+
+<dot>
+digraph {
+  node [shape=circle];
+  "A" -> "B";
+  "A" -> "C";
+  "B" -> "D";
+  "B" -> "E";
+}
+</dot>
+
+<p>Hier ist $A$ die Wurzel; es gibt keine Zyklen und für jeden Knoten genau einen Pfad zur Wurzel.</p>

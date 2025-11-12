@@ -1,0 +1,50 @@
+Wie funktioniert <i>Breitensuche</i>?
+
+-----
+
+<p><i>Breitensuche</i> (<i>Breadth-First Search</i>, BFS) ist ein algorithmisches Verfahren zur Durchsuchung von Graphen. Es exploriert alle Nachbarn eines Knotens, bevor es in die Tiefe geht. BFS wird häufig verwendet, um den kürzesten Pfad in ungewichteten Graphen zu finden.</p>
+
+<h3>Algorithmus</h3>
+
+<ul>
+  <li>Starte beim Wurzelknoten oder einem beliebigen Knoten.</li>
+  <li>Verwende eine Warteschlange zur Speicherung der Knoten, die besucht werden sollen.</li>
+  <li>Besuche einen Knoten, markiere ihn als besucht, und füge alle seine unbesuchten Nachbarn zur Warteschlange hinzu.</li>
+  <li>Wiederhole, bis die Warteschlange leer ist.</li>
+</ul>
+
+<h3>Pseudocode</h3>
+
+<pre>
+BFS(start):
+    erstelle eine leere Warteschlange Q
+    markiere start als besucht
+    füge start der Warteschlange Q hinzu
+
+    solange Q nicht leer ist:
+        aktuell = entferne das vorderste Element von Q
+        markiere aktuell als besucht
+
+        für jeden Nachbarn von aktuell:
+            falls Nachbar nicht besucht ist:
+                markiere Nachbar als besucht
+                füge Nachbar der Warteschlange Q hinzu
+</pre>
+
+<h3>Beispiel</h3>
+
+<p>Gegeben sei der Graph:</p>
+
+<dot>
+graph {
+    node [shape=circle];
+    A; B; C; D; E;
+    A -- B;
+    A -- C;
+    B -- D;
+    C -- D;
+    D -- E;
+}
+</dot>
+
+<p>Starte bei Knoten $A$. Die Reihenfolge der Besuche ist: $A, B, C, D, E$.</p>
