@@ -90,31 +90,40 @@ $card_ids = $deck->getCardIds();
     </div>
 
     <script type="module">
+        import { cyrb128, sfc32, stepping } from '/_static/pseudo-random.mjs';
+
         const deckId = <?= json_encode($deck->id) ?>;
         const cardIds = <?= json_encode($card_ids) ?>;
 
-        let _cardScores = JSON.parse(localStorage['_cardScores'] || '{}');
-        if (typeof _cardScores !== 'object') _cardScores = {};
-        const saveScores = () => localStorage['_cardScores'] = JSON.stringify(_cardScores);
-
-        const frontEl = document.getElementById('front');
-        const revealEl = document.getElementById('reveal');
-        const backEl = document.getElementById('back');
-        const nextButtonsEl = document.getElementById('next-buttons');
-        const falseAnswerEl = document.getElementById('false-answer');
-        const trueAnswerEl = document.getElementById('true-answer');
-
-        const hide = (el) => el.style.display = 'none';
-        const unhide = (el) => el.style.display = 'block';
-        const hidden = (el) => el.style.display === 'none';
+        // init seedable pseudo random number generator
+        const seed = cyrb128(deckId);
+        const rand = stepping(sfc32(seed[0], seed[1], seed[2], seed[3]));
+        let initialRandCount = parseInt(localStorage[`_randCount:${deckId}`] || 'asdf');
+        if (isNaN(initialRandCount)) initialRandCount = 20;
+        for (let i = 0; i < initialRandCount; i++) rand();
+        const saveRandCount = () => localStorage[`_randCount:${deckId}`] = rand.steps().toString();
 
         // init card scores
-        cardIds.forEach(id => _cardScores[`${deckId}::${id}`] ||= 0);
-        saveScores();
+        let _cardScores = JSON.parse(localStorage[`_cardScores:${deckId}`] || '{}');
+        if (typeof _cardScores !== 'object') _cardScores = {};
+        Object.keys(_cardScores).filter(id => !cardIds.includes(id)).forEach(id => delete _cardScores[id]);
+        cardIds.forEach(id => _cardScores[id] ||= 0);
+        const saveScores = () => localStorage[`_cardScores:${deckId}`] = JSON.stringify(_cardScores);
+
+        // re-init last card id
+        let currentCardId = null, lastCardId = null;
+        lastCardId = localStorage[`_lastCard:${deckId}`] || null;
+        const saveLastCardId = () => localStorage[`_lastCard:${deckId}`] = lastCardId;
+
+        const saveState = () => {
+            saveRandCount();
+            saveScores();
+            saveLastCardId();
+        };
 
         const _boundScore = (score) => Math.max(0, Math.min(63/64, score ?? 0))
-        const cardScore = (id) => _boundScore(_cardScores[`${deckId}::${id}`]);
-        const setCardScore = (id, value) => _cardScores[`${deckId}::${id}`] = _boundScore(value);
+        const cardScore = (id) => _boundScore(_cardScores[id]);
+        const setCardScore = (id, value) => _cardScores[id] = _boundScore(value);
         
         const recordFalse = (id) => setCardScore(id, 1/128 + cardScore(id) / 4);
         const recordTrue = (id) => {
@@ -166,12 +175,16 @@ $card_ids = $deck->getCardIds();
                 }
             }
 
+            const sortedProbabilites = Object.entries(probabilities).sort(
+                ([aKey], [bKey]) => aKey.localeCompare(bKey),
+            );
+
             const choose = () => {
-                const rand = Math.random();
+                const _rand = rand();
                 let cumulative = 0;
-                for (const [id, prob] of Object.entries(probabilities)) {
+                for (const [id, prob] of sortedProbabilites) {
                     cumulative += prob;
-                    if (rand < cumulative) return id;
+                    if (_rand < cumulative) return id;
                 }
             };
 
@@ -188,6 +201,17 @@ $card_ids = $deck->getCardIds();
             return chosen;
         }
 
+        const frontEl = document.getElementById('front');
+        const revealEl = document.getElementById('reveal');
+        const backEl = document.getElementById('back');
+        const nextButtonsEl = document.getElementById('next-buttons');
+        const falseAnswerEl = document.getElementById('false-answer');
+        const trueAnswerEl = document.getElementById('true-answer');
+
+        const hide = (el) => el.style.display = 'none';
+        const unhide = (el) => el.style.display = 'block';
+        const hidden = (el) => el.style.display === 'none';
+
         async function getCard(id) {
             const res = await fetch(`./cards/${id}.htm`);
             const htm = await res.text();
@@ -196,7 +220,6 @@ $card_ids = $deck->getCardIds();
             return { front, back };
         }
 
-        let currentCardId = null, lastCardId = null;
         async function next() {
             hide(frontEl);
             hide(revealEl);
@@ -231,11 +254,11 @@ $card_ids = $deck->getCardIds();
             unhide(nextButtonsEl);
         });
 
-        falseAnswerEl.addEventListener('click', () => {
+        falseAnswerEl.addEventListener('click', async () => {
             hide(nextButtonsEl);
 
             recordFalse(currentCardId);
-            saveScores();
+            saveState();
             next();
         });
 
@@ -243,7 +266,7 @@ $card_ids = $deck->getCardIds();
             hide(nextButtonsEl);
 
             recordTrue(currentCardId);
-            saveScores();
+            saveState();
             next();
         });
 

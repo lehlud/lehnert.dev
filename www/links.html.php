@@ -87,6 +87,7 @@ $links = [
         'Nicht kategorisiert' => [
             'homematic bidcos default aes key (November 2014)' => 'https://pastebin.com/eiDnuS8N',
             'Michael Gernoth: Dissecting HomeMatic AES' => 'https://git.zerfleddert.de/hmcfgusb/AES/',
+            'Nothing-up-my-sleeve numbers' => 'https://en.wikipedia.org/wiki/Nothing-up-my-sleeve_number',
         ],
     ],
     'Alternative Netzwerke' => [
