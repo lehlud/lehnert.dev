@@ -98,10 +98,23 @@ $card_ids = $deck->getCardIds();
         // init seedable pseudo random number generator
         const seed = cyrb128(deckId);
         const rand = stepping(sfc32(seed[0], seed[1], seed[2], seed[3]));
-        let initialRandCount = parseInt(localStorage[`_randCount:${deckId}`] || 'asdf');
-        if (isNaN(initialRandCount)) initialRandCount = 20;
-        for (let i = 0; i < initialRandCount; i++) rand();
+        {
+            const initialRandCount = parseInt(localStorage[`_randCount:${deckId}`] || 'asdf');
+            if (!isNaN(initialRandCount)) {
+                for (let i = 0; i < initialRandCount; i++) rand();
+            }
+        }
         const saveRandCount = () => localStorage[`_randCount:${deckId}`] = rand.steps().toString();
+        // wrapper to avoid excessive init iterations
+        const nextRand = () => {
+            if (rand.steps() > 500) rand.reset();
+
+            if (rand.steps() === 0) {
+                for (let i = 0; i < 20; i++) rand();
+            }
+
+            return rand();
+        };
 
         // init card scores
         let _cardScores = JSON.parse(localStorage[`_cardScores:${deckId}`] || '{}');
@@ -111,14 +124,16 @@ $card_ids = $deck->getCardIds();
         const saveScores = () => localStorage[`_cardScores:${deckId}`] = JSON.stringify(_cardScores);
 
         // re-init last card id
-        let currentCardId = null, lastCardId = null;
-        lastCardId = localStorage[`_lastCard:${deckId}`] || null;
-        const saveLastCardId = () => localStorage[`_lastCard:${deckId}`] = lastCardId;
+        let avoidCardIds = JSON.parse(localStorage[`_avoidCards:${deckId}`] || '[]');
+        if (!Array.isArray(avoidCardIds)) avoidCardIds = [];
+        if (avoidCardIds.length > 2) avoidCardIds = avoidCardIds.slice(-2);
+        const addAvoidCardId = (id) => avoidCardIds = id ? [...avoidCardIds, id].slice(-2) : avoidCardIds;
+        const saveAvoidCardIds = () => localStorage[`_avoidCards:${deckId}`] = JSON.stringify(avoidCardIds);
 
         const saveState = () => {
             saveRandCount();
             saveScores();
-            saveLastCardId();
+            saveAvoidCardIds();
         };
 
         const _boundScore = (score) => Math.max(0, Math.min(63/64, score ?? 0))
@@ -144,14 +159,13 @@ $card_ids = $deck->getCardIds();
         /**
          * Pick a next card id.
          * 
-         * The return value may never equal the values of `lastCardId` and `currentCardId`.
-         * This behaviour can be changed by supplying the first parameter.
+         * The return value may never equal the values specified in `avoidIds`.
          * 
          * For unseen cards (score = 0), the lexicographically coming first
          * of them is chosen.
          * This is good for introduction purposes and deterministic behaviour.
          */
-        function pickNextCardId(avoidIds = [lastCardId, currentCardId]) {
+        function pickNextCardId(avoidIds = []) {
             const availableCardIds = new Set(cardIds);
             const unseenCardIds = new Set();
 
@@ -180,11 +194,11 @@ $card_ids = $deck->getCardIds();
             );
 
             const choose = () => {
-                const _rand = rand();
+                const rand = nextRand();
                 let cumulative = 0;
                 for (const [id, prob] of sortedProbabilites) {
                     cumulative += prob;
-                    if (_rand < cumulative) return id;
+                    if (rand < cumulative) return id;
                 }
             };
 
@@ -220,16 +234,14 @@ $card_ids = $deck->getCardIds();
             return { front, back };
         }
 
+        let currentCardId = null;
         async function next() {
             hide(frontEl);
             hide(revealEl);
             hide(backEl);
             hide(nextButtonsEl);
 
-            let tmp = currentCardId;
-            currentCardId = pickNextCardId();
-            lastCardId = currentCardId;
-
+            currentCardId = pickNextCardId(avoidCardIds);
             const nextCard = await getCard(currentCardId);
 
             frontEl.innerHTML = nextCard.front;
@@ -258,6 +270,7 @@ $card_ids = $deck->getCardIds();
             hide(nextButtonsEl);
 
             recordFalse(currentCardId);
+            addAvoidCardId(currentCardId);
             saveState();
             next();
         });
@@ -266,6 +279,7 @@ $card_ids = $deck->getCardIds();
             hide(nextButtonsEl);
 
             recordTrue(currentCardId);
+            addAvoidCardId(currentCardId);
             saveState();
             next();
         });

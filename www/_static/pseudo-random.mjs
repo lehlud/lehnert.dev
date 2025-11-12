@@ -21,6 +21,8 @@ export function cyrb128(str) {
 }
 
 export function sfc32(a, b, c, d) {
+  const initialParams = [a, b, c, d];
+
   const rand = function () {
     a |= 0; b |= 0; c |= 0; d |= 0;
     let t = (a + b | 0) + d | 0;
@@ -32,6 +34,7 @@ export function sfc32(a, b, c, d) {
     return (t >>> 0) / 4294967296;
   };
 
+  rand.reset = () => [a, b, c, d] = initialParams;
   rand.params = () => [a, b, c, d];
   rand.setParams = (params) => [a, b, c, d] = params;
 
@@ -39,6 +42,8 @@ export function sfc32(a, b, c, d) {
 }
 
 export function splitmix32(a) {
+  const initialParams = [a];
+
   const rand = function () {
     a |= 0;
     a = a + 0x9e3779b9 | 0;
@@ -50,6 +55,7 @@ export function splitmix32(a) {
   };
 
 
+  rand.reset = () => [a] = initialParams;
   rand.params = () => [a];
   rand.setParams = (params) => [a] = params;
 
@@ -58,31 +64,17 @@ export function splitmix32(a) {
 
 // auto counting
 export function stepping(rand, steps = 0) {
-  const _steppable = function () {
+  const _stepping = function () {
     steps += 1;
     return rand();
   };
 
-  _steppable.steps = () => steps;
-  
-  return _steppable;
-}
-
-
-// manually progressible
-export function steppable(rand, steps = 0) {
-  let params = rand.params();
-
-  const _steppable = function () {
-    rand.setParams(params);
-    return rand();
+  _stepping.reset = () => {
+    steps = 0;
+    rand.reset();
   };
 
-  _steppable.steps = () => steps;
-  _steppable.step = () => {
-    params = rand.params();
-    steps += 1;
-  };
+  _stepping.steps = () => steps;
 
-  return _steppable;
+  return _stepping;
 }
