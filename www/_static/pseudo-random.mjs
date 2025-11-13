@@ -37,6 +37,7 @@ export function sfc32(a, b, c, d) {
   rand.reset = () => [a, b, c, d] = initialParams;
   rand.params = () => [a, b, c, d];
   rand.setParams = (params) => [a, b, c, d] = params;
+  rand.copy = () => sfc32(a, b, c, d);
 
   return rand;
 }
@@ -58,6 +59,7 @@ export function splitmix32(a) {
   rand.reset = () => [a] = initialParams;
   rand.params = () => [a];
   rand.setParams = (params) => [a] = params;
+  rand.copy = () => splitmix32(a);
 
   return rand;
 }
@@ -75,6 +77,8 @@ export function stepping(rand, steps = 0) {
   };
 
   _stepping.steps = () => steps;
+
+  _stepping.copy = () => stepping(rand.copy(), steps);
 
   return _stepping;
 }

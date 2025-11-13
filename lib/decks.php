@@ -20,6 +20,11 @@ class Deck {
         if (!isset($this->json['requireKatex'])) return false;
         return $this->json['requireKatex'] || false;
     }
+
+    public function randomizeOrder(): bool {
+        if (!isset($this->json['randomizeOrder'])) return false;
+        return $this->json['randomizeOrder'] || false;
+    }
     /**
      * @return DeckCard[]
      */

@@ -66,18 +66,22 @@ $card_ids = $deck->getCardIds();
     </style>
 
 
-    <?php if ($deck->requireKatex()) : ?>
-        <link rel="stylesheet" href="/_static/katex/katex.min.css">
-        <script defer src="/_static/katex/katex.min.js"></script>
-        <script defer src="/_static/katex/contrib/auto-render.min.js"></script>
-    <?php endif; ?>
+<?php if ($deck->requireKatex()) : ?>
+    <link rel="stylesheet" href="/_static/katex/katex.min.css">
+    <script defer src="/_static/katex/katex.min.js"></script>
+    <script defer src="/_static/katex/contrib/auto-render.min.js"></script>
+<?php endif; ?>
 </head>
 
 <body style="max-width: 900px; margin: 0 auto 0 auto; padding: 16px;">
     <h1><?= $deck->title() ?></h1>
 
     <div>
-        <div id="front"></div>
+        <div id="front">
+            <noscript>
+                <h3>He! Ohne JavaScript läuft hier nichts!</h3>
+            </noscript>
+        </div>
         <hr>
         <div id="back"></div>
 
@@ -169,36 +173,39 @@ $card_ids = $deck->getCardIds();
             const availableCardIds = new Set(cardIds);
             const unseenCardIds = new Set();
 
-            // limit to a circle of 10 "new" cards
+            // limit to a circle of 10 "new" cards ("new" != "unseen")
             let newCardCount = 0;
             for (const cardId of [...cardIds].toSorted()) {
                 if (cardScore(cardId) > 0.7) continue;
 
                 newCardCount += 1;
                 if (newCardCount > 10) availableCardIds.delete(cardId);
-                else if (!cardScore(cardId)) unseenCardIds.add(cardId);
+                if (!cardScore(cardId)) unseenCardIds.add(cardId);
             }
 
-            const probabilities = getProbabilities([...availableCardIds]);
+            let probabilities = getProbabilities([...availableCardIds]);
 
             if (unseenCardIds.size) {
                 probabilities['___unseen'] = 0;
                 for (const cardId of unseenCardIds) {
-                    probabilities['___unseen'] += probabilities[cardId];
-                    delete probabilities[cardId];
+                    if (cardId in probabilities) {
+                        probabilities['___unseen'] += probabilities[cardId];
+                        delete probabilities[cardId];
+                    }
                 }
             }
 
-            const sortedProbabilites = Object.entries(probabilities).sort(
+            // sorting is just to make things 100% deterministic
+            probabilities = Object.entries(probabilities).sort(
                 ([aKey], [bKey]) => aKey.localeCompare(bKey),
             );
 
             const choose = () => {
-                const rand = nextRand();
+                const randValue = nextRand();
                 let cumulative = 0;
-                for (const [id, prob] of sortedProbabilites) {
+                for (const [id, prob] of probabilities) {
                     cumulative += prob;
-                    if (rand < cumulative) return id;
+                    if (randValue < cumulative) return id;
                 }
             };
 
@@ -208,8 +215,15 @@ $card_ids = $deck->getCardIds();
             } while (avoidIds.includes(chosen));
 
             if (chosen === '___unseen') {
+                // sort to make things 100% deterministic (just like above)
                 const sortedUnseen = [...unseenCardIds].toSorted();
+
+<?php if ($deck->randomizeOrder()) : ?>
+                const randCopy = rand.copy();
+                return sortedUnseen.at(Math.floor(randCopy() * sortedUnseen.length));
+<?php else : ?>
                 return sortedUnseen.at(0);
+<?php endif; ?>
             }
 
             return chosen;
@@ -247,14 +261,14 @@ $card_ids = $deck->getCardIds();
             frontEl.innerHTML = nextCard.front;
             backEl.innerHTML = nextCard.back;
 
-            <?php if ($deck->requireKatex()) : ?>
-                [frontEl, backEl].forEach(el => window.renderMathInElement(el, {
-                    delimiters: [
-                        {left: "$$", right: "$$", display: true},
-                        {left: "$", right: "$", display: false}
-                    ],
-                }));
-            <?php endif; ?>
+<?php if ($deck->requireKatex()) : ?>
+            [frontEl, backEl].forEach(el => window.renderMathInElement(el, {
+                delimiters: [
+                    {left: "$$", right: "$$", display: true},
+                    {left: "$", right: "$", display: false}
+                ],
+            }));
+<?php endif; ?>
 
             unhide(frontEl);
             unhide(revealEl);
