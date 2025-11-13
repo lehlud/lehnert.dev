@@ -1,0 +1,32 @@
+Wann ist eine Sprache <i>regulär</i>?
+
+-----
+
+<p>Eine Sprache $L$ ist regulär, wenn sie von einem deterministischen oder nichtdeterministischen endlichen Automaten (DFA/NFA) erkannt werden kann oder wenn sie durch einen regulären Ausdruck beschrieben werden kann.</p>
+
+<h3>Formelle Definition</h3>
+
+<p>Eine Sprache $L$ ist regulär, wenn es einen endlichen Automaten $M = (Q, Σ, δ, q_0, F)$ gibt, wobei:</p>
+
+<ul>
+    <li>$Q$ die endliche Menge der Zustände ist.</li>
+    <li>$Σ$ das endliche Eingabealphabet ist.</li>
+    <li>$δ: Q \times Σ \rightarrow Q$ die Übergangsfunktion ist.</li>
+    <li>$q_0 \in Q$ der Startzustand ist.</li>
+    <li>$F \subseteq Q$ die Menge der Endzustände ist.</li>
+</ul>
+
+<h3>Beispiel</h3>
+
+<p>Die Sprache $L = \{ a^n b^n \,|\, n \geq 0 \}$ ist nicht regulär, während die Sprache $L' = \{ a^n \,|\, n \geq 0 \}$ regulär ist, da sie von einem DFA erkannt werden kann:</p>
+
+<p>DFA für $L$:</p>
+<dot>
+graph {
+    node [shape=circle];
+    A [label="q_0 (start)"];
+    B [label="q_1"];
+    A -- B [label="a"];
+    B -- B [label="a"];
+}
+</dot>

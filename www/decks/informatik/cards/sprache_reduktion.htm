@@ -1,0 +1,23 @@
+Wann ist eine Sprache $L_1$ auf eine Sprache $L_2$ reduzierbar?
+
+-----
+
+<p>Eine Sprache $L_1$ ist auf eine Sprache $L_2$ reduzierbar, wenn es eine total berechenbare Funktion $f$ gibt, die für jedes Wort $w$ die Bedingung erfüllt: $w\in L_1 \Leftrightarrow f(w) \in L_2$.</p>
+
+<h3>Erklärung</h3>
+
+<p>Die Funktion $f$ muss total sein, was bedeutet, dass sie für jedes Eingabewort einen Ausgabewert in $L_2$ zurückgibt. Damit kann man durch die Reduktion von $L_1$ auf $L_2$ die Entscheidbarkeit von $L_1$ durch die Entscheidbarkeit von $L_2$ untersuchen.</p>
+
+<h3>Beispiel</h3>
+
+<p>Sei $L_1$ die Menge aller gerade langen Wörter über einem Alphabet und $L_2$ die leere Sprache. Eine mögliche Reduktion könnte sein:</p>
+
+$$
+f(w) =
+\begin{cases}
+\text{Berechne } w & \text{wenn } |w| \text{ gerade ist}\\
+\lambda & \text{wenn } |w| \text{ ungerade ist}
+\end{cases}
+$$
+
+wobei $\lambda$ das leere Wort ist, welches nicht in $L_2$ enthalten ist.</p>
